@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #e6e6e6;
+  --text-color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* ダークモードの値 */
+    --bg-color: #1a1a1a;
+    --text-color: #e6e6e6;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav button {
+  padding: 5px 10px;
+}
+
+main {
+  margin: 20px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
