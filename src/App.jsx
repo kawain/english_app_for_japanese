@@ -8,6 +8,10 @@ function App () {
   // WASMとデータの初期化が完了したか
   const [wasmInitialized, setWasmInitialized] = useState(false)
   const [currentContent, setCurrentContent] = useState('home')
+  // 音量状態を追加 (初期値: 50)
+  const [volume, setVolume] = useState(50)
+  // 選択されたレベルの状態を追加
+  const [selectedLevel, setSelectedLevel] = useState('1')
   // 初期化処理中/済みフラグ
   const isInitializing = useRef(false)
 
@@ -69,6 +73,23 @@ function App () {
     initializeWasmAndData()
   }, [])
 
+  // 音量変更ハンドラを追加
+  const handleVolumeChange = newVolume => {
+    setVolume(newVolume)
+    // ここで実際の音量調整処理（例: Web Audio APIなど）を呼び出すこともできます
+    console.log('Volume changed to:', newVolume)
+  }
+
+  // レベル変更ハンドラを追加
+  const handleLevelChange = newLevel => {
+    setSelectedLevel(newLevel)
+    console.log('Level changed to:', newLevel)
+    // 必要に応じてWASM側の処理を呼び出す
+    // if (window.SetLevel && wasmInitialized) {
+    //   window.SetLevel(parseInt(newLevel, 10)); // 文字列を数値に変換
+    // }
+  }
+
   // 表示するコンテンツを決定する関数
   const renderContent = () => {
     // WASMの準備ができるまでローディング表示などを出す
@@ -77,11 +98,27 @@ function App () {
     }
     switch (currentContent) {
       case 'listening':
-        return <ListeningContent />
+        return (
+          <ListeningContent
+            volume={volume}
+            onVolumeChange={handleVolumeChange}
+            level={selectedLevel}
+            onLevelChange={handleLevelChange}
+          />
+        )
       case 'quiz':
-        return <WordQuizContent />
+        return (
+          <WordQuizContent
+            volume={volume}
+            onVolumeChange={handleVolumeChange}
+            level={selectedLevel}
+            onLevelChange={handleLevelChange}
+          />
+        )
       case 'typing':
-        return <TypingContent />
+        return (
+          <TypingContent volume={volume} onVolumeChange={handleVolumeChange} />
+        )
       case 'storage':
         return <Storage />
       case 'home':

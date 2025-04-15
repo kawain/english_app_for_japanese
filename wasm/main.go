@@ -4,6 +4,7 @@ package main
 
 import (
 	"english_app_for_japanese/wasm/objects"
+	"english_app_for_japanese/wasm/quiz"
 	"fmt"
 	"strconv"
 	"syscall/js"
@@ -106,22 +107,60 @@ func CreateStorage(this js.Value, args []js.Value) any {
 	return nil
 }
 
+func CreateQuiz(this js.Value, args []js.Value) any {
+	if len(args) < 2 {
+		return nil
+	}
+	level := args[0].Int()
+	choiceCount := args[1].Int()
+	quiz.NewQuiz(level, choiceCount)
+	// 結果をJavaScriptのオブジェクトとして返す
+	result := map[string]interface{}{
+		"id":  quiz.CorrectAnswer.ID,
+		"en":  quiz.CorrectAnswer.En,
+		"jp":  quiz.CorrectAnswer.Jp,
+		"en2": quiz.CorrectAnswer.En2,
+		"jp2": quiz.CorrectAnswer.Jp2,
+	}
+
+	return js.ValueOf(result)
+}
+
+func CreateQuizChoices(this js.Value, args []js.Value) any {
+	// JavaScriptのオブジェクトの配列に変換
+	jsResult := make([]interface{}, len(quiz.QuizChoices)) // 外側のスライスは []interface{}
+
+	for i, choice := range quiz.QuizChoices {
+		// 各選択肢を map[string]interface{} (JavaScriptオブジェクトに対応) に変換
+		choiceObj := map[string]interface{}{
+			"id": choice.ID, // IDは数値のまま渡す
+			"jp": choice.Jp, // 日本語訳
+		}
+		jsResult[i] = choiceObj // map を interface{} としてスライスに追加
+	}
+
+	// js.ValueOfを使ってJavaScriptの配列値に変換
+	return js.ValueOf(jsResult)
+}
+
 func test1(this js.Value, args []js.Value) any {
+	objs := objects.ShuffleObjects(objects.Objects)
+
 	// console.log 関数を取得
 	consoleLog := js.Global().Get("console").Get("log")
 
 	consoleLog.Invoke(js.ValueOf("--- test1 called ---")) // test1が呼ばれたことをログに出す
 
-	// objects.Objects の内容を確認
-	if len(objects.Objects) > 0 {
-		o1 := objects.Objects[0] // 要素があれば最初の要素を取得
+	// objs の内容を確認
+	if len(objs) > 0 {
+		o1 := objs[0] // 要素があれば最初の要素を取得
 		consoleLog.Invoke(js.ValueOf("First object ID:"), js.ValueOf(o1.ID))
 		consoleLog.Invoke(js.ValueOf("First object En:"), js.ValueOf(o1.En))
 		consoleLog.Invoke(js.ValueOf("First object Jp:"), js.ValueOf(o1.Jp))
 		// 必要に応じて他のフィールドも表示
 	} else {
 		// スライスが空の場合のメッセージ
-		consoleLog.Invoke(js.ValueOf("objects.Objects is empty."))
+		consoleLog.Invoke(js.ValueOf("objs is empty."))
 	}
 
 	// objects.Storage の内容を確認
@@ -142,6 +181,8 @@ func main() {
 	// ラッパー関数を登録
 	js.Global().Set("CreateObjects", js.FuncOf(CreateObjects))
 	js.Global().Set("CreateStorage", js.FuncOf(CreateStorage))
+	js.Global().Set("CreateQuiz", js.FuncOf(CreateQuiz))
+	js.Global().Set("CreateQuizChoices", js.FuncOf(CreateQuizChoices))
 
 	js.Global().Set("test1", js.FuncOf(test1))
 

@@ -54,3 +54,25 @@ h1 {
 button {
   cursor: pointer;
 }
+
+.volume-control-wrapper {
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.level-control-wrapper {
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.level-select {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
