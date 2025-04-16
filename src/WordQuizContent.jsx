@@ -27,7 +27,7 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
       }, 500)
 
       tts(currentQuiz.en, 'en-US', volume)
-        .then(() => console.log(`読み上げ完了: ${currentQuiz.en}.`))
+        .then(() => console.log(`読み上げ完了: ${currentQuiz.en}`))
         .catch(error => console.error('TTS error:', error))
 
       return () => clearTimeout(timer)
@@ -192,12 +192,11 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
 
   return (
     <>
-      <h1>単語クイズ</h1>
       <div className='quiz-container'>
         {!isQuizStarted ? (
           // スタートボタン: クリックで現在のレベルでクイズを開始
           <button onClick={() => handleStartQuiz(level)}>
-            スタート (レベル {level})
+            単語クイズ・スタート (レベル {level})
           </button>
         ) : (
           // クイズ中の表示

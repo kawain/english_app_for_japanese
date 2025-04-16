@@ -5,16 +5,27 @@ import (
 	"testing"
 )
 
+func TestSplitTextForTyping(t *testing.T) {
+	for _, v := range []string{"あきょう", "hello こんにちは", "", "しゃしん", "ちぇるのびゅいりゅ"} {
+		got := SplitTextForTyping(v)
+		fmt.Println(got)
+	}
+}
+
 func TestKeyDown(t *testing.T) {
-	a, b := KeyDown("o", "zzzkk", 0, []string{"ら", "っ", "こ"})
-	fmt.Println(a)
-	fmt.Println(b)
+	CurrentTypingQuestionSlice = []string{"ら", "っ", "こ"}
+	result := KeyDown("zkko", 1)
+	fmt.Println(result)
 
-	a, b = KeyDown("i", "r", 0, []string{"り", "ん", "ご"})
-	fmt.Println(a)
-	fmt.Println(b)
+	CurrentTypingQuestionSlice = []string{"ら", "っ", "ぱ"}
+	result = KeyDown("aaaappa", 1)
+	fmt.Println(result)
 
-	a, b = KeyDown("a", "xxx", 0, []string{"i", "s", "a"})
-	fmt.Println(a)
-	fmt.Println(b)
+	CurrentTypingQuestionSlice = []string{"り", "ん", "ご"}
+	result = KeyDown("n", 1)
+	fmt.Println(result)
+
+	CurrentTypingQuestionSlice = []string{"i", "s", "a"}
+	result = KeyDown("a", 2)
+	fmt.Println(result)
 }

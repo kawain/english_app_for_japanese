@@ -1,6 +1,8 @@
 package typing
 
 import (
+	"english_app_for_japanese/wasm/objects"
+	"fmt"
 	"strings"
 )
 
@@ -174,175 +176,6 @@ var RomajiMap = map[string][]string{
 	"ょ":  {"xyo", "lyo"},
 	"ゎ":  {"xwa", "lwa"},
 	"っ":  {"xtu", "ltu"},
-	"ア":  {"a"},
-	"イ":  {"i"},
-	"ウ":  {"u", "wu", "whu"},
-	"エ":  {"e"},
-	"オ":  {"o"},
-	"カ":  {"ka", "ca"},
-	"キ":  {"ki"},
-	"ク":  {"ku", "cu"},
-	"ケ":  {"ke"},
-	"コ":  {"ko", "co"},
-	"サ":  {"sa"},
-	"シ":  {"si", "shi", "ci"},
-	"ス":  {"su"},
-	"セ":  {"se", "ce"},
-	"ソ":  {"so"},
-	"タ":  {"ta"},
-	"チ":  {"ti", "chi"},
-	"ツ":  {"tu", "tsu"},
-	"テ":  {"te"},
-	"ト":  {"to"},
-	"ナ":  {"na"},
-	"ニ":  {"ni"},
-	"ヌ":  {"nu"},
-	"ネ":  {"ne"},
-	"ノ":  {"no"},
-	"ハ":  {"ha"},
-	"ヒ":  {"hi"},
-	"フ":  {"hu", "fu"},
-	"ヘ":  {"he"},
-	"ホ":  {"ho"},
-	"マ":  {"ma"},
-	"ミ":  {"mi"},
-	"ム":  {"mu"},
-	"メ":  {"me"},
-	"モ":  {"mo"},
-	"ヤ":  {"ya"},
-	"ユ":  {"yu"},
-	"ヨ":  {"yo"},
-	"ラ":  {"ra"},
-	"リ":  {"ri"},
-	"ル":  {"ru"},
-	"レ":  {"re"},
-	"ロ":  {"ro"},
-	"ワ":  {"wa"},
-	"ヲ":  {"wo"},
-	"ン":  {"n", "nn"},
-	"ガ":  {"ga"},
-	"ギ":  {"gi"},
-	"グ":  {"gu"},
-	"ゲ":  {"ge"},
-	"ゴ":  {"go"},
-	"ザ":  {"za"},
-	"ジ":  {"zi", "ji"},
-	"ズ":  {"zu"},
-	"ゼ":  {"ze"},
-	"ゾ":  {"zo"},
-	"ダ":  {"da"},
-	"ヂ":  {"di"},
-	"ヅ":  {"du"},
-	"デ":  {"de"},
-	"ド":  {"do"},
-	"バ":  {"ba"},
-	"ビ":  {"bi"},
-	"ブ":  {"bu"},
-	"ベ":  {"be"},
-	"ボ":  {"bo"},
-	"パ":  {"pa"},
-	"ピ":  {"pi"},
-	"プ":  {"pu"},
-	"ペ":  {"pe"},
-	"ポ":  {"po"},
-	"ヴ":  {"vu"},
-	"ウァ": {"wha", "uxa", "ula"},
-	"ウィ": {"whi", "wi", "uxi", "uli"},
-	"ウェ": {"whe", "we", "uxe", "ule"},
-	"ウォ": {"who", "uxo", "ulo"},
-	"ヴァ": {"va", "vuxa", "vula"},
-	"ヴィ": {"vi", "vuxi", "vuli"},
-	"ヴェ": {"ve", "vuxe", "vule"},
-	"ヴォ": {"vo", "vuxo", "vulo"},
-	"イェ": {"ye", "ixe", "ile"},
-	"キャ": {"kixya", "kilya", "kya"},
-	"キィ": {"kixi", "kili", "kyi"},
-	"キュ": {"kixyu", "kilyu", "kyu"},
-	"キェ": {"kixe", "kye", "kile"},
-	"キョ": {"kyo", "kilyo", "kixyo"},
-	"ギャ": {"gilya", "gya", "gixya"},
-	"ギィ": {"gyi", "gixi", "gili"},
-	"ギュ": {"gilyu", "gixyu", "gyu"},
-	"ギェ": {"gile", "gye", "gixe"},
-	"ギョ": {"gixyo", "gilyo", "gyo"},
-	"シャ": {"shilya", "shixya", "cixya", "silya", "sixya", "sya", "cilya", "sha"},
-	"シィ": {"cixi", "sili", "syi", "shixi", "shili", "cili", "sixi"},
-	"シュ": {"sixyu", "syu", "shixyu", "shilyu", "cixyu", "shu", "silyu", "cilyu"},
-	"シェ": {"sixe", "shile", "cile", "sye", "she", "sile", "shixe", "cixe"},
-	"ショ": {"shixyo", "cixyo", "cilyo", "sixyo", "silyo", "sho", "shilyo", "syo"},
-	"ジャ": {"zilya", "jya", "zixya", "zya", "jixya", "ja", "jilya"},
-	"ジィ": {"zili", "jixi", "zixi", "zyi", "jili", "jyi"},
-	"ジュ": {"jilyu", "jixyu", "ju", "jyu", "zilyu", "zyu", "zixyu"},
-	"ジェ": {"zile", "jixe", "zye", "je", "jile", "zixe", "jye"},
-	"ジョ": {"zyo", "jyo", "jilyo", "zixyo", "jixyo", "jo", "zilyo"},
-	"チャ": {"cya", "tya", "tixya", "chilya", "chixya", "tilya"},
-	"チィ": {"cyi", "tili", "tixi", "tyi", "chixi", "chili"},
-	"チュ": {"cyu", "tyu", "tilyu", "tixyu", "chilyu", "chixyu"},
-	"チェ": {"cye", "tixe", "tile", "chile", "chixe", "tye"},
-	"チョ": {"cyo", "chixyo", "chilyo", "tixyo", "tilyo", "tyo"},
-	"ヂャ": {"dilya", "dya", "dixya"},
-	"ヂィ": {"dyi", "dixi", "dili"},
-	"ヂュ": {"dyu", "dixyu", "dilyu"},
-	"ヂェ": {"dile", "dixe", "dye"},
-	"ヂョ": {"dyo", "dixyo", "dilyo"},
-	"テャ": {"texya", "telya", "tha"},
-	"ティ": {"teli", "thi", "texi"},
-	"テュ": {"texyu", "telyu", "thu"},
-	"テェ": {"tele", "texe", "the"},
-	"テョ": {"texyo", "telyo", "tho"},
-	"デャ": {"dha", "dexya", "delya"},
-	"ディ": {"dhi", "deli", "dexi"},
-	"デュ": {"dexyu", "delyu", "dhu"},
-	"デェ": {"dele", "dexe", "dhe"},
-	"デョ": {"dho", "delyo", "dexyo"},
-	"ニャ": {"nilya", "nya", "nixya"},
-	"ニィ": {"nili", "nyi", "nixi"},
-	"ニュ": {"nixyu", "nyu", "nilyu"},
-	"ニェ": {"nye", "nixe", "nile"},
-	"ニョ": {"nilyo", "nixyo", "nyo"},
-	"ヒャ": {"hilya", "hya", "hixya"},
-	"ヒィ": {"hyi", "hili", "hixi"},
-	"ヒュ": {"hixyu", "hilyu", "hyu"},
-	"ヒェ": {"hye", "hile", "hixe"},
-	"ヒョ": {"hixyo", "hyo", "hilyo"},
-	"ビャ": {"bya", "bixya", "bilya"},
-	"ビィ": {"byi", "bili", "bixi"},
-	"ビュ": {"bixyu", "bilyu", "byu"},
-	"ビェ": {"bye", "bile", "bixe"},
-	"ビョ": {"byo", "bixyo", "bilyo"},
-	"ピャ": {"pilya", "pixya", "pya"},
-	"ピィ": {"pixi", "pili", "pyi"},
-	"ピュ": {"pilyu", "pyu", "pixyu"},
-	"ピェ": {"pye", "pixe", "pile"},
-	"ピョ": {"pyo", "pilyo", "pixyo"},
-	"ファ": {"hula", "fula", "huxa", "fuxa", "fa"},
-	"フィ": {"fuxi", "huxi", "fuli", "huli", "fi"},
-	"フェ": {"fuxe", "huxe", "fe", "fule", "hule"},
-	"フォ": {"fo", "fuxo", "hulo", "fulo", "huxo"},
-	"フャ": {"hulya", "fya", "fuxya", "fulya", "huxya"},
-	"フョ": {"fulyo", "huxyo", "fuxyo", "fyo", "hulyo"},
-	"ミャ": {"mixya", "milya", "mya"},
-	"ミィ": {"myi", "mili", "mixi"},
-	"ミュ": {"myu", "milyu", "mixyu"},
-	"ミェ": {"mile", "mixe", "mye"},
-	"ミョ": {"myo", "mixyo", "milyo"},
-	"リャ": {"rilya", "rixya", "rya"},
-	"リィ": {"rili", "rixi", "ryi"},
-	"リュ": {"rilyu", "rixyu", "ryu"},
-	"リェ": {"rixe", "rile", "rye"},
-	"リョ": {"ryo", "rilyo", "rixyo"},
-	"トゥ": {"twu", "tolu", "toxu"},
-	"ドゥ": {"dwu", "dolu", "doxu"},
-	"ァ":  {"xa", "la"},
-	"ィ":  {"xi", "li"},
-	"ゥ":  {"xu", "lu"},
-	"ェ":  {"xe", "le"},
-	"ォ":  {"xo", "lo"},
-	"ャ":  {"xya", "lya"},
-	"ュ":  {"xyu", "lyu"},
-	"ョ":  {"xyo", "lyo"},
-	"ヮ":  {"xwa", "lwa"},
-	"ッ":  {"xtu", "ltu"},
 	"ー":  {"-"},
 	"、":  {","},
 	"。":  {"."},
@@ -357,6 +190,30 @@ var RomajiMap = map[string][]string{
 	"；":  {";"},
 	"：":  {":"},
 	"　":  {" "},
+}
+
+var TypingQuestions []objects.Object
+var TypingQuestionIndex int
+var CurrentTypingQuestion objects.Object
+var CurrentTypingQuestionSlice []string
+
+func PrepareQuestion() {
+	if len(TypingQuestions) == 0 {
+		TypingQuestions = objects.ShuffleObjects(objects.Objects)
+		TypingQuestionIndex = 0
+	}
+
+	if TypingQuestionIndex >= len(TypingQuestions) {
+		TypingQuestions = objects.ShuffleObjects(objects.Objects)
+		TypingQuestionIndex = 0
+	}
+
+	CurrentTypingQuestion = TypingQuestions[TypingQuestionIndex]
+	TypingQuestionIndex++
+
+	// 英語部分とカナ部分を結合して問題スライスを作成
+	// 例: "hello こんにちは" -> ["h", "e", "l", "l", "o", " ", "こ", "ん", "に", "ち", "は"]
+	CurrentTypingQuestionSlice = SplitTextForTyping(fmt.Sprintf("%v %v", CurrentTypingQuestion.En2, CurrentTypingQuestion.Kana))
 }
 
 func SplitTextForTyping(text string) []string {
@@ -383,96 +240,110 @@ func SplitTextForTyping(text string) []string {
 	return result
 }
 
-func KeyDown(c, s string, i int, questionArray []string) (string, int) {
-	newText := s + c
+// KeyDown はuserInputが正しいかどうかを調べる
+// 戻り値はインデックス（正解ならインデックスを1または2進めて返す）
+// インデックスを超えた場合は全部終了という印
+func KeyDown(userInput string, index int) int {
 
-	// 早期リターン：エラーチェック
-	if len(questionArray) == 0 || i >= len(questionArray) {
-		return "", i + 1 // 入力をクリアして次へ
+	currentLength := len(CurrentTypingQuestionSlice)
+
+	// 早期リターン
+	if currentLength == 0 || index >= currentLength {
+		return index
 	}
 
-	question := questionArray[i]
+	targetElement := CurrentTypingQuestionSlice[index]
+	nextElement := ""
 
-	// 次の文字の取得とチェックを関数化
-	getNextChar := func() (string, bool) {
-		if i+1 < len(questionArray) {
-			return questionArray[i+1], true
-		}
-		return "", false
+	// 次の要素がある場合
+	if index < currentLength-1 {
+		nextElement = CurrentTypingQuestionSlice[index+1]
 	}
 
-	// 入力成功時の処理を関数化
-	success := func(increment int) (string, int) {
-		return "", i + increment // 入力をクリアして指定数進める
-	}
-
-	switch question {
+	// 「っ」と「ん」が例外
+	switch targetElement {
 	case "っ":
-		next, hasNext := getNextChar()
-		if !hasNext {
-			return success(1)
-		}
-
-		if words, exists := RomajiMap[next]; exists {
-			// 促音のパターンを生成
-			patterns := []string{"xtu", "ltu"}
-			for _, word := range words {
-				firstChar := word[:1]
-				patterns = append(patterns, firstChar+word)
-			}
-
-			// パターンマッチング
-			for _, pattern := range patterns {
-				if strings.HasSuffix(newText, pattern) {
-					if pattern == "xtu" || pattern == "ltu" {
-						return success(1)
+		if nextElement == "" {
+			// ほとんどないが「っ」で終わる文章の場合
+			if words, exists := RomajiMap[targetElement]; exists {
+				for _, word := range words {
+					if strings.HasSuffix(userInput, word) {
+						return index + 1
 					}
-					return success(2)
+				}
+			}
+		} else {
+			// 例「っぱ」の場合
+			if words, exists := RomajiMap[nextElement]; exists {
+				// 促音のパターンを生成
+				patterns := []string{"xtu", "ltu"}
+				for _, word := range words {
+					// もしも「っぱ」なら
+					// 「ぱ」なら「p」を取得
+					firstChar := word[:1]
+					// 「ppa」にする
+					// 「っぱ」になる
+					patterns = append(patterns, firstChar+word)
+				}
+				// パターンマッチング
+				for _, pattern := range patterns {
+					if strings.HasSuffix(userInput, pattern) {
+						if pattern == "xtu" || pattern == "ltu" {
+							// この場合は「っ」のみ正解なので1進める
+							return index + 1
+						}
+						// 「っぱ」クリアなので2つ進める
+						return index + 2
+					}
 				}
 			}
 		}
-		return newText, i // マッチしない場合は状態維持
 
 	case "ん":
-		next, hasNext := getNextChar()
-		if !hasNext {
-			if strings.HasSuffix(newText, "nn") {
-				return success(1)
+		if nextElement == "" {
+			// 「ん」で終わる場合は「nn」
+			if strings.HasSuffix(userInput, "nn") {
+				return index + 1
 			}
-			return newText, i
-		}
-
-		if words, exists := RomajiMap[next]; exists {
-			needsNN := false
-			for _, word := range words {
-				firstChar := string(word[0])
-				if strings.Contains("aiueony", firstChar) {
-					needsNN = true
-					break
+		} else {
+			//
+			if words, exists := RomajiMap[nextElement]; exists {
+				needsNN := false
+				for _, word := range words {
+					firstChar := string(word[0])
+					// aiueony
+					// 「ん」＋「あいうえお」「な行」「や行」は
+					// 「nn」で入力しないとおかしくなる
+					// それ以外は「n」でいい
+					if strings.Contains("aiueony", firstChar) {
+						needsNN = true
+						break
+					}
 				}
+				if needsNN && strings.HasSuffix(userInput, "nn") {
+					return index + 1
+				}
+				if !needsNN && strings.HasSuffix(userInput, "n") {
+					return index + 1
+				}
+			} else if strings.HasSuffix(userInput, "nn") {
+				// 「んa」のようなRomajiMapにない時も「nn」
+				return index + 1
 			}
-
-			if needsNN && strings.HasSuffix(newText, "nn") {
-				return success(1)
-			}
-			if !needsNN && strings.HasSuffix(newText, "n") {
-				return success(1)
-			}
-		} else if strings.HasSuffix(newText, "nn") {
-			return success(1)
 		}
-		return newText, i
 
 	default:
-		if words, exists := RomajiMap[question]; exists {
+		if words, exists := RomajiMap[targetElement]; exists {
 			for _, word := range words {
-				if strings.HasSuffix(newText, word) {
-					return success(1)
+				if strings.HasSuffix(userInput, word) {
+					return index + 1
 				}
 			}
-		} else if strings.HasSuffix(newText, question) {
-			return success(1)
+		} else if strings.HasSuffix(userInput, targetElement) {
+			return index + 1
 		}
-		return newText, i
 	}
+
+	// 不正解なので変化なし
+	return index
 }

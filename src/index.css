@@ -132,6 +132,22 @@ button:not([disabled]) {
   align-items: center;
 }
 
+/* TypingContent */
+.typing-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.typing-container button {
+  padding: 10px;
+}
+
+.typing-content {
+  width: 100%;
+  height: 200px;
+  background-color: brown;
+}
+
 .highlight {
   animation: highlight-animation 0.5s ease-out; /* アニメーションの時間を調整 */
 }

@@ -5,6 +5,7 @@ package main
 import (
 	"english_app_for_japanese/wasm/objects"
 	"english_app_for_japanese/wasm/quiz"
+	"english_app_for_japanese/wasm/typing"
 	"strconv"
 	"syscall/js"
 )
@@ -169,6 +170,33 @@ func CreateQuizChoices(this js.Value, args []js.Value) any {
 	return js.ValueOf(jsResult)
 }
 
+// GetTypingQuestion
+func GetTypingQuestion(this js.Value, args []js.Value) any {
+	consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)が呼び出されました"))
+
+	typing.PrepareQuestion()
+
+	consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)後のインデックス:"), js.ValueOf(typing.TypingQuestionIndex))
+
+	// 結果をJavaScriptのオブジェクトとして返す
+	result := map[string]interface{}{
+		"en2": typing.CurrentTypingQuestion.En2,
+		"jp2": typing.CurrentTypingQuestion.Jp2,
+	}
+	return js.ValueOf(result)
+}
+
+// GetTypingQuestionSlice
+func GetTypingQuestionSlice(this js.Value, args []js.Value) any {
+	consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestionSlice)が呼び出されました"))
+	// JavaScriptの配列に変換
+	jsArray := make([]interface{}, len(typing.CurrentTypingQuestionSlice))
+	for i, v := range typing.CurrentTypingQuestionSlice {
+		jsArray[i] = v
+	}
+	return js.ValueOf(jsArray)
+}
+
 func main() {
 	// ラッパー関数を登録
 	js.Global().Set("CreateObjects", js.FuncOf(CreateObjects))
@@ -176,6 +204,8 @@ func main() {
 	js.Global().Set("AddStorage", js.FuncOf(AddStorage))
 	js.Global().Set("CreateQuiz", js.FuncOf(CreateQuiz))
 	js.Global().Set("CreateQuizChoices", js.FuncOf(CreateQuizChoices))
+	js.Global().Set("GetTypingQuestion", js.FuncOf(GetTypingQuestion))
+	js.Global().Set("GetTypingQuestionSlice", js.FuncOf(GetTypingQuestionSlice))
 
 	// プログラムを終了させない
 	select {}
