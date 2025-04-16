@@ -42,25 +42,13 @@ function App () {
           }
         }
         // WASMの関数を呼び出して単語オブジェクトを作成
-        if (window.CreateObjects) {
-          window.CreateObjects(data)
-          console.log('CreateObjects 呼び出し完了')
-        } else {
-          console.error('window.CreateObjects is not defined yet.')
-          return
-        }
+        window.CreateObjects(data)
 
         console.log('除外単語IDの読み込み開始...')
         const loadedExcludedIds = getExcludedWordIds()
         console.log('読み込んだ除外単語ID:', loadedExcludedIds)
         // WASMの関数を呼び出して除外単語IDを設定
-        if (window.CreateStorage) {
-          window.CreateStorage(loadedExcludedIds)
-          console.log('CreateStorage 呼び出し完了')
-        } else {
-          console.error('window.CreateStorage is not defined yet.')
-          return
-        }
+        window.CreateStorage(loadedExcludedIds)
 
         setWasmInitialized(true)
         console.log('WASM およびデータ初期化完了')
@@ -76,25 +64,20 @@ function App () {
   // 音量変更ハンドラを追加
   const handleVolumeChange = newVolume => {
     setVolume(newVolume)
-    // ここで実際の音量調整処理（例: Web Audio APIなど）を呼び出すこともできます
-    console.log('Volume changed to:', newVolume)
+    console.log('Volume 変更:', newVolume)
   }
 
   // レベル変更ハンドラを追加
   const handleLevelChange = newLevel => {
     setSelectedLevel(newLevel)
-    console.log('Level changed to:', newLevel)
-    // 必要に応じてWASM側の処理を呼び出す
-    // if (window.SetLevel && wasmInitialized) {
-    //   window.SetLevel(parseInt(newLevel, 10)); // 文字列を数値に変換
-    // }
+    console.log('Level 変更:', newLevel)
   }
 
   // 表示するコンテンツを決定する関数
   const renderContent = () => {
     // WASMの準備ができるまでローディング表示などを出す
     if (!wasmInitialized) {
-      return <div>Loading WASM and data...</div>
+      return <div className='loading'>Loading WASM and data...</div>
     }
     switch (currentContent) {
       case 'listening':
@@ -127,58 +110,42 @@ function App () {
     }
   }
 
-  const handleTest1Click = () => {
-    if (!wasmInitialized) {
-      console.log('WASM is not initialized yet.')
-      return
-    }
-    if (window.test1) {
-      console.log('Calling test1...')
-      window.test1()
-    } else {
-      console.error('window.test1 is not defined.')
-    }
-  }
-
   return (
     <>
       <div className='container'>
         <nav>
           <button
+            onClick={() => setCurrentContent('home')}
+            disabled={!wasmInitialized || currentContent === 'home'}
+          >
+            ホーム
+          </button>
+          <button
             onClick={() => setCurrentContent('listening')}
-            disabled={!wasmInitialized}
+            disabled={!wasmInitialized || currentContent === 'listening'}
           >
             ヒアリング
           </button>
           <button
             onClick={() => setCurrentContent('quiz')}
-            disabled={!wasmInitialized}
+            disabled={!wasmInitialized || currentContent === 'quiz'}
           >
             単語クイズ
           </button>
           <button
             onClick={() => setCurrentContent('typing')}
-            disabled={!wasmInitialized}
+            disabled={!wasmInitialized || currentContent === 'typing'}
           >
             タイピング
           </button>
           <button
             onClick={() => setCurrentContent('storage')}
-            disabled={!wasmInitialized}
+            disabled={!wasmInitialized || currentContent === 'storage'}
           >
             ストレージ
           </button>
-          {currentContent !== 'home' && (
-            <button
-              onClick={() => setCurrentContent('home')}
-              disabled={!wasmInitialized}
-            >
-              ホームに戻る
-            </button>
-          )}
         </nav>
         <main>{renderContent()}</main>
-        {wasmInitialized && <button onClick={handleTest1Click}>テスト1</button>}
       </div>
     </>
   )

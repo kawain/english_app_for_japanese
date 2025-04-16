@@ -47,11 +47,15 @@ main {
   margin: 20px 0;
 }
 
+.loading {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
 }
 
-button {
+button:not([disabled]) {
   cursor: pointer;
 }
 
@@ -75,4 +79,68 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+/* WordQuizContent */
+.quiz-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.quiz-container button {
+  padding: 10px;
+}
+
+.quiz-container h2 {
+  font-size: 3rem;
+}
+
+.quiz-content {
+  display: flex;
+}
+
+.quiz-choices input[type='radio'] {
+  padding: 10px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.quiz-choices label {
+  cursor: pointer;
+}
+
+.quiz-content > div:first-child {
+  width: 40%;
+  text-align: left;
+  line-height: 2;
+}
+
+.quiz-result {
+  line-height: 2;
+}
+
+.quiz-stats {
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.quiz-content > div:nth-child(2) {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  animation: highlight-animation 0.5s ease-out; /* アニメーションの時間を調整 */
+}
+
+@keyframes highlight-animation {
+  0% {
+    background-color: yellow; /* 開始時の色 */
+  }
+  100% {
+    background-color: transparent; /* 終了時の色（元の色に戻す） */
+  }
 }

@@ -23,8 +23,6 @@ var Storage []int
 
 // ShuffleObjects は与えられた Object スライスのコピーをランダムにシャッフルして返します。
 // 元のスライスは変更されません。
-// 注意: WASM環境での time.Now() の挙動によっては、毎回同じシードになる可能性があります。
-// より信頼性の高いランダム性が必要な場合は、JavaScript側からシード値を提供することを検討してください。
 func ShuffleObjects(inputObjects []Object) []Object {
 	if len(inputObjects) <= 1 {
 		shuffled := make([]Object, len(inputObjects))
@@ -87,8 +85,6 @@ func FilterObjectsByLevel(inputObjects []Object, level int) []Object {
 
 // SelectRandomObject は与えられた Object スライスからランダムに1つの Object を選択して返します。
 // スライスが空の場合はゼロ値の Object (全てのフィールドがデフォルト値) を返します。
-// 注意: WASM環境での time.Now() の挙動によっては、毎回同じシードになる可能性があります。
-// より信頼性の高いランダム性が必要な場合は、外部からシード値を提供することを検討してください。
 func SelectRandomObject(inputObjects []Object) Object {
 	// スライスの長さを確認
 	n := len(inputObjects)
@@ -100,7 +96,6 @@ func SelectRandomObject(inputObjects []Object) Object {
 	}
 
 	// ランダムなインデックスを生成するための準備
-	// ShuffleObjects と同様に、WASM 環境での time.Now() の信頼性に注意
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
@@ -138,9 +133,4 @@ func NewObjects(idText, en, jp, en2, jp2, kana, levelText, similarText string) O
 		Level:   level,
 		Similar: similar,
 	}
-}
-
-// GetObjectsForQuiz は出題を作成する
-func GetObjectsForQuiz(level int, index int) {
-
 }

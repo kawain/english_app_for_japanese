@@ -35,8 +35,8 @@ function LevelControl ({ level, onLevelChange }) {
           <input
             type='radio'
             name='level'
-            value='9'
-            checked={level === '9'}
+            value='0'
+            checked={level === '0'}
             onChange={handleChange}
           />{' '}
           レベル1と2
