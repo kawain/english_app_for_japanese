@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import VolumeControl from './components/VolumeControl.jsx'
+import { tts } from './utils/tts'
 
-function TypingContent ({ volume, onVolumeChange }) {
+function TypingContent ({
+  volume,
+  onVolumeChange,
+  isSoundEnabled,
+  onToggleSound
+}) {
   const [isTypingStarted, setIsTypingStarted] = useState(false)
   // 表示用の問題の文字列(日本語は漢字)
   const [questionText, setQuestionText] = useState({})
@@ -78,7 +84,12 @@ function TypingContent ({ volume, onVolumeChange }) {
           </div>
         )}
       </div>
-      <VolumeControl volume={volume} onVolumeChange={onVolumeChange} />
+      <VolumeControl
+        volume={volume}
+        onVolumeChange={onVolumeChange}
+        isSoundEnabled={isSoundEnabled}
+        onToggleSound={onToggleSound}
+      />
     </>
   )
 }

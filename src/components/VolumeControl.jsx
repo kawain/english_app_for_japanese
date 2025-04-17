@@ -1,4 +1,9 @@
-function VolumeControl ({ volume, onVolumeChange }) {
+function VolumeControl ({
+  volume,
+  onVolumeChange,
+  isSoundEnabled,
+  onToggleSound
+}) {
   // スライダーが変更されたときに呼ばれる関数
   const handleChange = event => {
     // onVolumeChangeを通じてAppコンポーネントの状態を更新
@@ -17,10 +22,19 @@ function VolumeControl ({ volume, onVolumeChange }) {
           max='100'
           value={volume}
           onChange={handleChange}
+          aria-label='音量調節スライダー'
         />
         <span id='volumeValue' className='volume-display'>
           {volume}%
         </span>
+
+        <input
+          type='checkbox'
+          id='soundToggleCheckbox'
+          checked={isSoundEnabled}
+          onChange={onToggleSound}
+        />
+        <label htmlFor='soundToggleCheckbox'>音を有効にする</label>
       </div>
     </div>
   )

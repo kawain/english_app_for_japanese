@@ -81,6 +81,49 @@ button:not([disabled]) {
   gap: 20px;
 }
 
+/* Home */
+.home-container {
+}
+.home-container button {
+  padding: 10px;
+}
+
+.home-buttons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-results table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.home-results table th,
+.home-results table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* WordQuizContent */
 .quiz-container {
   margin: 20px 0;
@@ -148,6 +191,43 @@ button:not([disabled]) {
   background-color: brown;
 }
 
+/* Storage */
+.storage-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.storage-container p {
+  margin: 20px 0;
+}
+
+.storage-container button {
+  padding: 10px;
+}
+
+.storage-button-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.custom-file-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Highlight */
 .highlight {
   animation: highlight-animation 0.5s ease-out; /* アニメーションの時間を調整 */
 }

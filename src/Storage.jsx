@@ -136,21 +136,27 @@ function Storage () {
 
   return (
     <>
-      <h1>LocalStorage エクスポート/インポート</h1>
-      <p>他のブラウザにデータを移動できます</p>
-      <p>
-        <button onClick={handleExport}>エクスポート</button>
-      </p>
-      <p>
-        <label htmlFor='importFile'>インポート:</label>
-        <input
-          type='file'
-          id='importFile'
-          // JSONとテキストファイルを受け入れる
-          accept='.json,.txt'
-          onChange={handleImport}
-        />
-      </p>
+      <div className='storage-container'>
+        <h1>LocalStorage エクスポート/インポート</h1>
+        <p>他のブラウザにデータを移動できます</p>
+        <div className='storage-button-container'>
+          <div>
+            <button onClick={handleExport}>エクスポート</button>
+          </div>
+          <div>
+            <input
+              type='file'
+              id='importFile'
+              accept='.json,.txt'
+              onChange={handleImport}
+              className='hidden-input'
+            />
+            <label htmlFor='importFile' className='custom-file-button'>
+              インポート
+            </label>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

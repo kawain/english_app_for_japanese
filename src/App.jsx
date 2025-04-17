@@ -3,17 +3,20 @@ import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
 import Storage, { getExcludedWordIds } from './Storage.jsx'
+import Home from './Home.jsx'
 
 function App () {
   // WASMとデータの初期化が完了したか
   const [wasmInitialized, setWasmInitialized] = useState(false)
   const [currentContent, setCurrentContent] = useState('home')
-  // 音量状態を追加 (初期値: 50)
-  const [volume, setVolume] = useState(50)
   // 選択されたレベルの状態を追加
   const [selectedLevel, setSelectedLevel] = useState('1')
   // 初期化処理中/済みフラグ
   const isInitializing = useRef(false)
+  // 音量状態を追加 (初期値: 50)
+  const [volume, setVolume] = useState(50)
+  // サウンドのオン/オフ状態 (デフォルトはオフ)
+  const [isSoundEnabled, setIsSoundEnabled] = useState(false)
 
   useEffect(() => {
     if (isInitializing.current) return
@@ -67,6 +70,11 @@ function App () {
     console.log('Volume 変更:', newVolume)
   }
 
+  // サウンドのオン/オフを切り替える関数
+  const toggleSound = () => {
+    setIsSoundEnabled(prev => !prev)
+  }
+
   // レベル変更ハンドラを追加
   const handleLevelChange = newLevel => {
     setSelectedLevel(newLevel)
@@ -83,30 +91,40 @@ function App () {
       case 'listening':
         return (
           <ListeningContent
-            volume={volume}
-            onVolumeChange={handleVolumeChange}
             level={selectedLevel}
             onLevelChange={handleLevelChange}
+            volume={volume}
+            onVolumeChange={handleVolumeChange}
+            isSoundEnabled={isSoundEnabled}
+            onToggleSound={toggleSound}
           />
         )
       case 'quiz':
         return (
           <WordQuizContent
-            volume={volume}
-            onVolumeChange={handleVolumeChange}
             level={selectedLevel}
             onLevelChange={handleLevelChange}
+            volume={volume}
+            onVolumeChange={handleVolumeChange}
+            isSoundEnabled={isSoundEnabled}
+            onToggleSound={toggleSound}
           />
         )
       case 'typing':
         return (
-          <TypingContent volume={volume} onVolumeChange={handleVolumeChange} />
+          <TypingContent
+            volume={volume}
+            onVolumeChange={handleVolumeChange}
+            isSoundEnabled={isSoundEnabled}
+            onToggleSound={toggleSound}
+          />
         )
       case 'storage':
         return <Storage />
       case 'home':
+        return <Home />
       default:
-        return <h1>英語アプリ</h1>
+        return <Home />
     }
   }
 

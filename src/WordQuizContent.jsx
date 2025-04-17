@@ -7,7 +7,14 @@ import { addExcludedWordId } from './Storage.jsx'
 
 const numberOfChoices = 10
 
-function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
+function WordQuizContent ({
+  level,
+  onLevelChange,
+  volume,
+  onVolumeChange,
+  isSoundEnabled,
+  onToggleSound
+}) {
   const [currentQuiz, setCurrentQuiz] = useState(null)
   const [quizChoices, setQuizChoices] = useState([])
   const [isQuizStarted, setIsQuizStarted] = useState(false)
@@ -26,9 +33,11 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
         setIsHighlighted(false)
       }, 500)
 
-      tts(currentQuiz.en, 'en-US', volume)
-        .then(() => console.log(`読み上げ完了: ${currentQuiz.en}`))
-        .catch(error => console.error('TTS error:', error))
+      if (isSoundEnabled) {
+        tts(currentQuiz.en, 'en-US', volume)
+          .then(() => console.log(`読み上げ完了: ${currentQuiz.en}`))
+          .catch(error => console.error('TTS error:', error))
+      }
 
       return () => clearTimeout(timer)
     }
@@ -85,7 +94,6 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
       return { quizData, choicesData }
     } catch (error) {
       console.error('Error fetching quiz data:', error)
-      // エラー発生時にも null を返すなど、適切なエラーハンドリングを行う
       return null
     }
   }
@@ -119,7 +127,6 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
   const handleAnswerSubmit = () => {
     if (!currentQuiz || currentQuiz.id === undefined) {
       console.error('正解のID(currentQuiz.id)が取得できません。')
-      // ユーザーにエラーを通知することも検討
       alert('エラーが発生しました。問題データを取得できませんでした。')
       return
     }
@@ -137,36 +144,25 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
     }
 
     setAnswerResult(result)
-    setTotalQuestions(prev => prev + 1) // パスした場合も問題数にはカウント
+    setTotalQuestions(prev => prev + 1)
 
     if (isCorrect) {
       setCorrectCount(prev => prev + 1)
-      // ローカルストレージへの保存処理（エラーハンドリングを追加）
       try {
         addExcludedWordId(String(currentQuiz.id))
-        window.AddStorage(currentQuiz.id) // この関数が存在し、適切に動作することが前提
+        window.AddStorage(currentQuiz.id)
       } catch (error) {
         console.error('Error saving to storage:', error)
-        // ストレージ保存失敗時の処理（例：ユーザー通知）
       }
     }
 
     // 正誤に関わらず、回答後に例文などを読み上げる
     if (currentQuiz.en2) {
-      tts(currentQuiz.en2, 'en-US', volume)
-        .then(() => console.log(`読み上げ完了: ${currentQuiz.en2}`))
-        .catch(error => console.error('TTS error (en2):', error))
-    } else {
-      // en2 がない場合でも、正解/不正解のフィードバックを音声で行うことも検討可能
-      // 例: 正解なら "Correct!", 不正解なら "Incorrect." など
-      const feedbackWord = isCorrect
-        ? 'Correct'
-        : result === 'passed'
-        ? 'Passed'
-        : 'Incorrect'
-      tts(feedbackWord, 'en-US', volume).catch(error =>
-        console.error('TTS error (feedback):', error)
-      )
+      if (isSoundEnabled) {
+        tts(currentQuiz.en2, 'en-US', volume)
+          .then(() => console.log(`読み上げ完了: ${currentQuiz.en2}`))
+          .catch(error => console.error('TTS error (en2):', error))
+      }
     }
   }
 
@@ -202,12 +198,7 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
           // クイズ中の表示
           <>
             {currentQuiz && (
-              <h2
-                className={isHighlighted ? 'highlight' : ''}
-                onClick={() => tts(currentQuiz.en, 'en-US', volume)}
-                style={{ cursor: 'pointer' }}
-                title='クリックして再読み上げ'
-              >
+              <h2 className={isHighlighted ? 'highlight' : ''}>
                 {currentQuiz.en}
               </h2>
             )}
@@ -266,7 +257,12 @@ function WordQuizContent ({ volume, onVolumeChange, level, onLevelChange }) {
           </>
         )}
       </div>
-      <VolumeControl volume={volume} onVolumeChange={onVolumeChange} />
+      <VolumeControl
+        volume={volume}
+        onVolumeChange={onVolumeChange}
+        isSoundEnabled={isSoundEnabled}
+        onToggleSound={onToggleSound}
+      />
       <LevelControl level={level} onLevelChange={onLevelChange} />
     </>
   )
