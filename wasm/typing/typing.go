@@ -2,7 +2,6 @@ package typing
 
 import (
 	"english_app_for_japanese/wasm/objects"
-	"fmt"
 	"strings"
 )
 
@@ -192,84 +191,86 @@ var RomajiMap = map[string][]string{
 	"　":  {" "},
 }
 
-var TypingQuestions []objects.Object
-var TypingQuestionIndex int
-var CurrentTypingQuestion objects.Object
-var CurrentTypingQuestionSlice []string
-
-func PrepareQuestion() {
-	if len(TypingQuestions) == 0 {
-		TypingQuestions = objects.ShuffleObjects(objects.Objects)
-		TypingQuestionIndex = 0
-	}
-
-	if TypingQuestionIndex >= len(TypingQuestions) {
-		TypingQuestions = objects.ShuffleObjects(objects.Objects)
-		TypingQuestionIndex = 0
-	}
-
-	CurrentTypingQuestion = TypingQuestions[TypingQuestionIndex]
-	TypingQuestionIndex++
-
-	// 英語部分とカナ部分を結合して問題スライスを作成
-	// 例: "hello こんにちは" -> ["h", "e", "l", "l", "o", " ", "こ", "ん", "に", "ち", "は"]
-	CurrentTypingQuestionSlice = SplitTextForTyping(fmt.Sprintf("%v %v", CurrentTypingQuestion.En2, CurrentTypingQuestion.Kana))
+type Typing struct {
+	appData          *objects.AppData
+	FilteredArray    []objects.Datum
+	index            int
+	CurrentData      *objects.Datum
+	CurrentDataArray []string
 }
 
-func SplitTextForTyping(text string) []string {
-	result := make([]string, 0, len([]rune(text)))
+func (t *Typing) Init(appData *objects.AppData) {
+	t.appData = appData
+	t.FilteredArray = objects.ShuffleCopy(t.appData.Data)
+	t.index = 0
+}
+
+func (t *Typing) Next() {
+	t.CurrentData = &t.FilteredArray[t.index]
+	t.index++
+	if t.index >= len(t.FilteredArray) {
+		t.index = 0
+	}
+	t.createCurrentDataArray()
+}
+
+func (t *Typing) createCurrentDataArray() {
+	text := t.CurrentData.En2 + " " + t.CurrentData.Kana
+	t.CurrentDataArray = make([]string, 0, len([]rune(text)))
 	runes := []rune(text)
 	i := 0
-
 	for i < len(runes) {
 		if i < len(runes)-1 {
 			// 2文字を切り出し
 			twoChars := string(runes[i : i+2])
 			if _, exists := RomajiMap[twoChars]; exists {
-				result = append(result, twoChars)
+				t.CurrentDataArray = append(t.CurrentDataArray, twoChars)
 				i += 2
 			} else {
-				result = append(result, string(runes[i:i+1]))
+				t.CurrentDataArray = append(t.CurrentDataArray, string(runes[i:i+1]))
 				i++
 			}
 		} else {
-			result = append(result, string(runes[i:i+1]))
+			t.CurrentDataArray = append(t.CurrentDataArray, string(runes[i:i+1]))
 			i++
 		}
 	}
-	return result
 }
 
-// KeyDown はuserInputが正しいかどうかを調べる
-// 戻り値はインデックス（正解ならインデックスを1または2進めて返す）
-// インデックスを超えた場合は全部終了という印
-func KeyDown(userInput string, index int) int {
+func (t *Typing) KeyDown(userInput string, index int) int {
+	sliceLength := len(t.CurrentDataArray)
 
-	currentLength := len(CurrentTypingQuestionSlice)
-
-	// 早期リターン
-	if currentLength == 0 || index >= currentLength {
+	if sliceLength == 0 || index >= sliceLength {
 		return index
 	}
 
-	targetElement := CurrentTypingQuestionSlice[index]
-	nextElement := ""
+	targetElement := t.CurrentDataArray[index]
 
-	// 次の要素がある場合
-	if index < currentLength-1 {
-		nextElement = CurrentTypingQuestionSlice[index+1]
+	if targetElement != "っ" && targetElement != "ん" {
+		if words, exists := RomajiMap[targetElement]; exists {
+			for _, word := range words {
+				if strings.HasSuffix(userInput, word) {
+					return index + 1
+				}
+			}
+		} else if strings.HasSuffix(userInput, targetElement) {
+			return index + 1
+		}
+		return index
 	}
 
-	// 「っ」と「ん」が例外
-	switch targetElement {
-	case "っ":
+	nextElement := ""
+	// 次の要素がある場合
+	if index < sliceLength-1 {
+		nextElement = t.CurrentDataArray[index+1]
+	}
+
+	if targetElement == "っ" {
 		if nextElement == "" {
 			// ほとんどないが「っ」で終わる文章の場合
-			if words, exists := RomajiMap[targetElement]; exists {
-				for _, word := range words {
-					if strings.HasSuffix(userInput, word) {
-						return index + 1
-					}
+			for _, word := range []string{"xtu", "ltu"} {
+				if strings.HasSuffix(userInput, word) {
+					return index + 1
 				}
 			}
 		} else {
@@ -298,8 +299,7 @@ func KeyDown(userInput string, index int) int {
 				}
 			}
 		}
-
-	case "ん":
+	} else if targetElement == "ん" {
 		if nextElement == "" {
 			// 「ん」で終わる場合は「nn」
 			if strings.HasSuffix(userInput, "nn") {
@@ -331,19 +331,7 @@ func KeyDown(userInput string, index int) int {
 				return index + 1
 			}
 		}
-
-	default:
-		if words, exists := RomajiMap[targetElement]; exists {
-			for _, word := range words {
-				if strings.HasSuffix(userInput, word) {
-					return index + 1
-				}
-			}
-		} else if strings.HasSuffix(userInput, targetElement) {
-			return index + 1
-		}
 	}
 
-	// 不正解なので変化なし
 	return index
 }

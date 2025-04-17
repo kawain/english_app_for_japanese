@@ -1,13 +1,13 @@
 package objects
 
 import (
-	"math/rand"
+	"errors"
+	"math/rand/v2"
 	"strconv"
 	"strings"
-	"time"
 )
 
-type Object struct {
+type Datum struct {
 	ID      int
 	En      string
 	Jp      string
@@ -18,101 +18,21 @@ type Object struct {
 	Similar []int
 }
 
-var Objects []Object
-var Storage []int
+func NewDatum(idText, en, jp, en2, jp2, kana, levelText, similarText string) Datum {
+	idText = strings.TrimSpace(idText)
+	en = strings.TrimSpace(en)
+	jp = strings.TrimSpace(jp)
+	en2 = strings.TrimSpace(en2)
+	jp2 = strings.TrimSpace(jp2)
+	kana = strings.TrimSpace(kana)
+	levelText = strings.TrimSpace(levelText)
+	similarText = strings.TrimSpace(similarText)
 
-// ShuffleObjects は与えられた Object スライスのコピーをランダムにシャッフルして返します。
-// 元のスライスは変更されません。
-func ShuffleObjects(inputObjects []Object) []Object {
-	if len(inputObjects) <= 1 {
-		shuffled := make([]Object, len(inputObjects))
-		copy(shuffled, inputObjects)
-		return shuffled
-	}
-
-	shuffled := make([]Object, len(inputObjects))
-	copy(shuffled, inputObjects)
-
-	source := rand.NewSource(time.Now().UnixNano())
-	r := rand.New(source)
-
-	r.Shuffle(len(shuffled), func(i, j int) {
-		shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
-	})
-
-	return shuffled
-}
-
-// FilterObjectsNotInStorage は、与えられた Object スライスから、
-// グローバル変数 Storage スライスに含まれていない ID を持つ要素を抽出して
-// 新しいスライスとして返します。
-func FilterObjectsNotInStorage(inputObjects []Object) []Object {
-	// Storage の ID を効率的に検索するためのセットを作成
-	storageSet := make(map[int]struct{}, len(Storage))
-	for _, id := range Storage {
-		storageSet[id] = struct{}{}
-	}
-
-	// 結果を格納するためのスライス
-	filteredObjects := make([]Object, 0)
-
-	// 与えられた inputObjects スライスを走査し、Storage に含まれていないものを抽出
-	for _, obj := range inputObjects { // ループ対象を inputObjects に変更
-		// obj.ID が storageSet に存在するかどうかを確認
-		if _, found := storageSet[obj.ID]; !found {
-			// 存在しない場合（Storageに含まれていない場合）、結果のスライスに追加
-			filteredObjects = append(filteredObjects, obj)
-		}
-	}
-
-	// 抽出された Object のスライスを返す
-	return filteredObjects
-}
-
-// FilterObjectsByLevel は、与えられた Object スライスから指定された level に一致する
-// Level を持つ要素を抽出して新しいスライスとして返します。
-func FilterObjectsByLevel(inputObjects []Object, level int) []Object {
-	filteredObjects := make([]Object, 0)
-
-	for _, obj := range inputObjects {
-		if obj.Level == level {
-			filteredObjects = append(filteredObjects, obj)
-		}
-	}
-
-	return filteredObjects
-}
-
-// SelectRandomObject は与えられた Object スライスからランダムに1つの Object を選択して返します。
-// スライスが空の場合はゼロ値の Object (全てのフィールドがデフォルト値) を返します。
-func SelectRandomObject(inputObjects []Object) Object {
-	// スライスの長さを確認
-	n := len(inputObjects)
-
-	// スライスが空の場合の処理
-	if n == 0 {
-		// 空のスライスが渡された場合は、ゼロ値のObjectを返す
-		return Object{}
-	}
-
-	// ランダムなインデックスを生成するための準備
-	source := rand.NewSource(time.Now().UnixNano())
-	r := rand.New(source)
-
-	// 0 から n-1 の範囲でランダムなインデックスを生成
-	randomIndex := r.Intn(n)
-
-	// ランダムに選ばれたインデックスの Object を返す
-	return inputObjects[randomIndex]
-}
-
-func NewObjects(idText, en, jp, en2, jp2, kana, levelText, similarText string) Object {
 	id, _ := strconv.Atoi(idText)
 	level, _ := strconv.Atoi(levelText)
 	similarSlice := strings.Split(similarText, ",")
 	// 結果を格納するためのintスライスを準備
 	similar := make([]int, 0, len(similarSlice))
-
 	for _, strNum := range similarSlice {
 		trimmedStr := strings.TrimSpace(strNum)
 		// 空文字列になった場合はスキップする（例: "1,,2" のような入力）
@@ -123,7 +43,7 @@ func NewObjects(idText, en, jp, en2, jp2, kana, levelText, similarText string) O
 		similar = append(similar, num)
 	}
 
-	return Object{
+	return Datum{
 		ID:      id,
 		En:      en,
 		Jp:      jp,
@@ -133,4 +53,100 @@ func NewObjects(idText, en, jp, en2, jp2, kana, levelText, similarText string) O
 		Level:   level,
 		Similar: similar,
 	}
+}
+
+type AppData struct {
+	Data         []Datum
+	LocalStorage []int
+}
+
+func (a *AppData) AddData(datum Datum) {
+	a.Data = append(a.Data, datum)
+}
+
+func (a *AppData) AddStorage(id int) {
+	a.LocalStorage = append(a.LocalStorage, id)
+}
+
+// FilterNotInStorage は、LocalStorageに含まれていない ID を持つ要素を抽出して
+// 新しいスライスとして返します
+func (a *AppData) FilterNotInStorage() []Datum {
+	storageSet := make(map[int]bool, len(a.LocalStorage))
+	for _, id := range a.LocalStorage {
+		storageSet[id] = true
+	}
+	results := make([]Datum, 0)
+	for _, obj := range a.Data {
+		if !storageSet[obj.ID] {
+			results = append(results, obj)
+		}
+	}
+	return results
+}
+
+// FilterInStorage は、LocalStorageに含まれている ID を持つ要素を抽出して
+// 新しいスライスとして返します
+func (a *AppData) FilterInStorage() []Datum {
+	storageSet := make(map[int]bool, len(a.LocalStorage))
+	for _, id := range a.LocalStorage {
+		storageSet[id] = true
+	}
+	results := make([]Datum, 0)
+	for _, obj := range a.Data {
+		if storageSet[obj.ID] {
+			results = append(results, obj)
+		}
+	}
+	return results
+}
+
+// ShuffleCopy は元のスライスを変更せず、シャッフルされた新しいスライスを返します。
+// ジェネリクスを使用して任意の型のスライスに対応します。
+func ShuffleCopy[T any](original []T) []T {
+	n := len(original)
+	// 要素数が1以下の場合はシャッフルの必要がない（コピーだけ行う）
+	if n <= 1 {
+		newSlice := make([]T, n)
+		copy(newSlice, original)
+		return newSlice
+	}
+
+	// 1. 元のスライスのコピーを作成
+	shuffled := make([]T, n)
+	copy(shuffled, original) // original の内容を shuffled にコピー
+
+	// 2. コピーしたスライス (shuffled) をシャッフル
+	// Go 1.22 以降 (math/rand/v2)
+	rand.Shuffle(n, func(i, j int) {
+		shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
+	})
+
+	// 3. シャッフルされた新しいスライスを返す
+	return shuffled
+}
+
+// スライスからランダムに1つの要素を返す関数
+func GetRandomElement[T any](slice []T) (T, error) {
+	n := len(slice)
+	if n == 0 {
+		var zero T // 型に応じたゼロ値を返すため
+		return zero, errors.New("cannot get random element from an empty slice")
+	}
+
+	// 0 から n-1 の範囲でランダムなインデックスを取得
+	// Go 1.22 以降 (math/rand/v2)
+	randomIndex := rand.IntN(n) // 0 <= randomIndex < n
+
+	return slice[randomIndex], nil
+}
+
+// FilterByLevel は与えられた配列からlevelで抽出した結果を返す
+func FilterByLevel(data []Datum, level int) []Datum {
+	results := make([]Datum, 0)
+	for _, obj := range data {
+		if obj.Level == level {
+			results = append(results, obj)
+		}
+	}
+	return results
 }
