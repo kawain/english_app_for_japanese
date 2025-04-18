@@ -68,6 +68,20 @@ func (a *AppData) AddStorage(id int) {
 	a.LocalStorage = append(a.LocalStorage, id)
 }
 
+func (a *AppData) RemoveStorage(idToRemove int) {
+	newStorage := make([]int, 0, len(a.LocalStorage))
+	for _, id := range a.LocalStorage {
+		if id != idToRemove {
+			newStorage = append(newStorage, id)
+		}
+	}
+	a.LocalStorage = newStorage
+}
+
+func (a *AppData) ClearStorage() {
+	a.LocalStorage = make([]int, 0)
+}
+
 // FilterNotInStorage は、LocalStorageに含まれていない ID を持つ要素を抽出して
 // 新しいスライスとして返します
 func (a *AppData) FilterNotInStorage() []Datum {

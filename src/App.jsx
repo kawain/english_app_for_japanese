@@ -16,7 +16,7 @@ function App () {
   // 音量状態を追加 (初期値: 50)
   const [volume, setVolume] = useState(50)
   // サウンドのオン/オフ状態
-  const [isSoundEnabled, setIsSoundEnabled] = useState(true)
+  const [isSoundEnabled, setIsSoundEnabled] = useState(false)
 
   useEffect(() => {
     if (isInitializing.current) return
@@ -85,7 +85,7 @@ function App () {
   const renderContent = () => {
     // WASMの準備ができるまでローディング表示などを出す
     if (!wasmInitialized) {
-      return <div className='loading'>Loading WASM and data...</div>
+      return <div className='loading'>Loading data...</div>
     }
     switch (currentContent) {
       case 'listening':

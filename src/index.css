@@ -29,7 +29,7 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 nav {
@@ -40,6 +40,7 @@ nav {
 }
 
 nav button {
+  font-size: 0.7rem;
   padding: 5px 10px;
 }
 
@@ -82,8 +83,6 @@ button:not([disabled]) {
 }
 
 /* Home */
-.home-container {
-}
 .home-container button {
   padding: 10px;
 }
@@ -122,6 +121,10 @@ button:not([disabled]) {
   margin: 20px 0;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.show-or-hide {
+  cursor: pointer;
 }
 
 /* WordQuizContent */

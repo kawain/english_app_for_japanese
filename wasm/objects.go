@@ -110,7 +110,12 @@ func AddStorage(this js.Value, args []js.Value) any {
 
 	consoleLog.Invoke(js.ValueOf("Go関数(AddStorage)で追加前のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
 
+	// 引数の数をチェック
 	if len(args) < 1 {
+		return nil
+	}
+	// 引数0 (level) の型をチェック (数値型か？)
+	if args[0].Type() != js.TypeNumber {
 		return nil
 	}
 
@@ -118,6 +123,41 @@ func AddStorage(this js.Value, args []js.Value) any {
 	appData.AddStorage(id)
 
 	consoleLog.Invoke(js.ValueOf("Go関数(AddStorage)で追加後のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
+
+	return nil
+}
+
+// RemoveStorage はJavaScript から数値を受け取る
+func RemoveStorage(this js.Value, args []js.Value) any {
+	consoleLog.Invoke(js.ValueOf("Go関数(RemoveStorage)が呼び出されました"))
+
+	consoleLog.Invoke(js.ValueOf("Go関数(RemoveStorage)で追加前のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
+
+	// 引数の数をチェック
+	if len(args) < 1 {
+		return nil
+	}
+	// 引数0 (level) の型をチェック (数値型か？)
+	if args[0].Type() != js.TypeNumber {
+		return nil
+	}
+
+	id := args[0].Int()
+	appData.RemoveStorage(id)
+
+	consoleLog.Invoke(js.ValueOf("Go関数(RemoveStorage)で追加後のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
+
+	return nil
+}
+
+// ClearStorage は全部消す
+func ClearStorage(this js.Value, args []js.Value) any {
+	consoleLog.Invoke(js.ValueOf("Go関数(ClearStorage)が呼び出されました"))
+	consoleLog.Invoke(js.ValueOf("Go関数(ClearStorage)で削除前のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
+
+	appData.ClearStorage()
+
+	consoleLog.Invoke(js.ValueOf("Go関数(ClearStorage)で削除後のLocalStorageの長さ:"), js.ValueOf(len(appData.LocalStorage)))
 
 	return nil
 }

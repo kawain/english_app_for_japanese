@@ -34,12 +34,10 @@ export function removeExcludedWordId (wordId) {
 }
 
 export function clearExcludedWordIds () {
-  if (window.confirm('本当に除外した単語を全部復元しますか？')) {
-    try {
-      localStorage.removeItem(localStorageKey)
-    } catch (error) {
-      console.error('ローカルストレージのクリアに失敗しました:', error)
-    }
+  try {
+    localStorage.removeItem(localStorageKey)
+  } catch (error) {
+    console.error('ローカルストレージのクリアに失敗しました:', error)
   }
 }
 
@@ -117,6 +115,8 @@ function Storage () {
         }
         // localStorageに保存
         localStorage.setItem(localStorageKey, JSON.stringify(parsedData))
+        // wasmの関数を呼び出して除外単語IDを設定
+        window.CreateStorage(parsedData)
         alert('データをインポートしました。')
       } catch (error) {
         alert(`インポートに失敗しました: ${error.message}`)

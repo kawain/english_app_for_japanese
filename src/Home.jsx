@@ -1,4 +1,9 @@
-import { useState, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import {
+  addExcludedWordId,
+  removeExcludedWordId,
+  clearExcludedWordIds
+} from './Storage.jsx'
 
 // 1ページあたりの表示件数
 const ITEMS_PER_PAGE = 100
@@ -14,30 +19,33 @@ function Home () {
   const [error, setError] = useState(null)
   // 最後に選択されたレベル（ページネーションでレベルを維持するため）
   const [currentLevel, setCurrentLevel] = useState(null)
+  // Setを使うことで、IDの追加・削除・存在チェックを効率的に行えます
+  const [processingWordIds, setProcessingWordIds] = useState(new Set())
+  // 日本語等を隠す状態
+  const [showOffCol, setShowOffCol] = useState(false)
+  // セルごとに日本語等を隠す状態を管理
+  const [showOffCell, setShowOffCell] = useState({})
 
-  const handleButtonClick = level => {
+  const handleButtonClick = async level => {
     setLoading(true)
     setError(null)
     setCurrentLevel(level)
+    setProcessingWordIds(new Set())
+    setShowOffCol(false)
+    setShowOffCell({})
 
     try {
-      const result = window.SearchAndReturnData(level)
+      const result = await window.SearchAndReturnDataPromise(level)
       console.log(`レベル${level}の単語データ:`, result)
-      // 結果が配列であることを確認（エラーハンドリング）
-      if (Array.isArray(result)) {
-        setAllData(result)
-        setCurrentPage(1) // 新しいデータを取得したら1ページ目に戻る
-        console.log(`レベル${level}の単語データ (${result.length}件):`, result)
-      } else {
-        // 想定外のデータ形式の場合
-        console.error('取得したデータが配列ではありません:', result)
-        setError('データの取得に失敗しました。予期しない形式です。')
-        setAllData([]) // データを空にする
-      }
+      setAllData(result)
+      setCurrentPage(1)
     } catch (err) {
-      console.error('SearchAndReturnDataの実行中にエラーが発生しました:', err)
+      console.error(
+        'SearchAndReturnDataPromiseの実行中にエラーが発生しました:',
+        err
+      )
       setError(`データの取得中にエラーが発生しました: ${err.message}`)
-      setAllData([]) // エラー時はデータを空にする
+      setAllData([])
     } finally {
       setLoading(false)
     }
@@ -57,7 +65,7 @@ function Home () {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
     const endIndex = startIndex + ITEMS_PER_PAGE
     return allData.slice(startIndex, endIndex)
-  }, [allData, currentPage]) // allDataかcurrentPageが変わった時だけ再計算
+  }, [allData, currentPage])
 
   // ページネーションボタンを生成する関数
   const renderPaginationButtons = () => {
@@ -79,6 +87,67 @@ function Home () {
     }
     return <div className='pagination-buttons'>{buttons}</div>
   }
+
+  // 復元、除外ボタンの操作
+  const handleActionClick = wordId => {
+    if (currentLevel === 1 || currentLevel === 2) {
+      addExcludedWordId(wordId)
+      window.AddStorage(wordId)
+    } else if (currentLevel === 0) {
+      removeExcludedWordId(wordId)
+      window.RemoveStorage(wordId)
+    }
+    setProcessingWordIds(prev => new Set(prev).add(wordId))
+  }
+
+  // 日本語等を隠す状態のチェックボックスのハンドラ
+  const handleShowOffCol = event => {
+    const isChecked = event.target.checked
+    setShowOffCol(isChecked)
+    // 現在表示されている displayedData の各要素に対して状態を更新
+    setShowOffCell(prev => {
+      const newState = { ...prev }
+      displayedData.forEach(item => {
+        newState[item.id] = isChecked
+      })
+      return newState
+    })
+  }
+
+  // セルごとに日本語等を隠す状態のハンドラ
+  const handleShowOffCell = wordId => {
+    // 以前のステート (prev) を受け取り、新しいオブジェクトを返す
+    setShowOffCell(prev => ({
+      ...prev, // 既存のキーと値をコピー
+      [wordId]: !prev[wordId] // 対象のキーの値だけを反転させる
+    }))
+  }
+
+  // displayedData または showOffCol (全体表示フラグ) が変更されたときに実行
+  useEffect(() => {
+    // 新しいページのデータに基づいて showOffCell の状態を更新
+    setShowOffCell(prev => {
+      const newState = { ...prev } // 既存の状態を引き継ぐ
+      const currentIds = new Set(displayedData.map(item => item.id))
+
+      // 古いページのIDを削除 (任意ですが、メモリリークを防ぐために推奨)
+      Object.keys(newState).forEach(key => {
+        // IDが数値の場合はparseIntが必要
+        if (!currentIds.has(parseInt(key, 10))) {
+          delete newState[key]
+        }
+      })
+
+      // 新しいページのIDを追加/更新
+      displayedData.forEach(item => {
+        // 既に状態が存在しない場合のみ、showOffCol (全体表示フラグ) に基づいて初期化
+        if (newState[item.id] === undefined) {
+          newState[item.id] = showOffCol
+        }
+      })
+      return newState
+    })
+  }, [displayedData, showOffCol])
 
   return (
     <>
@@ -114,18 +183,33 @@ function Home () {
           {!loading &&
             !error &&
             allData.length === 0 &&
-            currentLevel !== null && <p>データがありません。</p>}
+            currentLevel !== null && (
+              <p style={{ textAlign: 'center' }}>データがありません。</p>
+            )}
 
           {/* データがある場合のみテーブルとページネーションを表示 */}
           {!loading && !error && allData.length > 0 && (
             <>
+              <p>
+                {currentPage}ページ目 / {allData.length}件見つかりました
+              </p>
               <table>
                 <thead>
                   <tr>
                     <th>ID</th>
                     <th>English</th>
-                    <th>Japanese</th>
-                    <th>Example (EN/JP)</th>
+                    <th>
+                      <label className='show-or-hide'>
+                        Japanese{' '}
+                        <input
+                          className='show-or-hide'
+                          type='checkbox'
+                          checked={showOffCol}
+                          onChange={handleShowOffCol}
+                        />
+                      </label>
+                    </th>
+                    <th>Example (EN/JA)</th>
                     <th>Level</th>
                     <th className='nowrap'>操作</th>
                   </tr>
@@ -135,21 +219,62 @@ function Home () {
                     <tr key={item.id}>
                       <td>{item.id}</td>
                       <td>{item.en}</td>
-                      <td>{item.jp}</td>
-                      <td>
+                      <td
+                        className='show-or-hide'
+                        style={{ opacity: showOffCell[item.id] ? 1 : 0 }}
+                        onClick={() => {
+                          handleShowOffCell(item.id)
+                        }}
+                      >
+                        {item.jp}
+                      </td>
+                      <td style={{ opacity: showOffCell[item.id] ? 1 : 0 }}>
                         {item.en2}
                         <br />
                         {item.jp2}
                       </td>
                       <td className='center-text'>{item.level}</td>
                       <td>
-                        <button className='nowrap'>操作</button>
+                        <button
+                          className='nowrap'
+                          onClick={() => handleActionClick(item.id)}
+                          disabled={processingWordIds.has(item.id)}
+                        >
+                          {currentLevel === 0 ? '復元' : '除外'}
+                        </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
               {renderPaginationButtons()}
+              {currentLevel === 0 ? (
+                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <button
+                    onClick={() => {
+                      if (
+                        window.confirm('本当に除外リストを全部クリアしますか？')
+                      ) {
+                        clearExcludedWordIds()
+                        window.ClearStorage()
+                        setProcessingWordIds(new Set())
+                        setAllData([])
+                        setCurrentPage(1)
+                        window.scrollTo(0, 0)
+                      }
+                    }}
+                  >
+                    除外リスト全クリア
+                  </button>
+                </div>
+              ) : (
+                ''
+              )}
+              <div style={{ textAlign: 'right' }}>
+                <button onClick={() => window.scrollTo(0, 0)}>
+                  ページ先頭
+                </button>
+              </div>
             </>
           )}
         </div>

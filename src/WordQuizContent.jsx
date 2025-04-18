@@ -5,6 +5,7 @@ import QuizChoices from './components/QuizChoices.jsx'
 import { tts } from './utils/tts'
 import { addExcludedWordId } from './Storage.jsx'
 
+// 問題の選択肢の数
 const numberOfChoices = 10
 
 function WordQuizContent ({
@@ -33,9 +34,8 @@ function WordQuizContent ({
         setIsHighlighted(false)
       }, 500)
 
-      if (isSoundEnabled) {
-        tts(currentQuiz.en, 'en-US', volume)
-      }
+      // 読み上げ
+      tts(currentQuiz.en, 'en-US', volume, isSoundEnabled)
 
       return () => clearTimeout(timer)
     }
@@ -156,9 +156,8 @@ function WordQuizContent ({
 
     // 正誤に関わらず、回答後に例文などを読み上げる
     if (currentQuiz.en2) {
-      if (isSoundEnabled) {
-        tts(currentQuiz.en2, 'en-US', volume)
-      }
+      // 読み上げ
+      tts(currentQuiz.en2, 'en-US', volume, isSoundEnabled)
     }
   }
 

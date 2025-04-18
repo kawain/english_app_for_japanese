@@ -25,7 +25,44 @@ function initializeVoices () {
   })
 }
 
-export function tts (text, lang, volumeLevel) {
+export function tts (text, lang, volumeLevel, isSoundEnabled) {
+  // 音声がオフならreturn
+  if (!isSoundEnabled) {
+    console.log('Sound is disabled')
+    return
+  }
+  // ブラウザが読み上げをサポートしていない場合はreturn
+  if (!window.speechSynthesis) {
+    console.log('Speech synthesis is not supported')
+    return
+  }
+  // textが空文字ならreturn
+  if (!text) {
+    console.log('No text to speak')
+    return
+  }
+  // langが"ja-JP"か"en-US"以外はreturn
+  if (lang !== 'ja-JP' && lang !== 'en-US') {
+    console.log('Unsupported language:', lang)
+    return
+  }
+  // volumeLevelが0ならreturn
+  if (volumeLevel === 0) {
+    console.log('Volume is muted')
+    return
+  }
+  // OSがUbuntuでブラウザがfirefoxでlangが"ja-JP"ならreturn
+  const userAgent = navigator.userAgent.toLowerCase()
+  const isUbuntu = userAgent.includes('ubuntu')
+  const isFirefox = userAgent.includes('firefox')
+
+  if (isUbuntu && isFirefox && lang === 'ja-JP') {
+    console.log(
+      'Skipping Japanese TTS on Ubuntu Firefox due to potential compatibility issues.'
+    )
+    return
+  }
+
   const uttr = new SpeechSynthesisUtterance(text)
   window.speechSynthesis.cancel() // 前の音声をクリア
 

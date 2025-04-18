@@ -23,6 +23,7 @@ function VolumeControl ({
           value={volume}
           onChange={handleChange}
           aria-label='音量調節スライダー'
+          disabled={!isSoundEnabled}
         />
         <span id='volumeValue' className='volume-display'>
           {volume}%
