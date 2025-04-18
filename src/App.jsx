@@ -15,8 +15,8 @@ function App () {
   const isInitializing = useRef(false)
   // 音量状態を追加 (初期値: 50)
   const [volume, setVolume] = useState(50)
-  // サウンドのオン/オフ状態 (デフォルトはオフ)
-  const [isSoundEnabled, setIsSoundEnabled] = useState(false)
+  // サウンドのオン/オフ状態
+  const [isSoundEnabled, setIsSoundEnabled] = useState(true)
 
   useEffect(() => {
     if (isInitializing.current) return

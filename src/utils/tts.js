@@ -1,45 +1,51 @@
 // src/utils/tts.js
 
-/**
- * 指定されたテキストを読み上げる関数 (Text-to-Speech)
- * @param {string} text 読み上げるテキスト
- * @param {string} lang 言語コード (例: 'en-US', 'ja-JP')
- * @param {number} volumeLevel 音量 (0から100の範囲)
- * @returns {Promise<void>} 発話が完了したら解決される Promise
- */
-export function tts (text, lang, volumeLevel) {
+// 音声リストを事前にロードする関数
+function initializeVoices () {
   return new Promise((resolve, reject) => {
-    // Speech Synthesis APIがサポートされているか確認
-    if (!window.speechSynthesis) {
-      const errorMsg = 'Speech Synthesis API is not supported in this browser.'
-      console.error(errorMsg)
-      // サポートされていない場合はエラーで Promise を reject
-      reject(new Error(errorMsg))
+    let voices = window.speechSynthesis.getVoices()
+    if (voices.length) {
+      resolve(voices)
       return
     }
-
-    const uttr = new SpeechSynthesisUtterance()
-    uttr.text = text
-    uttr.lang = lang
-    uttr.rate = 1.0 // 読み上げ速度 (デフォルト: 1.0)
-    uttr.pitch = 1.0 // 声の高さ (デフォルト: 1.0)
-
-    // volumeLevel (0-100) を SpeechSynthesisUtterance の volume (0-1) に変換
-    // Math.max/min で範囲外の値を丸める
-    uttr.volume = Math.max(0, Math.min(1, volumeLevel / 100))
-
-    // 発話終了時の処理
-    uttr.onend = () => {
-      resolve() // Promise を解決
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = window.speechSynthesis.getVoices()
+      if (voices.length) {
+        resolve(voices)
+      } else {
+        reject(new Error('No voices available'))
+      }
     }
-
-    // エラー発生時の処理
-    uttr.onerror = error => {
-      console.error('Speech synthesis error:', error)
-      reject(error) // Promise を reject
-    }
-
-    // 発話を実行
-    window.speechSynthesis.speak(uttr)
+    // タイムアウトを設定（例：5秒）
+    setTimeout(() => {
+      if (!voices.length) {
+        reject(new Error('Voice loading timed out'))
+      }
+    }, 5000)
   })
+}
+
+export function tts (text, lang, volumeLevel) {
+  const uttr = new SpeechSynthesisUtterance(text)
+  window.speechSynthesis.cancel() // 前の音声をクリア
+
+  initializeVoices()
+    .then(voices => {
+      console.log('Available voices:', voices)
+      // 日本語音声（lang: 'ja-JP'）、英語（en-US）、なければ最初の音声
+      const preferredVoice =
+        voices.find(voice => voice.lang === lang) || voices[0]
+      if (!preferredVoice) {
+        throw new Error('No suitable voice found')
+      }
+      uttr.voice = preferredVoice
+      uttr.rate = 1 // 速度（0.1～10）
+      uttr.pitch = 1 // ピッチ（0～2）
+      uttr.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
+      console.log('Speaking with voice:', preferredVoice.name)
+      window.speechSynthesis.speak(uttr)
+    })
+    .catch(err => {
+      console.error('Speech synthesis error:', err)
+    })
 }

@@ -35,13 +35,11 @@ function WordQuizContent ({
 
       if (isSoundEnabled) {
         tts(currentQuiz.en, 'en-US', volume)
-          .then(() => console.log(`読み上げ完了: ${currentQuiz.en}`))
-          .catch(error => console.error('TTS error:', error))
       }
 
       return () => clearTimeout(timer)
     }
-  }, [currentQuiz, isQuizStarted, volume]) // volume も依存配列に追加
+  }, [currentQuiz, isQuizStarted, volume, isSoundEnabled])
 
   // レベル変更時にクイズをリセットする useEffect
   useEffect(() => {
@@ -160,8 +158,6 @@ function WordQuizContent ({
     if (currentQuiz.en2) {
       if (isSoundEnabled) {
         tts(currentQuiz.en2, 'en-US', volume)
-          .then(() => console.log(`読み上げ完了: ${currentQuiz.en2}`))
-          .catch(error => console.error('TTS error (en2):', error))
       }
     }
   }
