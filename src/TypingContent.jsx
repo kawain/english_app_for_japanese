@@ -17,8 +17,11 @@ function TypingContent ({
   const [questionIndex, setQuestionIndex] = useState(0)
   // 入力途中の文字列
   const [inputCharacters, setInputCharacters] = useState('')
-
+  // 最後に押されたキー
   const [pressedKey, setPressedKey] = useState('')
+  //
+  const [times, setTimes] = useState(0)
+  //
   const typingAreaRef = useRef(null)
 
   useEffect(() => {
@@ -31,27 +34,39 @@ function TypingContent ({
     const questionArray = window.GetTypingQuestionSlice()
     setQuestionTextArray(questionArray)
     setQuestionIndex(0)
-
-    console.log(question)
-    console.log(questionArray)
-
+    setTimes(prev => prev + 1)
     setIsTypingStarted(true)
+    // 読み上げ
+    tts(question.en2, 'en-US', volume, isSoundEnabled)
   }
 
   const handleKeyDown = e => {
     // デフォルトのキー動作（例: Tabキーでのフォーカス移動など）を防ぐ場合
-    // e.preventDefault();
-
+    e.preventDefault()
     let input = inputCharacters
-    input += e.key
+    const moji = e.key
+    input += moji
     setInputCharacters(input)
+    setPressedKey(moji)
+    const result = window.KeyDown(input, questionIndex)
+    if (result > questionIndex) {
+      setQuestionIndex(result)
+      setInputCharacters('')
 
-    setPressedKey(e.key)
-
-    // setInputCharacters(prev => [...prev, moji])
-
-    // console.log('押されたキー:', moji)
-    console.log('入力途中の文字配列:', inputCharacters)
+      if (result >= questionTextArray.length) {
+        setTimeout(() => {
+          const question = window.GetTypingQuestion()
+          setQuestionText(question)
+          const questionArray = window.GetTypingQuestionSlice()
+          setQuestionTextArray(questionArray)
+          setQuestionIndex(0)
+          setInputCharacters('')
+          setTimes(prev => prev + 1)
+          // 読み上げ
+          tts(question.en2, 'en-US', volume, isSoundEnabled)
+        }, 500)
+      }
+    }
   }
 
   return (
@@ -66,21 +81,24 @@ function TypingContent ({
             tabIndex={0}
             onKeyDown={handleKeyDown}
           >
-            <p>
-              {/* questionTextArray が配列であることを確認してから map を使う */}
+            <div className='number-area'>{times}回目</div>
+            <div className='kanji-area'>
+              {questionText.en2} {questionText.jp2}
+            </div>
+            <div className='hiragana-area'>
               {Array.isArray(questionTextArray) &&
                 questionTextArray.map((character, index) => (
-                  // 各文字 (character) を <span> タグで囲む
-                  // React のリスト表示では、各要素に一意な key を指定する必要があるため、index を key として使用
-                  <span key={index}>{character}</span>
+                  <span
+                    key={index}
+                    className={index < questionIndex ? 'correct-char' : ''}
+                  >
+                    {character}
+                  </span>
                 ))}
-            </p>
-            <p>
-              {questionText.en2} {questionText.jp2}
-            </p>
-            <p>
-              最後に押されたキー: <strong>{pressedKey}</strong>
-            </p>
+            </div>
+            <div className='key-area'>
+              最後に押されたキー: <span>{pressedKey}</span>
+            </div>
           </div>
         )}
       </div>

@@ -68,7 +68,7 @@ export function tts (text, lang, volumeLevel, isSoundEnabled) {
 
   initializeVoices()
     .then(voices => {
-      console.log('Available voices:', voices)
+      // console.log('Available voices:', voices)
       // 日本語音声（lang: 'ja-JP'）、英語（en-US）、なければ最初の音声
       const preferredVoice =
         voices.find(voice => voice.lang === lang) || voices[0]
@@ -81,6 +81,7 @@ export function tts (text, lang, volumeLevel, isSoundEnabled) {
       uttr.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
       console.log('Speaking with voice:', preferredVoice.name)
       window.speechSynthesis.speak(uttr)
+      console.log('Speech synthesis completed: ', text)
     })
     .catch(err => {
       console.error('Speech synthesis error:', err)

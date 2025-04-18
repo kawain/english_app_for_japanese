@@ -195,6 +195,7 @@ func main() {
 	js.Global().Set("CreateQuizChoices", js.FuncOf(CreateQuizChoices))
 	js.Global().Set("GetTypingQuestion", js.FuncOf(GetTypingQuestion))
 	js.Global().Set("GetTypingQuestionSlice", js.FuncOf(GetTypingQuestionSlice))
+	js.Global().Set("KeyDown", js.FuncOf(KeyDown))
 	js.Global().Set("GetListeningQuestion", js.FuncOf(GetListeningQuestion))
 	js.Global().Set("SearchAndReturnData", js.FuncOf(SearchAndReturnData))
 	js.Global().Set("SearchAndReturnDataPromise", js.FuncOf(SearchAndReturnDataPromise))
