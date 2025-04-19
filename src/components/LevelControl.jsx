@@ -1,9 +1,15 @@
-function LevelControl ({ level, onLevelChange }) {
+import { useAppContext } from '../App.jsx'
+
+function LevelControl () {
+  const {
+    selectedLevel,
+    handleLevelChange,
+  } = useAppContext()
+
   // ラジオボタンの値が変更されたときに呼び出される関数
   const handleChange = event => {
-    // 親コンポーネントに定義された onLevelChange を呼び出し、
     // 選択されたラジオボタンの値を渡す
-    onLevelChange(event.target.value)
+    handleLevelChange(event.target.value)
   }
 
   return (
@@ -14,9 +20,7 @@ function LevelControl ({ level, onLevelChange }) {
             type='radio'
             name='level'
             value='1'
-            // 受け取った level prop と比較して checked 状態を決定
-            checked={level === '1'}
-            // 変更時に handleChange 関数を呼び出す
+            checked={selectedLevel === '1'}
             onChange={handleChange}
           />{' '}
           レベル1
@@ -26,7 +30,7 @@ function LevelControl ({ level, onLevelChange }) {
             type='radio'
             name='level'
             value='2'
-            checked={level === '2'}
+            checked={selectedLevel === '2'}
             onChange={handleChange}
           />{' '}
           レベル2
@@ -36,7 +40,7 @@ function LevelControl ({ level, onLevelChange }) {
             type='radio'
             name='level'
             value='0'
-            checked={level === '0'}
+            checked={selectedLevel === '0'}
             onChange={handleChange}
           />{' '}
           レベル1と2

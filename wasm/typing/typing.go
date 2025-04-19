@@ -192,11 +192,12 @@ var RomajiMap = map[string][]string{
 }
 
 type Typing struct {
-	appData          *objects.AppData
-	FilteredArray    []objects.Datum
-	index            int
-	CurrentData      *objects.Datum
-	CurrentDataArray []string
+	appData           *objects.AppData
+	FilteredArray     []objects.Datum
+	index             int
+	CurrentData       *objects.Datum
+	CurrentDataArrayE []string
+	CurrentDataArrayJ []string
 }
 
 func (t *Typing) Init(appData *objects.AppData) {
@@ -211,12 +212,12 @@ func (t *Typing) Next() {
 	if t.index >= len(t.FilteredArray) {
 		t.index = 0
 	}
-	t.createCurrentDataArray()
+	t.createCurrentDataArrayE()
+	t.createCurrentDataArrayJ()
 }
 
-func (t *Typing) createCurrentDataArray() {
-	text := t.CurrentData.En2 + " " + t.CurrentData.Kana
-	t.CurrentDataArray = make([]string, 0, len([]rune(text)))
+func (t *Typing) createDataArray(text string) []string {
+	tmp := make([]string, 0, len([]rune(text)))
 	runes := []rune(text)
 	i := 0
 	for i < len(runes) {
@@ -224,27 +225,46 @@ func (t *Typing) createCurrentDataArray() {
 			// 2文字を切り出し
 			twoChars := string(runes[i : i+2])
 			if _, exists := RomajiMap[twoChars]; exists {
-				t.CurrentDataArray = append(t.CurrentDataArray, twoChars)
+				tmp = append(tmp, twoChars)
 				i += 2
 			} else {
-				t.CurrentDataArray = append(t.CurrentDataArray, string(runes[i:i+1]))
+				tmp = append(tmp, string(runes[i:i+1]))
 				i++
 			}
 		} else {
-			t.CurrentDataArray = append(t.CurrentDataArray, string(runes[i:i+1]))
+			tmp = append(tmp, string(runes[i:i+1]))
 			i++
 		}
 	}
+	return tmp
 }
 
-func (t *Typing) KeyDown(userInput string, index int) int {
-	sliceLength := len(t.CurrentDataArray)
+func (t *Typing) createCurrentDataArrayE() {
+	t.CurrentDataArrayE = t.createDataArray(t.CurrentData.En2)
+}
+
+func (t *Typing) createCurrentDataArrayJ() {
+	t.CurrentDataArrayJ = t.createDataArray(t.CurrentData.Kana)
+}
+
+// KeyDown 引数modeは1なら英語、2なら日本語の配列を調べる
+func (t *Typing) KeyDown(userInput string, index, mode int) int {
+	var dataArry []string
+	if mode == 1 {
+		dataArry = t.CurrentDataArrayE
+	} else if mode == 2 {
+		dataArry = t.CurrentDataArrayJ
+	} else {
+		return index
+	}
+
+	sliceLength := len(dataArry)
 
 	if sliceLength == 0 || index >= sliceLength {
 		return index
 	}
 
-	targetElement := t.CurrentDataArray[index]
+	targetElement := dataArry[index]
 
 	if targetElement != "っ" && targetElement != "ん" {
 		if words, exists := RomajiMap[targetElement]; exists {
@@ -262,7 +282,7 @@ func (t *Typing) KeyDown(userInput string, index int) int {
 	nextElement := ""
 	// 次の要素がある場合
 	if index < sliceLength-1 {
-		nextElement = t.CurrentDataArray[index+1]
+		nextElement = dataArry[index+1]
 	}
 
 	if targetElement == "っ" {

@@ -26,64 +26,99 @@ function initializeVoices () {
 }
 
 export function tts (text, lang, volumeLevel, isSoundEnabled) {
-  // 音声がオフならreturn
-  if (!isSoundEnabled) {
-    console.log('Sound is disabled')
-    return
-  }
-  // ブラウザが読み上げをサポートしていない場合はreturn
-  if (!window.speechSynthesis) {
-    console.log('Speech synthesis is not supported')
-    return
-  }
-  // textが空文字ならreturn
-  if (!text) {
-    console.log('No text to speak')
-    return
-  }
-  // langが"ja-JP"か"en-US"以外はreturn
-  if (lang !== 'ja-JP' && lang !== 'en-US') {
-    console.log('Unsupported language:', lang)
-    return
-  }
-  // volumeLevelが0ならreturn
-  if (volumeLevel === 0) {
-    console.log('Volume is muted')
-    return
-  }
-  // OSがUbuntuでブラウザがfirefoxでlangが"ja-JP"ならreturn
-  const userAgent = navigator.userAgent.toLowerCase()
-  const isUbuntu = userAgent.includes('ubuntu')
-  const isFirefox = userAgent.includes('firefox')
+  // Promiseを返すように変更
+  return new Promise((resolve, reject) => {
+    // 音声がオフならすぐに解決して終了
+    if (!isSoundEnabled) {
+      console.log('Sound is disabled')
+      resolve()
+      return
+    }
+    // ブラウザが読み上げをサポートしていない場合はすぐに解決して終了
+    if (!window.speechSynthesis) {
+      console.log('Speech synthesis is not supported')
+      resolve()
+      return
+    }
+    // textが空文字ならすぐに解決して終了
+    if (!text) {
+      console.log('No text to speak')
+      resolve()
+      return
+    }
+    // langが"ja-JP"か"en-US"以外はすぐに解決して終了
+    if (lang !== 'ja-JP' && lang !== 'en-US') {
+      console.log('Unsupported language:', lang)
+      resolve()
+      return
+    }
+    // volumeLevelが0ならすぐに解決して終了
+    if (volumeLevel === 0) {
+      console.log('Volume is muted')
+      resolve()
+      return
+    }
+    // OSがUbuntuでブラウザがfirefoxでlangが"ja-JP"ならすぐに解決して終了
+    const userAgent = navigator.userAgent.toLowerCase()
+    const isUbuntu = userAgent.includes('ubuntu')
+    const isFirefox = userAgent.includes('firefox')
 
-  if (isUbuntu && isFirefox && lang === 'ja-JP') {
-    console.log(
-      'Skipping Japanese TTS on Ubuntu Firefox due to potential compatibility issues.'
-    )
-    return
-  }
+    if (isUbuntu && isFirefox && lang === 'ja-JP') {
+      console.log(
+        'Skipping Japanese TTS on Ubuntu Firefox due to potential compatibility issues.'
+      )
+      resolve()
+      return
+    }
 
-  const uttr = new SpeechSynthesisUtterance(text)
-  window.speechSynthesis.cancel() // 前の音声をクリア
+    const uttr = new SpeechSynthesisUtterance(text)
 
-  initializeVoices()
-    .then(voices => {
-      // console.log('Available voices:', voices)
-      // 日本語音声（lang: 'ja-JP'）、英語（en-US）、なければ最初の音声
-      const preferredVoice =
-        voices.find(voice => voice.lang === lang) || voices[0]
-      if (!preferredVoice) {
-        throw new Error('No suitable voice found')
-      }
-      uttr.voice = preferredVoice
-      uttr.rate = 1 // 速度（0.1～10）
-      uttr.pitch = 1 // ピッチ（0～2）
-      uttr.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
-      console.log('Speaking with voice:', preferredVoice.name)
-      window.speechSynthesis.speak(uttr)
-      console.log('Speech synthesis completed: ', text)
-    })
-    .catch(err => {
-      console.error('Speech synthesis error:', err)
-    })
+    // 発話が進行中の場合のみキャンセル
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+      window.speechSynthesis.cancel()
+    }
+
+    // Chrome のバグ対策：音声エンジンを再初期化
+    if (isUbuntu && userAgent.includes('chrome')) {
+      window.speechSynthesis.cancel() // キューをクリア
+      window.speechSynthesis.resume() // エンジンを再開
+    }
+
+    initializeVoices()
+      .then(voices => {
+        // console.log('Available voices:', voices);
+        const preferredVoice =
+          voices.find(voice => voice.lang === lang) || voices[0]
+        if (!preferredVoice) {
+          // 適切な音声が見つからない場合もエラーとして扱う
+          throw new Error(`No suitable voice found for lang: ${lang}`)
+        }
+        uttr.voice = preferredVoice
+        uttr.rate = 1 // 速度（0.1～10）
+        uttr.pitch = 1 // ピッチ（0～2）
+        uttr.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
+
+        // 読み上げ完了時のイベントリスナー
+        uttr.onend = () => {
+          console.log('Speech synthesis completed: ', text)
+          resolve() // Promiseを解決
+        }
+
+        // 読み上げエラー時のイベントリスナー
+        uttr.onerror = event => {
+          console.error('Speech synthesis error:', event.error)
+          reject(new Error(`Speech synthesis error: ${event.error}`)) // Promiseを拒否
+        }
+
+        console.log('Speaking with voice:', preferredVoice.name, 'Text:', text)
+        window.speechSynthesis.speak(uttr)
+      })
+      .catch(err => {
+        console.error(
+          'Speech synthesis initialization or voice finding error:',
+          err
+        )
+        reject(err) // 初期化や音声検索のエラーも拒否
+      })
+  })
 }

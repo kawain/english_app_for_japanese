@@ -37,9 +37,29 @@ func GetTypingQuestion(this js.Value, args []js.Value) any {
 func GetTypingQuestionSlice(this js.Value, args []js.Value) any {
 	consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestionSlice)が呼び出されました"))
 
+	if len(args) < 1 {
+		return nil
+	}
+
+	if args[0].Type() != js.TypeNumber {
+		consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestionSlice)エラー: 引数0 (mode) は数値である必要があります。"))
+		return nil
+	}
+
+	mode := args[0].Int()
+
+	var dataArry []string
+	if mode == 1 {
+		dataArry = typingData.CurrentDataArrayE
+	} else if mode == 2 {
+		dataArry = typingData.CurrentDataArrayJ
+	} else {
+		return nil
+	}
+
 	// JavaScriptの配列に変換
-	jsArray := make([]interface{}, len(typingData.CurrentDataArray))
-	for i, v := range typingData.CurrentDataArray {
+	jsArray := make([]interface{}, len(dataArry))
+	for i, v := range dataArry {
 		jsArray[i] = v
 	}
 	return js.ValueOf(jsArray)
@@ -49,7 +69,7 @@ func GetTypingQuestionSlice(this js.Value, args []js.Value) any {
 func KeyDown(this js.Value, args []js.Value) any {
 	consoleLog.Invoke(js.ValueOf("Go関数(KeyDown)が呼び出されました"))
 
-	if len(args) < 2 {
+	if len(args) < 3 {
 		return nil
 	}
 
@@ -65,5 +85,11 @@ func KeyDown(this js.Value, args []js.Value) any {
 	}
 	index := args[1].Int()
 
-	return js.ValueOf(typingData.KeyDown(userInput, index))
+	if args[2].Type() != js.TypeNumber {
+		consoleLog.Invoke(js.ValueOf("Go関数(KeyDown)エラー: 引数2 (mode) は数値である必要があります。"))
+		return nil
+	}
+	mode := args[2].Int()
+
+	return js.ValueOf(typingData.KeyDown(userInput, index, mode))
 }

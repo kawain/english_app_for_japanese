@@ -1,14 +1,12 @@
-function VolumeControl ({
-  volume,
-  onVolumeChange,
-  isSoundEnabled,
-  onToggleSound
-}) {
+import { useAppContext } from '../App.jsx'
+
+function VolumeControl () {
+  const { volume, handleVolumeChange, isSoundEnabled, toggleSound } =
+    useAppContext()
+
   // スライダーが変更されたときに呼ばれる関数
   const handleChange = event => {
-    // onVolumeChangeを通じてAppコンポーネントの状態を更新
-    // event.target.value は文字列なので数値に変換
-    onVolumeChange(parseInt(event.target.value, 10))
+    handleVolumeChange(parseInt(event.target.value, 10))
   }
 
   return (
@@ -33,7 +31,7 @@ function VolumeControl ({
           type='checkbox'
           id='soundToggleCheckbox'
           checked={isSoundEnabled}
-          onChange={onToggleSound}
+          onChange={toggleSound}
         />
         <label htmlFor='soundToggleCheckbox'>音を有効にする</label>
       </div>

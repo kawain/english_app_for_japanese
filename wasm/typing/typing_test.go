@@ -39,10 +39,10 @@ func TestCreateCurrentDataArray(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			typingInstance.CurrentData = &objects.Datum{En2: tc.en2, Kana: tc.kana}
-			typingInstance.createCurrentDataArray()
-			got := typingInstance.CurrentDataArray
+			typingInstance.createCurrentDataArrayE()
+			got := typingInstance.CurrentDataArrayE
 			if equalStringSlice(got, tc.expected) {
-				t.Errorf("createCurrentDataArray() for '%s %s' failed: expected %v, got %v", tc.en2, tc.kana, tc.expected, got)
+				t.Errorf("createCurrentDataArrayE() for '%s %s' failed: expected %v, got %v", tc.en2, tc.kana, tc.expected, got)
 			}
 			fmt.Println(tc.name)
 		})
@@ -89,8 +89,8 @@ func TestKeyDown(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			typingInstance.CurrentDataArray = tc.questionSlice
-			result := typingInstance.KeyDown(tc.userInput, tc.index)
+			typingInstance.CurrentDataArrayE = tc.questionSlice
+			result := typingInstance.KeyDown(tc.userInput, tc.index, 1)
 			fmt.Printf("Slice: %v, Input: '%s', Index: %d -> Result: %d (Expected: %d)\n", tc.questionSlice, tc.userInput, tc.index, result, tc.expectedIndex)
 			if result != tc.expectedIndex {
 				t.Errorf("KeyDown(%q, %d) with slice %v failed: expected %d, got %d", tc.userInput, tc.index, tc.questionSlice, tc.expectedIndex, result)

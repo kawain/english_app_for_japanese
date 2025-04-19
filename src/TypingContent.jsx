@@ -1,113 +1,160 @@
 import { useState, useEffect, useRef } from 'react'
+import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import { tts } from './utils/tts'
 
-function TypingContent ({
-  volume,
-  onVolumeChange,
-  isSoundEnabled,
-  onToggleSound
-}) {
-  const [isTypingStarted, setIsTypingStarted] = useState(false)
+function TypingContent () {
+  const { volume, isSoundEnabled } = useAppContext()
+  // 0: 初期状態スタートボタン表示
+  // 1: タイピング表示
+  const [progress, setProgress] = useState(0)
+  // 回数
+  const [times, setTimes] = useState(0)
   // 表示用の問題の文字列(日本語は漢字)
   const [questionText, setQuestionText] = useState({})
-  // 問題の文字配列(日本語はひらがな)
-  const [questionTextArray, setQuestionTextArray] = useState([])
-  // questionTextArrayのインデックス
-  const [questionIndex, setQuestionIndex] = useState(0)
+  // 問題の文字配列(英語)
+  const [questionTextArray1, setQuestionTextArray1] = useState([])
+  // 問題の文字配列(日本語)
+  const [questionTextArray2, setQuestionTextArray2] = useState([])
+  // questionTextArray1のインデックス
+  const [questionIndex1, setQuestionIndex1] = useState(0)
+  // questionTextArray2のインデックス
+  const [questionIndex2, setQuestionIndex2] = useState(0)
   // 入力途中の文字列
   const [inputCharacters, setInputCharacters] = useState('')
   // 最後に押されたキー
   const [pressedKey, setPressedKey] = useState('')
-  //
-  const [times, setTimes] = useState(0)
-  //
+  // typing-contentのref
   const typingAreaRef = useRef(null)
+  // 英語か日本語かどちらを行っているか
+  const whichRef = useRef(1)
 
+  // フォーカスをする useEffect
   useEffect(() => {
+    if (progress === 0) return
     typingAreaRef.current?.focus()
-  }, [isTypingStarted])
+  }, [progress])
 
-  const handleStartTyping = () => {
+  // タイピング開始
+  const handleStart = () => {
+    // WASMの関数
     const question = window.GetTypingQuestion()
     setQuestionText(question)
-    const questionArray = window.GetTypingQuestionSlice()
-    setQuestionTextArray(questionArray)
-    setQuestionIndex(0)
+    // WASMの関数(英語の配列)
+    const array1 = window.GetTypingQuestionSlice(1)
+    setQuestionTextArray1(array1)
+    // WASMの関数(日本語の配列)
+    const array2 = window.GetTypingQuestionSlice(2)
+    setQuestionTextArray2(array2)
     setTimes(prev => prev + 1)
-    setIsTypingStarted(true)
-    // 読み上げ
-    tts(question.en2, 'en-US', volume, isSoundEnabled)
+    setProgress(1)
   }
 
   const handleKeyDown = e => {
     // デフォルトのキー動作（例: Tabキーでのフォーカス移動など）を防ぐ場合
     e.preventDefault()
+
     let input = inputCharacters
     const moji = e.key
     input += moji
     setInputCharacters(input)
     setPressedKey(moji)
-    const result = window.KeyDown(input, questionIndex)
-    if (result > questionIndex) {
-      setQuestionIndex(result)
-      setInputCharacters('')
 
-      if (result >= questionTextArray.length) {
-        setTimeout(() => {
-          const question = window.GetTypingQuestion()
-          setQuestionText(question)
-          const questionArray = window.GetTypingQuestionSlice()
-          setQuestionTextArray(questionArray)
-          setQuestionIndex(0)
-          setInputCharacters('')
-          setTimes(prev => prev + 1)
-          // 読み上げ
-          tts(question.en2, 'en-US', volume, isSoundEnabled)
-        }, 500)
+    let result = 0
+    if (whichRef.current === 1) {
+      result = window.KeyDown(input, questionIndex1, 1)
+      if (result > questionIndex1) {
+        setQuestionIndex1(result)
+        setInputCharacters('')
+        if (result >= questionTextArray1.length) {
+          whichRef.current = 2
+        }
+      }
+    } else if (whichRef.current === 2) {
+      result = window.KeyDown(input, questionIndex2, 2)
+      if (result > questionIndex2) {
+        setQuestionIndex2(result)
+        setInputCharacters('')
+        if (result >= questionTextArray2.length) {
+          setTimeout(() => {
+            const question = window.GetTypingQuestion()
+            setQuestionText(question)
+            const array1 = window.GetTypingQuestionSlice(1)
+            setQuestionTextArray1(array1)
+            const array2 = window.GetTypingQuestionSlice(2)
+            setQuestionTextArray2(array2)
+            setQuestionIndex1(0)
+            setQuestionIndex2(0)
+            setTimes(prev => prev + 1)
+            whichRef.current = 1
+          }, 500)
+        }
       }
     }
   }
 
+  let content = ''
+
+  if (progress === 0) {
+    content = <button onClick={handleStart}>タイピング開始</button>
+  } else if (progress === 1) {
+    content = (
+      <div
+        ref={typingAreaRef}
+        className='typing-content'
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+      >
+        <div className='number-area'>{times}回目</div>
+
+        <div
+          className='english-area'
+          style={{ cursor: 'pointer' }}
+          title='読み上げ'
+          onClick={() =>
+            tts(questionText.en2, 'en-US', volume, isSoundEnabled).catch(
+              error => {
+                console.error('TTS エラー:', error)
+              }
+            )
+          }
+        >
+          {Array.isArray(questionTextArray1) &&
+            questionTextArray1.map((character, index) => (
+              <span
+                key={index}
+                className={index < questionIndex1 ? 'correct-char' : ''}
+              >
+                {character}
+              </span>
+            ))}
+        </div>
+
+        <div className='hiragana-area'>
+          {Array.isArray(questionTextArray2) &&
+            questionTextArray2.map((character, index) => (
+              <span
+                key={index}
+                className={index < questionIndex2 ? 'correct-char' : ''}
+              >
+                {character}
+              </span>
+            ))}
+        </div>
+
+        <div className='kanji-area'>{questionText.jp2}</div>
+
+        <div className='key-area'>
+          最後に押されたキー: <span>{pressedKey}</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
-      <div className='typing-container'>
-        {!isTypingStarted ? (
-          <button onClick={handleStartTyping}>タイピング開始</button>
-        ) : (
-          <div
-            ref={typingAreaRef}
-            className='typing-content'
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
-          >
-            <div className='number-area'>{times}回目</div>
-            <div className='kanji-area'>
-              {questionText.en2} {questionText.jp2}
-            </div>
-            <div className='hiragana-area'>
-              {Array.isArray(questionTextArray) &&
-                questionTextArray.map((character, index) => (
-                  <span
-                    key={index}
-                    className={index < questionIndex ? 'correct-char' : ''}
-                  >
-                    {character}
-                  </span>
-                ))}
-            </div>
-            <div className='key-area'>
-              最後に押されたキー: <span>{pressedKey}</span>
-            </div>
-          </div>
-        )}
-      </div>
-      <VolumeControl
-        volume={volume}
-        onVolumeChange={onVolumeChange}
-        isSoundEnabled={isSoundEnabled}
-        onToggleSound={onToggleSound}
-      />
+      <div className='typing-container'>{content}</div>
+      <VolumeControl />
     </>
   )
 }
