@@ -1,12 +1,11 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useAppContext } from './App.jsx'
+import { useAppContext, speakText } from './App.jsx'
 import {
   addExcludedWordId,
   removeExcludedWordId,
   clearExcludedWordIds
 } from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
-import { tts } from './utils/tts'
 
 // 1ページあたりの表示件数
 const ITEMS_PER_PAGE = 100
@@ -181,11 +180,7 @@ function Home () {
                   style={{ cursor: 'pointer' }}
                   title='読み上げ'
                   onClick={() =>
-                    tts(item.en, 'en-US', volume, isSoundEnabled).catch(
-                      error => {
-                        console.error('TTS エラー:', error)
-                      }
-                    )
+                    speakText(item.en, 'en-US', volume, isSoundEnabled)
                   }
                 >
                   {item.en}

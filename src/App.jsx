@@ -168,4 +168,52 @@ export const useAppContext = () => {
   return context
 }
 
+export function speakText (text, lang, volumeLevel, isSoundEnabled) {
+  // 音声がオフならすぐに終了
+  if (!isSoundEnabled) {
+    console.log('Sound is disabled')
+    return
+  }
+  // ブラウザが読み上げをサポートしていない場合はすぐに終了
+  if (!window.speechSynthesis) {
+    console.log('Speech synthesis is not supported')
+    return
+  }
+  // textが空文字ならすぐに終了
+  if (!text) {
+    console.log('No text to speak')
+    return
+  }
+  // langが"ja-JP"か"en-US"以外はすぐに終了
+  if (lang !== 'ja-JP' && lang !== 'en-US') {
+    console.log('Unsupported language:', lang)
+    return
+  }
+  // volumeLevelが0ならすぐに終了
+  if (volumeLevel === 0) {
+    console.log('Volume is muted')
+    return
+  }
+  // OSがUbuntuでブラウザがfirefoxでlangが"ja-JP"ならすぐに終了
+  const userAgent = navigator.userAgent.toLowerCase()
+  const isUbuntu = userAgent.includes('ubuntu')
+  const isFirefox = userAgent.includes('firefox')
+
+  if (isUbuntu && isFirefox && lang === 'ja-JP') {
+    console.log(
+      'Skipping Japanese on Ubuntu Firefox due to potential compatibility issues.'
+    )
+    return
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text)
+  utterance.lang = lang
+  utterance.rate = 1 // 速度（0.1～10）
+  utterance.pitch = 1 // ピッチ（0～2）
+  utterance.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
+
+  window.speechSynthesis.cancel()
+  window.speechSynthesis.speak(utterance)
+}
+
 export default App

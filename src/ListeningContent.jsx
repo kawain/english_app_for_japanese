@@ -1,26 +1,72 @@
 import { useState, useEffect, useCallback, use } from 'react'
-import { useAppContext } from './App.jsx'
+import { useAppContext, speakText } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
-import { tts } from './utils/tts'
 import { addExcludedWordId } from './Storage.jsx'
 
 function ListeningContent () {
   const { selectedLevel, volume, isSoundEnabled } = useAppContext()
+  const [progress, setProgress] = useState(0)
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
-  // 0: 初期状態
-  // 1: en表示/読み上げ
-  // 2: jp表示/読み上げ
-  // 3: en2表示/読み上げ
-  // 4: jp2表示/読み上げ
-  const [progress, setProgress] = useState(0)
+  const [en, setEn] = useState('')
+  const [jp, setJp] = useState('【日本語訳】')
+  const [en2, setEn2] = useState('【例文】')
+  const [jp2, setJp2] = useState('【例文の日本語訳】')
+  const [step, setStep] = useState(0)
+  const [autoPlay, setAutoPlay] = useState(false)
 
   // スタート
   const handleStart = () => {
-    fetchQuestion()
-    setTimes(times + 1)
+    const question = fetchQuestion()
+    setCurrentQuestion(question)
+    setEn(question.en)
+    setTimes(1)
     setProgress(1)
+    setStep(1)
+    speakText(question.en, 'en-US', volume, isSoundEnabled)
+  }
+
+  const handleEnClick = () => {
+    if (currentQuestion) {
+      speakText(currentQuestion.en, 'en-US', volume, isSoundEnabled)
+    }
+  }
+
+  const handleJpClick = () => {
+    if (currentQuestion && currentQuestion.jp && currentQuestion.en2) {
+      setJp(currentQuestion.jp)
+      setStep(prev => prev + 1)
+      speakText(currentQuestion.jp, 'ja-JP', volume, isSoundEnabled)
+    }
+  }
+
+  const handleEn2Click = () => {
+    if (currentQuestion && currentQuestion.en2) {
+      setEn2(currentQuestion.en2)
+      setStep(prev => prev + 1)
+      speakText(currentQuestion.en2, 'en-US', volume, isSoundEnabled)
+    }
+  }
+
+  const handleJp2Click = () => {
+    if (currentQuestion && currentQuestion.jp2) {
+      setJp2(currentQuestion.jp2)
+      setStep(prev => prev + 1)
+      speakText(currentQuestion.jp2, 'ja-JP', volume, isSoundEnabled)
+    }
+  }
+
+  const handleNext = () => {
+    const question = fetchQuestion()
+    setCurrentQuestion(question)
+    setEn(question.en)
+    setJp('【日本語訳】')
+    setEn2('【例文】')
+    setJp2('【例文の日本語訳】')
+    setTimes(prev => prev + 1)
+    setStep(1)
+    speakText(question.en, 'en-US', volume, isSoundEnabled)
   }
 
   // 問題を取得する関数 (useCallbackでメモ化)
@@ -33,70 +79,62 @@ function ListeningContent () {
         throw new Error('問題データを取得できませんでした。')
       }
       console.log('New question:', questionData)
-      setCurrentQuestion(questionData)
+      return questionData
     } catch (err) {
       console.error('Error fetching question:', err)
-      setCurrentQuestion(null)
+      return null
     }
   }, [selectedLevel]) // selectedLevelが変わったら関数を再生成
 
+  // 自動シーケンスの処理
   useEffect(() => {
-    if (progress === 0) return
+    if (progress === 0 || !currentQuestion || !autoPlay) return
 
-    let timerId = null
+    const getWaitTime = (text, lang) => {
+      const baseTime = 2000
+      const timePerChar = lang === 'ja-JP' ? 400 : 150
+      return Math.max(baseTime, text.length * timePerChar)
+    }
 
-    const handleProgress = async () => {
-      try {
-        if (isSoundEnabled) {
-          if (progress === 1) {
-            await tts(currentQuestion.en, 'en-US', volume, isSoundEnabled)
-            setProgress(2)
-          } else if (progress === 2) {
-            await tts(currentQuestion.jp, 'ja-JP', volume, isSoundEnabled)
-            setProgress(3)
-          } else if (progress === 3) {
-            await tts(currentQuestion.en2, 'en-US', volume, isSoundEnabled)
-            setProgress(4)
-          } else if (progress === 4) {
-            await tts(currentQuestion.jp2, 'ja-JP', volume, isSoundEnabled)
-            fetchQuestion()
-            setTimes(times + 1)
-            setProgress(1)
-          }
-        } else {
-          timerId = setTimeout(() => {
-            if (progress === 1) {
-              setProgress(2)
-            } else if (progress === 2) {
-              setProgress(3)
-            } else if (progress === 3) {
-              setProgress(4)
-            } else if (progress === 4) {
-              fetchQuestion()
-              setTimes(times + 1)
-              setProgress(1)
-            }
-          }, 3000)
-        }
-      } catch (error) {
-        console.error('TTS エラー:', error)
+    const proceedToNextStep = () => {
+      if (step === 1) {
+        handleJpClick()
+      } else if (step === 2) {
+        handleEn2Click()
+      } else if (step === 3) {
+        handleJp2Click()
+      } else if (step === 4) {
+        handleNext()
       }
     }
 
-    handleProgress()
+    let timerId
+    let waitTime
+
+    // 現在のステップに応じたテキストを取得し、待機時間を計算
+    if (step === 1) {
+      waitTime = getWaitTime(currentQuestion.en, 'en-US')
+    } else if (step === 2) {
+      waitTime = getWaitTime(currentQuestion.jp, 'ja-JP')
+    } else if (step === 3) {
+      waitTime = getWaitTime(currentQuestion.en2, 'en-US')
+    } else if (step === 4) {
+      waitTime = getWaitTime(currentQuestion.jp2, 'ja-JP')
+    }
+
+    timerId = setTimeout(() => {
+      proceedToNextStep()
+    }, waitTime)
 
     return () => {
-      if (timerId) {
-        clearTimeout(timerId)
-      }
+      clearTimeout(timerId)
     }
-  }, [progress, currentQuestion, isSoundEnabled])
+  }, [step, progress, currentQuestion, autoPlay])
 
-  // レベルを変えたらリセット
+  // レベルを変更
   useEffect(() => {
     if (progress === 0) return
-    setTimes(0)
-    setProgress(0)
+    handleStart()
   }, [selectedLevel])
 
   let content = null
@@ -108,52 +146,51 @@ function ListeningContent () {
       <>
         <div className='listening-content'>
           <div className='number-area'>{times}回目</div>
-          <div className='en-area'>{currentQuestion.en}</div>
-          <div className='jp-area' onClick={() => setProgress(2)}>
-            ?
+          <div
+            className={step === 1 ? 'en-area highlight' : 'en-area'}
+            onClick={handleEnClick}
+            style={{ cursor: 'pointer' }}
+          >
+            {en}
           </div>
-          <div className='en2-area'>?</div>
-          <div className='jp2-area'>?</div>
-        </div>
-      </>
-    )
-  } else if (progress === 2) {
-    content = (
-      <>
-        <div className='listening-content'>
-          <div className='number-area'>{times}回目</div>
-          <div className='en-area'>{currentQuestion.en}</div>
-          <div className='jp-area'>{currentQuestion.jp}</div>
-          <div className='en2-area' onClick={() => setProgress(3)}>
-            ?
+          <div
+            className={step === 2 ? 'jp-area highlight' : 'jp-area'}
+            onClick={handleJpClick}
+            style={{ cursor: 'pointer' }}
+          >
+            {jp}
           </div>
-          <div className='jp2-area'>?</div>
-        </div>
-      </>
-    )
-  } else if (progress === 3) {
-    content = (
-      <>
-        <div className='listening-content'>
-          <div className='number-area'>{times}回目</div>
-          <div className='en-area'>{currentQuestion.en}</div>
-          <div className='jp-area'>{currentQuestion.jp}</div>
-          <div className='en2-area'>{currentQuestion.en2}</div>
-          <div className='jp2-area' onClick={() => setProgress(4)}>
-            ?
+          <div
+            className={step === 3 ? 'en2-area highlight' : 'en2-area'}
+            onClick={handleEn2Click}
+            style={{ cursor: 'pointer' }}
+          >
+            {en2}
+          </div>
+          <div
+            className={step === 4 ? 'jp2-area highlight' : 'jp2-area'}
+            onClick={handleJp2Click}
+            style={{ cursor: 'pointer' }}
+          >
+            {jp2}
           </div>
         </div>
-      </>
-    )
-  } else if (progress === 4) {
-    content = (
-      <>
-        <div className='listening-content'>
-          <div className='number-area'>{times}回目</div>
-          <div className='en-area'>{currentQuestion.en}</div>
-          <div className='jp-area'>{currentQuestion.jp}</div>
-          <div className='en2-area'>{currentQuestion.en2}</div>
-          <div className='jp2-area'>{currentQuestion.jp2}</div>
+        <div className='button-container'>
+          <button onClick={handleNext} disabled={autoPlay}>
+            次の問題へ
+          </button>
+          <button onClick={() => setAutoPlay(prev => !prev)}>
+            {autoPlay ? '自動再生をオフ' : '自動再生をオン'}
+          </button>
+          <button
+            onClick={() => {
+              addExcludedWordId(String(currentQuestion.id))
+              window.AddStorage(currentQuestion.id)
+              alert('ストレージに追加しました')
+            }}
+          >
+            ストレージに追加
+          </button>
         </div>
       </>
     )

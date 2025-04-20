@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { useAppContext } from './App.jsx'
+import { useAppContext, speakText } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
-import { tts } from './utils/tts'
 
 function TypingContent () {
   const { volume, isSoundEnabled } = useAppContext()
@@ -112,11 +111,7 @@ function TypingContent () {
           style={{ cursor: 'pointer' }}
           title='読み上げ'
           onClick={() =>
-            tts(questionText.en2, 'en-US', volume, isSoundEnabled).catch(
-              error => {
-                console.error('TTS エラー:', error)
-              }
-            )
+            speakText(questionText.en2, 'en-US', volume, isSoundEnabled)
           }
         >
           {Array.isArray(questionTextArray1) &&

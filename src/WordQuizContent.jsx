@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import { useAppContext } from './App.jsx'
+import { useAppContext, speakText } from './App.jsx'
 import { addExcludedWordId } from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
 import QuizChoices from './components/QuizChoices.jsx'
-import { tts } from './utils/tts'
 
 // 問題の選択肢の数
 const numberOfChoices = 10
@@ -159,9 +158,7 @@ function WordQuizContent () {
 
     const textToSpeak = progress === 1 ? currentQuiz.en : currentQuiz.en2
     if (textToSpeak) {
-      tts(textToSpeak, 'en-US', volume, isSoundEnabled).catch(error => {
-        console.error('TTS エラー:', error)
-      })
+      speakText(textToSpeak, 'en-US', volume, isSoundEnabled)
     }
   }, [progress, currentQuiz, volume, isSoundEnabled])
 
@@ -181,11 +178,7 @@ function WordQuizContent () {
           style={{ cursor: 'pointer' }}
           title='読み上げ'
           onClick={() =>
-            tts(currentQuiz.en, 'en-US', volume, isSoundEnabled).catch(
-              error => {
-                console.error('TTS エラー:', error)
-              }
-            )
+            speakText(currentQuiz.en, 'en-US', volume, isSoundEnabled)
           }
         >
           {currentQuiz.en}
@@ -210,11 +203,7 @@ function WordQuizContent () {
           style={{ cursor: 'pointer' }}
           title='読み上げ'
           onClick={() =>
-            tts(currentQuiz.en, 'en-US', volume, isSoundEnabled).catch(
-              error => {
-                console.error('TTS エラー:', error)
-              }
-            )
+            speakText(currentQuiz.en, 'en-US', volume, isSoundEnabled)
           }
         >
           {currentQuiz.en}
@@ -258,11 +247,7 @@ function WordQuizContent () {
                   style={{ cursor: 'pointer' }}
                   title='読み上げ'
                   onClick={() =>
-                    tts(currentQuiz.en2, 'en-US', volume, isSoundEnabled).catch(
-                      error => {
-                        console.error('TTS エラー:', error)
-                      }
-                    )
+                    speakText(currentQuiz.en2, 'en-US', volume, isSoundEnabled)
                   }
                 >
                   {currentQuiz.en2}
