@@ -93,7 +93,7 @@ function TypingContent () {
     }
   }
 
-  let content = ''
+  let content = null
 
   if (progress === 0) {
     content = <button onClick={handleStart}>タイピング開始</button>

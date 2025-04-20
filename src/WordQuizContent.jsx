@@ -165,7 +165,7 @@ function WordQuizContent () {
     }
   }, [progress, currentQuiz, volume, isSoundEnabled])
 
-  let content = ''
+  let content = null
 
   if (progress === 0) {
     content = (

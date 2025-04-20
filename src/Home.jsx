@@ -1,42 +1,37 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useAppContext } from './App.jsx'
 import {
   addExcludedWordId,
   removeExcludedWordId,
   clearExcludedWordIds
 } from './Storage.jsx'
+import VolumeControl from './components/VolumeControl.jsx'
+import { tts } from './utils/tts'
 
 // 1ページあたりの表示件数
 const ITEMS_PER_PAGE = 100
 
 function Home () {
-  // APIから取得した全データ
+  const { volume, isSoundEnabled } = useAppContext()
+  // WASMから取得した全データ
   const [allData, setAllData] = useState([])
+  // 選択されたレベル（ページネーションでレベルを維持するため）
+  const [searchLevel, setSearchLevel] = useState(null)
   // 現在表示中のページ番号
   const [currentPage, setCurrentPage] = useState(1)
-  // 読み込み中かどうかの状態
-  const [loading, setLoading] = useState(false)
-  // エラーメッセージ
-  const [error, setError] = useState(null)
-  // 最後に選択されたレベル（ページネーションでレベルを維持するため）
-  const [currentLevel, setCurrentLevel] = useState(null)
-  // Setを使うことで、IDの追加・削除・存在チェックを効率的に行えます
+  // opacityを1、0に変えて表示をコントロールするため
   const [processingWordIds, setProcessingWordIds] = useState(new Set())
-  // 日本語等を隠す状態
   const [showOffCol, setShowOffCol] = useState(false)
-  // セルごとに日本語等を隠す状態を管理
   const [showOffCell, setShowOffCell] = useState({})
 
   const handleButtonClick = async level => {
-    setLoading(true)
-    setError(null)
-    setCurrentLevel(level)
+    setSearchLevel(level)
     setProcessingWordIds(new Set())
     setShowOffCol(false)
     setShowOffCell({})
 
     try {
       const result = await window.SearchAndReturnDataPromise(level)
-      console.log(`レベル${level}の単語データ:`, result)
       setAllData(result)
       setCurrentPage(1)
     } catch (err) {
@@ -44,21 +39,9 @@ function Home () {
         'SearchAndReturnDataPromiseの実行中にエラーが発生しました:',
         err
       )
-      setError(`データの取得中にエラーが発生しました: ${err.message}`)
       setAllData([])
-    } finally {
-      setLoading(false)
     }
   }
-
-  // ページ変更時の処理
-  const handlePageChange = pageNumber => {
-    setCurrentPage(pageNumber)
-    window.scrollTo(0, 0)
-  }
-
-  // ページネーションの計算
-  const totalPages = Math.ceil(allData.length / ITEMS_PER_PAGE)
 
   // 現在のページに表示するデータを計算 (useMemoで計算結果をキャッシュ)
   const displayedData = useMemo(() => {
@@ -67,12 +50,20 @@ function Home () {
     return allData.slice(startIndex, endIndex)
   }, [allData, currentPage])
 
+  // ページネーションの計算
+  const totalPages = Math.ceil(allData.length / ITEMS_PER_PAGE)
+
+  // ページ変更時の処理
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber)
+    window.scrollTo(0, 0)
+  }
+
   // ページネーションボタンを生成する関数
   const renderPaginationButtons = () => {
     if (totalPages <= 1) {
       return null // 1ページ以下の場合はボタンを表示しない
     }
-
     const buttons = []
     for (let i = 1; i <= totalPages; i++) {
       buttons.push(
@@ -90,10 +81,10 @@ function Home () {
 
   // 復元、除外ボタンの操作
   const handleActionClick = wordId => {
-    if (currentLevel === 1 || currentLevel === 2) {
+    if (searchLevel === 1 || searchLevel === 2) {
       addExcludedWordId(wordId)
       window.AddStorage(wordId)
-    } else if (currentLevel === 0) {
+    } else if (searchLevel === 0) {
       removeExcludedWordId(wordId)
       window.RemoveStorage(wordId)
     }
@@ -149,6 +140,110 @@ function Home () {
     })
   }, [displayedData, showOffCol])
 
+  let content = null
+
+  if (searchLevel === null) {
+    content = null
+  } else if (allData.length === 0) {
+    content = <p style={{ textAlign: 'center' }}>データがありません。</p>
+  } else {
+    content = (
+      <>
+        <p>
+          {currentPage}ページ目 / {allData.length}件見つかりました
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>English</th>
+              <th>
+                <label className='show-or-hide'>
+                  Japanese{' '}
+                  <input
+                    className='show-or-hide'
+                    type='checkbox'
+                    checked={showOffCol}
+                    onChange={handleShowOffCol}
+                  />
+                </label>
+              </th>
+              <th>Example (EN/JA)</th>
+              <th>Level</th>
+              <th className='nowrap'>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {displayedData.map(item => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td
+                  style={{ cursor: 'pointer' }}
+                  title='読み上げ'
+                  onClick={() =>
+                    tts(item.en, 'en-US', volume, isSoundEnabled).catch(
+                      error => {
+                        console.error('TTS エラー:', error)
+                      }
+                    )
+                  }
+                >
+                  {item.en}
+                </td>
+                <td
+                  className='show-or-hide'
+                  style={{ opacity: showOffCell[item.id] ? 1 : 0 }}
+                  onClick={() => {
+                    handleShowOffCell(item.id)
+                  }}
+                >
+                  {item.jp}
+                </td>
+                <td style={{ opacity: showOffCell[item.id] ? 1 : 0 }}>
+                  {item.en2}
+                  <br />
+                  {item.jp2}
+                </td>
+                <td className='center-text'>{item.level}</td>
+                <td>
+                  <button
+                    className='nowrap'
+                    onClick={() => handleActionClick(item.id)}
+                    disabled={processingWordIds.has(item.id)}
+                  >
+                    {searchLevel === 0 ? '復元' : '除外'}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {renderPaginationButtons()}
+        {searchLevel === 0 ? (
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <button
+              onClick={() => {
+                if (window.confirm('本当に除外リストを全部クリアしますか？')) {
+                  clearExcludedWordIds()
+                  window.ClearStorage()
+                  setProcessingWordIds(new Set())
+                  setAllData([])
+                  setCurrentPage(1)
+                  window.scrollTo(0, 0)
+                }
+              }}
+            >
+              除外リスト全クリア
+            </button>
+          </div>
+        ) : null}
+        <div style={{ textAlign: 'right' }}>
+          <button onClick={() => window.scrollTo(0, 0)}>ページ先頭</button>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <div className='home-container'>
@@ -156,129 +251,26 @@ function Home () {
         <div className='home-buttons'>
           <button
             onClick={() => handleButtonClick(1)}
-            disabled={loading || currentLevel === 1}
+            disabled={searchLevel === 1}
           >
             レベル1の単語
           </button>
           <button
             onClick={() => handleButtonClick(2)}
-            disabled={loading || currentLevel === 2}
+            disabled={searchLevel === 2}
           >
             レベル2の単語
           </button>
           <button
             onClick={() => handleButtonClick(0)}
-            disabled={loading || currentLevel === 0}
+            disabled={searchLevel === 0}
           >
             除外された単語
           </button>
         </div>
-
-        {/* エラー表示 */}
-        {error && <div style={{ color: 'red' }}>エラー: {error}</div>}
-
-        {/* 結果表示エリア */}
-        <div className='home-results'>
-          {loading && currentLevel !== null && <p>読み込み中...</p>}
-          {!loading &&
-            !error &&
-            allData.length === 0 &&
-            currentLevel !== null && (
-              <p style={{ textAlign: 'center' }}>データがありません。</p>
-            )}
-
-          {/* データがある場合のみテーブルとページネーションを表示 */}
-          {!loading && !error && allData.length > 0 && (
-            <>
-              <p>
-                {currentPage}ページ目 / {allData.length}件見つかりました
-              </p>
-              <table>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>English</th>
-                    <th>
-                      <label className='show-or-hide'>
-                        Japanese{' '}
-                        <input
-                          className='show-or-hide'
-                          type='checkbox'
-                          checked={showOffCol}
-                          onChange={handleShowOffCol}
-                        />
-                      </label>
-                    </th>
-                    <th>Example (EN/JA)</th>
-                    <th>Level</th>
-                    <th className='nowrap'>操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {displayedData.map(item => (
-                    <tr key={item.id}>
-                      <td>{item.id}</td>
-                      <td>{item.en}</td>
-                      <td
-                        className='show-or-hide'
-                        style={{ opacity: showOffCell[item.id] ? 1 : 0 }}
-                        onClick={() => {
-                          handleShowOffCell(item.id)
-                        }}
-                      >
-                        {item.jp}
-                      </td>
-                      <td style={{ opacity: showOffCell[item.id] ? 1 : 0 }}>
-                        {item.en2}
-                        <br />
-                        {item.jp2}
-                      </td>
-                      <td className='center-text'>{item.level}</td>
-                      <td>
-                        <button
-                          className='nowrap'
-                          onClick={() => handleActionClick(item.id)}
-                          disabled={processingWordIds.has(item.id)}
-                        >
-                          {currentLevel === 0 ? '復元' : '除外'}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              {renderPaginationButtons()}
-              {currentLevel === 0 ? (
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                  <button
-                    onClick={() => {
-                      if (
-                        window.confirm('本当に除外リストを全部クリアしますか？')
-                      ) {
-                        clearExcludedWordIds()
-                        window.ClearStorage()
-                        setProcessingWordIds(new Set())
-                        setAllData([])
-                        setCurrentPage(1)
-                        window.scrollTo(0, 0)
-                      }
-                    }}
-                  >
-                    除外リスト全クリア
-                  </button>
-                </div>
-              ) : (
-                ''
-              )}
-              <div style={{ textAlign: 'right' }}>
-                <button onClick={() => window.scrollTo(0, 0)}>
-                  ページ先頭
-                </button>
-              </div>
-            </>
-          )}
-        </div>
+        <div className='home-results'>{content}</div>
       </div>
+      <VolumeControl />
     </>
   )
 }

@@ -132,7 +132,7 @@ function App () {
             onClick={() => setCurrentContent('listening')}
             disabled={!wasmInitialized || currentContent === 'listening'}
           >
-            <MdHearing /> ヒアリング
+            <MdHearing /> リスニング
           </button>
           <button
             onClick={() => setCurrentContent('quiz')}

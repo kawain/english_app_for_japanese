@@ -71,18 +71,9 @@ export function tts (text, lang, volumeLevel, isSoundEnabled) {
       return
     }
 
+    window.speechSynthesis.cancel()
+
     const uttr = new SpeechSynthesisUtterance(text)
-
-    // 発話が進行中の場合のみキャンセル
-    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-      window.speechSynthesis.cancel()
-    }
-
-    // Chrome のバグ対策：音声エンジンを再初期化
-    if (isUbuntu && userAgent.includes('chrome')) {
-      window.speechSynthesis.cancel() // キューをクリア
-      window.speechSynthesis.resume() // エンジンを再開
-    }
 
     initializeVoices()
       .then(voices => {

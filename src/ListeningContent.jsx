@@ -1,209 +1,169 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, use } from 'react'
+import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
 import { tts } from './utils/tts'
 import { addExcludedWordId } from './Storage.jsx'
 
-function ListeningContent ({
-  level,
-  onLevelChange,
-  volume,
-  onVolumeChange,
-  isSoundEnabled,
-  onToggleSound
-}) {
-  const [isListeningStarted, setIsListeningStarted] = useState(false)
+function ListeningContent () {
+  const { selectedLevel, volume, isSoundEnabled } = useAppContext()
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
   // 0: 初期状態
   // 1: en表示/読み上げ
   // 2: jp表示/読み上げ
   // 3: en2表示/読み上げ
   // 4: jp2表示/読み上げ
-  // 5: 完了
-  const [displayStep, setDisplayStep] = useState(0)
-  // 各要素の表示状態
-  const [visibility, setVisibility] = useState({
-    en: false,
-    jp: false,
-    en2: false,
-    jp2: false
-  })
+  const [progress, setProgress] = useState(0)
 
-  const handleStartListening = () => {
-    setIsListeningStarted(true)
+  // スタート
+  const handleStart = () => {
+    fetchQuestion()
     setTimes(times + 1)
+    setProgress(1)
   }
 
   // 問題を取得する関数 (useCallbackでメモ化)
   const fetchQuestion = useCallback(() => {
-    setIsLoading(true)
-    setError(null)
-    setDisplayStep(0) // ステップをリセット
-    setVisibility({ en: false, jp: false, en2: false, jp2: false }) // 表示状態をリセット
-    window.speechSynthesis.cancel() // 念のため既存の読み上げをキャンセル
-
     try {
-      // window.GetListeningQuestion() は同期的にデータを返す想定
-      const questionData = window.GetListeningQuestion(parseInt(level, 10))
+      const questionData = window.GetListeningQuestion(
+        parseInt(selectedLevel, 10)
+      )
       if (!questionData) {
         throw new Error('問題データを取得できませんでした。')
       }
       console.log('New question:', questionData)
       setCurrentQuestion(questionData)
-      setDisplayStep(1) // 最初のステップへ移行
     } catch (err) {
       console.error('Error fetching question:', err)
-      setError('問題の取得に失敗しました。')
       setCurrentQuestion(null)
-    } finally {
-      setIsLoading(false)
     }
-  }, [level]) // levelが変わったら関数を再生成
+  }, [selectedLevel]) // selectedLevelが変わったら関数を再生成
 
-  // コンポーネントマウント時とレベル変更時に最初の問題を取得
   useEffect(() => {
-    fetchQuestion()
-  }, [fetchQuestion]) // fetchQuestion (levelに依存) が変わったら実行
+    if (progress === 0) return
 
-  // displayStep が変更されたら、表示と読み上げ処理を実行
-  useEffect(() => {
-    // ステップが 0 または 5以上(完了後) または問題がない場合は何もしない
-    if (
-      isListeningStarted === false ||
-      displayStep === 0 ||
-      displayStep > 4 ||
-      !currentQuestion
-    )
-      return
+    let timerId = null
 
-    const processCurrentStep = async () => {
+    const handleProgress = async () => {
       try {
-        let textToSpeak = ''
-        let lang = ''
-        let nextStep = displayStep + 1
-
-        switch (displayStep) {
-          case 1:
-            if (currentQuestion.en) {
-              setVisibility(prev => ({ ...prev, en: true }))
-              textToSpeak = currentQuestion.en
-              lang = 'en-US'
-            }
-            break
-          case 2:
-            if (currentQuestion.jp) {
-              setVisibility(prev => ({ ...prev, jp: true }))
-              textToSpeak = currentQuestion.jp
-              lang = 'ja-JP'
-            }
-            break
-          case 3:
-            if (currentQuestion.en2) {
-              setVisibility(prev => ({ ...prev, en2: true }))
-              textToSpeak = currentQuestion.en2
-              lang = 'en-US'
-            }
-            break
-          case 4:
-            if (currentQuestion.jp2) {
-              setVisibility(prev => ({ ...prev, jp2: true }))
-              textToSpeak = currentQuestion.jp2
-              lang = 'ja-JP'
-            }
-            break
-          default: // 完了状態にする
-            // 想定外のステップ
-            console.warn('Invalid display step:', displayStep)
-            setDisplayStep(5)
-            return
-        }
-
-        // テキストがあれば読み上げ、完了を待つ
-        if (textToSpeak && lang) {
-          await tts(textToSpeak, lang, volume, isSoundEnabled)
+        if (isSoundEnabled) {
+          if (progress === 1) {
+            await tts(currentQuestion.en, 'en-US', volume, isSoundEnabled)
+            setProgress(2)
+          } else if (progress === 2) {
+            await tts(currentQuestion.jp, 'ja-JP', volume, isSoundEnabled)
+            setProgress(3)
+          } else if (progress === 3) {
+            await tts(currentQuestion.en2, 'en-US', volume, isSoundEnabled)
+            setProgress(4)
+          } else if (progress === 4) {
+            await tts(currentQuestion.jp2, 'ja-JP', volume, isSoundEnabled)
+            fetchQuestion()
+            setTimes(times + 1)
+            setProgress(1)
+          }
         } else {
-          console.log(`Step ${displayStep}: No text to speak or invalid lang.`)
+          timerId = setTimeout(() => {
+            if (progress === 1) {
+              setProgress(2)
+            } else if (progress === 2) {
+              setProgress(3)
+            } else if (progress === 3) {
+              setProgress(4)
+            } else if (progress === 4) {
+              fetchQuestion()
+              setTimes(times + 1)
+              setProgress(1)
+            }
+          }, 3000)
         }
-
-        // 次のステップへ (エラーがなければ)
-        setDisplayStep(nextStep)
-      } catch (ttsError) {
-        console.error(`TTS Error at step ${displayStep}:`, ttsError)
-        // TTSエラーが発生した場合でも次のステップに進むか、処理を中断するか選択できます
-        // ここでは、エラーが発生しても次のステップに進むようにしています
-        setDisplayStep(prevStep => prevStep + 1)
+      } catch (error) {
+        console.error('TTS エラー:', error)
       }
     }
 
-    processCurrentStep()
+    handleProgress()
 
-    // クリーンアップ関数: displayStepが変わる前 or アンマウント時に読み上げをキャンセル
     return () => {
-      window.speechSynthesis.cancel()
+      if (timerId) {
+        clearTimeout(timerId)
+      }
     }
-  }, [displayStep, currentQuestion, volume, isSoundEnabled]) // 依存配列
+  }, [progress, currentQuestion, isSoundEnabled])
 
-  // 次の問題へ進む処理
-  const handleNextQuestion = () => {
-    fetchQuestion() // 新しい問題を取得（これによりuseEffectがトリガーされ、ステップがリセットされる）
+  // レベルを変えたらリセット
+  useEffect(() => {
+    if (progress === 0) return
+    setTimes(0)
+    setProgress(0)
+  }, [selectedLevel])
+
+  let content = null
+
+  if (progress === 0) {
+    content = <button onClick={handleStart}>リスニング開始</button>
+  } else if (progress === 1) {
+    content = (
+      <>
+        <div className='listening-content'>
+          <div className='number-area'>{times}回目</div>
+          <div className='en-area'>{currentQuestion.en}</div>
+          <div className='jp-area' onClick={() => setProgress(2)}>
+            ?
+          </div>
+          <div className='en2-area'>?</div>
+          <div className='jp2-area'>?</div>
+        </div>
+      </>
+    )
+  } else if (progress === 2) {
+    content = (
+      <>
+        <div className='listening-content'>
+          <div className='number-area'>{times}回目</div>
+          <div className='en-area'>{currentQuestion.en}</div>
+          <div className='jp-area'>{currentQuestion.jp}</div>
+          <div className='en2-area' onClick={() => setProgress(3)}>
+            ?
+          </div>
+          <div className='jp2-area'>?</div>
+        </div>
+      </>
+    )
+  } else if (progress === 3) {
+    content = (
+      <>
+        <div className='listening-content'>
+          <div className='number-area'>{times}回目</div>
+          <div className='en-area'>{currentQuestion.en}</div>
+          <div className='jp-area'>{currentQuestion.jp}</div>
+          <div className='en2-area'>{currentQuestion.en2}</div>
+          <div className='jp2-area' onClick={() => setProgress(4)}>
+            ?
+          </div>
+        </div>
+      </>
+    )
+  } else if (progress === 4) {
+    content = (
+      <>
+        <div className='listening-content'>
+          <div className='number-area'>{times}回目</div>
+          <div className='en-area'>{currentQuestion.en}</div>
+          <div className='jp-area'>{currentQuestion.jp}</div>
+          <div className='en2-area'>{currentQuestion.en2}</div>
+          <div className='jp2-area'>{currentQuestion.jp2}</div>
+        </div>
+      </>
+    )
   }
-
-  // // 今は未使用後で使う
-  // // 除外処理
-  // const handleExclude = () => {
-  //   if (currentQuestion && currentQuestion.id !== undefined) {
-  //     try {
-  //       addExcludedWordId(String(currentQuestion.id))
-  //       window.AddStorage(currentQuestion.id) // WASM側にも通知
-  //       console.log(`Excluded word ID: ${currentQuestion.id}`)
-  //       // 除外したらすぐに次の問題へ
-  //       fetchQuestion()
-  //     } catch (error) {
-  //       console.error('Error excluding word:', error)
-  //       alert('単語の除外処理中にエラーが発生しました。')
-  //     }
-  //   } else {
-  //     console.warn(
-  //       'Cannot exclude: currentQuestion or currentQuestion.id is missing.'
-  //     )
-  //   }
-  // }
 
   return (
     <>
-      <div className='listening-container'>
-        {!isListeningStarted ? (
-          <button onClick={handleStartListening}>ヒアリング開始</button>
-        ) : (
-          <>
-            <div className='listening-content'>
-              <div className='number-area'>{times}回目</div>
-              {visibility.en && (
-                <div className='en-area'>{currentQuestion.en}</div>
-              )}
-              {visibility.jp && (
-                <div className='jp-area'>{currentQuestion.jp}</div>
-              )}
-              {visibility.en2 && (
-                <div className='en2-area'>{currentQuestion.en2}</div>
-              )}
-              {visibility.jp2 && (
-                <div className='jp2-area'>{currentQuestion.jp2}</div>
-              )}
-            </div>
-          </>
-        )}
-      </div>
-      <VolumeControl
-        volume={volume}
-        onVolumeChange={onVolumeChange}
-        isSoundEnabled={isSoundEnabled}
-        onToggleSound={onToggleSound}
-      />
-      <LevelControl level={level} onLevelChange={onLevelChange} />
+      <div className='listening-container'>{content}</div>
+      <VolumeControl />
+      <LevelControl />
     </>
   )
 }
