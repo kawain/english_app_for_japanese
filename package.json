@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://kawain.github.io/english_app_for_japanese",
+  "homepage": "https://kawain.github.io/english_app_for_japanese/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
