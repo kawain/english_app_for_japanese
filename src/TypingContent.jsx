@@ -27,6 +27,7 @@ function TypingContent () {
   const typingAreaRef = useRef(null)
   // 英語か日本語かどちらを行っているか
   const whichRef = useRef(1)
+  const timerIdRef = useRef(null)
 
   // フォーカスをする useEffect
   useEffect(() => {
@@ -47,6 +48,7 @@ function TypingContent () {
     setQuestionTextArray2(array2)
     setTimes(prev => prev + 1)
     setProgress(1)
+    speakText(question.en2, 'en-US', volume, isSoundEnabled)
   }
 
   const handleKeyDown = e => {
@@ -75,7 +77,7 @@ function TypingContent () {
         setQuestionIndex2(result)
         setInputCharacters('')
         if (result >= questionTextArray2.length) {
-          setTimeout(() => {
+          timerIdRef.current = setTimeout(() => {
             const question = window.GetTypingQuestion()
             setQuestionText(question)
             const array1 = window.GetTypingQuestionSlice(1)
@@ -86,11 +88,21 @@ function TypingContent () {
             setQuestionIndex2(0)
             setTimes(prev => prev + 1)
             whichRef.current = 1
+            timerIdRef.current = null
+            speakText(question.en2, 'en-US', volume, isSoundEnabled)
           }, 500)
         }
       }
     }
   }
+
+  useEffect(() => {
+    return () => {
+      if (timerIdRef.current) {
+        clearTimeout(timerIdRef.current)
+      }
+    }
+  }, [])
 
   let content = null
 

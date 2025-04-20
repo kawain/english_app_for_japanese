@@ -6,6 +6,8 @@ import {
   clearExcludedWordIds
 } from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
+import { SiPagerduty } from 'react-icons/si'
+import { MdVerticalAlignTop } from 'react-icons/md'
 
 // 1ページあたりの表示件数
 const ITEMS_PER_PAGE = 100
@@ -71,7 +73,7 @@ function Home () {
           onClick={() => handlePageChange(i)}
           disabled={currentPage === i}
         >
-          {i}
+          <SiPagerduty /> {i}
         </button>
       )
     }
@@ -175,9 +177,10 @@ function Home () {
           <tbody>
             {displayedData.map(item => (
               <tr key={item.id}>
-                <td>{item.id}</td>
+                <td className='center-text'>{item.id}</td>
                 <td
                   style={{ cursor: 'pointer' }}
+                  role='button'
                   title='読み上げ'
                   onClick={() =>
                     speakText(item.en, 'en-US', volume, isSoundEnabled)
@@ -187,6 +190,7 @@ function Home () {
                 </td>
                 <td
                   className='show-or-hide'
+                  role='button'
                   style={{ opacity: showOffCell[item.id] ? 1 : 0 }}
                   onClick={() => {
                     handleShowOffCell(item.id)
@@ -200,7 +204,7 @@ function Home () {
                   {item.jp2}
                 </td>
                 <td className='center-text'>{item.level}</td>
-                <td>
+                <td className='center-text'>
                   <button
                     className='nowrap'
                     onClick={() => handleActionClick(item.id)}
@@ -221,6 +225,7 @@ function Home () {
                 if (window.confirm('本当に除外リストを全部クリアしますか？')) {
                   clearExcludedWordIds()
                   window.ClearStorage()
+                  setShowOffCell({})
                   setProcessingWordIds(new Set())
                   setAllData([])
                   setCurrentPage(1)
@@ -233,7 +238,9 @@ function Home () {
           </div>
         ) : null}
         <div style={{ textAlign: 'right' }}>
-          <button onClick={() => window.scrollTo(0, 0)}>ページ先頭</button>
+          <button onClick={() => window.scrollTo(0, 0)}>
+            <MdVerticalAlignTop /> ページ先頭
+          </button>
         </div>
       </>
     )

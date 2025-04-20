@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, use } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useAppContext, speakText } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
@@ -19,6 +19,10 @@ function ListeningContent () {
   // スタート
   const handleStart = () => {
     const question = fetchQuestion()
+    if (!question) {
+      console.error('Failed to fetch question.')
+      return
+    }
     setCurrentQuestion(question)
     setEn(question.en)
     setTimes(1)
@@ -59,6 +63,10 @@ function ListeningContent () {
 
   const handleNext = () => {
     const question = fetchQuestion()
+    if (!question) {
+      console.error('Failed to fetch question.')
+      return
+    }
     setCurrentQuestion(question)
     setEn(question.en)
     setJp('【日本語訳】')
@@ -92,7 +100,7 @@ function ListeningContent () {
 
     const getWaitTime = (text, lang) => {
       const baseTime = 2000
-      const timePerChar = lang === 'ja-JP' ? 400 : 150
+      const timePerChar = lang === 'ja-JP' ? 380 : 140
       return Math.max(baseTime, text.length * timePerChar)
     }
 
@@ -129,7 +137,7 @@ function ListeningContent () {
     return () => {
       clearTimeout(timerId)
     }
-  }, [step, progress, currentQuestion, autoPlay])
+  }, [step, progress, autoPlay])
 
   // レベルを変更
   useEffect(() => {

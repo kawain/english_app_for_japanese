@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react'
+import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
 import Storage, { getExcludedWordIds } from './Storage.jsx'
-import Home from './Home.jsx'
 import { FaHome } from 'react-icons/fa'
 import { MdHearing } from 'react-icons/md'
 import { MdOutlineQuiz } from 'react-icons/md'
@@ -19,6 +19,8 @@ function App () {
   const [currentContent, setCurrentContent] = useState('home')
   // 初期化処理中/済みフラグ
   const isInitializing = useRef(false)
+  // エラーメッセージ
+  const [errorMessage, setErrorMessage] = useState('')
 
   // コンテキストで管理する状態
   const [selectedLevel, setSelectedLevel] = useState('1')
@@ -80,6 +82,9 @@ function App () {
         console.log('WASM およびデータ初期化完了')
       } catch (error) {
         console.error('WASMのロードまたはデータ初期化に失敗しました:', error)
+        setErrorMessage(
+          'データ初期化に失敗しました。ブラウザをリロードしてください。'
+        )
         isInitializing.current = false
       }
     }
@@ -91,6 +96,9 @@ function App () {
   const renderContent = () => {
     if (!wasmInitialized) {
       return <div className='loading'>Loading data...</div>
+    }
+    if (errorMessage) {
+      return <div className='error'>{errorMessage}</div>
     }
     switch (currentContent) {
       case 'listening':
