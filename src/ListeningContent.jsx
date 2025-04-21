@@ -52,7 +52,6 @@ function ListeningContent () {
     } else {
       setTimes(prev => prev + 1)
     }
-    speak(question.en, 'en-US')
     setStep(1)
   }
 
@@ -163,8 +162,6 @@ function ListeningContent () {
           if (step === 1) {
             await speak(currentQuestion.en, 'en-US')
             await speak(currentQuestion.en, 'en-US')
-            // 少し考える時間
-            // await new Promise(resolve => setTimeout(resolve, 2000))
             if (!isCancelled) {
               setJp(currentQuestion.jp)
               setStep(2)
@@ -182,9 +179,9 @@ function ListeningContent () {
               setStep(4)
             }
           } else if (step === 4) {
-            await new Promise(resolve => setTimeout(resolve, 500))
             await speak(currentQuestion.jp2, 'ja-JP')
             await speak(currentQuestion.en2, 'en-US')
+            await new Promise(resolve => setTimeout(resolve, 1000))
             if (!isCancelled) {
               next()
             }
