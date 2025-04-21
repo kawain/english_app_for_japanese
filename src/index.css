@@ -8,11 +8,12 @@
 }
 
 :root {
-  --bg-color: rgb(230, 230, 230);
+  --bg-color: rgb(200, 200, 200);
   --text-color: rgb(26, 26, 26);
-  --focus-color: rgb(220, 220, 220);
+  --focus-color: rgb(180, 180, 180);
 
-  color-scheme: light dark; /* lightとdarkの両方をサポート */
+
+  color-scheme: light dark;
 }
 
 /* Dark mode variables */
@@ -51,6 +52,9 @@ nav {
   button {
     font-size: 0.7rem;
     padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 }
 
@@ -124,6 +128,23 @@ button:not([disabled]) {
       }
     }
   }
+
+  .pagination-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pagetop {
+    display: flex;
+    justify-content: end;
+  }
+
+  .pagetop button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 }
 
 /* Utility classes */
@@ -159,20 +180,27 @@ button:not([disabled]) {
 
   h2 {
     font-size: 3rem;
+    margin: 20px 0;
   }
 
   .quiz-content {
+    width: 100%;
+    border: 1px solid var(--text-color);
+    padding: 20px 50px;
+    border-radius: 5px;
+
+
     display: flex;
 
-    > div:first-child {
+    >div:first-child {
       /* Use > for direct children if intended */
-      width: 40%;
+      width: 50%;
       text-align: left;
       line-height: 2;
     }
 
-    > div:nth-child(2) {
-      width: 60%;
+    >div:nth-child(2) {
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -180,6 +208,7 @@ button:not([disabled]) {
     }
 
     .quiz-choices {
+
       /* Assuming .quiz-choices is inside one of the divs */
       input[type='radio'] {
         padding: 10px;
@@ -233,12 +262,14 @@ button:not([disabled]) {
     }
 
     .hiragana-area {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      font-weight: bold;
       padding: 10px 0;
     }
 
     .correct-char {
-      color: orangered;
+      color: var(--bg-color);
+      background-color: var(--text-color);
     }
 
     .kanji-area {
@@ -251,7 +282,22 @@ button:not([disabled]) {
 
       span {
         font-size: 1.5rem;
-        color: orangered;
+        color: var(--bg-color);
+        background-color: var(--text-color);
+      }
+    }
+
+    .button-container {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
       }
     }
   }
@@ -286,10 +332,12 @@ button:not([disabled]) {
       font-size: 2rem;
       padding: 5px 0;
     }
+
     .en2-area {
       font-size: 2rem;
       padding: 5px 0;
     }
+
     .jp2-area {
       font-size: 1.8rem;
       padding: 5px 0;
@@ -351,6 +399,7 @@ button:not([disabled]) {
   0% {
     background-color: yellow;
   }
+
   100% {
     background-color: transparent;
   }

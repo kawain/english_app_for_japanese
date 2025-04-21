@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useAppContext, speakText } from './App.jsx'
+import { useAppContext } from './App.jsx'
 import { addExcludedWordId } from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
@@ -9,7 +9,7 @@ import QuizChoices from './components/QuizChoices.jsx'
 const numberOfChoices = 10
 
 function WordQuizContent () {
-  const { selectedLevel, volume, isSoundEnabled } = useAppContext()
+  const { selectedLevel, speak } = useAppContext()
   // 0: 初期状態スタートボタン表示
   // 1: 問題と選択肢と回答するボタン表示
   // 2: 回答と次の問題ボタン表示
@@ -158,9 +158,9 @@ function WordQuizContent () {
 
     const textToSpeak = progress === 1 ? currentQuiz.en : currentQuiz.en2
     if (textToSpeak) {
-      speakText(textToSpeak, 'en-US', volume, isSoundEnabled)
+      speak(textToSpeak, 'en-US')
     }
-  }, [progress, currentQuiz, volume, isSoundEnabled])
+  }, [progress, currentQuiz])
 
   let content = null
 
@@ -177,9 +177,7 @@ function WordQuizContent () {
           className={isHighlighted ? 'highlight' : ''}
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() =>
-            speakText(currentQuiz.en, 'en-US', volume, isSoundEnabled)
-          }
+          onClick={() => speak(currentQuiz.en, 'en-US')}
         >
           {currentQuiz.en}
         </h2>
@@ -202,9 +200,7 @@ function WordQuizContent () {
         <h2
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() =>
-            speakText(currentQuiz.en, 'en-US', volume, isSoundEnabled)
-          }
+          onClick={() => speak(currentQuiz.en, 'en-US')}
         >
           {currentQuiz.en}
         </h2>
@@ -246,9 +242,7 @@ function WordQuizContent () {
                   className={isHighlighted ? 'highlight' : ''}
                   style={{ cursor: 'pointer' }}
                   title='読み上げ'
-                  onClick={() =>
-                    speakText(currentQuiz.en2, 'en-US', volume, isSoundEnabled)
-                  }
+                  onClick={() => speak(currentQuiz.en2, 'en-US')}
                 >
                   {currentQuiz.en2}
                 </p>

@@ -1,9 +1,18 @@
-import { createContext, useContext, useState, useEffect, useRef } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+  useCallback
+} from 'react'
 import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
 import Storage, { getExcludedWordIds } from './Storage.jsx'
+import { speakText, speakTextAsync, checkSyncOrAsync } from './utils/tts.js'
 import { FaHome } from 'react-icons/fa'
 import { MdHearing } from 'react-icons/md'
 import { MdOutlineQuiz } from 'react-icons/md'
@@ -24,8 +33,26 @@ function App () {
 
   // コンテキストで管理する状態
   const [selectedLevel, setSelectedLevel] = useState('1')
-  const [volume, setVolume] = useState(50)
+  const [volume, setVolume] = useState(30)
   const [isSoundEnabled, setIsSoundEnabled] = useState(false)
+
+  // speak関数
+  // ページ読み込み時に同期/非同期モードを決定
+  const syncOrAsyncMode = useMemo(() => checkSyncOrAsync(), [])
+  // モードに応じて適切なspeak関数を呼び出すヘルパー関数
+  const speak = useCallback(
+    async (text, lang) => {
+      if (syncOrAsyncMode === 'sync') {
+        speakText(text, lang, volume, isSoundEnabled)
+        // 同期でもPromiseを返すインターフェースに合わせる
+        return Promise.resolve()
+      } else {
+        // speakTextAsync は Promise を返す
+        return speakTextAsync(text, lang, volume, isSoundEnabled)
+      }
+    },
+    [syncOrAsyncMode, volume, isSoundEnabled]
+  )
 
   // レベル変更ハンドラ
   const handleLevelChange = newLevel => {
@@ -125,7 +152,9 @@ function App () {
         volume,
         handleVolumeChange,
         isSoundEnabled,
-        toggleSound
+        toggleSound,
+        speak,
+        syncOrAsyncMode
       }}
     >
       <div className='container'>
@@ -134,31 +163,36 @@ function App () {
             onClick={() => setCurrentContent('home')}
             disabled={!wasmInitialized || currentContent === 'home'}
           >
-            <FaHome /> ホーム
+            <FaHome />
+            <span>ホーム</span>
           </button>
           <button
             onClick={() => setCurrentContent('listening')}
             disabled={!wasmInitialized || currentContent === 'listening'}
           >
-            <MdHearing /> リスニング
+            <MdHearing />
+            <span>リスニング</span>
           </button>
           <button
             onClick={() => setCurrentContent('quiz')}
             disabled={!wasmInitialized || currentContent === 'quiz'}
           >
-            <MdOutlineQuiz /> 単語クイズ
+            <MdOutlineQuiz />
+            <span>単語クイズ</span>
           </button>
           <button
             onClick={() => setCurrentContent('typing')}
             disabled={!wasmInitialized || currentContent === 'typing'}
           >
-            <TiMessageTyping /> タイピング
+            <TiMessageTyping />
+            <span>タイピング</span>
           </button>
           <button
             onClick={() => setCurrentContent('storage')}
             disabled={!wasmInitialized || currentContent === 'storage'}
           >
-            <GrStorage /> ストレージ
+            <GrStorage />
+            <span>ストレージ</span>
           </button>
         </nav>
         <main>{renderContent()}</main>
@@ -174,54 +208,6 @@ export const useAppContext = () => {
     throw new Error('useAppContext must be used within an AppContext.Provider')
   }
   return context
-}
-
-export function speakText (text, lang, volumeLevel, isSoundEnabled) {
-  // 音声がオフならすぐに終了
-  if (!isSoundEnabled) {
-    console.log('Sound is disabled')
-    return
-  }
-  // ブラウザが読み上げをサポートしていない場合はすぐに終了
-  if (!window.speechSynthesis) {
-    console.log('Speech synthesis is not supported')
-    return
-  }
-  // textが空文字ならすぐに終了
-  if (!text) {
-    console.log('No text to speak')
-    return
-  }
-  // langが"ja-JP"か"en-US"以外はすぐに終了
-  if (lang !== 'ja-JP' && lang !== 'en-US') {
-    console.log('Unsupported language:', lang)
-    return
-  }
-  // volumeLevelが0ならすぐに終了
-  if (volumeLevel === 0) {
-    console.log('Volume is muted')
-    return
-  }
-  // OSがUbuntuでブラウザがfirefoxでlangが"ja-JP"ならすぐに終了
-  const userAgent = navigator.userAgent.toLowerCase()
-  const isUbuntu = userAgent.includes('ubuntu')
-  const isFirefox = userAgent.includes('firefox')
-
-  if (isUbuntu && isFirefox && lang === 'ja-JP') {
-    console.log(
-      'Skipping Japanese on Ubuntu Firefox due to potential compatibility issues.'
-    )
-    return
-  }
-
-  const utterance = new SpeechSynthesisUtterance(text)
-  utterance.lang = lang
-  utterance.rate = 1 // 速度（0.1～10）
-  utterance.pitch = 1 // ピッチ（0～2）
-  utterance.volume = Math.max(0, Math.min(1, volumeLevel / 100)) // 0-1の範囲に正規化
-
-  window.speechSynthesis.cancel()
-  window.speechSynthesis.speak(utterance)
 }
 
 export default App

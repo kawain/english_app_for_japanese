@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import { useAppContext, speakText } from './App.jsx'
+import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
+import { GrLinkPrevious } from "react-icons/gr";
+import { GrLinkNext } from "react-icons/gr";
 
 function TypingContent () {
-  const { volume, isSoundEnabled } = useAppContext()
+  const { speak } = useAppContext()
   // 0: 初期状態スタートボタン表示
   // 1: タイピング表示
   const [progress, setProgress] = useState(0)
@@ -35,8 +37,7 @@ function TypingContent () {
     typingAreaRef.current?.focus()
   }, [progress])
 
-  // タイピング開始
-  const handleStart = () => {
+  const next = (startFlag = false) => {
     // WASMの関数
     const question = window.GetTypingQuestion()
     setQuestionText(question)
@@ -48,7 +49,12 @@ function TypingContent () {
     setQuestionTextArray2(array2)
     setTimes(prev => prev + 1)
     setProgress(1)
-    speakText(question.en2, 'en-US', volume, isSoundEnabled)
+    speak(question.en2, 'en-US')
+  }
+
+  // タイピング開始
+  const handleStart = () => {
+    next(true)
   }
 
   const handleKeyDown = e => {
@@ -89,7 +95,7 @@ function TypingContent () {
             setTimes(prev => prev + 1)
             whichRef.current = 1
             timerIdRef.current = null
-            speakText(question.en2, 'en-US', volume, isSoundEnabled)
+            speak(question.en2, 'en-US')
           }, 500)
         }
       }
@@ -122,9 +128,7 @@ function TypingContent () {
           className='english-area'
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() =>
-            speakText(questionText.en2, 'en-US', volume, isSoundEnabled)
-          }
+          onClick={() => speak(questionText.en2, 'en-US')}
         >
           {Array.isArray(questionTextArray1) &&
             questionTextArray1.map((character, index) => (
@@ -153,6 +157,16 @@ function TypingContent () {
 
         <div className='key-area'>
           最後に押されたキー: <span>{pressedKey}</span>
+        </div>
+        <div className='button-container'>
+          <button>
+            <GrLinkPrevious />
+            <span>前の問題</span>
+          </button>
+          <button onClick={handleStart}>
+            <span>次の問題</span>
+            <GrLinkNext />
+          </button>
         </div>
       </div>
     )

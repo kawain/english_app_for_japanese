@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useAppContext, speakText } from './App.jsx'
+import { useAppContext } from './App.jsx'
 import {
   addExcludedWordId,
   removeExcludedWordId,
@@ -13,7 +13,7 @@ import { MdVerticalAlignTop } from 'react-icons/md'
 const ITEMS_PER_PAGE = 100
 
 function Home () {
-  const { volume, isSoundEnabled } = useAppContext()
+  const { speak } = useAppContext()
   // WASMから取得した全データ
   const [allData, setAllData] = useState([])
   // 選択されたレベル（ページネーションでレベルを維持するため）
@@ -73,7 +73,8 @@ function Home () {
           onClick={() => handlePageChange(i)}
           disabled={currentPage === i}
         >
-          <SiPagerduty /> {i}
+          <SiPagerduty />
+          <span>{i}</span>
         </button>
       )
     }
@@ -182,9 +183,7 @@ function Home () {
                   style={{ cursor: 'pointer' }}
                   role='button'
                   title='読み上げ'
-                  onClick={() =>
-                    speakText(item.en, 'en-US', volume, isSoundEnabled)
-                  }
+                  onClick={() => speak(item.en, 'en-US')}
                 >
                   {item.en}
                 </td>
@@ -237,9 +236,10 @@ function Home () {
             </button>
           </div>
         ) : null}
-        <div style={{ textAlign: 'right' }}>
+        <div className='pagetop'>
           <button onClick={() => window.scrollTo(0, 0)}>
-            <MdVerticalAlignTop /> ページ先頭
+            <MdVerticalAlignTop />
+            <span>ページ先頭</span>
           </button>
         </div>
       </>
