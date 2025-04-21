@@ -16,6 +16,7 @@ function ListeningContent () {
   const [jp2, setJp2] = useState('【例文の日本語訳】')
   const [step, setStep] = useState(0)
   const [autoPlay, setAutoPlay] = useState(false)
+  const [reviewArray, setReviewArray] = useState([])
 
   // 問題を取得する関数 (useCallbackでメモ化)
   const fetchQuestion = useCallback(() => {
@@ -26,6 +27,7 @@ function ListeningContent () {
       if (!questionData) {
         throw new Error('問題データを取得できませんでした。')
       }
+      setReviewArray(prev => [...prev, questionData])
       return questionData
     } catch (err) {
       console.error('Error fetching question:', err)
@@ -160,8 +162,9 @@ function ListeningContent () {
           // 現在のstepに応じた「次のアクション」（読み上げ＋state更新）を実行
           if (step === 1) {
             await speak(currentQuestion.en, 'en-US')
+            await speak(currentQuestion.en, 'en-US')
             // 少し考える時間
-            await new Promise(resolve => setTimeout(resolve, 3000))
+            // await new Promise(resolve => setTimeout(resolve, 2000))
             if (!isCancelled) {
               setJp(currentQuestion.jp)
               setStep(2)
@@ -174,8 +177,6 @@ function ListeningContent () {
             }
           } else if (step === 3) {
             await speak(currentQuestion.en2, 'en-US')
-            // 少し考える時間
-            await new Promise(resolve => setTimeout(resolve, 3000))
             if (!isCancelled) {
               setJp2(currentQuestion.jp2)
               setStep(4)
@@ -183,6 +184,7 @@ function ListeningContent () {
           } else if (step === 4) {
             await new Promise(resolve => setTimeout(resolve, 500))
             await speak(currentQuestion.jp2, 'ja-JP')
+            await speak(currentQuestion.en2, 'en-US')
             if (!isCancelled) {
               next()
             }
@@ -306,6 +308,54 @@ function ListeningContent () {
   return (
     <>
       <div className='listening-container'>{content}</div>
+      {reviewArray.length > 0 ? (
+        <div className='review-container'>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>English</th>
+                <th>Japanese</th>
+                <th>Example (EN/JA)</th>
+                <th>Level</th>
+                <th className='nowrap'>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reviewArray.map(item => (
+                <tr key={item.id}>
+                  <td className='center-text'>{item.id}</td>
+                  <td>{item.en}</td>
+                  <td>{item.jp}</td>
+                  <td>
+                    {item.en2}
+                    <br />
+                    {item.jp2}
+                  </td>
+                  <td className='center-text'>{item.level}</td>
+                  <td className='center-text'>
+                    <button
+                      className='nowrap'
+                      onClick={() => {
+                        addExcludedWordId(String(currentQuestion.id))
+                        window.AddStorage(currentQuestion.id)
+                        const newArray = reviewArray.filter(
+                          obj => obj.id !== item.id
+                        )
+                        setReviewArray(newArray)
+                        alert('ストレージに追加しました')
+                      }}
+                    >
+                      除外
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+
       <VolumeControl />
       <LevelControl />
     </>

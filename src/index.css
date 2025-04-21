@@ -354,6 +354,25 @@ button:not([disabled]) {
   }
 }
 
+.review-container {
+  margin-top: 500px;
+
+  button {
+    padding: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--text-color);
+    }
+  }
+}
+
 /* Storage */
 .storage-container {
   margin: 20px 0;
