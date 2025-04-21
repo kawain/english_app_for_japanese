@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "wasm": "cd wasm && GOOS=js GOARCH=wasm go build -o ../public/main.wasm",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

@@ -194,7 +194,6 @@ var RomajiMap = map[string][]string{
 type Typing struct {
 	appData           *objects.AppData
 	FilteredArray     []objects.Datum
-	index             int
 	CurrentData       *objects.Datum
 	CurrentDataArrayE []string
 	CurrentDataArrayJ []string
@@ -203,15 +202,17 @@ type Typing struct {
 func (t *Typing) Init(appData *objects.AppData) {
 	t.appData = appData
 	t.FilteredArray = objects.ShuffleCopy(t.appData.Data)
-	t.index = 0
 }
 
-func (t *Typing) Next() {
-	t.CurrentData = &t.FilteredArray[t.index]
-	t.index++
-	if t.index >= len(t.FilteredArray) {
-		t.index = 0
+func (t *Typing) SetData(index int) {
+	allQuestions := len(t.FilteredArray)
+	if index < 0 {
+		index = 0
 	}
+	if index >= allQuestions {
+		index = allQuestions - 1
+	}
+	t.CurrentData = &t.FilteredArray[index]
 	t.createCurrentDataArrayE()
 	t.createCurrentDataArrayJ()
 }

@@ -6,22 +6,37 @@ import (
 	"syscall/js"
 )
 
+func CreateTyping(this js.Value, args []js.Value) any {
+	consoleLog.Invoke(js.ValueOf("Go関数(CreateTyping)が呼び出されました"))
+
+	if appData.Data == nil {
+		consoleLog.Invoke(js.ValueOf("Go関数(CreateTyping)エラー: appDataが初期化されていません。CreateObjectsを先に呼び出してください。"))
+		return nil
+	}
+	typingData.Init(&appData)
+
+	return js.ValueOf(len(typingData.FilteredArray))
+}
+
 // GetTypingQuestion
 func GetTypingQuestion(this js.Value, args []js.Value) any {
 	consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)が呼び出されました"))
 
-	if typingData.FilteredArray == nil {
-		if appData.Data == nil {
-			consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)エラー: appDataが初期化されていません。CreateObjectsを先に呼び出してください。"))
-			return nil
-		}
-		typingData.Init(&appData)
+	if len(args) < 1 {
+		return nil
 	}
 
-	// 次の問題へ(最初の問題含む)
-	typingData.Next()
-	if typingData.CurrentData == nil {
-		consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)エラー: 次の問題の取得に失敗しました。データがない可能性があります。"))
+	if args[0].Type() != js.TypeNumber {
+		consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestionSlice)エラー: 引数0 (mode) は数値である必要があります。"))
+		return nil
+	}
+
+	index := args[0].Int()
+
+	// 問題設定
+	typingData.SetData(index)
+	if typingData.CurrentData == nil && typingData.CurrentDataArrayE == nil && typingData.CurrentDataArrayJ == nil {
+		consoleLog.Invoke(js.ValueOf("Go関数(GetTypingQuestion)エラー: 問題の取得に失敗しました。データがない可能性があります。"))
 		return nil
 	}
 

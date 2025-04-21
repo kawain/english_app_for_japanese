@@ -1,16 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
-import { GrLinkPrevious } from "react-icons/gr";
-import { GrLinkNext } from "react-icons/gr";
+import { GrLinkPrevious } from 'react-icons/gr'
+import { GrLinkNext } from 'react-icons/gr'
 
 function TypingContent () {
   const { speak } = useAppContext()
   // 0: 初期状態スタートボタン表示
   // 1: タイピング表示
   const [progress, setProgress] = useState(0)
-  // 回数
-  const [times, setTimes] = useState(0)
+  // 最大問題数（インデックスの数）
+  const [maxIndex, setMaxIndex] = useState(0)
+  // 今の問題のインデックス
+  const [currentIndex, setCurrentIndex] = useState(0)
   // 表示用の問題の文字列(日本語は漢字)
   const [questionText, setQuestionText] = useState({})
   // 問題の文字配列(英語)
@@ -31,15 +33,24 @@ function TypingContent () {
   const whichRef = useRef(1)
   const timerIdRef = useRef(null)
 
-  // フォーカスをする useEffect
+  // WASMの関数で問題のセットアップと問題数を返す
+  useEffect(() => {
+    const result = window.CreateTyping()
+    console.log(result)
+    setMaxIndex(result)
+  }, [])
+
+  // フォーカスをする
   useEffect(() => {
     if (progress === 0) return
     typingAreaRef.current?.focus()
   }, [progress])
 
-  const next = (startFlag = false) => {
+  // 問題配列から任意のインデックスで問題を抽出
+  const selectQuestion = (index, startFlag = false) => {
+    setCurrentIndex(index)
     // WASMの関数
-    const question = window.GetTypingQuestion()
+    const question = window.GetTypingQuestion(index)
     setQuestionText(question)
     // WASMの関数(英語の配列)
     const array1 = window.GetTypingQuestionSlice(1)
@@ -47,14 +58,42 @@ function TypingContent () {
     // WASMの関数(日本語の配列)
     const array2 = window.GetTypingQuestionSlice(2)
     setQuestionTextArray2(array2)
-    setTimes(prev => prev + 1)
-    setProgress(1)
+
+    setQuestionIndex1(0)
+    setQuestionIndex2(0)
+    setInputCharacters('')
+    setPressedKey('')
+
+    if (startFlag) {
+      setProgress(1)
+    }
+
     speak(question.en2, 'en-US')
   }
 
   // タイピング開始
   const handleStart = () => {
-    next(true)
+    selectQuestion(0, true)
+  }
+
+  const handlePrevious = () => {
+    let index = currentIndex
+    if (index > 0) {
+      index--
+      selectQuestion(index)
+    } else {
+      selectQuestion(maxIndex - 1)
+    }
+  }
+
+  const handleNext = () => {
+    let index = currentIndex
+    if (index < maxIndex - 1) {
+      index++
+      selectQuestion(index)
+    } else {
+      selectQuestion(0)
+    }
   }
 
   const handleKeyDown = e => {
@@ -84,18 +123,9 @@ function TypingContent () {
         setInputCharacters('')
         if (result >= questionTextArray2.length) {
           timerIdRef.current = setTimeout(() => {
-            const question = window.GetTypingQuestion()
-            setQuestionText(question)
-            const array1 = window.GetTypingQuestionSlice(1)
-            setQuestionTextArray1(array1)
-            const array2 = window.GetTypingQuestionSlice(2)
-            setQuestionTextArray2(array2)
-            setQuestionIndex1(0)
-            setQuestionIndex2(0)
-            setTimes(prev => prev + 1)
             whichRef.current = 1
+            selectQuestion(currentIndex + 1)
             timerIdRef.current = null
-            speak(question.en2, 'en-US')
           }, 500)
         }
       }
@@ -122,7 +152,9 @@ function TypingContent () {
         tabIndex={0}
         onKeyDown={handleKeyDown}
       >
-        <div className='number-area'>{times}回目</div>
+        <div className='number-area'>
+          {currentIndex + 1} / {maxIndex} 回目
+        </div>
 
         <div
           className='english-area'
@@ -159,11 +191,11 @@ function TypingContent () {
           最後に押されたキー: <span>{pressedKey}</span>
         </div>
         <div className='button-container'>
-          <button>
+          <button onClick={handlePrevious}>
             <GrLinkPrevious />
             <span>前の問題</span>
           </button>
-          <button onClick={handleStart}>
+          <button onClick={handleNext}>
             <span>次の問題</span>
             <GrLinkNext />
           </button>

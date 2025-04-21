@@ -193,6 +193,7 @@ func main() {
 	js.Global().Set("ClearStorage", js.FuncOf(ClearStorage))
 	js.Global().Set("CreateQuiz", js.FuncOf(CreateQuiz))
 	js.Global().Set("CreateQuizChoices", js.FuncOf(CreateQuizChoices))
+	js.Global().Set("CreateTyping", js.FuncOf(CreateTyping))
 	js.Global().Set("GetTypingQuestion", js.FuncOf(GetTypingQuestion))
 	js.Global().Set("GetTypingQuestionSlice", js.FuncOf(GetTypingQuestionSlice))
 	js.Global().Set("KeyDown", js.FuncOf(KeyDown))
