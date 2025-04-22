@@ -3,6 +3,7 @@ function getEnvironmentFlags () {
   return {
     isUbuntu: userAgent.includes('ubuntu'),
     isWindows: userAgent.includes('windows'),
+    isWindows10: userAgent.includes('windows nt 10.0'),
     isMac: userAgent.includes('macintosh'),
     isChrome: userAgent.includes('chrome') && !userAgent.includes('edg'),
     isSafari: userAgent.includes('safari') && !userAgent.includes('chrome'),
@@ -48,20 +49,11 @@ export function speakText (text, lang, volumeLevel, isSoundEnabled) {
     return
   }
 
-  const env = getEnvironmentFlags()
-  const isJpChromeEdge =
-    lang === 'ja-JP' && env.isWindows && (env.isChrome || env.isEdge)
-
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = lang
   utterance.pitch = 1
   utterance.rate = 1
   utterance.volume = Math.max(0, Math.min(1, volumeLevel / 100))
-
-  if (isJpChromeEdge) {
-    utterance.volume = Math.max(0, Math.min(1, (volumeLevel * 2.3) / 100))
-  }
-
   window.speechSynthesis.cancel()
   window.speechSynthesis.speak(utterance)
 }
@@ -73,7 +65,7 @@ export async function speakTextAsync (text, lang, volumeLevel, isSoundEnabled) {
 
   const env = getEnvironmentFlags()
   const isJpChromeEdge =
-    lang === 'ja-JP' && env.isWindows && (env.isChrome || env.isEdge)
+    lang === 'ja-JP' && env.isWindows10 && (env.isChrome || env.isEdge)
 
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = lang
@@ -82,7 +74,7 @@ export async function speakTextAsync (text, lang, volumeLevel, isSoundEnabled) {
   utterance.volume = Math.max(0, Math.min(1, volumeLevel / 100))
 
   if (isJpChromeEdge) {
-    utterance.volume = Math.max(0, Math.min(1, (volumeLevel * 2.3) / 100))
+    utterance.volume = Math.max(0, Math.min(1, (volumeLevel * 2) / 100))
   }
 
   return new Promise(resolve => {
