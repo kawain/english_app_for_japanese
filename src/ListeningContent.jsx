@@ -5,8 +5,7 @@ import LevelControl from './components/LevelControl.jsx'
 import { addExcludedWordId } from './Storage.jsx'
 
 function ListeningContent () {
-  const { selectedLevel, isSoundEnabled, speak, syncOrAsyncMode } =
-    useAppContext()
+  const { selectedLevel, isSoundEnabled, speak } = useAppContext()
   const [progress, setProgress] = useState(0)
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -17,6 +16,11 @@ function ListeningContent () {
   const [step, setStep] = useState(0)
   const [autoPlay, setAutoPlay] = useState(false)
   const [reviewArray, setReviewArray] = useState([])
+  // WakeLock は画面起動ロック API のインターフェイスで、
+  // アプリケーションが動作し続ける必要があるときに、
+  // 端末の画面が暗くなったりロックされたりすることを防ぐためのものです。
+  const [wakeLock, setWakeLock] = useState(null)
+  const [isLocked, setIsLocked] = useState(false)
 
   // 問題を取得する関数 (useCallbackでメモ化)
   const fetchQuestion = useCallback(() => {
@@ -59,40 +63,61 @@ function ListeningContent () {
     next(true)
   }
 
-  const handleEnClick = () => {
+  const handleEnClick = async () => {
     if (currentQuestion) {
       setEn(currentQuestion.en)
-      speak(currentQuestion.en, 'en-US')
+      await speak(currentQuestion.en, 'en-US')
       setStep(1)
     }
   }
 
-  const handleJpClick = () => {
+  const handleJpClick = async () => {
     if (currentQuestion) {
       setJp(currentQuestion.jp)
-      speak(currentQuestion.jp, 'ja-JP')
+      await speak(currentQuestion.jp, 'ja-JP')
       setStep(2)
     }
   }
 
-  const handleEn2Click = () => {
+  const handleEn2Click = async () => {
     if (currentQuestion) {
       setEn2(currentQuestion.en2)
-      speak(currentQuestion.en2, 'en-US')
+      await speak(currentQuestion.en2, 'en-US')
       setStep(3)
     }
   }
 
-  const handleJp2Click = () => {
+  const handleJp2Click = async () => {
     if (currentQuestion) {
       setJp2(currentQuestion.jp2)
-      speak(currentQuestion.jp2, 'ja-JP')
+      await speak(currentQuestion.jp2, 'ja-JP')
       setStep(4)
     }
   }
 
   const handleNext = () => {
     next()
+  }
+
+  const handleAutoPlay = async () => {
+    if (!isLocked) {
+      try {
+        const lock = await navigator.wakeLock.request('screen')
+        setWakeLock(lock)
+        setIsLocked(true)
+        console.log('Screen Wake Lock acquired')
+      } catch (err) {
+        console.log(`${err.name}, ${err.message}`)
+      }
+    } else {
+      if (wakeLock) {
+        await wakeLock.release()
+        setWakeLock(null)
+        setIsLocked(false)
+        console.log('Screen Wake Lock released')
+      }
+    }
+    setAutoPlay(prev => !prev)
   }
 
   useEffect(() => {
@@ -105,102 +130,39 @@ function ListeningContent () {
     )
       return
 
-    let isCancelled = false
-    let timerId = null
-
-    // 同期モード用の次のステップに進む関数
-    const proceedToNextStepSync = () => {
-      if (isCancelled) return
-      // 次のステップのUI更新と読み上げ開始
-      if (step === 1) {
-        setJp(currentQuestion.jp)
-        speak(currentQuestion.jp, 'ja-JP')
-        setStep(2)
-      } else if (step === 2) {
-        setEn2(currentQuestion.en2)
-        speak(currentQuestion.en2, 'en-US')
-        setStep(3)
-      } else if (step === 3 && currentQuestion.jp2) {
-        setJp2(currentQuestion.jp2)
-        speak(currentQuestion.jp2, 'ja-JP')
-        setStep(4)
-      } else if (step === 4) {
-        next()
-      }
-    }
-
-    if (syncOrAsyncMode === 'sync') {
-      // 同期モード: setTimeoutで待機
-      const getWaitTime = (text, lang) => {
-        const baseTime = 2000
-        const timePerChar = lang === 'ja-JP' ? 300 : 100
-        // テキストがない場合のデフォルト待機時間
-        if (!text) return baseTime
-        return Math.max(baseTime, text.length * timePerChar)
-      }
-
-      let waitTime
-      // 現在のステップの *読み上げが終わるまでの* 時間を見積もる
-      if (step === 1 && currentQuestion.en)
-        waitTime = getWaitTime(currentQuestion.en, 'en-US')
-      else if (step === 2 && currentQuestion.jp)
-        waitTime = getWaitTime(currentQuestion.jp, 'ja-JP')
-      else if (step === 3 && currentQuestion.en2)
-        waitTime = getWaitTime(currentQuestion.en2, 'en-US')
-      else if (step === 4 && currentQuestion.jp2)
-        waitTime = getWaitTime(currentQuestion.jp2, 'ja-JP')
-      else return // 待機時間が計算できない場合は終了
-
-      timerId = setTimeout(proceedToNextStepSync, waitTime)
-    } else {
-      // 非同期モード: speakの完了を待って次のステップへ
-      const runAsyncSequence = async () => {
-        if (isCancelled) return
-        try {
-          // このeffectはstepが変わった後に実行される
-          // 現在のstepに応じた「次のアクション」（読み上げ＋state更新）を実行
-          if (step === 1) {
-            await speak(currentQuestion.en, 'en-US')
-            await speak(currentQuestion.en, 'en-US')
-            if (!isCancelled) {
-              setJp(currentQuestion.jp)
-              setStep(2)
-            }
-          } else if (step === 2) {
-            await speak(currentQuestion.jp, 'ja-JP')
-            if (!isCancelled) {
-              setEn2(currentQuestion.en2)
-              setStep(3)
-            }
-          } else if (step === 3) {
-            await speak(currentQuestion.en2, 'en-US')
-            if (!isCancelled) {
-              setJp2(currentQuestion.jp2)
-              setStep(4)
-            }
-          } else if (step === 4) {
-            await speak(currentQuestion.jp2, 'ja-JP')
-            await speak(currentQuestion.en2, 'en-US')
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            if (!isCancelled) {
-              next()
-            }
-          }
-        } catch (error) {
-          console.error('Error in async auto play sequence:', error)
-          // エラーが発生した場合、自動再生を停止するなどの処理を追加可能
-          if (!isCancelled) setAutoPlay(false)
+    // 非同期モード: speakの完了を待って次のステップへ
+    const runAsyncSequence = async () => {
+      try {
+        // このeffectはstepが変わった後に実行される
+        // 現在のstepに応じた「次のアクション」（読み上げ＋state更新）を実行
+        if (step === 1) {
+          await speak(currentQuestion.en, 'en-US')
+          await speak(currentQuestion.en, 'en-US')
+          setJp(currentQuestion.jp)
+          setStep(2)
+        } else if (step === 2) {
+          await speak(currentQuestion.jp, 'ja-JP')
+          setEn2(currentQuestion.en2)
+          setStep(3)
+        } else if (step === 3) {
+          await speak(currentQuestion.en2, 'en-US')
+          setJp2(currentQuestion.jp2)
+          setStep(4)
+        } else if (step === 4) {
+          await speak(currentQuestion.jp2, 'ja-JP')
+          await speak(currentQuestion.en2, 'en-US')
+          await new Promise(resolve => setTimeout(resolve, 1000))
+          next()
         }
+      } catch (error) {
+        console.error('Error in async auto play sequence:', error)
       }
-      // 非同期シーケンスを開始
-      runAsyncSequence()
     }
+    // 非同期シーケンスを開始
+    runAsyncSequence()
 
     // クリーンアップ関数
     return () => {
-      isCancelled = true
-      clearTimeout(timerId)
-      // コンポーネントのアンマウント時や依存配列の値が変わる前に
       // 進行中の読み上げがあればキャンセルする
       if (window.speechSynthesis && window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel()
@@ -211,7 +173,6 @@ function ListeningContent () {
     progress,
     autoPlay,
     currentQuestion,
-    syncOrAsyncMode,
     speak,
     isSoundEnabled
   ])
@@ -280,7 +241,7 @@ function ListeningContent () {
           <button onClick={handleNext} disabled={autoPlay}>
             次の問題へ
           </button>
-          <button onClick={() => setAutoPlay(prev => !prev)}>
+          <button onClick={handleAutoPlay} disabled={!isSoundEnabled}>
             {autoPlay ? '自動再生をオフ' : '自動再生をオン'}
           </button>
           <button

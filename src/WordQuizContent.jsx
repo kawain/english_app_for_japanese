@@ -155,10 +155,16 @@ function WordQuizContent () {
   // クイズ内容の読み上げのための TTS
   useEffect(() => {
     if (!currentQuiz || progress === 0) return
-
     const textToSpeak = progress === 1 ? currentQuiz.en : currentQuiz.en2
     if (textToSpeak) {
-      speak(textToSpeak, 'en-US')
+      const speakText = async () => {
+        try {
+          await speak(textToSpeak, 'en-US')
+        } catch (error) {
+          console.error('Error in speak:', error)
+        }
+      }
+      speakText()
     }
   }, [progress, currentQuiz])
 
@@ -177,7 +183,7 @@ function WordQuizContent () {
           className={isHighlighted ? 'highlight' : ''}
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() => speak(currentQuiz.en, 'en-US')}
+          onClick={async () => await speak(currentQuiz.en, 'en-US')}
         >
           {currentQuiz.en}
         </h2>
@@ -200,7 +206,7 @@ function WordQuizContent () {
         <h2
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() => speak(currentQuiz.en, 'en-US')}
+          onClick={async () => await speak(currentQuiz.en, 'en-US')}
         >
           {currentQuiz.en}
         </h2>
@@ -242,7 +248,7 @@ function WordQuizContent () {
                   className={isHighlighted ? 'highlight' : ''}
                   style={{ cursor: 'pointer' }}
                   title='読み上げ'
-                  onClick={() => speak(currentQuiz.en2, 'en-US')}
+                  onClick={async () => await speak(currentQuiz.en2, 'en-US')}
                 >
                   {currentQuiz.en2}
                 </p>

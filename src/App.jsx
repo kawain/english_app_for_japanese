@@ -12,7 +12,7 @@ import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
 import Storage, { getExcludedWordIds } from './Storage.jsx'
-import { speakText, speakTextAsync, checkSyncOrAsync } from './utils/tts.js'
+import { speakTextAsync } from './utils/tts.js'
 import { FaHome } from 'react-icons/fa'
 import { MdHearing } from 'react-icons/md'
 import { MdOutlineQuiz } from 'react-icons/md'
@@ -37,21 +37,12 @@ function App () {
   const [isSoundEnabled, setIsSoundEnabled] = useState(false)
 
   // speak関数
-  // ページ読み込み時に同期/非同期モードを決定
-  const syncOrAsyncMode = useMemo(() => checkSyncOrAsync(), [])
-  // モードに応じて適切なspeak関数を呼び出すヘルパー関数
   const speak = useCallback(
     async (text, lang) => {
-      if (syncOrAsyncMode === 'sync') {
-        speakText(text, lang, volume, isSoundEnabled)
-        // 同期でもPromiseを返すインターフェースに合わせる
-        return Promise.resolve()
-      } else {
-        // speakTextAsync は Promise を返す
-        return speakTextAsync(text, lang, volume, isSoundEnabled)
-      }
+      // speakTextAsync は Promise を返す
+      return speakTextAsync(text, lang, volume, isSoundEnabled)
     },
-    [syncOrAsyncMode, volume, isSoundEnabled]
+    [volume, isSoundEnabled]
   )
 
   // レベル変更ハンドラ
@@ -153,8 +144,7 @@ function App () {
         handleVolumeChange,
         isSoundEnabled,
         toggleSound,
-        speak,
-        syncOrAsyncMode
+        speak
       }}
     >
       <div className='container'>

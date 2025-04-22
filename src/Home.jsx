@@ -183,7 +183,7 @@ function Home () {
                   style={{ cursor: 'pointer' }}
                   role='button'
                   title='読み上げ'
-                  onClick={() => speak(item.en, 'en-US')}
+                  onClick={async () => await speak(item.en, 'en-US')}
                 >
                   {item.en}
                 </td>

@@ -47,7 +47,7 @@ function TypingContent () {
   }, [progress])
 
   // 問題配列から任意のインデックスで問題を抽出
-  const selectQuestion = (index, startFlag = false) => {
+  const selectQuestion = async (index, startFlag = false) => {
     setCurrentIndex(index)
     // WASMの関数
     const question = window.GetTypingQuestion(index)
@@ -68,7 +68,7 @@ function TypingContent () {
       setProgress(1)
     }
 
-    speak(question.en2, 'en-US')
+    await speak(question.en2, 'en-US')
   }
 
   // タイピング開始
@@ -160,7 +160,7 @@ function TypingContent () {
           className='english-area'
           style={{ cursor: 'pointer' }}
           title='読み上げ'
-          onClick={() => speak(questionText.en2, 'en-US')}
+          onClick={async () => await speak(questionText.en2, 'en-US')}
         >
           {Array.isArray(questionTextArray1) &&
             questionTextArray1.map((character, index) => (
