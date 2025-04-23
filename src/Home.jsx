@@ -1,10 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useAppContext } from './App.jsx'
-import {
-  addExcludedWordId,
-  removeExcludedWordId,
-  clearExcludedWordIds
-} from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import { SiPagerduty } from 'react-icons/si'
 import { MdVerticalAlignTop } from 'react-icons/md'
@@ -13,7 +8,7 @@ import { MdVerticalAlignTop } from 'react-icons/md'
 const ITEMS_PER_PAGE = 100
 
 function Home () {
-  const { speak } = useAppContext()
+  const { addStorage, removeStorage, clearStorage, speak } = useAppContext()
   // WASMから取得した全データ
   const [allData, setAllData] = useState([])
   // 選択されたレベル（ページネーションでレベルを維持するため）
@@ -32,14 +27,11 @@ function Home () {
     setShowOffCell({})
 
     try {
-      const result = await window.SearchAndReturnDataPromise(level)
+      const result = await window.SearchData(level)
       setAllData(result)
       setCurrentPage(1)
     } catch (err) {
-      console.error(
-        'SearchAndReturnDataPromiseの実行中にエラーが発生しました:',
-        err
-      )
+      console.error(err)
       setAllData([])
     }
   }
@@ -82,13 +74,11 @@ function Home () {
   }
 
   // 復元、除外ボタンの操作
-  const handleActionClick = wordId => {
+  const handleActionClick = async wordId => {
     if (searchLevel === 1 || searchLevel === 2) {
-      addExcludedWordId(wordId)
-      window.AddStorage(wordId)
+      await addStorage(wordId)
     } else if (searchLevel === 0) {
-      removeExcludedWordId(wordId)
-      window.RemoveStorage(wordId)
+      await removeStorage(wordId)
     }
     setProcessingWordIds(prev => new Set(prev).add(wordId))
   }
@@ -220,10 +210,9 @@ function Home () {
         {searchLevel === 0 ? (
           <div style={{ textAlign: 'center', marginTop: '20px' }}>
             <button
-              onClick={() => {
+              onClick={async () => {
                 if (window.confirm('本当に除外リストを全部クリアしますか？')) {
-                  clearExcludedWordIds()
-                  window.ClearStorage()
+                  await clearStorage()
                   setShowOffCell({})
                   setProcessingWordIds(new Set())
                   setAllData([])

@@ -44,20 +44,6 @@ function validateSpeechParams (text, lang, volumeLevel, isSoundEnabled) {
   return true
 }
 
-// export function speakText (text, lang, volumeLevel, isSoundEnabled) {
-//   if (!validateSpeechParams(text, lang, volumeLevel, isSoundEnabled)) {
-//     return
-//   }
-
-//   const utterance = new SpeechSynthesisUtterance(text)
-//   utterance.lang = lang
-//   utterance.pitch = 1
-//   utterance.rate = 1
-//   utterance.volume = Math.max(0, Math.min(1, volumeLevel / 100))
-//   window.speechSynthesis.cancel()
-//   window.speechSynthesis.speak(utterance)
-// }
-
 export async function speakTextAsync (text, lang, volumeLevel, isSoundEnabled) {
   if (!validateSpeechParams(text, lang, volumeLevel, isSoundEnabled)) {
     return
@@ -84,17 +70,3 @@ export async function speakTextAsync (text, lang, volumeLevel, isSoundEnabled) {
     window.speechSynthesis.speak(utterance)
   })
 }
-
-// export function checkSyncOrAsync () {
-//   const env = getEnvironmentFlags()
-
-//   const syncEnvironments = [
-//     { os: env.isUbuntu, browser: env.isChrome }
-//     // { os: env.isWindows, browser: env.isFirefox },
-//     // 必要に応じて追加
-//   ]
-
-//   const isSyncMode = syncEnvironments.some(env => env.os && env.browser)
-
-//   return isSyncMode ? 'sync' : 'async'
-// }

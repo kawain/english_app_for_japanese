@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAppContext } from './App.jsx'
-import { addExcludedWordId } from './Storage.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
 import QuizChoices from './components/QuizChoices.jsx'
@@ -9,7 +8,7 @@ import QuizChoices from './components/QuizChoices.jsx'
 const numberOfChoices = 10
 
 function WordQuizContent () {
-  const { selectedLevel, speak } = useAppContext()
+  const { selectedLevel, addStorage, speak } = useAppContext()
   // 0: 初期状態スタートボタン表示
   // 1: 問題と選択肢と回答するボタン表示
   // 2: 回答と次の問題ボタン表示
@@ -30,19 +29,13 @@ function WordQuizContent () {
   // 現在のレベルを保存する ref
   const prevLevelRef = useRef(selectedLevel)
 
-  const fetchQuizData = () => {
+  const fetchQuizData = async () => {
     try {
-      // WASMの関数
-      const quizData = window.CreateQuiz(
+      const quizData = await window.CreateQuiz(
         parseInt(selectedLevel, 10),
         numberOfChoices
       )
-      // WASMの関数
-      const choicesData = window.CreateQuizChoices()
-      if (!quizData || !choicesData) {
-        console.error('クイズデータの取得に失敗しました。')
-        return false
-      }
+      const choicesData = await window.CreateQuizChoices()
       setCurrentQuiz(quizData)
       setQuizChoices(choicesData)
       return true
@@ -52,8 +45,8 @@ function WordQuizContent () {
     }
   }
 
-  const handleStart = () => {
-    const result = fetchQuizData()
+  const handleStart = async () => {
+    const result = await fetchQuizData()
     if (result) {
       setProgress(1)
       setSelectedChoiceId(null)
@@ -66,8 +59,8 @@ function WordQuizContent () {
     }
   }
 
-  const handleNext = () => {
-    const result = fetchQuizData()
+  const handleNext = async () => {
+    const result = await fetchQuizData()
     if (result) {
       setProgress(1)
       setSelectedChoiceId(null)
@@ -84,7 +77,7 @@ function WordQuizContent () {
     setSelectedChoiceId(event.target.value)
   }
 
-  const handleAnswer = () => {
+  const handleAnswer = async () => {
     let result
     let isCorrect = false
 
@@ -104,8 +97,7 @@ function WordQuizContent () {
       setCorrectCount(prev => prev + 1)
       try {
         // 正解した単語をストレージに追加
-        addExcludedWordId(String(currentQuiz.id))
-        window.AddStorage(currentQuiz.id)
+        await addStorage(currentQuiz.id)
       } catch (error) {
         console.error('Error saving to storage:', error)
       }

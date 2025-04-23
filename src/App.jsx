@@ -4,14 +4,18 @@ import {
   useState,
   useEffect,
   useRef,
-  useMemo,
   useCallback
 } from 'react'
 import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
-import Storage, { getExcludedWordIds } from './Storage.jsx'
+import Storage, {
+  getExcludedWordIds,
+  addExcludedWordId,
+  removeExcludedWordId,
+  clearExcludedWordIds
+} from './Storage.jsx'
 import { speakTextAsync } from './utils/tts.js'
 import { FaHome } from 'react-icons/fa'
 import { MdHearing } from 'react-icons/md'
@@ -36,32 +40,7 @@ function App () {
   const [volume, setVolume] = useState(30)
   const [isSoundEnabled, setIsSoundEnabled] = useState(false)
 
-  // speak関数
-  const speak = useCallback(
-    async (text, lang) => {
-      // speakTextAsync は Promise を返す
-      return speakTextAsync(text, lang, volume, isSoundEnabled)
-    },
-    [volume, isSoundEnabled]
-  )
-
-  // レベル変更ハンドラ
-  const handleLevelChange = newLevel => {
-    setSelectedLevel(newLevel)
-    console.log('Level 変更:', newLevel)
-  }
-
-  // 音量変更ハンドラ
-  const handleVolumeChange = newVolume => {
-    setVolume(newVolume)
-    console.log('Volume 変更:', newVolume)
-  }
-
-  // サウンドのオン/オフを切り替える関数
-  const toggleSound = () => {
-    setIsSoundEnabled(prev => !prev)
-  }
-
+  // 初期化
   useEffect(() => {
     if (isInitializing.current) return
     isInitializing.current = true
@@ -89,12 +68,12 @@ function App () {
           }
         }
         // WASMの関数を呼び出して単語オブジェクトを作成
-        window.CreateObjects(data)
+        await window.CreateObject(data)
 
         console.log('除外単語IDの読み込み開始...')
-        const loadedExcludedIds = getExcludedWordIds()
+        const loadedExcludedIds = await getExcludedWordIds()
         // WASMの関数を呼び出して除外単語IDを設定
-        window.CreateStorage(loadedExcludedIds)
+        await window.SetStorage(loadedExcludedIds)
 
         setWasmInitialized(true)
         console.log('WASM およびデータ初期化完了')
@@ -109,6 +88,65 @@ function App () {
 
     initializeWasmAndData()
   }, [])
+
+  // addStorage
+  const addStorage = useCallback(async wordId => {
+    try {
+      await addExcludedWordId(wordId)
+      await window.AddStorage(wordId)
+    } catch (error) {
+      console.error('addStorageでエラーが発生しました:', error)
+    }
+  }, [])
+
+  // removeStorage
+  const removeStorage = useCallback(async wordId => {
+    try {
+      await removeExcludedWordId(wordId)
+      await window.RemoveStorage(wordId)
+    } catch (error) {
+      console.error('removeStorageでエラーが発生しました:', error)
+    }
+  }, [])
+
+  // clearStorage
+  const clearStorage = useCallback(async () => {
+    try {
+      await clearExcludedWordIds()
+      await window.ClearStorage()
+    } catch (error) {
+      console.error('clearStorageでエラーが発生しました:', error)
+    }
+  }, [])
+
+  // speak関数
+  const speak = useCallback(
+    async (text, lang) => {
+      try {
+        await speakTextAsync(text, lang, volume, isSoundEnabled)
+      } catch (error) {
+        console.error('speakでエラーが発生しました:', error)
+      }
+    },
+    [volume, isSoundEnabled]
+  )
+
+  // レベル変更ハンドラ
+  const handleLevelChange = newLevel => {
+    setSelectedLevel(newLevel)
+    console.log('Level 変更:', newLevel)
+  }
+
+  // 音量変更ハンドラ
+  const handleVolumeChange = newVolume => {
+    setVolume(newVolume)
+    console.log('Volume 変更:', newVolume)
+  }
+
+  // サウンドのオン/オフを切り替える関数
+  const toggleSound = () => {
+    setIsSoundEnabled(prev => !prev)
+  }
 
   // 表示するコンテンツを決定する関数
   const renderContent = () => {
@@ -139,12 +177,15 @@ function App () {
     <AppContext.Provider
       value={{
         selectedLevel,
-        handleLevelChange,
         volume,
-        handleVolumeChange,
         isSoundEnabled,
-        toggleSound,
-        speak
+        addStorage,
+        removeStorage,
+        clearStorage,
+        speak,
+        handleLevelChange,
+        handleVolumeChange,
+        toggleSound
       }}
     >
       <div className='container'>

@@ -1,43 +1,49 @@
 const localStorageKey = 'excludedWords'
 
-export function getExcludedWordIds () {
+export async function getExcludedWordIds () {
   try {
-    const storedIds = localStorage.getItem(localStorageKey)
+    const storedIds = await localStorage.getItem(localStorageKey)
     return storedIds ? JSON.parse(storedIds) : []
   } catch (error) {
     console.error('ローカルストレージからのID取得に失敗しました:', error)
-    return [] // エラー発生時は空の配列を返す
+    return []
   }
 }
 
-export function addExcludedWordId (wordId) {
+export async function addExcludedWordId (wordId) {
   try {
-    const excludedIds = getExcludedWordIds()
+    const excludedIds = await getExcludedWordIds()
 
     if (!excludedIds.includes(wordId)) {
       excludedIds.push(wordId)
-      localStorage.setItem(localStorageKey, JSON.stringify(excludedIds))
+      await localStorage.setItem(localStorageKey, JSON.stringify(excludedIds))
     }
+    return true
   } catch (error) {
     console.error('ローカルストレージへのID追加に失敗しました:', error)
+    throw error
   }
 }
 
-export function removeExcludedWordId (wordId) {
+export async function removeExcludedWordId (wordId) {
   try {
-    let excludedIds = getExcludedWordIds()
+    let excludedIds = await getExcludedWordIds()
     excludedIds = excludedIds.filter(id => id !== wordId)
-    localStorage.setItem(localStorageKey, JSON.stringify(excludedIds))
+    await localStorage.setItem(localStorageKey, JSON.stringify(excludedIds))
+    return true
   } catch (error) {
     console.error('ローカルストレージからのID削除に失敗しました:', error)
+    throw error
   }
 }
 
-export function clearExcludedWordIds () {
+export async function clearExcludedWordIds () {
   try {
-    localStorage.removeItem(localStorageKey)
+    await localStorage.removeItem(localStorageKey)
+    return true
   } catch (error) {
     console.error('ローカルストレージのクリアに失敗しました:', error)
+    throw error
   }
 }
 
@@ -97,7 +103,7 @@ function Storage () {
       return
     }
     const reader = new FileReader()
-    reader.onload = e => {
+    reader.onload = async e => {
       try {
         const content = e.target.result
         let parsedData
@@ -116,7 +122,7 @@ function Storage () {
         // localStorageに保存
         localStorage.setItem(localStorageKey, JSON.stringify(parsedData))
         // wasmの関数を呼び出して除外単語IDを設定
-        window.CreateStorage(parsedData)
+        await window.SetStorage(parsedData)
         alert('データをインポートしました。')
       } catch (error) {
         alert(`インポートに失敗しました: ${error.message}`)
