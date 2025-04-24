@@ -50,7 +50,7 @@ id	en	jp	en2	jp2	kana	level	similar
 49	lie	嘘、虚偽の陳述	It's never a good idea to lie to your friends.	友達に嘘をつくことは決して良い考えではありません。	ともだちにうそをつくことはけっしてよいかんがえではありません。	1	1149,6701,7541,12602,9737
 50	sport	スポーツ、競技	He has been playing that sport since he was a child.	彼は子供の頃からそのスポーツを続けています。	かれはこどものころからそのすぽーつをつづけています。	1	6724,3052,387,6563,12774
 51	caution	注意、用心	Please use caution while driving in the rain.	雨の中で運転する際は注意してください。	あめのなかでうんてんするさいはちゅういしてください。	1	780,11308,9722,4029,617
-52	pull	引く	Please pull the door.	ドアを引いてください。	どあをひいてください。	1	2156,333,12120,384,7394
+52	pull	引く	Please pull the door.	ドアを引いてください。	どあをひいてください。	1	2156,333,384,7394,773
 53	through	通して、通じて、縦に	She walked through the forest, enjoying the beauty of nature.	彼女は森を通り抜けながら自然の美しさを楽しんでいました。	かのじょはもりをとおりぬけながらしぜんのうつくしさをたのしんでいました。	1	9723,3192,12219,9949,491
 54	fade	消える、薄れる	The colors of the painting began to fade after many years.	その絵画の色は、何年も経つにつれて薄れていきました。	そのかいがのいろは、なんねんもたつにつれてうすれていきました。	1	8135,8349,7486,10635,2579
 55	quiet	静かな	She enjoys reading books in a quiet place.	彼女は静かな場所で本を読むのが好きです。	かのじょはしずかなばしょでほんをよむのがすきです。	1	5554,1444,4956,623,3669
@@ -78,7 +78,7 @@ id	en	jp	en2	jp2	kana	level	similar
 77	nothing	何も～ない	I have nothing to do.	何もすることがない。	なにもすることがない。	1	9511,7062,12381,6775,1260
 78	drop	落とす	He accidentally dropped the book from his hands.	彼は手から本を落としてしまった。	かれはてからほんをおとしてしまった。	1	5492,10711,3338,12066,5303
 79	collect	集める、収集する	She enjoys collecting stamps from around the world.	彼女は世界中の切手を集めるのが趣味です。	かのじょはせかいじゅうのきってをあつめるのがしゅみです。	1	2117,1129,8507,2261,5933
-80	excuse	言い訳、口実	He used an excuse for being late.	彼は遅れた理由を言い訳として使った。	かれはおくれたりゆうをいいわけとしてつかった。	1	5860,3836,2254,1404,7483
+80	excuse	言い訳、口実	He used an excuse for being late.	彼は遅れた理由を言い訳として使った。	かれはおくれたりゆうをいいわけとしてつかった。	1	3836,2254,1404,7483,8355
 81	war	戦争、戦い	The country has been facing turmoil since the outbreak of war.	その国は戦争の勃発以来、混乱に直面しています。	そのくにはせんそうのぼっぱついらい、こんらんにちょくめんしています。	1	6631,6881,11749,7157,11514
 82	wicked	邪悪な、意地悪な	The witch gave a wicked grin.	魔女は邪悪な笑みを浮かべた。	まじょはじゃあくなえみをうかべた。	1	2855,7802,3299,8261,7030
 83	cake	ケーキ、特に甘いデザート	She baked a delicious chocolate cake for the party.	彼女はパーティーのためにおいしいチョコレートケーキを焼きました。	かのじょはぱーてぃーのためにおいしいちょこれーとけーきをやきました。	1	9741,5731,10553,6468,745
@@ -99,7 +99,7 @@ id	en	jp	en2	jp2	kana	level	similar
 98	beauty	美しさ、魅力	The beauty of the sunset took my breath away.	夕日の美しさには息を呑みました。	ゆうひのうつくしさにはいきをのみました。	1	193,1134,124,1167,3805
 99	friendly	友好的な、親しみやすい	He always has a friendly smile on his face.	彼はいつも友好的な笑顔を浮かべている。	かれはいつもゆうこうてきなえがおをうかべている。	1	9642,2148,2941,3990,2111
 100	advise	助言する、勧める	He advised me on my decision to continue my education.	彼は私に進学について助言をくれました。	かれはわたしにしんがくについてじょげんをくれました。	1	1163,1407,6273,3840,6270
-101	loose	ゆるい、緩い	His pants are a bit loose, so he needs to tighten his belt.	彼のズボンは少しゆるいので、ベルトを締める必要があります。	かれのずぼんはすこしゆるいので、べるとをしめるひつようがあります。	1	2102,10787,1726,2988,6462
+101	loose	ゆるい、緩い	His pants are a bit loose, so he needs to tighten his belt.	彼のズボンは少しゆるいので、ベルトを締める必要があります。	かれのずぼんはすこしゆるいので、べるとをしめるひつようがあります。	1	2102,1726,2988,6462,7544
 102	word	単語、言葉	Can you tell me the meaning of this word?	この単語の意味を教えてくれますか？	このたんごのいみをおしえてくれますか?	1	9802,9318,13010,6575,6926
 103	invent	発明する、考案する	He invented a new type of engine.	彼は新しいタイプのエンジンを発明しました。	かれはあたらしいたいぷのえんじんをはつめいしました。	1	12524,1858,12996,3432,8540
 104	shelf	棚、物を置くための平らな面	I placed my favorite books on the shelf.	お気に入りの本を棚に置きました。	おきにいりのほんをたなにおきました。	1	134,662,1243,5337,681
@@ -266,7 +266,7 @@ id	en	jp	en2	jp2	kana	level	similar
 266	direct	直接の、まっすぐな、指示する	Please direct me to the nearest bus stop.	最寄りのバス停まで案内してください。	もよりのばすていまであんないしてください。	1	540,9515,12713,12419,11642
 267	envelope	封筒、書類や手紙を入れるためのもの	She put the letter in an envelope and took it to the post office.	彼女は手紙を封筒に入れて郵便局へ持って行きました。	かのじょはてがみをふうとうにいれてゆうびんきょくへもっていきました。	1	6610,1178,6165,6550,7714
 268	aside	横に、脇へ、除いて	Please set your worries aside and enjoy the moment.	心配事は横に置いて、この瞬間を楽しんでください。	しんぱいことはよこにおいて、このしゅんかんをたのしんでください。	1	6774,3342,533,8665,2249
-269	spell	綴り、スペル	Can you spell your name for me, please?	あなたの名前を綴っていただけますか？	あなたのなまえをつづっていただけますか?	1	12120,8978,1454,2251,8977
+269	spell	綴り、スペル	Can you spell your name for me, please?	あなたの名前を綴っていただけますか？	あなたのなまえをつづっていただけますか?	1	8978,1454,2251,8977,8987
 270	sudden	突然の、予期しない	The sudden change in temperature caught everyone off guard.	気温の突然の変化は、誰もが驚かせました。	きおんのとつぜんのへんかは、だれもがおどろかせました。	1	4061,5766,5129,8334,8416
 271	cough	咳、咳をすること	She couldn't stop coughing during the movie.	彼女は映画の間、咳を止めることができませんでした。	かのじょはえいがのあいだ、せきをとめることができませんでした。	1	7696,5542,3042,5815,4744
 272	fasten	留める、固定する	Please fasten your seatbelt securely.	安全ベルトをしっかりと留めてください。	あんぜんべるとをしっかりととめてください。	2	12580,8263,2102,7904,202
@@ -853,7 +853,7 @@ id	en	jp	en2	jp2	kana	level	similar
 853	curve	曲線、カーブ	The road has a sharp curve that requires careful driving.	その道には慎重な運転が必要な急なカーブがあります。	そのみちにはしんちょうなうんてんがひつようなきゅうなかーぶがあります。	2	860,13055,780,6026,3205
 854	annoy	イライラさせる、迷惑をかける	His loud voice really annoyed me.	彼の大声が私をとてもイライラさせました。	かれのおおごえがわたしをとてもいらいらさせました。	1	4591,5879,10903,4335,11205
 855	widower	未亡人の夫、配偶者を失った男性	He became a widower after his wife passed away last year.	昨年、妻が亡くなった後、彼は未亡人になりました。	さくねん、つまがなくなったあと、かれはみぼうじんになりました。	2	8213,2077,1270,9796,3766
-856	mad	怒っている、狂った	She was mad at him for forgetting their anniversary.	彼女は彼が記念日を忘れたことに怒っていました。	かのじょはかれがきねんびをわすれたことにおこっていました。	2	10601,5964,5860,906,8017
+856	mad	怒っている、狂った	She was mad at him for forgetting their anniversary.	彼女は彼が記念日を忘れたことに怒っていました。	かのじょはかれがきねんびをわすれたことにおこっていました。	2	10601,5964,906,8017,7899
 857	lighten	明るくする、軽くする	You should lighten your load if you want to enjoy your hike.	ハイキングを楽しみたいなら、荷物を軽くするべきです。	はいきんぐをたのしみたいなら、にもつをかるくするべきです。	2	10740,12771,9021,7967,4037
 858	contain	含む、内包する	The box can contain up to ten liters of water.	その箱は最大で10リットルの水を含むことができます。	そのはこはさいだいで10りっとるのみずをふくむことができます。	1	834,11015,10620,5206,6785
 859	alone	一人で、孤独に	She felt very alone in the crowded room.	彼女は混雑した部屋の中でとても孤独に感じた。	かのじょはこんざつしたへやのなかでとてもこどくにかんじた。	1	1347,2870,11841,4875,8901
@@ -1028,7 +1028,7 @@ id	en	jp	en2	jp2	kana	level	similar
 1028	bush	茂み、低木	There are beautiful bushes planted in the corner of the park.	公園の隅に美しい茂みが植えられています。	こうえんのすみにうつくしいしげみがうえられています。	1	3977,6217,516,9905,3664
 1029	sing	歌う	She sang beautifully with a wonderful voice.	彼女は素晴らしい声で歌を歌った。	かのじょはすばらしいこえでうたをうたった。	1	11916,6527,11850,3616,306
 1030	buy	購入する、買う	He was saving money to buy a new car.	彼は新しい車を買うために貯金をしていました。	かれはあたらしいくるまをかうためにちょきんをしていました。	1	729,5041,5885,8353,7978
-1031	reply	返事、回答	Please reply to my email when you have a chance.	時間があるときに私のメールに返信してください。	じかんがあるときにわたしのめーるにへんしんしてください。	1	11799,12968,3084,12567,11106
+1031	reply	返事、回答	Please reply to my email when you have a chance.	時間があるときに私のメールに返信してください。	じかんがあるときにわたしのめーるにへんしんしてください。	1	11799,12968,3084,12567,12837
 1032	next	次の、次に来るもの	I will finish my homework next week.	私は来週、宿題を終わらせる予定です。	わたしはらいしゅう、しゅくだいをおわらせるよていです。	1	196,1970,2221,9016,6492
 1033	whenever	いつでも、～する時は常に	I feel happy whenever I see my friends.	友達に会う時は常に、私は幸せを感じます。	ともだちにあうときはつねに、わたしはしあわせをかんじます。	2	9001,1385,8998,243,3092
 1034	impossible	不可能	I thought it was impossible to pass the exam, but with hard work, I succeeded.	その試験に合格するのは不可能だと思っていたが、努力の結果、成功した。	そのしけんにごうかくするのはふかのうだとおもっていたが、どりょくのけっか、せいこうした。	1	11536,12921,59,11751,4807
@@ -1348,7 +1348,7 @@ id	en	jp	en2	jp2	kana	level	similar
 1348	leather	革、皮革製品	She decided to buy a new leather jacket for the winter.	彼女は冬のために新しい革のジャケットを買うことに決めました。	かのじょはふゆのためにあたらしいかわのじゃけっとをかうことにきめました。	1	105,2407,2071,6597,10829
 1349	destructive	破壊的な、損害を与える	The hurricane caused destructive damage to the coastal towns.	そのハリケーンは沿岸の町に破壊的な損害を与えました。	そのはりけーんはえんがんのまちにはかいてきなそんがいをあたえました。	2	6338,879,5976,8688,6879
 1350	believe	信じる	I believe you.	私はあなたを信じます。	わたしはあなたをしんじます。	1	1554,7115,10104,915,1931
-1351	sheet	シーツ、薄い用紙や布	I need to buy a new sheet for my bed.	ベッド用の新しいシーツを買う必要があります。	べっどようのあたらしいしーつをかうひつようがあります。	1	10787,1356,9471,6597,10922
+1351	sheet	シーツ、薄い用紙や布	I need to buy a new sheet for my bed.	ベッド用の新しいシーツを買う必要があります。	べっどようのあたらしいしーつをかうひつようがあります。	1	1356,9471,6597,10922,503
 1352	bright	明るい	This room has large windows that let in bright natural light.	この部屋は大きな窓があり、明るい自然光が差し込んでいます。	このへやはおおきなまどがあり、あかるいしぜんこうがさしこんでいます。	1	9484,2255,10106,6502,3899
 1353	kick	蹴る、強く押すこと	He decided to kick the ball as hard as he could.	彼はできるだけ強くボールを蹴ることに決めました。	かれはできるだけつよくぼーるをけることにきめました。	1	7184,6086,905,3873,8919
 1354	dig	掘る、掘り下げる	They decided to dig a hole in the backyard for a new garden.	彼らは新しい庭のために裏庭に穴を掘ることに決めました。	かれらはあたらしいにわのためにうらにわにあなをほることにきめました。	1	458,413,6771,6987,983
@@ -1723,7 +1723,7 @@ id	en	jp	en2	jp2	kana	level	similar
 1723	gain	得る、獲得する	She worked hard to gain the respect of her colleagues.	彼女は同僚たちの尊敬を得るために一生懸命働きました。	かのじょはどうりょうたちのそんけいをえるためにいっしょうけんめいはたらきました。	1	5439,716,2623,10964,12523
 1724	certainty	確実性、確信	There is a certainty that she will succeed in her endeavors.	彼女が成功するという確信があります。	かのじょがせいこうするというかくしんがあります。	2	4161,6294,2526,785,3833
 1725	inform	知らせる、通知する	Please inform them of the changes.	変更について彼らに知らせてください。	へんこうについてかれらにしらせてください。	1	7535,10269,9809,421,6758
-1726	waist	腰、ウエスト部分	She tied a belt around her waist to keep her pants from falling down.	彼女はズボンがずり落ちないようにウエストにベルトを締めました。	かのじょはずぼんがずりおちないようにうえすとにべるとをしめました。	2	101,10589,10787,44,2188
+1726	waist	腰、ウエスト部分	She tied a belt around her waist to keep her pants from falling down.	彼女はズボンがずり落ちないようにウエストにベルトを締めました。	かのじょはずぼんがずりおちないようにうえすとにべるとをしめました。	2	101,10589,44,2188,885
 1727	state	状態、国家、州、述べる、言う	He stated his opinion clearly.	彼は自分の意見をはっきりと述べた。	かれはじぶんのいけんをはっきりとのべた。	1	3211,3828,5994,1550,6268
 1728	distance	距離、間隔	The distance between the two cities is approximately 100 miles.	その二つの都市の距離はおよそ100マイルです。	そのふたつのとしのきょりはおよそ100まいるです。	1	12933,11488,12527,4035,12247
 1729	silent	静かな、黙っている	The library was silent, allowing everyone to concentrate on their studies.	図書館は静かで、皆が勉強に集中できるようになっていました。	としょかんはしずかで、みながべんきょうにしゅうちゅうできるようになっていました。	1	8306,5554,9720,2201,498
@@ -2068,7 +2068,7 @@ id	en	jp	en2	jp2	kana	level	similar
 2068	devil	悪魔、邪悪な存在	The devil tempted him to make a wrong decision.	悪魔は彼に間違った決断をするよう誘惑した。	あくまはかれにまちがったけつだんをするようゆうわくした。	2	6201,2083,8671,3711,5102
 2069	learn	学ぶ、習得する	He practices every day to learn a new language.	彼は新しい言語を学ぶために毎日練習しています。	かれはあたらしいげんごをまなぶためにまいにちれんしゅうしています。	1	1764,6123,387,3460,8966
 2070	easy	簡単な、楽な	This problem is so easy that I think you can solve it right away.	この問題は非常に簡単なので、すぐに解けると思います。	このもんだいはひじょうにかんたんなので、すぐにとけるとおもいます。	1	4719,6499,5772,6362,12969
-2071	belt	ベルト、帯状の物	I bought a new leather belt for my suit.	スーツのために新しい革のベルトを買いました。	すーつのためにあたらしいかわのべるとをかいました。	1	10787,6597,1348,848,998
+2071	belt	ベルト、帯状の物	I bought a new leather belt for my suit.	スーツのために新しい革のベルトを買いました。	すーつのためにあたらしいかわのべるとをかいました。	1	6597,1348,848,998,6462
 2072	omission	省略、脱落	His name was an omission from the list.	彼の名前がリストから省略されていた。	かれのなまえがりすとからしょうりゃくされていた。	2	8569,8458,968,5859,8479
 2073	when	いつ、～する時	I will call you when I arrive at the station.	駅に着いた時に電話します。	えきについたときにでんわします。	1	1868,9714,1221,7768,476
 2074	load	積み込む、荷物を載せる	Please load the boxes onto the truck carefully.	ボックスをトラックに丁寧に積み込んでください。	ぼっくすをとらっくにていねいにつみこんでください。	1	1623,10362,8087,10550,11630
@@ -2099,7 +2099,7 @@ id	en	jp	en2	jp2	kana	level	similar
 2099	citizen	市民	The citizens worked together to ensure the safety of their community.	市民は地域の安全を守るために協力しました。	しみんはちいきのあんぜんをまもるためにきょうりょくしました。	1	6458,9989,11420,12155,3081
 2100	lesson	レッスン、授業	I take an English lesson every Wednesday.	私は毎週水曜日に英語のレッスンを受けています。	わたしはまいしゅうすいようびにえいごのれっすんをうけています。	1	8966,9479,9188,995,10801
 2101	tax	税金	The government is planning to increase the tax on luxury goods.	政府は贅沢品に対する税金を増加させる計画を立てています。	せいふはぜいたくひんにたいするぜいきんをぞうかさせるけいかくをたてています。	1	11418,5679,10734,5765,9821
-2102	loosen	緩める、和らげる	Loosen your belt.	ベルトを緩めてください。	べるとをゆるめてください。	2	101,6774,272,10787,202
+2102	loosen	緩める、和らげる	Loosen your belt.	ベルトを緩めてください。	べるとをゆるめてください。	2	101,6774,272,202,1726
 2103	east	東、方角	The sun rises in the east every morning.	太陽は毎朝東から昇ります。	たいようはまいあさひがしからのぼります。	1	912,302,10038,315,9098
 2104	criminal	犯罪者、犯人	The criminal was arrested by the police.	犯罪者は警察に逮捕されました。	はんざいしゃはけいさつにたいほされました。	1	1071,6998,8460,10769,5586
 2105	complaint	不満、苦情	I filed a complaint about the poor service at the restaurant.	そのレストランのサービスの悪さについて苦情を申し立てました。	そのれすとらんのさーびすのわるさについてくじょうをもうしたてました。	1	1272,12896,631,6656,1909
@@ -2153,7 +2153,7 @@ id	en	jp	en2	jp2	kana	level	similar
 2153	angle	角度	He measured the angle of the wall accurately using a protractor.	彼は測定器を使って壁の角度を正確に計りました。	かれはそくていきをつかってかべのかくどをせいかくにはかりました。	1	7726,5809,5188,7962,5389
 2154	chimney	煙突	The smoke from the fireplace went up the chimney.	暖炉からの煙は煙突を上っていきました。	だんろからのけむりはえんとつをのぼっていきました。	2	8237,12330,12250,8170,3243
 2155	island	島	He is looking forward to his vacation on the beautiful island.	彼は、美しい島での休暇を楽しみにしています。	かれは、うつくしいしまでのきゅうかをたのしみにしています。	1	9078,6461,7920,2123,1699
-2156	slide	滑ること、スライドすること	Please slide the door open gently.	ドアを優しくスライドさせて開けてください。	どあをやさしくすらいどさせてあけてください。	2	52,12120,333,950,384
+2156	slide	滑ること、スライドすること	Please slide the door open gently.	ドアを優しくスライドさせて開けてください。	どあをやさしくすらいどさせてあけてください。	2	52,333,950,384,6489
 2157	delay	遅延、遅れ	The meeting was delayed due to traffic congestion.	会議が交通渋滞のために遅れました。	かいぎがこうつうじゅうたいのためにおくれました。	1	5229,2569,11392,8195,4598
 2158	care	配慮、注意、世話	She always takes great care when handling delicate materials.	彼女は繊細な材料を扱うとき、常に細心の注意を払います。	かのじょはせんさいなざいりょうをあつかうとき、つねにさいしんのちゅういをはらいます。	1	6533,659,6978,1133,972
 2159	knowledge	知識、情報の理解や認識	Having a broad knowledge of various subjects can greatly enhance your problem-solving skills.	さまざまな分野について幅広い知識を持つことは、問題解決能力を大いに高めることができます。	さまざまなぶんやについてはばひろいちしきをもつことは、もんだいかいけつのうりょくをおおいにたかめることができます。	1	966,5755,10156,6475,6089
@@ -4060,7 +4060,7 @@ id	en	jp	en2	jp2	kana	level	similar
 4062	lavatory	トイレ、洗面所	He needed to go to the lavatory before the meeting.	彼はその会議の前にトイレに行く必要がありました。	かれはそのかいぎのまえにといれにいくひつようがありました。	2	2516,12751,12150,179,5859
 4063	scornful	軽蔑した、侮蔑的な	She listened to his suggestion with a scornful expression.	彼女は彼の提案を軽蔑した表情で聞いた。	かのじょはかれのていあんをけいべつしたひょうじょうできいた。	2	4847,277,7313,4368,3818
 4064	tranquil	静かな、穏やかな	The park was tranquil, offering a soothing atmosphere.	その公園は静かで、心が安らぐ雰囲気でした。	そのこうえんはしずかで、こころがやすらぐふんいきでした。	2	5355,4164,5935,12038,6261
-4065	flush	洗い流す、流す、顔が赤くなる	His face flushed after running.	彼は走った後で顔が赤くなった。	かれははしったあとでかおがあかくなった。	2	2862,10849,6780,4786,874
+4065	flush	洗い流す、流す、顔が赤くなる	His face flushed after running.	彼は走った後で顔が赤くなった。	かれははしったあとでかおがあかくなった。	2	2862,10787,10849,6780,4786
 4066	polar	極、北極または南極の	Polar animals have adapted to survive in the harsh cold.	北極の動物たちは、厳しい寒さに適応しています。	ほっきょくのどうぶつたちは、きびしいさむさにてきおうしています。	2	2899,11472,8831,6430,12101
 4067	raid	襲撃、打撃	The police conducted a raid on the hideout of the criminal organization.	警察の襲撃が犯罪組織のアジトに行われました。	けいさつのしゅうげきがはんざいそしきのあじとにおこなわれました。	2	7557,2856,11475,7389,6861
 4068	fiery	炎のような、激しい	The fiery discussion was as heated as flames.	その激しい議論はまるで炎のように熱かった。	そのはげしいぎろんはまるでほのおのようにあつかった。	2	7708,5176,7360,4891,2260
@@ -4490,7 +4490,7 @@ id	en	jp	en2	jp2	kana	level	similar
 4492	incur	負う、招く	This cost will incur as you use the service.	この費用は、あなたがサービスを利用することで発生します。	このひようは、あなたがさーびすをりようすることではっせいします。	2	5120,469,12953,3920,5748
 4493	predominant	主要な、支配的な	Emotions are a predominant theme in his work.	彼の作品には、感情が主要なテーマとして現れています。	かれのさくひんには、かんじょうがしゅようなてーまとしてあらわれています。	2	7923,6101,1830,4527,2311
 4494	interim	一時的な、仮の	He is working as the interim CEO until a new one is appointed.	彼は新しいCEOが決まるまでの間、一時的なCEOとして働いています。	かれはあたらしいCEOがきまるまでのあいだ、いちじてきなCEOとしてはたらいています。	2	12543,11266,6391,5633,7639
-4495	pretext	口実、理由、仮の理由	He came up with a pretext to take a day off from work.	彼は仕事を休むための口実を考えました。	かれはしごとをやすむためのこうじつをかんがえました。	2	6315,580,4949,80,5860
+4495	pretext	口実、理由、仮の理由	He came up with a pretext to take a day off from work.	彼は仕事を休むための口実を考えました。	かれはしごとをやすむためのこうじつをかんがえました。	2	6315,580,4949,80,2628
 4496	idly	特に何もしないで、無為に	He spent his time idly, doing nothing in particular.	彼は何もせず、ただ無為に時間を過ごしていました。	かれはなにもせず、ただむいにじかんをすごしていました。	2	1038,1398,3208,1380,8907
 4497	ceaseless	途切れない、絶え間ない	Her ceaseless efforts led to her success.	彼女の途切れない努力が成功をもたらしました。	かのじょのとぎれないどりょくがせいこうをもたらしました。	2	6297,2623,8889,11820,8466
 4498	bizarre	奇妙な、風変わりな	His behavior was truly bizarre.	彼の行動は本当に奇妙だった。	かれのこうどうはほんとうにきみょうだった。	2	7824,7991,2886,8102,11712
@@ -4721,7 +4721,7 @@ id	en	jp	en2	jp2	kana	level	similar
 4723	fend	防ぐ、受け止める	She skillfully fended off the criticism to protect her viewpoint.	彼女は自分の意見を守るために、巧みに議論をかわしました。	かのじょはじぶんのいけんをまもるために、たくみにぎろんをかわしました。	2	3362,8641,13034,5746,3222
 4724	coalesce	合体する、結合する	The different opinions coalesced into a single conclusion.	異なる意見が一つの結論に合体しました。	ことなるいけんがひとつのけつろんにがったいしました。	2	4950,1400,7385,5336,18
 4725	exhale	吐き出す、呼気	She took a deep breath and slowly exhaled.	彼女は深呼吸をし、ゆっくりと息を吐き出しました。	かのじょはしんこきゅうをし、ゆっくりといきをはきだしました。	2	589,1980,533,1263,6489
-4726	slip by	逃す、すり抜ける	He let the important meeting slip by because he was too busy.	彼は忙しすぎて、重要な会議をすり抜けてしまいました。	かれはいそがしすぎて、じゅうようなかいぎをすりぬけてしまいました。	1	5859,810,5860,1057,7706
+4726	slip by	逃す、すり抜ける	He let the important meeting slip by because he was too busy.	彼は忙しすぎて、重要な会議をすり抜けてしまいました。	かれはいそがしすぎて、じゅうようなかいぎをすりぬけてしまいました。	1	5859,810,1057,7706,5443
 4727	enigmatic	謎めいた	Her smile was enigmatic, leaving everyone unable to grasp its true meaning.	彼女の微笑みは謎めいていて、誰もその真意を理解することができませんでした。	かのじょのほほえみはなぞめいていて、だれもそのしんいをりかいすることができませんでした。	2	4789,1924,2973,7748,5277
 4728	gnaw	かじる、かじりつく	The mouse gnawed on the furniture.	ネズミは家具をかじってしまいました。	ねずみはかぐをかじってしまいました。	2	964,7362,6812,1008,7853
 4729	inter	インターネット	The internet has greatly changed our lives.	インターネットは私たちの生活を大きく変えました。	いんたーねっとはわたしたちのせいかつをおおきくかえました。	2	12819,12352,12783,3776,7699
@@ -4781,7 +4781,7 @@ id	en	jp	en2	jp2	kana	level	similar
 4783	overhaul	オーバーホール、改革	The company overhauled its management and introduced a new growth strategy.	会社は経営をオーバーホールし、新たな成長戦略を導入しました。	かいしゃはけいえいをおーばーほーるし、あらたなせいちょうせんりゃくをどうにゅうしました。	2	4864,12051,4675,4689,10727
 4784	wretch	不幸な人、哀れな人	He was a wretch lamenting his unfortunate circumstances.	彼は自分の不幸な境遇を嘆く哀れな人でした。	かれはじぶんのふこうなきょうぐうをなげくあわれなひとでした。	2	2525,2456,3986,6836,3516
 4785	ardent	熱心な、情熱的な	He is very ardent about a particular project.	彼は特定のプロジェクトに対して非常に熱心です。	かれはとくていのぷろじぇくとにたいしてひじょうにねっしんです。	2	3604,3583,5382,70,7805
-4786	run down	走り去る、略奪する、疲れ果てる	He ran down the road, completely exhausted.	彼は疲れ果てて、道を走り去っていった。	かれはつかれはてて、みちをはしりさっていった。	1	2363,340,2481,2721,4356
+4786	run down	走り去る、略奪する、疲れ果てる	He ran down the road, completely exhausted.	彼は疲れ果てて、道を走り去っていった。	かれはつかれはてて、みちをはしりさっていった。	1	2363,340,2481,2721,10787
 4787	innermost	最も内側の、最も深い	She shared her innermost feelings with her friend.	彼女は自分の最も内側の感情を友人に話しました。	かのじょはじぶんのもっともうちがわのかんじょうをゆうじんにはなしました。	2	576,4518,2993,1171,3989
 4788	volatile	揮発性の	This chemical substance is highly volatile and needs to be handled with care.	この化学物質は揮発性が高く、扱いには注意が必要です。	このかがくぶっしつはきはつせいがたかく、あつかいにはちゅういがひつようです。	2	6214,2333,2910,12262,2341
 4789	beguile	魅了する、惑わす	Her enchanting smile could beguile anyone.	彼女の魅力的な笑顔は、誰もが魅了されるほどでした。	かのじょのみりょくてきなえがおは、だれもがみりょうされるほどでした。	2	1924,918,4727,2434,6431
@@ -5746,13 +5746,13 @@ id	en	jp	en2	jp2	kana	level	similar
 5748	fee	料金、手数料	He agreed to pay the fee for the service.	彼はサービスの料金を支払うことに同意しました。	かれはさーびすのりょうきんをしはらうことにどういしました。	1	8939,5156,7361,11487,7707
 5749	individually	個々に、個別に	They expressed their opinions individually.	彼らは個々に意見を述べました。	かれらはここにいけんをのべました。	2	1400,1550,7385,4005,1727
 5750	physically	身体的に、肉体的に	He goes to the gym every day to become physically stronger.	彼は身体的に強くなるために毎日ジムに通っています。	かれはしんたいてきにつよくなるためにまいにちじむにかよっています。	1	6542,5841,3988,5704,5801
-5751	heavily	重く、大きく、激しく	He sighed heavily as he climbed the stairs.	彼は重く息を吐き出しながら、階段を上りました。	かれはおもくいきをはきだしながら、かいだんをのぼりました。	1	3059,6780,7896,1505,4428
+5751	heavily	重く、大きく、激しく	He sighed heavily as he climbed the stairs.	彼は重く息を吐き出しながら、階段を上りました。	かれはおもくいきをはきだしながら、かいだんをのぼりました。	1	3059,10787,6780,7896,1505
 5752	properly	適切に、正しく	He worked hard to finish the task properly.	彼は仕事を適切に終わらせるために、一生懸命に努力しました。	かれはしごとをてきせつにおわらせるために、いっしょうけんめいにどりょくしました。	1	7520,6802,3372,8473,10002
 5753	amount of	量、額	This project requires a significant amount of funding.	このプロジェクトには、多くの資金が必要です。	このぷろじぇくとには、おおくのしきんがひつようです。	1	1906,3920,6722,8923,8616
 5754	nuclear	核	Nuclear energy brings many benefits to our lives, but it is also essential to consider safety issues.	核エネルギーは、私たちの生活に多くの利点をもたらす一方で、安全性の問題も考慮する必要があります。	かくえねるぎーは、わたしたちのせいかつにおおくのりてんをもたらすいっぽうで、あんぜんせいのもんだいもこうりょするひつようがあります。	1	10285,5775,12128,7103,11496
 5755	flexible	柔軟な	She has a flexible mindset, which allows her to handle various problems effectively.	彼女は柔軟な考え方を持っているので、さまざまな問題にうまく対処できます。	かのじょはじゅうなんなかんがえかたをもっているので、さまざまなもんだいにうまくたいしょできます。	1	3403,1873,6475,7300,1990
 5756	domestic	国内の、家庭の	They launched a new product aimed at the domestic market.	彼らは国内の市場をターゲットにした新しい製品を発表しました。	かれらはこくないのしじょうをたーげっとにしたあたらしいせいひんをはっぴょうしました。	1	6930,2087,9983,11452,5721
-5757	neither do i	私もそうではありません。	"When he said he wasn't going, I replied, 'Neither do I.'"	「彼は行かない」と言ったとき、私は「私もそうではありません」と返事しました。	「かれはいかない」といったとき、わたしは「わたしもそうではありません」とへんじしました。	1	12786,2605,1515,11066,3968
+5757	neither do I	私もそうではありません。	"When he said he wasn't going, I replied, 'Neither do I.'"	「彼は行かない」と言ったとき、私は「私もそうではありません」と返事しました。	「かれはいかない」といったとき、わたしは「わたしもそうではありません」とへんじしました。	1	12786,2605,1515,11066,3968
 5758	log into	ログインする	He logged into his account to access the important documents.	彼は重要な書類にアクセスするために、自分のアカウントにログインしました。	かれはじゅうようなしょるいにあくせすするために、じぶんのあかうんとにろぐいんしました。	1	5443,3416,10847,12056,6594
 5759	inherit	相続する、遺伝する	He inherited his tall stature from his mother.	彼は母親から背の高い体格を受け継いだ。	かれはははおやからせのたかいたいかくをうけついだ。	1	12528,8638,4596,6107,397
 5760	-in-law	義理の	My sister-in-law is coming over to visit.	義理の妹が家に遊びに来ることになりました。	ぎりのいもうとがいえにあそびにくることになりました。	1	2150,11192,1176,1501,3318
@@ -5853,8 +5853,7 @@ id	en	jp	en2	jp2	kana	level	similar
 5855	select	選ぶ、選択する	He selected the best movie from among them.	彼はその中から最高の映画を選びました。	かれはそのなかからさいこうのえいがをえらびました。	1	4240,10429,5728,4568,10766
 5856	cease	終了、停止	They decided to cease the conversation.	彼らは会話を終えることに決めた。	かれらはかいわをおえることにきめた。	1	6348,8124,2847,5275,6252
 5857	make effort(s)	努力	He made a lot of efforts to achieve success.	彼は成功のために多くの努力をしました。	かれはせいこうのためにおおくのどりょくをしました。	1	8093,6802,2875,6297,5797
-5859	forget to	忘れる、失念する	He forgot to attend the meeting.	彼は会議に参加するのを忘れてしまいました。	かれはかいぎにさんかするのをわすれてしまいました。	1	10454,810,1057,5860,4726
-5860	forget ing	忘れること	He made an excuse that he forgot about the appointment.	彼は約束を忘れてしまったと言い訳をしました。	かれはやくそくをわすれてしまったといいわけをしました。	1	80,7706,5859,4726,8914
+5859	forget to	忘れる、失念する	He forgot to attend the meeting.	彼は会議に参加するのを忘れてしまいました。	かれはかいぎにさんかするのをわすれてしまいました。	1	10454,810,1057,4726,12638
 5861	pick up	拾い上げる、取る	He bent down to pick up the pen that had fallen on the ground.	彼は地面に落ちたペンを拾い上げました。	かれはじめんにおちたぺんをひろいあげました。	1	3946,7167,7465,5303,78
 5862	used to	かつて、昔は	I used to jog every morning, but I don't do it anymore.	昔は、私は毎朝ジョギングをしていましたが、今はやっていません。	むかしは、わたしはまいあさじょぎんぐをしていましたが、いまはやっていません。	1	5851,9959,2141,1391,9939
 5863	in terms of	という観点で、という点で	She reported on the progress in terms of the budget.	彼女は進捗について、予算の観点で報告しました。	かのじょはしんちょくについて、よさんのかんてんでほうこくしました。	1	6544,705,6505,4626,9824
@@ -6454,7 +6453,7 @@ id	en	jp	en2	jp2	kana	level	similar
 6459	firefighter	消防士	The firefighter rescued people at the scene of the fire.	消防士は火事の現場で人々を助けました。	しょうぼうしはかじのげんばでひとびとをたすけました。	1	3703,8753,1338,2866,8835
 6460	driver	運転手、ドライバー	The driver safely transported the passenger to their destination.	運転手はお客さんを目的地まで安全に運びました。	うんてんしゅはおきゃくさんをもくてきちまであんぜんにはこびました。	1	10286,3500,6455,10486,860
 6461	vacation	休暇、バケーション	He had a wonderful vacation at a seaside resort with his family.	彼は家族と一緒に海辺のリゾートで素晴らしい休暇を過ごしました。	かれはかぞくといっしょにうみべのりぞーとですばらしいきゅうかをすごしました。	1	5682,2155,2218,5691,3917
-6462	pants	ズボン	I bought a new pair of pants, but they are a bit too big.	私は新しいズボンを買いましたが、少し大きすぎます。	わたしはあたらしいずぼんをかいましたが、すこしおおきすぎます。	1	6597,998,1614,10787,6343
+6462	pants	ズボン	I bought a new pair of pants, but they are a bit too big.	私は新しいズボンを買いましたが、少し大きすぎます。	わたしはあたらしいずぼんをかいましたが、すこしおおきすぎます。	1	6597,998,1614,6343,2071
 6463	magazine	雑誌	He enjoys buying and reading a new magazine every month.	彼は毎月新しい雑誌を買って読むのが好きです。	かれはまいつきあたらしいざっしをかってよむのがすきです。	1	7169,11946,5391,2453,5081
 6464	contest	コンテスト、競技	She participates in the singing contest held every year.	彼女は毎年行われる歌のコンテストに参加しています。	かのじょはまいとしおこなわれるうたのこんてすとにさんかしています。	2	12391,4482,6750,11916,4095
 6465	concert	コンサート、演奏会	She is looking forward to going to the concert with her friends.	彼女は友達と一緒にコンサートに行くのを楽しみにしています。	かのじょはともだちといっしょにこんさーとにいくのをたのしみにしています。	1	1890,11134,5557,9513,9987
@@ -6772,7 +6771,7 @@ id	en	jp	en2	jp2	kana	level	similar
 6777	rub off	(性格・習慣などが)移る、影響を与える	Good habits rub off on those around you.	良い習慣は周りの人に影響を与えます。	よいしゅうかんはまわりのひとにえいきょうをあたえます。	1	4487,3695,8143,1620,1648
 6778	buy over	買収する、懐柔する	He tried to buy over his rivals.	彼はライバルを買収しようとしました。	かれはらいばるをばいしゅうしようとしました。	1	6733,3289,4691,7405,5076
 6779	energy	エネルギー、活力	Solar power is a renewable source of energy.	太陽光は再生可能なエネルギー源です。	たいようこうはさいせいかのうなえねるぎーげんです。	1	3954,9681,5775,770,4414
-6780	stairs	階段	He ran up the stairs.	彼は階段を駆け上がって行きました。	かれはかいだんをかけあがっていきました。	1	1505,7896,8279,6510,5751
+6780	stairs	階段	He ran up the stairs.	彼は階段を駆け上がって行きました。	かれはかいだんをかけあがっていきました。	1	10787,1505,7896,8279,6510
 6781	flu	インフルエンザ	He is in bed with the flu.	彼はインフルエンザにかかって寝ています。	かれはいんふるえんざにかかってねています。	1	6103,5379,2005,3368,10425
 6782	design	設計、デザイン	The design of this building is very beautiful.	この建物のデザインはとても美しいです。	このたてもののでざいんはとてもうつくしいです。	1	7133,5339,11944,12280,1652
 6783	achievement	達成、業績	His greatest achievement was finishing the marathon.	彼の最大の業績はマラソンを完走したことです。	かれのさいだいのぎょうせきはまらそんをかんそうしたことです。	1	10712,12785,10596,5881,3075
@@ -7536,7 +7535,7 @@ id	en	jp	en2	jp2	kana	level	similar
 7541	at no time	決して〜ない	At no time does he tell a lie.	彼は決して嘘をつかない。	かれはけっしてうそをつかない。	1	6960,8031,12508,6773,7114
 7542	apprenticeship	見習い期間、徒弟制度	He spent three years in an apprenticeship as a carpenter.	彼は大工として3年間の見習い期間を過ごした。	かれはだいくとしてさんねんかんのみならいきかんをすごした。	2	4011,4905,1371,434,5675
 7543	originate in	〜に起源を持つ、〜から始まる	This tradition originates in ancient China.	この伝統は古代中国に起源を持つ。	このでんとうはこだいちゅうごくにきげんをもつ。	1	438,13041,11037,12605,7907
-7544	crotch	股間、股	The crotch of my pants got torn.	ズボンの股の部分が破れた。	ずぼんのまたのぶぶんがやぶれた。	2	10787,3838,101,4316,1913
+7544	crotch	股間、股	The crotch of my pants got torn.	ズボンの股の部分が破れた。	ずぼんのまたのぶぶんがやぶれた。	2	3838,101,4316,1913,7014
 7545	pretend to do	〜するふりをする	He pretended to be asleep.	彼は寝ているふりをした。	かれはねているふりをした。	1	5454,6525,8249,8765,4667
 7546	take A by surprise	Aを驚かせる	The news took him by surprise.	そのニュースは彼を驚かせた。	そのにゅーすはかれをおどろかせた。	1	4461,5766,10688,1823,10297
 7547	in a vacuum	孤立して、周囲と関わりなく	Culture does not exist in a vacuum.	文化は孤立して存在するものではない。	ぶんかはこりつしてそんざいするものではない。	1	10137,6466,1734,4275,689
@@ -7698,7 +7697,7 @@ id	en	jp	en2	jp2	kana	level	similar
 7703	stow	収納する、しまう	I stowed my luggage in the overhead compartment.	荷物をオーバーヘッドボックスに収納しました。	にもつをおーばーへっどぼっくすにしゅうのうしました。	2	7118,4600,1910,12425,3652
 7704	debit	借方、引き落とし	The bank made a debit from my account.	銀行が私の口座から料金を引き落としました。	ぎんこうがわたしのこうざからりょうきんをひきおとしました。	2	3921,10662,3940,1716,10123
 7705	split the bill	割り勘にする	We split the bill with my friends.	友達と食事代を割り勘にしました。	ともだちとしょくじだいをわりかんにしました。	1	1953,424,3699,3136,6371
-7706	slip a's mind	うっかり忘れる	The appointment slipped my mind.	約束をうっかり忘れてしまいました。	やくそくをうっかりわすれてしまいました。	1	5860,5859,2401,4726,12493
+7706	slip a's mind	うっかり忘れる	The appointment slipped my mind.	約束をうっかり忘れてしまいました。	やくそくをうっかりわすれてしまいました。	1	5859,2401,4726,12493,1089
 7707	recompense	報酬、補償	His efforts were recompensed with proper payment.	彼の努力は適切な報酬で報われました。	かれのどりょくはてきせつなほうしゅうでむくわれました。	2	3461,7975,6834,3617,4826
 7708	altercation	口論、言い争い	There was a heated altercation between the two.	二人の間で激しい口論が起きました。	ふたりのあいだではげしいこうろんがおきました。	2	11524,4068,7360,8238,228
 7709	chaff	もみ殻、からかう	The farmer separated the chaff from the wheat.	農夫は小麦からもみ殻を取り除きました。	のうふはこむぎからもみがらをとりのぞきました。	2	21,1941,8944,1155,942
@@ -7878,7 +7877,7 @@ id	en	jp	en2	jp2	kana	level	similar
 7883	pasture	牧草地	The cows are grazing in the green pasture.	牛たちは緑の牧草地で草を食べています。	うしたちはみどりのぼくそうちでくさをたべています。	2	3960,10760,6259,1342,261
 7884	twilight	夕暮れ、黄昏	I like taking walks at twilight.	夕暮れ時に散歩するのが好きです。	ゆうぐれときにさんぽするのがすきです。	2	8971,575,2106,8018,9783
 7885	moan	うめく、嘆く	He moaned in pain.	痛みで彼は苦しそうにうめいていました。	いたみでかれはくるしそうにうめいていました。	2	3038,4959,3808,3422,6875
-7886	lame	足の不自由な、つまらない	That excuse was really lame.	その言い訳はとてもお粗末でした。	そのいいわけはとてもおそまつでした。	2	80,5860,10423,6394,3309
+7886	lame	足の不自由な、つまらない	That excuse was really lame.	その言い訳はとてもお粗末でした。	そのいいわけはとてもおそまつでした。	2	80,10423,6394,3309,4094
 7887	legally	合法的に	She is staying in this country legally.	彼女は合法的にこの国に滞在しています。	かのじょはごうほうてきにこのくににたいざいしています。	2	2214,12850,3130,5827,1121
 7888	condemn	非難する、断罪する	The government condemned the terrorist act.	政府はそのテロ行為を強く非難しました。	せいふはそのてろこういをつよくひなんしました。	1	10597,7799,11225,6278,5274
 7889	unbelievable	信じられない	The result of the match was unbelievable.	その試合の結果は本当に信じられませんでした。	そのしあいのけっかはほんとうにしんじられませんでした。	2	6892,10422,6477,3671,2543
@@ -7888,7 +7887,7 @@ id	en	jp	en2	jp2	kana	level	similar
 7893	outlet	排気口、はけ口、出口、販売所、小売店	We're going shopping at the outlet mall this weekend.	この週末アウトレットモールに買い物に行きます。	このしゅうまつあうとれっともーるにかいものにいきます。	2	9447,1314,9189,5064,6599
 7894	day in, day out	毎日毎日、日々	He does the same work day in, day out.	彼は日々同じ仕事を繰り返しています。	かれはひびおなじしごとをくりかえしています。	1	12722,1948,4431,3460,2061
 7895	erect	建てる、直立した	They erected a new building in the city center.	新しい建物を市の中心部に建設しました。	あたらしいたてものをしのちゅうしんぶにけんせつしました。	2	7504,4038,6007,1691,4958
-7896	stumble	つまずく、よろめく	He stumbled on the stairs.	彼は階段でつまずいて転びそうになりました。	かれはかいだんでつまずいてころびそうになりました。	1	1505,5080,8279,6780,7124
+7896	stumble	つまずく、よろめく	He stumbled on the stairs.	彼は階段でつまずいて転びそうになりました。	かれはかいだんでつまずいてころびそうになりました。	1	1505,5080,8279,6780,10787
 7897	bug	虫、バグ	There are many bugs in the garden.	庭には多くの虫がいます。	にわにはおおくのむしがいます。	2	12610,207,717,7711,3195
 7898	cathedral	大聖堂	The cathedral was built centuries ago.	その大聖堂は何世紀も前に建てられました。	そのだいせいどうはなんせいきもまえにたてられました。	2	7755,11791,8722,11385,10152
 7899	slap	平手打ち、ビンタ	She slapped him in anger.	彼女は怒って彼を平手打ちしました。	かのじょはおこってかれをひらてうちしました。	2	7772,8017,7365,7417,7199
@@ -8905,7 +8904,7 @@ id	en	jp	en2	jp2	kana	level	similar
 8911	drain	排水する、排出する、使い果たす	Please drain the water from the sink.	シンクの水を排出してください。	しんくのみずをはいしゅつしてください。	1	2067,8778,7871,2723,2687
 8912	break in	侵入する、割り込む	A burglar broke in by breaking a window.	泥棒が窓を破って侵入した。	どろぼうがまどをやぶってしんにゅうした。	1	8902,1685,6156,5111,4465
 8913	villainous	極悪な、悪党の	He was plotting a villainous scheme.	彼は極悪な計画を立てていた。	かれはごくあくなけいかくをたてていた。	2	6894,3442,3537,5511,1587
-8914	prior	前の、優先する	He cannot attend today because he has a prior appointment.	彼は優先する予定があるため、今日は参加できません。	かれはゆうせんするよていがあるため、きょうはさんかできません。	2	11523,10454,5860,5783,5859
+8914	prior	前の、優先する	He cannot attend today because he has a prior appointment.	彼は優先する予定があるため、今日は参加できません。	かれはゆうせんするよていがあるため、きょうはさんかできません。	2	11523,10454,5783,5859,7105
 8915	predict	予測する、予言する	It's difficult to predict tomorrow's weather.	明日の天気を予測することは難しい。	あすのてんきをよそくすることはむずかしい。	1	11179,2112,12016,10933,9759
 8916	sustain	持続させる、維持する、支える	The company was able to sustain its business despite the difficult situation.	その会社は厳しい状況にも関わらず、事業を維持することができました。	そのかいしゃはきびしいじょうきょうにもかかわらず、じぎょうをいじすることができました。	2	12051,4018,11363,12655,7687
 8917	carry out	実行する、遂行する	We need to carry out the plan.	私たちはその計画を遂行する必要があります。	わたしたちはそのけいかくをすいこうするひつようがあります。	1	7277,4448,11355,3123,4451
@@ -9214,7 +9213,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9223	French	フランス語、フランスの人・文化	I took a French class last semester and I really enjoyed it.	私は先学期にフランス語のクラスを受けて、とても楽しかったです。	わたしはせんがくきにふらんすごのくらすをうけて、とてもたのしかったです。	1	9301,9479,10863,9273,9660
 9224	French fries	フレンチフライ、揚げたポテト	I could really go for some crispy French fries right now.	今すぐカリカリのフレンチフライが食べたいな。	いますぐかりかりのふれんちふらいがたべたいな。	1	9432,6529,9012,740,503
 9225	Friday	金曜日	I can't wait for Friday; it means the weekend is finally here!	金曜日が待ちきれない。週末がやっとやってくるから！	きんようびがまちきれない。しゅうまつがやっとやってくるから!	1	9832,9434,9818,9468,9633
-9226	fridge	冷蔵庫	Could you please grab the milk from the fridge?	冷蔵庫から牛乳を取ってくれる？	れいぞうこからぎゅうにゅうをとってくれる?	2	9394,12859,12202,12120,12547
+9226	fridge	冷蔵庫	Could you please grab the milk from the fridge?	冷蔵庫から牛乳を取ってくれる？	れいぞうこからぎゅうにゅうをとってくれる?	2	9394,12859,12202,12547,52
 9227	fuel	燃料、エネルギー源	I need to stop and get some fuel before we hit the road.	道路に出る前に、燃料を補給する必要がある。	どうろにでるまえに、ねんりょうをほきゅうするひつようがある。	1	6447,1700,12419,8183,7393
 9228	futon	布団、寝具	I love sleeping on my futon when it gets cold outside.	外が寒くなると、布団の上で寝るのが大好きです。	そとがさむくなると、ふとんのうえでねるのがだいすきです。	2	6356,3228,3993,9489,6561
 9229	geese	ガチョウ、ガチョウの複数形	I saw a flock of geese swimming in the pond.	池で泳いでいるガチョウの群れを見ました。	いけでおよいでいるがちょうのむれをみました。	2	9241,9398,1397,2798,9531
@@ -9309,7 +9308,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9321	memorial	記念碑、記念行事	We went to the memorial to honor the soldiers who fought in the war.	私たちは戦争で戦った兵士たちを讃えるために記念碑に行きました。	わたしたちはせんそうでたたかったへいしたちをたたえるためにきねんひにいきました。	2	8828,12601,8100,8484,11381
 9322	men	男性、人間	There were a lot of men at the concert last night.	昨夜のコンサートにはたくさんの男性がいました。	さくやのこんさーとにはたくさんのだんせいがいました。	1	9969,9815,11885,6844,10514
 9323	menu	メニュー、料理のリスト	Let's check the menu to see what we want for dinner.	夕食に何を食べたいか、メニューを見てみよう。	ゆうしょくになにをたべたいか、めにゅーをみてみよう。	1	1538,8980,1810,13008,10774
-9324	meter	メーター、測定器	Can you check the temperature on the meter for me?	そのメーターで温度を確認してくれる？	そのめーたーでおんどをかくにんしてくれる?	1	5203,12120,11018,11673,9226
+9324	meter	メーター、測定器	Can you check the temperature on the meter for me?	そのメーターで温度を確認してくれる？	そのめーたーでおんどをかくにんしてくれる?	1	5203,11018,11673,9226,269
 9325	mid-1900s	1950年代から1960年代あたりの期間	The music from the mid-1900s really captures the spirit of that era.	1950年代から1960年代の音楽は、その時代の精神を見事に表現しています。	1950ねんだいから1960ねんだいのおんがくは、そのじだいのせいしんをみごとにひょうげんしています。	2	6712,6102,7357,7931,12014
 9326	mom	母、ママ	My mom always knows how to make me smile.	ママはいつも私を笑顔にする方法を知っている。	ままはいつもわたしをえがおにするほうほうをしっている。	2	2034,9642,1663,1361,7868
 9327	mommy	母、ママ	I love it when my mommy reads me bedtime stories.	ママが寝る前の話を読んでくれるのが大好き。	ままがねるまえのはなしをよんでくれるのがだいすき。	2	10101,9017,9416,2129,3669
@@ -9465,7 +9464,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9478	subway	地下鉄	I usually take the subway to work to avoid traffic.	通勤のために渋滞を避けるために、普段は地下鉄を利用しています。	つうきんのためにじゅうたいをさけるために、ふだんはちかてつをりようしています。	1	1467,4366,8891,13042,4333
 9479	summer class	夏の授業、夏季講座	I'm taking a summer class to improve my English skills.	英語のスキルを向上させるために、夏の授業を受けています。	えいごのすきるをこうじょうさせるために、なつのじゅぎょうをうけています。	1	2209,1640,920,2100,9813
 9480	sumo stable	相撲部屋	I visited a sumo stable to watch the athletes train.	相撲部屋を訪れて、アスリートたちのトレーニングを見ました。	すもうべやをおとずれて、あすりーとたちのとれーにんぐをみました。	1	9481,9397,6612,10327,7781
-9481	sumo wrestler	相撲レスラー	My friend wants to become a sumo wrestler because he loves the sport.	私の友達はそのスポーツが大好きなので、相撲レスラーになりたいと思っています。	わたしのともだちはそのすぽーつがだいすきなので、すもうれすらーになりたいとおもっています。	1	9480,3052,9269,9580,393
+9481	sumo wrestler	力士や相撲を取る人	My friend wants to become a sumo wrestler because he loves the sport.	私の友達はそのスポーツが大好きなので、相撲取りになりたいと思っています。	わたしのともだちはそのすぽーつがだいすきなので、すもうとりになりたいとおもっています。	1	9480,3052,9269,9580,393
 9482	sun flower	ひまわり	The sunflower in the garden is blooming beautifully.	庭のひまわりが美しく咲いています。	にわのひまわりがうつくしくさいています。	1	3195,7711,1430,11983,9638
 9483	Sunday	日曜日	I love to relax and watch movies on Sunday.	日曜日はリラックスして映画を見るのが大好きです。	にちようびはりらっくすしてえいがをみるのがだいすきです。	1	831,8196,2636,2989,6560
 9484	sunlight	日光、太陽の光	The sunlight streaming through the window makes the room feel so warm and inviting.	窓から差し込む日光が部屋をとても温かく、心地よく感じさせてくれます。	まどからさしこむにっこうがへやをとてもあたたかく、ここちよくかんじさせてくれます。	1	2255,1352,255,380,4899
@@ -9608,7 +9607,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9624	panic	恐慌、パニック	When the fire alarm went off, everyone started to panic and run for the exits.	火災警報が鳴ったとき、みんなパニックになって出口に向かって走り出しました。	かさいけいほうがなったとき、みんなぱにっくになってでぐちにむかってはしりだしました。	2	9193,12394,8835,8785,12501
 9625	quit	辞める、やめる	She decided to quit her job to travel the world.	彼女は世界を旅するために仕事を辞めることに決めました。	かのじょはせかいをたびするためにしごとをやめることにきめました。	1	889,9944,1880,7025,1394
 9626	recycle	リサイクル、再利用すること	It's super easy to recycle plastic bottles if you just put them in the right bin.	プラスチックボトルを正しいゴミ箱に入れれば、リサイクルはとても簡単です。	ぷらすちっくぼとるをただしいごみばこにいれれば、りさいくるはとてもかんたんです。	2	9422,9393,13062,4342,2252
-9627	respond	応答する、返事をする	I always try to respond to messages as quickly as I can.	私はできるだけ早くメッセージに返信するようにしています。	わたしはできるだけはやくめっせーじにへんしんするようにしています。	1	11799,9829,11106,12968,658
+9627	respond	応答する、返事をする	I always try to respond to messages as quickly as I can.	私はできるだけ早くメッセージに返信するようにしています。	わたしはできるだけはやくめっせーじにへんしんするようにしています。	1	11799,9829,12968,658,12187
 9628	scare	驚かせる、恐怖を感じさせる	The loud thunder scared me when I was home alone.	一人で家にいるときに、大きな雷鳴が私を驚かせました。	ひとりでいえにいるときに、おおきならいめいがわたしをおどろかせました。	1	1790,517,1828,11739,10613
 9629	score	得点、得点を取ること	I can't believe we scored the winning goal in the last minute!	最後の瞬間に勝利のゴールを決めたなんて信じられない！	さいごのしゅんかんにしょうりのごーるをきめたなんてしんじられない!	1	5371,9867,1931,924,10066
 9630	sent	送る、送信する	I sent the package to my friend yesterday.	昨日、友達にその荷物を送りました。	きのう、ともだちにそのにもつをおくりました。	1	1068,840,6165,12598,11296
@@ -10064,7 +10063,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10085	pepper	コショウ、唐辛子	Salt and pepper are on the table.	塩とコショウはテーブルの上にある。	しおとこしょうはてーぶるのうえにある。	2	3972,295,2039,318,8702
 10086	slice	薄切り、一片	A slice of pie, please.	パイを一切れください。	ぱいをひときれください。	1	1014,10087,9390,10112,11957
 10087	cookie	クッキー	One more cookie, please.	もう一枚クッキーをください。	もういちまいくっきーをください。	1	1483,10086,1014,7853,10089
-10088	jar	瓶、壺	Can you open the jar?	その瓶を開けてくれますか？	そのびんをあけてくれますか?	2	1674,12120,12323,11673,11018
+10088	jar	瓶、壺	Can you open the jar?	その瓶を開けてくれますか？	そのびんをあけてくれますか?	2	1674,12323,11673,11018,1265
 10089	candy	キャンディー、飴	I want more candy.	私はもっとキャンディーが欲しい。	わたしはもっときゃんでぃーがほしい。	1	4233,106,10087,9557,740
 10090	celebration	お祝い、祭典	New Year celebrations are fun.	お正月の祝祭は楽しい。	おしょうがつのしゅくさいはたのしい。	1	9341,11185,9342,9425,9154
 10091	entry	入場、エントリー、記載	No entry beyond this point.	この先立ち入り禁止。	このさきたちいりきんし。	1	10336,10100,10107,8343,10702
@@ -10576,7 +10575,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10598	drinking	飲酒、飲料	Drinking water is vital for survival.	飲料水は生存のために不可欠です。	いんりょうすいはせいぞんのためにふかけつです。	1	5799,527,5455,10236,1374
 10599	external	外部の、外面的な	The external walls of the house need repainting.	家の外壁を再塗装する必要があります。	いえのがいへきをさいとそうするひつようがあります。	1	13076,8349,5042,1329,8265
 10600	depression	憂鬱、不況	Many people suffer from depression silently.	多くの人々が黙ってうつ病を患っています。	おおくのひとびとがだまってうつびょうをわずらっています。	2	1333,10614,6646,12861,7861
-10601	guilty	有罪の、罪悪感を抱いている	He felt guilty about forgetting her birthday.	彼は彼女の誕生日を忘れてしまったことに罪悪感を感じていました。	かれはかのじょのたんじょうびをわすれてしまったことにざいあくかんをかんじていました。	1	856,1181,5860,7964,3846
+10601	guilty	有罪の、罪悪感を抱いている	He felt guilty about forgetting her birthday.	彼は彼女の誕生日を忘れてしまったことに罪悪感を感じていました。	かれはかのじょのたんじょうびをわすれてしまったことにざいあくかんをかんじていました。	1	856,1181,7964,3846,5252
 10602	underlie	根底にある、基礎となる	Fundamental principles underlie every theory.	すべての理論の基礎には基本的な原理があります。	すべてのりろんのきそにはきほんてきなげんりがあります。	2	12396,3048,6695,11788,7381
 10603	incorporate	組み込む、合併する	They decided to incorporate new features in the app.	彼らはアプリに新しい機能を取り入れることを決めました。	かれらはあぷりにあたらしいきのうをとりいれることをきめました。	2	12512,6219,12389,12449,9874
 10604	obligation	義務、責務	It's your obligation to finish the task on time.	タスクを時間通りに終わらせるのはあなたの義務です。	たすくをじかんどおりにおわらせるのはあなたのぎむです。	1	13051,1914,12190,10346,11459
@@ -10718,7 +10717,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10740	gear	ギア、装備	Make sure to wear the right gear when hiking.	ハイキングする時は適切な装備を着用してください。	はいきんぐするときはてきせつなそうびをちゃくようしてください。	2	857,4037,4582,6513,6064
 10741	click	クリックする	Just click the button to submit your answer.	あなたの答えを提出するには、ボタンをクリックしてください。	あなたのこたえをていしゅつするには、ぼたんをくりっくしてください。	2	1984,12664,6792,1816,4770
 10742	happily	幸せに、喜んで	The pig happily rolled in the mud.	豚は泥の中で喜んで転がりました。	ぶたはどろのなかでよろこんでころがりました。	1	560,5223,372,5036,7812
-10743	automatically	自動的に、機械的に	The door opens automatically when you approach.	近づくと、ドアが自動で開きます。	ちかづくと、どあがじどうでひらきます。	2	11528,2156,12120,384,9103
+10743	automatically	自動的に、機械的に	The door opens automatically when you approach.	近づくと、ドアが自動で開きます。	ちかづくと、どあがじどうでひらきます。	2	11528,2156,384,9103,1248
 10744	noted	著名な、有名な	He is a noted scholar in ancient history.	彼は古代史の著名な学者です。	かれはこだいしのちょめいながくしゃです。	1	11045,10682,4529,11058,11527
 10745	psychological	心理的な、精神的な	The test measures psychological traits.	このテストは心理的特性を測定します。	このてすとはしんりてきとくせいをそくていします。	2	7435,8304,11662,6075,6282
 10746	dramatically	劇的に、大幅に	The scene changed dramatically in seconds.	シーンは数秒で劇的に変わりました。	しーんはすうびょうでげきてきにかわりました。	2	8787,6233,10537,1973,2322
@@ -10762,7 +10761,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10784	hopefully	願わくば、うまくいけば	Hopefully, the weather will be sunny tomorrow.	うまくいけば、明日は晴れるでしょう。	うまくいけば、あすははれるでしょう。	2	5695,11179,12016,8521,9759
 10785	opening	開始、開店、開口部	The opening paragraph grabbed my attention.	開始段落が私の注意を引きました。	かいしだんらくがわたしのちゅういをひきました。	1	1285,11508,4481,10495,6397
 10786	stimulate	刺激する、活気づける	The economy needs policies that stimulate growth.	経済は成長を促進する政策が必要です。	けいざいはせいちょうをそくしんするせいさくがひつようです。	2	9821,5765,12659,12566,226
-10787	pant	あえぐ、息切れする	I need a new belt for my pants.	私はズボン用の新しいベルトが必要です。	わたしはずぼんようのあたらしいべるとがひつようです。	1	2071,101,6462,1351,7544
+10787	pant	あえぐ、息切れする、ズボン	He was panting after running up the stairs.	彼は階段を駆け上がった後、息を切らしていた。	かれはかいだんをかけあがったあと、いきをきらしていた。	1	6780,5751,7896,1505,3059
 10788	potato	ジャガイモ	I love baked potato with butter and chives.	私はバターとチャイブ入りのベイクドポテトが大好きです。	わたしはばたーとちゃいぶいりのべいくどぽてとがだいすきです。	1	13069,9145,7846,10644,1255
 10789	tissue	ティッシュ、組織	Please pass me a tissue; I need to blow my nose.	ティッシュを渡してください。鼻をかむ必要があります。	てぃっしゅをわたしてください。はなをかむひつようがあります。	2	10899,1516,1247,9799,1983
 10790	outweigh	～より重要である、～に勝る	The advantages and pros of the new system outweigh the cons.	新しいシステムの利点とメリットはデメリットを上回ります。	あたらしいしすてむのりてんとめりっとはでめりっとをうわまわります。	2	4851,10000,6180,675,10285
@@ -10951,7 +10950,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10974	to explain	説明する	The teacher took time to explain the concept to the students.	先生は生徒たちにその概念を説明する時間を取った。	せんせいはせいとたちにそのがいねんをせつめいするじかんをとった。	1	2113,719,3288,8865,3658
 10975	slot	スロット	The machine has a slot for inserting coins.	その機械にはコインを入れるスロットがある。	そのきかいにはこいんをいれるすろっとがある。	2	4653,10210,2380,7275,1816
 10976	compensate for	補償する	The company will compensate for the damages.	会社は被害に対する補償を行う。	かいしゃはひがいにたいするほしょうをおこなう。	1	11758,6895,2945,6834,3300
-10977	as soon as	できるだけ早く	Please contact us as soon as possible.	できるだけ早く私たちに連絡してください。	できるだけはやくわたしたちにれんらくしてください。	1	11106,12968,11799,11777,11694
+10977	as soon as	できるだけ早く	Please contact us as soon as possible.	できるだけ早く私たちに連絡してください。	できるだけはやくわたしたちにれんらくしてください。	1	12968,11799,11777,11694,12187
 10978	every day	毎日	I exercise every day to stay healthy.	健康を保つために毎日運動している。	けんこうをたもつためにまいにちうんどうしている。	1	5841,343,1673,1568,5801
 10979	in production	製造・生産中	The new product is currently in production.	新製品は現在製造中である。	しんせいひんはげんざいせいぞうちゅうである。	1	11199,6930,11452,11486,11491
 10980	fluctuation	変動	The stock market experienced significant fluctuation last week.	株式市場は先週大きく変動した。	かぶしきしじょうはせんしゅうおおきくへんどうした。	2	8146,2359,10158,7698,4532
@@ -10992,7 +10991,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11015	cubic	立方体の	The box has a cubic shape.	その箱は立方体の形をしている。	そのはこはりっぽうたいのかたちをしている。	2	12733,3070,7837,7661,858
 11016	periodically	定期的に	The software updates periodically.	ソフトウェアは定期的にアップデートされる。	そふとうぇあはていきてきにあっぷでーとされる。	2	12477,10255,10844,2643,10096
 11017	good and	良い状態	The hotel room was good and clean.	そのホテルの部屋は良くて清潔だった。	そのほてるのへやはよくてせいけつだった。	1	5896,6942,11399,749,468
-11018	see if	確認する	Can you see if the door is locked?	ドアがロックされているか確認してくれるか。	どあがろっくされているかかくにんしてくれるか。	1	12760,12705,13032,12120,11555
+11018	see if	確認する	Can you see if the door is locked?	ドアがロックされているか確認してくれるか。	どあがろっくされているかかくにんしてくれるか。	1	12760,12705,13032,11555,2056
 11019	fundamentally	根本的に	The approach is fundamentally different.	その手法は根本的に異なる。	そのしゅほうはこんぽんてきにことなる。	2	6251,10378,1466,6062,1668
 11020	promotional	宣伝用の	The company distributed promotional materials.	その会社は宣伝用の資料を配布した。	そのかいしゃはせんでんようのしりょうをはいふした。	2	1532,11911,11838,2087,5837
 11021	most recent	最新の	The most recent news is available online.	最新のニュースはオンラインで入手できる。	さいしんのにゅーすはおんらいんでにゅうしゅできる。	1	7953,6609,10558,3264,6758
@@ -11074,13 +11073,11 @@ id	en	jp	en2	jp2	kana	level	similar
 11097	at about	およそ	The meeting will start at about 2 o'clock.	会議は２時頃から始まる。	かいぎはにじころからはじまる。	1	6885,1769,12815,5512,9042
 11098	carry the	伝える	The media plays a crucial role in carrying the news.	メディアはニュースを伝える重要な役割を果たしている。	めでぃあはにゅーすをつたえるじゅうようなやくわりをはたしている。	1	9749,10575,7012,6456,7638
 11099	relative to	〜と相対的な	The price is relative to the quality of the product.	価格は商品の質と相対的である。	かかくはしょうひんのしつとそうたいてきである。	1	12731,12609,12175,1395,1061
-11100	amino acid	アミノ酸	The body needs amino acids to function properly.	体は正しく機能するためにアミノ酸を必要とする。	からだはただしくきのうするためにあみのさんをひつようとする。	1	12399,12302,8159,6287,10334
 11101	keep away from	〜から離れる	Keep away from the edge of the cliff.	崖の縁から離れろ。	がけのえんからはなれろ。	1	6532,5063,651,8516,2382
 11102	rename	名前を変える	The company decided to rename its product.	会社は自社の製品の名前を変えることにした。	かいしゃはじしゃのせいひんのなまえをかえることにした。	2	7873,2087,6930,2567,1871
 11103	freshwater	淡水	Freshwater fish are very sensitive to water quality.	淡水魚は水の質にとても敏感である。	たんすいぎょはみずのしつにとてもびんかんである。	2	12270,11720,5480,12522,6430
 11104	persuade A to	Aを説得する	I tried to persuade him to change his mind.	彼に考えを変えてもらおうと説得した。	かれにかんがえをかえてもらおうとせっとくした。	1	8843,1183,4996,10332,13071
 11105	back of	〜の後ろに	The door is at the back of the building.	ドアは建物の後ろにある。	どあはたてもののうしろにある。	1	11244,52,563,3607,12796
-11106	as soon	〜次第	I'll contact you as soon as possible.	可能な限りすぐに連絡します。	かのうなかぎりすぐにれんらくします。	1	10977,11799,12567,12837,12187
 11107	entitled to	〜の権利がある	All citizens are entitled to free healthcare.	すべての市民は無料の医療サービスを受ける権利がある。	すべてのしみんはむりょうのいりょうさーびすをうけるけんりがある。	1	10075,13001,9812,2131,12395
 11108	aware of	〜に気づいている	She is aware of the risks involved.	彼女は危険を認識している。	かのじょはきけんをにんしきしている。	1	119,10239,11079,654,3233
 11109	populate	住人を増やす	The government aims to populate the rural areas.	政府は地方に住人を増やそうとしている。	せいふはちほうにじゅうにんをふやそうとしている。	2	6882,11368,12566,6652,7996
@@ -11521,7 +11518,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11546	substrate	基質、基板	The enzyme reacts with the substrate to produce the product.	酵素は基質と反応して生成物を産生する。	こうそはきしつとはんのうしてせいせいぶつをさんせいする。	2	4920,10501,6077,6940,5498
 11547	miniature	ミニチュア、縮小模型	The artist created a miniature model of the city.	芸術家は都市のミニチュアモデルを作成した。	げいじゅつかはとしのみにちゅあもでるをさくせいした。	2	3674,2327,604,4927,10372
 11548	pedal	ペダル、踏み板	She pressed the pedal to make the bicycle move.	彼女は自転車を動かすためにペダルを踏んだ。	かのじょはじてんしゃをうごかすためにぺだるをふんだ。	2	973,1223,827,5353,1797
-11549	glucose	グルコース、ブドウ糖	The body uses glucose as a source of energy.	体はグルコースをエネルギー源として使用する。	からだはぐるこーすをえねるぎーげんとしてしようする。	2	8159,11121,11100,6934,10800
+11549	glucose	グルコース、ブドウ糖	The body uses glucose as a source of energy.	体はグルコースをエネルギー源として使用する。	からだはぐるこーすをえねるぎーげんとしてしようする。	2	8159,11121,6934,10800,4560
 11550	sharply	鋭く、急に	The price of oil increased sharply last year.	石油の価格は昨年急激に上昇した。	せきゆのかかくはさくねんきゅうげきにじょうしょうした。	2	12324,12104,10437,1684,12180
 11551	polynomial	多項式、ポリノミアル	The mathematician studied the properties of a polynomial.	数学者は多項式の特性を研究した。	すうがくしゃはたこうしきのとくせいをけんきゅうした。	2	12336,11974,12446,8117,1643
 11552	bomber	爆撃機	The bomber flew over the city, dropping bombs.	爆撃機は都市の上空を飛び、爆弾を投下した。	ばくげききはとしのじょうくうをとび、ばくだんをとうかした。	2	12087,109,12927,2546,3756
@@ -11643,7 +11640,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11670	after which	その後、続いて	The company will announce a new policy, after which there will be a Q&A session.	その後、会社は新しい政策を発表し、続いて質疑応答のセッションが行われる。	そのご、かいしゃはあたらしいせいさくをはっぴょうし、つづいてしつぎおうとうのせっしょんがおこなわれる。	1	11435,7535,5679,5055,11375
 11671	inference	推論、推測	The detective made an inference based on the evidence.	その探偵は証拠に基づいて推論した。	そのたんていはしょうこにもとづいてすいろんした。	2	9804,3254,6873,3877,11633
 11672	chloride	塩化物	The team will study chloride the new method.	チームは塩化物を研究します。	ちーむはえんかぶつをけんきゅうします。	2	530,11726,11304,1668,5853
-11673	turn on	オンにする	Can you turn on the light?	あなたは電気をつけることができますか？	あなたはでんきをつけることができますか?	1	11447,803,649,12120,11018
+11673	turn on	オンにする	Can you turn on the light?	あなたは電気をつけることができますか？	あなたはでんきをつけることができますか?	1	11447,803,649,11018,12323
 11674	be pleased with	に満足する	She seems to be pleased with her new job.	彼女は新しい仕事に満足しているようです。	かのじょはあたらしいしごとにまんぞくしているようです。	1	3790,3546,11963,11696,1423
 11675	cane	杖	The old man uses a cane to walk.	老人は歩くために杖を使います。	ろうじんはあるくためにつえをつかいます。	2	8040,8508,7363,7164,2481
 11676	bandwidth	帯域幅	The new server has a large bandwidth.	新しいサーバーは大きな帯域幅を持っています。	あたらしいさーばーはおおきなたいいきはばをもっています。	2	2406,10509,12657,11485,8653
@@ -11664,7 +11661,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11691	spinal	脊髄の	The spinal injury was very serious.	脊髄の損傷は非常に深刻でした。	せきずいのそんしょうはひじょうにしんこくでした。	2	12935,5548,6698,5405,3365
 11692	in the process of	の過程で	The project is in the process of development.	そのプロジェクトは開発の過程にあります。	そのぷろじぇくとはかいはつのかていにあります。	1	4230,12570,5845,12612,3127
 11693	unchanged	変化しない	The price has remained unchanged.	その価格は変化していません。	そのかかくはへんかしていません。	2	10437,12180,7268,6837,12609
-11694	right away	すぐに	Please call me right away.	すぐに私に電話してください。	すぐにわたしにでんわしてください。	1	1868,9705,11532,11106,9714
+11694	right away	すぐに	Please call me right away.	すぐに私に電話してください。	すぐにわたしにでんわしてください。	1	1868,9705,11532,9714,11330
 11695	internationally	国際的に	The company is known internationally.	その会社は国際的に知られています。	そのかいしゃはこくさいてきにしられています。	2	11297,11075,10396,12143,11048
 11696	seem to be	であるように思われる	She seems to be very happy.	彼女はとても幸せであるように思われます。	かのじょはとてもしあわせであるようにおもわれます。	1	11674,2752,6114,7868,3790
 11697	corpse	死体	The police found a corpse in the forest.	警察は森で死体を発見しました。	けいさつはもりでしたいをはっけんしました。	2	5106,7630,7124,8733,5713
@@ -11769,7 +11766,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11796	magnetic field	磁場	The Earth is surrounded by a magnetic field.	地球は磁場に囲まれている。	ちきゅうはじばにかこまれている。	1	8884,8449,12914,3770,11977
 11797	either A or B	AかBのどちらか	You can choose either A or B.	AかBのどちらかを選ぶことができます。	AかBのどちらかをえらぶことができます。	1	1565,11578,11804,1052,2273
 11798	harbour	港	The ships sailed into the harbour.	船は港に入港した。	ふねはみなとににゅうこうした。	2	8326,2549,4853,10257,1063
-11799	respond to	～に答える、反応する	Please respond to my email as soon as possible.	できるだけ早く私のメールに返信してください。	できるだけはやくわたしのめーるにへんしんしてください。	1	12968,1031,11106,10977,9627
+11799	respond to	～に答える、反応する	Please respond to my email as soon as possible.	できるだけ早く私のメールに返信してください。	できるだけはやくわたしのめーるにへんしんしてください。	1	12968,1031,10977,9627,3084
 11800	list of	～のリスト、一覧	Here is a list of items you need to buy.	これはあなたが買う必要のあるアイテムのリストです。	これはあなたがかうひつようのあるあいてむのりすとです。	1	217,12742,876,12547,13033
 11801	political party	政党	He is a member of a political party.	彼は政党のメンバーです。	かれはせいとうのめんばーです。	1	11195,6932,7212,2319,11254
 11802	priovide A with B	AにBを提供する	The company will provide you with all the necessary training.	会社はあなたに必要なすべてのトレーニングを提供します。	かいしゃはあなたにひつようなすべてのとれーにんぐをていきょうします。	1	12648,10582,5537,11092,12327
@@ -12088,7 +12085,6 @@ id	en	jp	en2	jp2	kana	level	similar
 12117	a couple of	2つ、数	I need a couple of days to finish this project.	このプロジェクトを完了するには2日くらいかかるだろう。	このぷろじぇくとをかんりょうするにはふつかくらいかかるだろう。	1	11780,12781,450,9665,11313
 12118	expectancy	期待	The expectancy of living a long life is increasing.	長く生きるという期待が高まっている。	ながくいきるというきたいがたかまっている。	2	8772,6383,6526,6157,12583
 12119	on the surface	表面上は	On the surface, everything seems fine, but there are underlying issues.	表面上は全て問題ないように見えるが、根本的な問題がある。	ひょうめんじょうはすべてもんだいないようにみえるが、こんぽんてきなもんだいがある。	1	10098,11484,4287,8530,9883
-12120	open the	〜を開く	Can you open the door for me?	ドアを開けてくれませんか？	どあをあけてくれませんか?	1	52,2156,11018,10088,333
 12121	encouraging	励ましの	Her encouraging words helped me a lot.	彼女の励ましの言葉は私にとても役に立った。	かのじょのはげましのことばはわたしにとてもやくにたった。	2	8810,1754,4661,8932,5010
 12122	curriculum	教育課程	The school curriculum includes a variety of subjects.	学校の教育課程には様々な科目が含まれている。	がっこうのきょういくかていにはさまざまなかもくがふくまれている。	2	6089,6620,11057,966,1386
 12123	not change	変わらない	Some things in life will not change, no matter what.	人生において、どんなことがあろうとも変わらないものもある。	じんせいにおいて、どんなことがあろうともかわらないものもある。	1	10094,10206,9712,3139,7380
@@ -12154,7 +12150,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12184	set out	出発する、始める	We set out on our journey early in the morning.	私たちは早朝に旅に出発した。	わたしたちはそうちょうにたびにしゅっぱつした。	1	4986,6032,2703,2014,8946
 12185	for sale	販売中、売却予定	The house is for sale.	その家は売却中である。	そのいえはばいきゃくちゅうである。	1	8265,13076,10187,4580,3578
 12186	passed by	通り過ぎる、無視する	The car passed by without stopping.	その車は停止せずに通り過ぎた。	そのくるまはていしせずにとおりすぎた。	1	1607,3825,11034,3263,2713
-12187	at any time	いつでも、自由に	You can contact me at any time.	あなたはいつでも私に連絡することができる。	あなたはいつでもわたしにれんらくすることができる。	1	11532,9705,11106,10977,11694
+12187	at any time	いつでも、自由に	You can contact me at any time.	あなたはいつでも私に連絡することができる。	あなたはいつでもわたしにれんらくすることができる。	1	11532,9705,10977,11694,12092
 12188	posthumously	死後に、追って	He was awarded the prize posthumously.	彼は死後に賞を与えられた。	かれはしごにしょうをあたえられた。	2	3028,3025,5412,8083,2196
 12189	far from	から離れて、ほど遠い	The new restaurant is far from my house.	新しいレストランは私の家からかなり遠い。	あたらしいれすとらんはわたしのいえからかなりとおい。	1	1564,12843,4647,9025,11424
 12190	not possible	不可能な、できない	It's not possible to finish the project on time.	そのプロジェクトを時間どおりに終わらせることは不可能だ。	そのぷろじぇくとをじかんどおりにおわらせることはふかのうだ。	1	12949,2193,5782,289,9912
@@ -12268,7 +12264,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12299	backwards	後ろ向きに、逆方向に	He walked backwards into the room.	彼は後ろ向きに部屋に入ってきました。	かれはうしろむきにへやにはいってきました。	2	6510,2983,1736,5147,5702
 12300	prevent A from ～ing	Aが～するのを妨げる	The rain prevented us from going to the park.	雨のせいで、私たちは公園に行くことができませんでした。	あめのせいで、わたしたちはこうえんにいくことができませんでした。	1	12802,9843,6665,12951,26
 12301	not work	機能しない、うまくいかない	The remote control does not work anymore.	そのリモコンはもう機能しません。	そのりもこんはもうきのうしません。	1	8189,5505,8817,10894,11624
-12302	amino acids	アミノ酸	Proteins are made up of amino acids.	タンパク質はアミノ酸で構成されています。	たんぱくしつはあみのさんでこうせいされています。	1	12399,11100,3682,7301,10689
+12302	amino acids	アミノ酸	Proteins are made up of amino acids.	タンパク質はアミノ酸で構成されています。	たんぱくしつはあみのさんでこうせいされています。	1	3682,7301,10689,10538,12576
 12303	hybrid	ハイブリッド、複合	The company developed a hybrid car that uses both electricity and gasoline.	その会社は電気とガソリンの両方を使用するハイブリッド車を開発しました。	そのかいしゃはでんきとがそりんのりょうほうをしようするはいぶりっどしゃをかいはつしました。	2	11164,12618,690,4430,12082
 12304	unsuccessfully	不成功に、うまくいかずに	He tried unsuccessfully to fix the broken machine.	彼は壊れた機械を修理しようとしましたが、うまくいきませんでした。	かれはこわれたきかいをしゅうりしようとしましたが、うまくいきませんでした。	2	8817,1797,8189,12923,5569
 12305	wish to	～したい	I wish to thank everyone for their support.	皆様のご支援に感謝申し上げます。	みなさまのごしえんにかんしゃもうしあげます。	1	20,412,7838,8689,3633
@@ -12365,7 +12361,6 @@ id	en	jp	en2	jp2	kana	level	similar
 12396	axiom	公理	The theorem is based on a fundamental axiom.	その定理は、基本的な公理に基づいています。	そのていりは、きほんてきなこうりにもとづいています。	2	10602,12336,12704,4370,4947
 12397	as a matter of fact	実際のところ、実のところ	As a matter of fact, I've never been to Japan.	実際のところ、私は一度も日本に行ったことがありません。	じっさいのところ、わたしはいちどもにっぽんにいったことがありません。	1	1419,1001,9279,11212,8979
 12398	depend on	～に頼る、～次第である	Our success will depend on how hard we work.	私たちの成功は、どれだけ努力するかにかかっています。	わたしたちのせいこうは、どれだけどりょくするかにかかっています。	1	1718,3373,12001,2060,453
-12399	amino	アミノ	Amino acids are the building blocks of proteins.	アミノ酸はタンパク質の構成要素です。	あみのさんはたんぱくしつのこうせいようそです。	1	12302,11100,3682,12576,11505
 12400	cannon	大砲	The old cannon stood on the fortress wall.	古い大砲が要塞の壁に立っていました。	ふるいたいほうがようさいのかべにたっていました。	2	7673,11920,595,5204,1803
 12401	young people	若者	We need to listen to the voices of young people.	私たちは若者の声に耳を傾ける必要があります。	わたしたちはわかもののこえにみみをかたむけるひつようがあります。	1	4745,7925,8485,9065,8863
 12402	parts of	～の一部	Parts of the city were affected by the flood.	都市の一部は洪水の影響を受けました。	としのいちぶはこうずいのえいきょうをうけました。	1	12613,685,8047,7159,4749
@@ -12532,7 +12527,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12564	chapel	礼拝堂	They got married in a small chapel.	彼らは小さな礼拝堂で結婚しました。	かれらはちいさなれいはいどうでけっこんしました。	2	8290,2186,5691,246,5895
 12565	free of	～がない、～を免れた	This product is free of harmful chemicals.	この製品は有害な化学物質を含んでいません。	このせいひんはゆうがいなかがくぶっしつをふくんでいません。	1	12758,1821,2341,2748,11473
 12566	economic growth	経済成長	The government is aiming for strong economic growth.	政府は力強い経済成長を目指しています。	せいふはちからづよいけいざいせいちょうをめざしています。	1	9821,5765,12659,10786,226
-12567	hear from	～から連絡をもらう	I hope to hear from you soon.	すぐにあなたから連絡があることを願っています。	すぐにあなたかられんらくがあることをねがっています。	1	12837,12979,11106,11799,1031
+12567	hear from	～から連絡をもらう	I hope to hear from you soon.	すぐにあなたから連絡があることを願っています。	すぐにあなたかられんらくがあることをねがっています。	1	12837,12979,11799,1031,12968
 12568	kind of	一種の、まあまあ	It's kind of cold today.	今日はちょっと寒いですね。	きょうはちょっとさむいですね。	1	2200,9028,1232,3918,574
 12569	shuttle	シャトル、往復する	The airport shuttle runs every hour.	空港シャトルは毎時間運行しています。	くうこうしゃとるはまいじかんうんこうしています。	2	1672,12502,12372,7258,11984
 12570	infancy	初期、幼少期	The project is still in its infancy.	そのプロジェクトはまだ初期段階です。	そのぷろじぇくとはまだしょきだんかいです。	2	11692,4230,3357,12612,11844
@@ -12781,7 +12776,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12815	shortly	まもなく、すぐに	The meeting will begin shortly.	会議はまもなく始まります。	かいぎはまもなくはじまります。	2	1981,11267,5512,11097,6885
 12816	be pleased to	～することを喜ぶ	I am pleased to announce the winners of the competition.	コンテストの受賞者を発表することを嬉しく思います。	こんてすとのじゅしょうしゃをはっぴょうすることをうれしくおもいます。	1	2196,1139,429,9320,3688
 12817	purely	純粋に、全く	He acted purely out of kindness.	彼は全く親切心から行動した。	かれはまったくしんせつしんからこうどうした。	2	5839,122,754,11959,6167
-12818	get back	戻る、取り戻す	I'll get back to you with an answer tomorrow.	明日、お返事いたします。	あす、おへんじいたします。	1	11606,11776,6592,11106,845
+12818	get back	戻る、取り戻す	I'll get back to you with an answer tomorrow.	明日、お返事いたします。	あす、おへんじいたします。	1	11606,11776,6592,845,11932
 12819	transform	変える、変化させる	The internet has transformed the way we communicate.	インターネットは私たちのコミュニケーション方法を変えました。	いんたーねっとはわたしたちのこみゅにけーしょんほうほうをかえました。	2	12352,4729,1410,7699,6314
 12820	arguably	おそらく、間違いなく	He is arguably the best player on the team.	彼はおそらくチームで最高の選手です。	かれはおそらくちーむでさいこうのせんしゅです。	2	13025,5684,6613,12222,12429
 12821	a great deal of	たくさんの、多量の	We spent a great deal of time preparing for the presentation.	私たちはプレゼンテーションの準備に多くの時間を費やしました。	わたしたちはぷれぜんてーしょんのじゅんびにおおくのじかんをついやしました。	1	63,8079,10914,10009,391
@@ -12800,7 +12795,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12834	on one	〜の上に	The book is on one of the shelves.	その本は棚の1つにあります。	そのほんはたなのひとつにあります。	1	1243,318,5337,12066,9590
 12835	drummer	ドラマー	The drummer played an amazing solo.	ドラマーは素晴らしいソロを演奏した。	どらまーはすばらしいそろをえんそうした。	2	663,12241,1482,6477,12315
 12836	in contact with	〜と連絡を取っている	I'm still in contact with my old classmates.	私はまだ昔のクラスメートと連絡を取っています。	わたしはまだむかしのくらすめーととれんらくをとっています。	1	12607,4500,11495,4681,11731
-12837	look forward to	〜を楽しみにする	I look forward to hearing from you soon.	ご連絡をお待ちしております。	ごれんらくをおまちしております。	1	12567,11106,8970,11799,1031
+12837	look forward to	〜を楽しみにする	I look forward to hearing from you soon.	ご連絡をお待ちしております。	ごれんらくをおまちしております。	1	12567,8970,11799,1031,12968
 12838	behind schedule	予定より遅れている	We are running behind schedule due to the bad weather.	悪天候のため、私たちは予定より遅れています。	あくてんこうのため、わたしたちはよていよりおくれています。	1	6968,1212,6068,5229,4598
 12839	replica	レプリカ、複製	The museum has a replica of the famous statue.	博物館には有名な彫像のレプリカがあります。	はくぶつかんにはゆうめいなちょうぞうのれぷりかがあります。	2	11232,11460,7392,11511,10347
 12840	accent	アクセント、なまり	She has a strong Southern accent.	彼女は強い南部訛りがあります。	かのじょはつよいなんぶなまりがあります。	2	1703,6572,7307,7270,7702
@@ -12931,7 +12926,7 @@ id	en	jp	en2	jp2	kana	level	similar
 12965	enforcement	執行、強制	Law enforcement is crucial for maintaining order.	法の執行は秩序を維持するために非常に重要です。	ほうのしっこうはちつじょをいじするためにひじょうにじゅうようです。	2	1269,5034,6458,5270,7389
 12966	lifetime	一生、生涯	This product has a lifetime warranty.	この製品には生涯保証が付いています。	このせいひんにはしょうがいほしょうがついています。	2	10404,6151,4584,12758,2544
 12967	identifie	特定する、識別する	The police tried to identifie the suspect.	警察は容疑者を特定しようとした。	けいさつはようぎしゃをとくていしようとした。	2	1071,6998,4699,8073,8796
-12968	as soon as possible	できるだけ早く	Please reply to this email as soon as possible.	できるだけ早くこのメールに返信してください。	できるだけはやくこのめーるにへんしんしてください。	1	11799,1031,10977,11106,3084
+12968	as soon as possible	できるだけ早く	Please reply to this email as soon as possible.	できるだけ早くこのメールに返信してください。	できるだけはやくこのめーるにへんしんしてください。	1	11799,1031,10977,3084,10264
 12969	mathematically	数学的に	The problem can be solved mathematically.	その問題は数学的に解決できます。	そのもんだいはすうがくてきにかいけつできます。	2	11857,8111,1643,1,5772
 12970	infantry	歩兵	The infantry advanced across the field.	歩兵は野原を前進した。	ふひょうはのはらをぜんしんした。	2	7669,11078,11567,927,12601
 12971	in question	問題になっている、議論中の	The issue in question is very complex.	問題となっている問題は非常に複雑です。	もんだいとなっているもんだいはひじょうにふくざつです。	1	3210,4536,10098,8815,5772
