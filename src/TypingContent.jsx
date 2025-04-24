@@ -35,9 +35,17 @@ function TypingContent () {
 
   // WASMの関数で問題のセットアップと問題数を返す
   useEffect(() => {
-    const result = window.CreateTyping()
-    console.log(result)
-    setMaxIndex(result)
+    const initializeTyping = async () => {
+      try {
+        const result = await window.CreateTyping()
+        console.log('タイピング問題セットアップ完了:', result)
+        setMaxIndex(result)
+      } catch (error) {
+        console.error('タイピング問題のセットアップに失敗しました:', error)
+      }
+    }
+
+    initializeTyping()
   }, [])
 
   // フォーカスをする
@@ -50,13 +58,13 @@ function TypingContent () {
   const selectQuestion = async (index, startFlag = false) => {
     setCurrentIndex(index)
     // WASMの関数
-    const question = window.GetTypingQuestion(index)
+    const question = await window.GetTypingQuestion(index)
     setQuestionText(question)
     // WASMの関数(英語の配列)
-    const array1 = window.GetTypingQuestionSlice(1)
+    const array1 = await window.GetTypingQuestionSlice(1)
     setQuestionTextArray1(array1)
     // WASMの関数(日本語の配列)
-    const array2 = window.GetTypingQuestionSlice(2)
+    const array2 = await window.GetTypingQuestionSlice(2)
     setQuestionTextArray2(array2)
 
     setQuestionIndex1(0)
@@ -72,31 +80,31 @@ function TypingContent () {
   }
 
   // タイピング開始
-  const handleStart = () => {
-    selectQuestion(0, true)
+  const handleStart = async () => {
+    await selectQuestion(0, true)
   }
 
-  const handlePrevious = () => {
+  const handlePrevious = async () => {
     let index = currentIndex
     if (index > 0) {
       index--
-      selectQuestion(index)
+      await selectQuestion(index)
     } else {
-      selectQuestion(maxIndex - 1)
+      await selectQuestion(maxIndex - 1)
     }
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     let index = currentIndex
     if (index < maxIndex - 1) {
       index++
-      selectQuestion(index)
+      await selectQuestion(index)
     } else {
-      selectQuestion(0)
+      await selectQuestion(0)
     }
   }
 
-  const handleKeyDown = e => {
+  const handleKeyDown = async e => {
     // デフォルトのキー動作（例: Tabキーでのフォーカス移動など）を防ぐ場合
     e.preventDefault()
 
@@ -108,7 +116,7 @@ function TypingContent () {
 
     let result = 0
     if (whichRef.current === 1) {
-      result = window.KeyDown(input, questionIndex1, 1)
+      result = await window.TypingKeyDown(input, questionIndex1, 1)
       if (result > questionIndex1) {
         setQuestionIndex1(result)
         setInputCharacters('')
@@ -117,14 +125,14 @@ function TypingContent () {
         }
       }
     } else if (whichRef.current === 2) {
-      result = window.KeyDown(input, questionIndex2, 2)
+      result = await window.TypingKeyDown(input, questionIndex2, 2)
       if (result > questionIndex2) {
         setQuestionIndex2(result)
         setInputCharacters('')
         if (result >= questionTextArray2.length) {
-          timerIdRef.current = setTimeout(() => {
+          timerIdRef.current = setTimeout(async () => {
             whichRef.current = 1
-            selectQuestion(currentIndex + 1)
+            await selectQuestion(currentIndex + 1)
             timerIdRef.current = null
           }, 500)
         }

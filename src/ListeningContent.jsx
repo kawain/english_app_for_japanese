@@ -1,11 +1,10 @@
-import { useState, useEffect, useCallback } from 'react' // useMemo を追加
+import { useState, useEffect, useCallback } from 'react'
 import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
-import { addExcludedWordId } from './Storage.jsx'
 
 function ListeningContent () {
-  const { selectedLevel, isSoundEnabled, speak } = useAppContext()
+  const { selectedLevel, isSoundEnabled, addStorage, speak } = useAppContext()
   const [progress, setProgress] = useState(0)
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -23,9 +22,9 @@ function ListeningContent () {
   const [isLocked, setIsLocked] = useState(false)
 
   // 問題を取得する関数 (useCallbackでメモ化)
-  const fetchQuestion = useCallback(() => {
+  const fetchQuestion = useCallback(async () => {
     try {
-      const questionData = window.GetListeningQuestion(
+      const questionData = await window.GetListeningData(
         parseInt(selectedLevel, 10)
       )
       if (!questionData) {
@@ -39,8 +38,8 @@ function ListeningContent () {
     }
   }, [selectedLevel]) // selectedLevelが変わったら関数を再生成
 
-  const next = (startFlag = false) => {
-    const question = fetchQuestion()
+  const next = async (startFlag = false) => {
+    const question = await fetchQuestion()
     if (!question) {
       console.error('Failed to fetch question.')
       return
@@ -59,44 +58,44 @@ function ListeningContent () {
     setStep(1)
   }
 
-  const handleStart = () => {
-    next(true)
+  const handleStart = async () => {
+    await next(true)
   }
 
   const handleEnClick = async () => {
     if (currentQuestion) {
+      setStep(1)
       setEn(currentQuestion.en)
       await speak(currentQuestion.en, 'en-US')
-      setStep(1)
     }
   }
 
   const handleJpClick = async () => {
     if (currentQuestion) {
+      setStep(2)
       setJp(currentQuestion.jp)
       await speak(currentQuestion.jp, 'ja-JP')
-      setStep(2)
     }
   }
 
   const handleEn2Click = async () => {
     if (currentQuestion) {
+      setStep(3)
       setEn2(currentQuestion.en2)
       await speak(currentQuestion.en2, 'en-US')
-      setStep(3)
     }
   }
 
   const handleJp2Click = async () => {
     if (currentQuestion) {
+      setStep(4)
       setJp2(currentQuestion.jp2)
       await speak(currentQuestion.jp2, 'ja-JP')
-      setStep(4)
     }
   }
 
-  const handleNext = () => {
-    next()
+  const handleNext = async () => {
+    await next()
   }
 
   const handleAutoPlay = async () => {
@@ -168,14 +167,7 @@ function ListeningContent () {
         window.speechSynthesis.cancel()
       }
     }
-  }, [
-    step,
-    progress,
-    autoPlay,
-    currentQuestion,
-    speak,
-    isSoundEnabled
-  ])
+  }, [step, progress, autoPlay, currentQuestion, speak, isSoundEnabled])
 
   // レベルを変更したときの処理
   useEffect(() => {
@@ -245,10 +237,9 @@ function ListeningContent () {
             {autoPlay ? '自動再生をオフ' : '自動再生をオン'}
           </button>
           <button
-            onClick={() => {
+            onClick={async () => {
               if (currentQuestion?.id != null) {
-                addExcludedWordId(String(currentQuestion.id))
-                window.AddStorage(currentQuestion.id)
+                await addStorage(currentQuestion.id)
                 alert('ストレージに追加しました')
               } else {
                 alert('現在の問題情報がありません。')
@@ -294,9 +285,8 @@ function ListeningContent () {
                   <td className='center-text'>
                     <button
                       className='nowrap'
-                      onClick={() => {
-                        addExcludedWordId(String(currentQuestion.id))
-                        window.AddStorage(currentQuestion.id)
+                      onClick={async () => {
+                        await addStorage(item.id)
                         const newArray = reviewArray.filter(
                           obj => obj.id !== item.id
                         )
