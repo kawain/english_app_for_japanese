@@ -10,12 +10,7 @@ import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
-import Storage, {
-  getExcludedWordIds,
-  addExcludedWordId,
-  removeExcludedWordId,
-  clearExcludedWordIds
-} from './Storage.jsx'
+import Storage from './Storage.jsx'
 import { speakTextAsync } from './utils/tts.js'
 import { FaHome } from 'react-icons/fa'
 import { MdHearing } from 'react-icons/md'
@@ -56,27 +51,11 @@ function App () {
         go.run(result.instance)
         console.log('WASM インスタンス実行開始')
 
-        console.log('CSVデータの読み込み開始...')
-        const response = await fetch('./word.csv')
-        const text = await response.text()
-        const rows = text.split('\n')
-        const data = []
-        for (let i = 1; i < rows.length; i++) {
-          const parts = rows[i].split('\t')
-          if (parts.length === 8) {
-            data.push(parts.map(p => p.trim()))
-          }
+        const success = await window.InitializeAppData()
+        if (success) {
+          setWasmInitialized(true)
+          console.log('WASM およびデータ初期化完了')
         }
-        // WASMの関数を呼び出して単語オブジェクトを作成
-        await window.CreateObject(data)
-
-        console.log('除外単語IDの読み込み開始...')
-        const loadedExcludedIds = await getExcludedWordIds()
-        // WASMの関数を呼び出して除外単語IDを設定
-        await window.SetStorage(loadedExcludedIds)
-
-        setWasmInitialized(true)
-        console.log('WASM およびデータ初期化完了')
       } catch (error) {
         console.error('WASMのロードまたはデータ初期化に失敗しました:', error)
         setErrorMessage(
@@ -87,36 +66,6 @@ function App () {
     }
 
     initializeWasmAndData()
-  }, [])
-
-  // addStorage
-  const addStorage = useCallback(async wordId => {
-    try {
-      await addExcludedWordId(wordId)
-      await window.AddStorage(wordId)
-    } catch (error) {
-      console.error('addStorageでエラーが発生しました:', error)
-    }
-  }, [])
-
-  // removeStorage
-  const removeStorage = useCallback(async wordId => {
-    try {
-      await removeExcludedWordId(wordId)
-      await window.RemoveStorage(wordId)
-    } catch (error) {
-      console.error('removeStorageでエラーが発生しました:', error)
-    }
-  }, [])
-
-  // clearStorage
-  const clearStorage = useCallback(async () => {
-    try {
-      await clearExcludedWordIds()
-      await window.ClearStorage()
-    } catch (error) {
-      console.error('clearStorageでエラーが発生しました:', error)
-    }
   }, [])
 
   // speak関数
@@ -177,15 +126,12 @@ function App () {
     <AppContext.Provider
       value={{
         selectedLevel,
-        volume,
-        isSoundEnabled,
-        addStorage,
-        removeStorage,
-        clearStorage,
-        speak,
         handleLevelChange,
+        volume,
         handleVolumeChange,
-        toggleSound
+        isSoundEnabled,
+        toggleSound,
+        speak
       }}
     >
       <div className='container'>

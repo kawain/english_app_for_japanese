@@ -76,7 +76,7 @@ func NewDatum(idText, en, jp, en2, jp2, kana, levelText, similarText string) Dat
 // AppData はアプリケーション全体のデータ（単語データとローカルストレージ情報）を保持します。
 type AppData struct {
 	Data         []Datum // すべての単語データのスライス
-	LocalStorage []int   // ローカルストレージに保存されている（学習済みなどの）単語IDのスライス
+	LocalStorage []int   // ローカルストレージに保存されている（学習済みなどの）単語IDのスライス (重複なし)
 }
 
 // AddData は AppData の Data スライスに新しい Datum を追加します。
@@ -88,11 +88,18 @@ func (a *AppData) AddData(datum Datum) {
 }
 
 // AddStorage は AppData の LocalStorage スライスに新しい単語IDを追加します。
-// 重複チェックは行いません。
+// すでにIDが存在する場合は、何も行いません（重複を防ぐ）。
 //
 // 引数:
 //   - id: 追加する単語ID。
 func (a *AppData) AddStorage(id int) {
+	// 既存のIDをチェック
+	for _, existingID := range a.LocalStorage {
+		if existingID == id {
+			return // すでに存在するので何もしない
+		}
+	}
+	// 存在しない場合のみ追加
 	a.LocalStorage = append(a.LocalStorage, id)
 }
 

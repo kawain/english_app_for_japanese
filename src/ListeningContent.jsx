@@ -4,7 +4,7 @@ import VolumeControl from './components/VolumeControl.jsx'
 import LevelControl from './components/LevelControl.jsx'
 
 function ListeningContent () {
-  const { selectedLevel, isSoundEnabled, addStorage, speak } = useAppContext()
+  const { selectedLevel, isSoundEnabled, speak } = useAppContext()
   const [progress, setProgress] = useState(0)
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -239,7 +239,9 @@ function ListeningContent () {
           <button
             onClick={async () => {
               if (currentQuestion?.id != null) {
-                await addStorage(currentQuestion.id)
+                await window.AddStorage(currentQuestion.id)
+                const newArray = reviewArray.filter(obj => obj.id !== item.id)
+                setReviewArray(newArray)
                 alert('ストレージに追加しました')
               } else {
                 alert('現在の問題情報がありません。')
@@ -286,7 +288,7 @@ function ListeningContent () {
                     <button
                       className='nowrap'
                       onClick={async () => {
-                        await addStorage(item.id)
+                        await window.AddStorage(item.id)
                         const newArray = reviewArray.filter(
                           obj => obj.id !== item.id
                         )

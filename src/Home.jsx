@@ -8,7 +8,7 @@ import { MdVerticalAlignTop } from 'react-icons/md'
 const ITEMS_PER_PAGE = 100
 
 function Home () {
-  const { addStorage, removeStorage, clearStorage, speak } = useAppContext()
+  const { speak } = useAppContext()
   // WASMから取得した全データ
   const [allData, setAllData] = useState([])
   // 選択されたレベル（ページネーションでレベルを維持するため）
@@ -76,9 +76,9 @@ function Home () {
   // 復元、除外ボタンの操作
   const handleActionClick = async wordId => {
     if (searchLevel === 1 || searchLevel === 2) {
-      await addStorage(wordId)
+      await window.AddStorage(wordId)
     } else if (searchLevel === 0) {
-      await removeStorage(wordId)
+      await window.RemoveStorage(wordId)
     }
     setProcessingWordIds(prev => new Set(prev).add(wordId))
   }
@@ -212,7 +212,7 @@ function Home () {
             <button
               onClick={async () => {
                 if (window.confirm('本当に除外リストを全部クリアしますか？')) {
-                  await clearStorage()
+                  await window.ClearStorage()
                   setShowOffCell({})
                   setProcessingWordIds(new Set())
                   setAllData([])

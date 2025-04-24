@@ -122,7 +122,7 @@ function Storage () {
         // localStorageに保存
         localStorage.setItem(localStorageKey, JSON.stringify(parsedData))
         // wasmの関数を呼び出して除外単語IDを設定
-        await window.SetStorage(parsedData)
+        await window.SetStorage()
         alert('データをインポートしました。')
       } catch (error) {
         alert(`インポートに失敗しました: ${error.message}`)

@@ -8,7 +8,7 @@ import QuizChoices from './components/QuizChoices.jsx'
 const numberOfChoices = 10
 
 function WordQuizContent () {
-  const { selectedLevel, addStorage, speak } = useAppContext()
+  const { selectedLevel, speak } = useAppContext()
   // 0: 初期状態スタートボタン表示
   // 1: 問題と選択肢と回答するボタン表示
   // 2: 回答と次の問題ボタン表示
@@ -95,12 +95,8 @@ function WordQuizContent () {
 
     if (isCorrect) {
       setCorrectCount(prev => prev + 1)
-      try {
-        // 正解した単語をストレージに追加
-        await addStorage(currentQuiz.id)
-      } catch (error) {
-        console.error('Error saving to storage:', error)
-      }
+      // 正解した単語をストレージに追加
+      await window.AddStorage(currentQuiz.id)
     }
 
     setProgress(2)
