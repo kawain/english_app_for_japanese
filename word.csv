@@ -531,7 +531,7 @@ id	en	jp	en2	jp2	kana	level	similar
 531	temperature	温度	The temperature outside is so high today that I sought refuge in a cool place.	今日は外の温度がとても高いので、涼しい場所に避難しました。	きょうはそとのおんどがとてもたかいので、すずしいばしょにひなんしました。	1	4221,473,574,6048,4165
 532	rather	むしろ	He would rather stay home and watch a movie than go to the party.	彼はパーティーに行くよりも家で映画を見る方がむしろ好きです。	かれはぱーてぃーにいくよりもいえでえいがをみるかたがむしろすきです。	1	12374,2036,547,2561,406
 533	breath	呼吸、息	Take a deep breath and relax.	深呼吸をしてリラックスしてください。	しんこきゅうをしてりらっくすしてください。	1	10417,6774,4725,589,431
-534	tea	お茶、茶葉から作られる飲み物	I enjoy drinking a cup of tea every afternoon.	私は毎夕、1杯のお茶を飲むのを楽しんでいます。	わたしはまいゆう、1はいのおちゃをのむのをたのしんでいます。	1	10374,9011,12068,12542,1150
+534	tea	お茶、茶葉から作られる飲み物	I enjoy drinking a cup of tea every afternoon.	私は毎夕、1杯のお茶を飲むのを楽しんでいます。	わたしはまいゆう、1はいのおちゃをのむのをたのしんでいます。	1	9011,12068,12542,1150,9304
 535	band	バンド、音楽グループ	The band performed their latest songs at the concert last weekend.	そのバンドは先週末のコンサートで最新の曲を演奏しました。	そのばんどはせんしゅうまつのこんさーとでさいしんのきょくをえんそうしました。	1	12479,9718,11586,9005,9606
 536	popular	人気のある、広く知られている	The movie is so popular that the tickets sold out quickly.	その映画は非常に人気があるので、すぐにチケットが売り切れてしまいました。	そのえいがはひじょうににんきがあるので、すぐにちけっとがうりきれてしまいました。	1	12654,10989,11331,10573,11417
 537	mine	私のもの、鉱山	This diamond is mine and I found it deep in the mine.	このダイヤモンドは私のもので、私はそれを鉱山の奥深くで見つけました。	このだいやもんどはわたしのもので、わたしはそれをこうざんのおくふかくでみつけました。	1	8782,8318,3225,11483,4321
@@ -4020,7 +4020,7 @@ id	en	jp	en2	jp2	kana	level	similar
 4022	marshal	整列させる、指揮する	He marshaled everyone in line to organize the progress of the event.	彼はイベントの進行を整えるために、全員を整列させました。	かれはいべんとのしんこうをととのえるために、ぜんいんをせいれつさせました。	2	975,179,3447,4690,4656
 4023	eyelash	まつげ、目を保護するための細い毛	She has long eyelashes, which makes her very attractive.	彼女は長いまつげを持っていて、とても魅力的です。	かのじょはながいまつげをもっていて、とてもみりょくてきです。	2	939,7468,583,1665,6431
 4024	messy	乱雑な、散らかった	His room is always messy, with things scattered everywhere.	彼の部屋はいつも乱雑で、物があちこちに散らかっている。	かれのへやはいつもらんざつで、ものがあちこちにちらかっている。	2	7148,688,8731,400,10691
-4025	sip	一口、少し飲むこと	She took a sip of the hot tea.	彼女は熱いお茶を一口ずつ味わいました。	かのじょはあついおちゃをひとくちずつあじわいました。	2	8072,674,1462,9011,10374
+4025	sip	一口、少し飲むこと	She took a sip of the hot tea.	彼女は熱いお茶を一口ずつ味わいました。	かのじょはあついおちゃをひとくちずつあじわいました。	2	8072,674,1462,9011,7853
 4026	bosom	胸部、親しい関係	She held the child gently in her bosom.	彼女は子供を優しく胸に抱きしめた。	かのじょはこどもをやさしくむねにだきしめた。	2	5703,3923,13052,191,5979
 4027	preside	司会をする、主宰する	He presided over the meeting as the chairperson.	彼は会議の間、議長として司会をしていました。	かれはかいぎのあいだ、ぎちょうとしてしかいをしていました。	2	3856,8512,454,1838,4921
 4028	eyesight	視力、視覚能力	He wears glasses to protect his eyesight.	彼は視力を保護するために眼鏡をかけています。	かれはしりょくをほごするためにめがねをかけています。	2	2730,12511,1362,2447,7210
@@ -5238,7 +5238,7 @@ id	en	jp	en2	jp2	kana	level	similar
 5240	abduction	誘拐	His abduction case became national news.	彼の誘拐事件は全国ニュースになりました。	かれのゆうかいじけんはぜんこくにゅーすになりました。	2	7250,6714,7638,10471,4461
 5241	cliche	クリシェ、決まり文句	The movie relied too heavily on clichés, which made it feel stale.	その映画は古いクリシェを使いすぎて、新鮮さが欠けてしまいました。	そのえいがはふるいくりしぇをつかいすぎて、しんせんさがかけてしまいました。	2	3302,3253,3466,8417,8345
 5242	kinship	親族関係、血縁	They cherish each other because of their close kinship.	彼らは深い親族関係を持っているため、お互いを大切に思っています。	かれらはふかいしんぞくかんけいをもっているため、おたがいをたいせつにおもっています。	2	5490,1969,6859,8358,5366
-5243	respite	一時的な休息、しばしの静寂	Taking a brief respite during work helps me refresh.	仕事の合間に短い休息を取ることで、リフレッシュできます。	しごとのあいまにみじかいきゅうそくをとることで、りふれっしゅできます。	2	1846,3702,2042,10374,756
+5243	respite	一時的な休息、しばしの静寂	Taking a brief respite during work helps me refresh.	仕事の合間に短い休息を取ることで、リフレッシュできます。	しごとのあいまにみじかいきゅうそくをとることで、りふれっしゅできます。	2	1846,3702,2042,756,10214
 5244	snarl	うなる、唸る	The dog snarled to warn the intruder.	犬は縄張りに侵入者がいると唸りながら威嚇しました。	いぬはなわばりにしんにゅうしゃがいるとうなりながらいかくしました。	2	8113,5936,11120,3933,6587
 5245	gloom	憂鬱、陰気	Her expression was filled with gloom.	彼女の表情には憂鬱な雰囲気が漂っていました。	かのじょのひょうじょうにはゆううつなふんいきがただよっていました。	2	6740,6764,2244,6984,6516
 5246	centerpiece	中心飾り	The centerpiece on the table features a beautiful bouquet of flowers.	テーブルの中心飾りには、美しい花束が飾られています。	てーぶるのちゅうしんかざりには、うつくしいはなたばがかざられています。	2	10364,12158,11378,10882,3668
@@ -8939,7 +8939,7 @@ id	en	jp	en2	jp2	kana	level	similar
 8945	leach	浸出する、溶出する、(有害物質などが)しみ出す	Harmful substances may leach from the soil and contaminate groundwater.	有害物質が土壌から浸出して、地下水を汚染する可能性があります。	ゆうがいぶっしつがどじょうからしんしゅつして、ちかすいをおせんするかのうせいがあります。	2	1821,7087,2341,2883,5480
 8946	pilgrim	巡礼者、巡礼、信仰のために旅をする人	The devoted pilgrims began walking before dawn to reach the holy site.	熱心な巡礼者たちは、夜明け前から聖地に到着するために歩き始めました。	ねっしんなじゅんれいしゃたちは、よあけまえからせいちにとうちゃくするためにあるきはじめました。	2	12184,4986,2703,2014,2141
 8947	xylophone	木琴	The kindergarten children are playing simple tunes on colorful xylophones during music time.	幼稚園の音楽の時間に、子どもたちはじラフルな木琴で簡単な曲を演奏しています。	ようちえんのおんがくのじかんに、こどもたちはじらふるなもっきんでかんたんなきょくをえんそうしています。	2	1012,10253,11177,7840,6450
-8948	extract	抽出する、取り出す	This tea is made by extracting active ingredients from green tea leaves.	このお茶は、緑茶の葉から有効成分を抽出して作られています。	このおちゃは、りょくちゃのはからゆうこうせいぶんをちゅうしゅつしてつくられています。	2	4025,8777,8072,10374,9304
+8948	extract	抽出する、取り出す	This tea is made by extracting active ingredients from green tea leaves.	このお茶は、緑茶の葉から有効成分を抽出して作られています。	このおちゃは、りょくちゃのはからゆうこうせいぶんをちゅうしゅつしてつくられています。	2	4025,8777,8072,9304,674
 8949	devotee	熱心な信者、愛好家、熱狂的なファン	She is a devoted yoga devotee who never misses her morning practice.	彼女は熱心なヨガの愛好家で、毎朝欠かさず練習を続けています。	かのじょはねっしんなよがのあいこうかで、まいあさかかさずれんしゅうをつづけています。	2	8570,10845,11474,1845,6718
 8950	comatose	昏睡状態の、意識不明の、無気力な	The patient who took an overdose of sleeping pills was rushed to the hospital in a comatose state.	大量の睡眠薬を服用した患者は意識不明の状態で救急搬送されました。	たいりょうのすいみんやくをふくようしたかんじゃはいしきふめいのじょうたいできゅうきゅうはんそうされました。	2	5598,10382,6198,12976,4553
 8951	divinity	神性、神聖さ、神	Ancient Greeks found divinity in natural phenomena.	古代ギリシャ人は、自然現象の中に神の存在を見出していました。	こだいぎりしゃじんは、しぜんげんしょうのなかにかみのそんざいをみいだしていました。	2	4529,3261,8755,3348,9246
@@ -9002,7 +9002,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9008	How can I 〜	どうやって～するか	How can I improve my English speaking skills?	どうやって英語の会話力を向上させることができますか？	どうやってえいごのかいわりょくをこうじょうさせることができますか?	1	2209,9975,1640,9813,920
 9009	I wish I could 〜	願望を表現するフレーズ	I wish I could travel to Japan next summer.	来年の夏に日本に旅行できたらいいのに。	らいねんのなつににっぽんにりょこうできたらいいのに。	1	8979,9279,9404,9263,9555
 9010	Why don't you 〜	なぜ~しないの？、提案や勧誘をする場合に使う表現	Why don't you join us for dinner tonight?	今夜、私たちと一緒に夕食を食べませんか？	こんや、わたしたちといっしょにゆうしょくをたべませんか?	1	8968,12998,1538,8980,9332
-9011	Would you like 〜?	〜はいかがですか？	Would you like a cup of tea?	お茶はいかがですか？	おちゃはいかがですか?	1	12924,1483,9012,534,10374
+9011	Would you like 〜?	〜はいかがですか？	Would you like a cup of tea?	お茶はいかがですか？	おちゃはいかがですか?	1	12924,1483,9012,534,2022
 9012	I would like 〜	～したいと思います	I would like to have a cup of coffee right now.	今、コーヒーを一杯飲みたいと思います。	いま、こーひーをいっぱいのみたいとおもいます。	1	12728,12924,1483,9011,672
 9013	I've been 〜ing	～している、進行中のアクションを示す表現	I've been studying English for three years now.	私は今英語を勉強して3年になります。	わたしはこんえいごをべんきょうしてさんねんになります。	1	8966,6623,9479,1086,9188
 9014	Have you been 〜ing?	進行中の行動を尋ねる表現（「〜している？」）	Have you been studying for the exam lately?	最近、試験のために勉強していますか？	さいきん、しけんのためにべんきょうしていますか?	1	10141,1288,3634,59,9954
@@ -9289,7 +9289,7 @@ id	en	jp	en2	jp2	kana	level	similar
 9301	language arts	言語芸術（文学、読み書き、文学的な表現などを含む教科）	I'm really enjoying my language arts class this semester.	今学期の言語芸術の授業をとても楽しんでいます。	こんがっきのげんごげいじゅつのじゅぎょうをとてもたのしんでいます。	1	9223,9479,9364,9336,6623
 9302	lap	ひざの上、膝の上、ひざの部分	The cat loves to sit in my lap while I watch TV.	その猫は私がテレビを見る間、私の膝の上に座るのが大好きです。	そのねこはわたしがてれびをみるあいだ、わたしのひざのうえにすわるのがだいすきです。	1	1562,3069,380,255,10443
 9303	leader	リーダー、指導者	She is a great leader who inspires everyone around her.	彼女は周りの人々を鼓舞する素晴らしいリーダーです。	かのじょはまわりのひとびとをこぶするすばらしいりーだーです。	1	9982,2431,11888,952,9467
-9304	lemon	レモン、酸味のある果物	I love adding lemon to my tea for a refreshing taste.	お茶にレモンを加えるのが大好きです、さっぱりした味がします。	おちゃにれもんをくわえるのがだいすきです、さっぱりしたあじがします。	2	10374,534,674,2168,9562
+9304	lemon	レモン、酸味のある果物	I love adding lemon to my tea for a refreshing taste.	お茶にレモンを加えるのが大好きです、さっぱりした味がします。	おちゃにれもんをくわえるのがだいすきです、さっぱりしたあじがします。	2	534,674,2168,9562,9093
 9305	leopard	ヒョウ、大型の猫科の動物	I saw a beautiful leopard at the zoo yesterday.	昨日、動物園で美しいヒョウを見ました。	きのう、どうぶつえんでうつくしいひょうをみました。	2	9370,815,9296,9396,2245
 9306	lion	ライオン、獅子	The lion roared so loudly that everyone turned to look.	ライオンはとても大きな声で吼えたので、みんなが振り向いた。	らいおんはとてもおおきなこえでほえたので、みんながふりむいた。	1	923,6728,5040,43,6705
 9307	lives	命、生きていること	Many people dedicate their lives to helping others.	多くの人々は他の人を助けることに人生を捧げています。	おおくのひとびとはほかのひとをたすけることにじんせいをささげています。	1	1169,9989,5600,1827,976
@@ -10350,7 +10350,6 @@ id	en	jp	en2	jp2	kana	level	similar
 10371	cheek	頬	A tear rolled down her cheek.	彼女の頬を涙が伝った。	かのじょのほおをなみだがつたった。	1	1569,8340,6516,5815,2616
 10372	studio	スタジオ	The artist worked in his studio.	アーティストは彼のスタジオで働いた。	あーてぃすとはかれのすたじおではたらいた。	1	11743,9673,11644,11557,4949
 10373	luxury	贅沢	I can't afford the luxury car.	私は高級車を手に入れる余裕がない。	わたしはこうきゅうしゃをてにいれるよゆうがない。	1	3126,3640,5885,796,12485
-10374	refreshe		A cup of tea refreshes me.	一杯のお茶で私はさっぱりする。	いちばいのおちゃでわたしはさっぱりする。	2	534,9011,9304,10344,5243
 10375	detailed	詳細な	The description was vivid and detailed.	説明は鮮明で詳しかった。	せつめいはせんめいでくわしかった。	1	872,1661,11762,12940,9835
 10376	register	登録する	Please register for the event in advance.	イベントには事前に登録してください。	いべんとにはじぜんにとうろくしてください。	1	3895,893,7214,9844,7138
 10377	commitment	約束、献身	He shows great commitment to his work.	彼は彼の仕事に大きな献身を見せています。	かれはかれのしごとにおおきなけんしんをみせています。	2	7805,70,8158,12483,3583
@@ -10543,7 +10542,7 @@ id	en	jp	en2	jp2	kana	level	similar
 10564	enterprise	企業、事業	The new enterprise focuses on sustainable products.	新しい企業は持続可能な製品に焦点を当てています。	あたらしいきぎょうはじぞくかのうなせいひんにしょうてんをあてています。	2	8728,9777,11226,12105,10356
 10565	pitch	投げる、売り込み	The soccer team practiced on the pitch.	サッカーチームはピッチで練習しました。	さっかーちーむはぴっちでれんしゅうしました。	2	12274,671,5660,3286,6443
 10566	arrival	到着	The arrival of the train was delayed.	電車の到着が遅れました。	でんしゃのとうちゃくがおくれました。	1	12279,10912,7768,10759,2157
-10567	beer	ビール	Cold beer is refreshing on a hot day.	暑い日には冷たいビールがさっぱりします。	あついひにはつめたいびーるがさっぱりします。	1	6048,9656,10374,1216,7364
+10567	beer	ビール	Cold beer is refreshing on a hot day.	暑い日には冷たいビールがさっぱりします。	あついひにはつめたいびーるがさっぱりします。	1	6048,9656,1216,7364,531
 10568	specialist	専門家	He's a specialist in pediatric care.	彼は小児医療の専門家です。	かれはしょうにいりょうのせんもんかです。	2	8806,7226,4813,3794,12699
 10569	profile	プロフィール、横顔	Her profile picture was taken at the beach.	彼女のプロフィール写真はビーチで撮影されました。	かのじょのぷろふぃーるしゃしんはびーちでさつえいされました。	2	9990,3057,4815,4513,124
 10570	mood	気分、雰囲気	The rainy weather affected his mood.	雨の天気は彼の気分に影響を与えました。	あめのてんきはかれのきぶんにえいきょうをあたえました。	1	8028,6681,10149,3104,2392
@@ -11656,7 +11655,7 @@ id	en	jp	en2	jp2	kana	level	similar
 11682	in front of	の前に	The park is in front of my house.	公園は私の家の前にあります。	こうえんはわたしのいえのまえにあります。	1	1363,11424,6306,12690,12090
 11683	on which	について	The book on which I depend is very useful.	私が依存しているその本は非常に役に立ちます。	わたしがいぞんしているそのほんはひじょうにやくにたちます。	1	6131,6530,12037,982,10230
 11684	continuity	連続性	The continuity of the movie was great.	映画の連続性は素晴らしかった。	えいがのれんぞくせいはすばらしかった。	2	11441,5728,1815,10766,45
-11685	coconut	ココナッツ	The coconut water is very refreshing.	ココナッツウォーターはとてもさわやかです。	ここなっつうぉーたーはとてもさわやかです。	2	1160,10374,10567,1216,6104
+11685	coconut	ココナッツ	The coconut water is very refreshing.	ココナッツウォーターはとてもさわやかです。	ここなっつうぉーたーはとてもさわやかです。	2	1160,10567,1216,6104,6048
 11686	rotary	回転する	The rotary club is very active.	ロータリークラブはとても活発です。	ろーたりーくらぶはとてもかっぱつです。	2	9790,8007,9855,11845,2801
 11687	tonne	トン	The truck can carry one tonne of goods.	そのトラックは1トンの貨物を運ぶことができます。	そのとらっくは1とんのかもつをはこぶことができます。	2	834,3965,10362,8087,2074
 11688	most likely	おそらく	It will rain today, most likely.	今日はおそらく雨が降るでしょう。	きょうはおそらくあめがふるでしょう。	1	8521,8152,12016,706,3418
