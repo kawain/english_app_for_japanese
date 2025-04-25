@@ -12,7 +12,6 @@
   --text-color: rgb(26, 26, 26);
   --focus-color: rgb(180, 180, 180);
 
-
   color-scheme: light dark;
 }
 
@@ -189,17 +188,16 @@ button:not([disabled]) {
     padding: 20px 50px;
     border-radius: 5px;
 
-
     display: flex;
 
-    >div:first-child {
+    > div:first-child {
       /* Use > for direct children if intended */
       width: 50%;
       text-align: left;
       line-height: 2;
     }
 
-    >div:nth-child(2) {
+    > div:nth-child(2) {
       width: 50%;
       display: flex;
       flex-direction: column;
@@ -208,7 +206,6 @@ button:not([disabled]) {
     }
 
     .quiz-choices {
-
       /* Assuming .quiz-choices is inside one of the divs */
       input[type='radio'] {
         padding: 10px;
@@ -285,6 +282,14 @@ button:not([disabled]) {
         color: var(--bg-color);
         background-color: var(--text-color);
       }
+    }
+
+    .stats-area {
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
     }
 
     .button-container {

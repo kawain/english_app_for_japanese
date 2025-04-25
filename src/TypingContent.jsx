@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useAppContext } from './App.jsx'
 import VolumeControl from './components/VolumeControl.jsx'
 import { GrLinkPrevious } from 'react-icons/gr'
@@ -32,6 +32,12 @@ function TypingContent () {
   // 英語か日本語かどちらを行っているか
   const whichRef = useRef(1)
   const timerIdRef = useRef(null)
+  // --- タイピング速度計測用の状態 ---
+  const [startTime, setStartTime] = useState(null) // 問題ごとのタイピング開始時間
+  const [currentCPM, setCurrentCPM] = useState(0) // 現在の問題のCPM
+  const [averageCPM, setAverageCPM] = useState(0) // 全体の平均CPM
+  const [allProblemStats, setAllProblemStats] = useState([]) // 各問題の統計 [{ cpm: number, duration: number, charCount: number }]
+  const isTypingStartedForProblem = useRef(false) // 現在の問題でタイピングが開始されたかフラグ
 
   // WASMの関数で問題のセットアップと問題数を返す
   useEffect(() => {
@@ -44,7 +50,6 @@ function TypingContent () {
         console.error('タイピング問題のセットアップに失敗しました:', error)
       }
     }
-
     initializeTyping()
   }, [])
 
@@ -54,91 +59,197 @@ function TypingContent () {
     typingAreaRef.current?.focus()
   }, [progress])
 
-  // 問題配列から任意のインデックスで問題を抽出
-  const selectQuestion = async (index, startFlag = false) => {
-    setCurrentIndex(index)
-    // WASMの関数
-    const question = await window.GetTypingQuestion(index)
-    setQuestionText(question)
-    // WASMの関数(英語の配列)
-    const array1 = await window.GetTypingQuestionSlice(1)
-    setQuestionTextArray1(array1)
-    // WASMの関数(日本語の配列)
-    const array2 = await window.GetTypingQuestionSlice(2)
-    setQuestionTextArray2(array2)
+  // 問題選択ロジック
+  const selectQuestion = useCallback(
+    async (index, startFlag = false) => {
+      setCurrentIndex(index)
+      const question = await window.GetTypingQuestion(index)
+      setQuestionText(question)
+      const array1 = await window.GetTypingQuestionSlice(1)
+      setQuestionTextArray1(array1)
+      const array2 = await window.GetTypingQuestionSlice(2)
+      setQuestionTextArray2(array2)
 
-    setQuestionIndex1(0)
-    setQuestionIndex2(0)
-    setInputCharacters('')
-    setPressedKey('')
+      setQuestionIndex1(0)
+      setQuestionIndex2(0)
+      setInputCharacters('')
+      setPressedKey('')
 
-    if (startFlag) {
-      setProgress(1)
-    }
+      // --- 速度関連の状態リセット ---
+      setStartTime(null) // 開始時間をリセット
+      // setCurrentCPM(0) // 現在の問題のCPMをリセット
+      isTypingStartedForProblem.current = false // タイピング開始フラグをリセット
+      whichRef.current = 1 // 英語から開始
+      // --- ここまで ---
 
-    await speak(question.en2, 'en-US')
-  }
+      if (startFlag) {
+        setProgress(1)
+      }
+
+      await speak(question.en2, 'en-US')
+    },
+    [speak]
+  )
 
   // タイピング開始
-  const handleStart = async () => {
+  const handleStart = useCallback(async () => {
+    // --- 全体の統計情報をリセット ---
+    setAllProblemStats([])
+    setAverageCPM(0)
+    // --- ここまで ---
     await selectQuestion(0, true)
-  }
+    // 開始時にフォーカス
+    typingAreaRef.current?.focus()
+  }, [selectQuestion])
 
-  const handlePrevious = async () => {
+  // 前の問題へ
+  const handlePrevious = useCallback(async () => {
+    if (timerIdRef.current) {
+      clearTimeout(timerIdRef.current)
+      timerIdRef.current = null
+    }
     let index = currentIndex
     if (index > 0) {
       index--
-      await selectQuestion(index)
     } else {
-      await selectQuestion(maxIndex - 1)
+      index = maxIndex - 1
     }
-  }
+    await selectQuestion(index)
+    typingAreaRef.current?.focus()
+  }, [currentIndex, maxIndex, selectQuestion])
 
-  const handleNext = async () => {
+  // 次の問題へ
+  const handleNext = useCallback(async () => {
+    if (timerIdRef.current) {
+      clearTimeout(timerIdRef.current)
+      timerIdRef.current = null
+    }
     let index = currentIndex
     if (index < maxIndex - 1) {
       index++
-      await selectQuestion(index)
     } else {
-      await selectQuestion(0)
+      index = 0
     }
-  }
+    await selectQuestion(index)
+    typingAreaRef.current?.focus()
+  }, [currentIndex, maxIndex, selectQuestion])
 
-  const handleKeyDown = async e => {
-    // デフォルトのキー動作（例: Tabキーでのフォーカス移動など）を防ぐ場合
-    e.preventDefault()
+  // キー入力処理
+  const handleKeyDown = useCallback(
+    async e => {
+      e.preventDefault()
 
-    let input = inputCharacters
-    const moji = e.key
-    input += moji
-    setInputCharacters(input)
-    setPressedKey(moji)
+      // 次の問題への遷移中は入力を無視
+      if (timerIdRef.current) return
 
-    let result = 0
-    if (whichRef.current === 1) {
-      result = await window.TypingKeyDown(input, questionIndex1, 1)
-      if (result > questionIndex1) {
-        setQuestionIndex1(result)
-        setInputCharacters('')
-        if (result >= questionTextArray1.length) {
-          whichRef.current = 2
+      const moji = e.key
+
+      // --- 最初の有効なキー入力でタイマー開始 ---
+      if (!isTypingStartedForProblem.current && moji.length === 1) {
+        // 1文字のキー入力で開始
+        setStartTime(Date.now())
+        isTypingStartedForProblem.current = true
+      }
+
+      let input = inputCharacters + moji
+      setInputCharacters(input)
+      setPressedKey(moji)
+
+      let result = 0
+      let currentQuestionIndex = 0
+      let currentQuestionArray = []
+      let nextWhich = whichRef.current
+      let questionCompleted = false // 問題完了フラグ
+
+      if (whichRef.current === 1) {
+        // 英語
+        currentQuestionIndex = questionIndex1
+        currentQuestionArray = questionTextArray1
+        result = await window.TypingKeyDown(input, currentQuestionIndex, 1)
+        if (result > currentQuestionIndex) {
+          setQuestionIndex1(result)
+          setInputCharacters('')
+          if (result >= currentQuestionArray.length) {
+            nextWhich = 2 // 日本語へ
+          }
+        }
+      } else if (whichRef.current === 2) {
+        // 日本語
+        currentQuestionIndex = questionIndex2
+        currentQuestionArray = questionTextArray2
+        result = await window.TypingKeyDown(input, currentQuestionIndex, 2)
+        if (result > currentQuestionIndex) {
+          setQuestionIndex2(result)
+          setInputCharacters('')
+          if (result >= currentQuestionArray.length) {
+            // --- 問題完了時の速度計算 ---
+            questionCompleted = true
+            const endTime = Date.now()
+            if (startTime) {
+              // startTimeが記録されている場合のみ計算
+              const duration = (endTime - startTime) / 1000 // 秒
+              const totalChars =
+                questionTextArray1.length + questionTextArray2.length
+              const cpm =
+                totalChars > 0 && duration > 0
+                  ? Math.round((totalChars / duration) * 60)
+                  : 0
+
+              setCurrentCPM(cpm) // 現在の問題のCPMをセット
+
+              const newStat = {
+                cpm,
+                duration,
+                charCount: totalChars,
+                index: currentIndex
+              }
+              const updatedStats = [...allProblemStats, newStat]
+              setAllProblemStats(updatedStats)
+
+              // 平均CPMを計算
+              const totalCPM = updatedStats.reduce(
+                (sum, stat) => sum + stat.cpm,
+                0
+              )
+              const avgCPM =
+                updatedStats.length > 0
+                  ? Math.round(totalCPM / updatedStats.length)
+                  : 0
+              setAverageCPM(avgCPM)
+            }
+            // --- 計算ここまで ---
+
+            // 次の問題へ遷移
+            timerIdRef.current = setTimeout(async () => {
+              const nextIndex =
+                currentIndex + 1 >= maxIndex ? 0 : currentIndex + 1
+              await selectQuestion(nextIndex)
+              timerIdRef.current = null
+            }, 500) // 500ms待機
+
+            nextWhich = 1 // 次は英語から
+          }
         }
       }
-    } else if (whichRef.current === 2) {
-      result = await window.TypingKeyDown(input, questionIndex2, 2)
-      if (result > questionIndex2) {
-        setQuestionIndex2(result)
-        setInputCharacters('')
-        if (result >= questionTextArray2.length) {
-          timerIdRef.current = setTimeout(async () => {
-            whichRef.current = 1
-            await selectQuestion(currentIndex + 1)
-            timerIdRef.current = null
-          }, 500)
-        }
+
+      // whichRef の更新は状態遷移が発生した場合のみ
+      if (nextWhich !== whichRef.current) {
+        whichRef.current = nextWhich
       }
-    }
-  }
+    },
+    [
+      inputCharacters,
+      questionIndex1,
+      questionIndex2,
+      questionTextArray1,
+      questionTextArray2,
+      startTime,
+      currentIndex,
+      maxIndex,
+      selectQuestion,
+      allProblemStats
+    ]
+  )
 
   useEffect(() => {
     return () => {
@@ -173,7 +284,7 @@ function TypingContent () {
           {Array.isArray(questionTextArray1) &&
             questionTextArray1.map((character, index) => (
               <span
-                key={index}
+                key={`en-${index}`}
                 className={index < questionIndex1 ? 'correct-char' : ''}
               >
                 {character}
@@ -185,7 +296,7 @@ function TypingContent () {
           {Array.isArray(questionTextArray2) &&
             questionTextArray2.map((character, index) => (
               <span
-                key={index}
+                key={`jp-${index}`}
                 className={index < questionIndex2 ? 'correct-char' : ''}
               >
                 {character}
@@ -198,6 +309,14 @@ function TypingContent () {
         <div className='key-area'>
           最後に押されたキー: <span>{pressedKey}</span>
         </div>
+
+        <div className='stats-area'>
+          <span>前回のCPM: {currentCPM > 0 ? currentCPM : '-'}</span>
+          <span>平均CPM: {averageCPM > 0 ? averageCPM : '-'}</span>
+        </div>
+
+        <p>CPM: 1分あたりに入力できる文字数</p>
+
         <div className='button-container'>
           <button onClick={handlePrevious}>
             <GrLinkPrevious />
