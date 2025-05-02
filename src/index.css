@@ -329,7 +329,12 @@ button:not([disabled]) {
     }
 
     .en-area {
-      font-size: 3rem;
+      font-size: 4rem;
+      padding: 5px 0;
+    }
+
+    .ee-area {
+      font-size: 1.5rem;
       padding: 5px 0;
     }
 
@@ -344,7 +349,7 @@ button:not([disabled]) {
     }
 
     .jp2-area {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       padding: 5px 0;
       margin-bottom: 20px;
     }

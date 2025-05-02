@@ -9,39 +9,25 @@ import (
 
 // Datum は単語とその関連情報を保持する構造体です。
 type Datum struct {
-	ID      int    // 単語の一意なID
-	En      string // 英語の単語または短いフレーズ
-	Jp      string // Enに対応する日本語訳
-	En2     string // 英語の例文または長いフレーズ
-	Jp2     string // En2に対応する日本語訳
-	Kana    string // Jp2の読み仮名（ひらがな）
-	Level   int    // 単語の難易度レベル (例: 1, 2)
-	Similar []int  // 類似または関連する単語のIDのスライス
+	ID           int
+	Word         string
+	DefinitionEn string
+	DefinitionJa string
+	ExampleEn    string
+	ExampleJa    string
+	Kana         string
+	Level        int
+	SimilarIDs   []int
 }
 
 // NewDatum は文字列形式のデータから新しい Datum オブジェクトを生成します。
-// 各文字列引数はトリムされ、idText と levelText は整数に、
-// similarText はカンマ区切りの文字列から整数のスライスに変換されます。
-// 変換に失敗した場合、対応するフィールドはゼロ値（数値の場合は0、スライスの場合は空）になります。
-//
-// 引数:
-//   - idText: 単語IDを表す文字列。
-//   - en: 英語の単語または短いフレーズ。
-//   - jp: enに対応する日本語訳。
-//   - en2: 英語の例文または長いフレーズ。
-//   - jp2: en2に対応する日本語訳。
-//   - kana: jp2の読み仮名（ひらがな）。
-//   - levelText: 単語の難易度レベルを表す文字列。
-//   - similarText: 類似または関連する単語のIDをカンマ区切りで表す文字列。
-//
-// 戻り値:
-//   - 初期化された Datum オブジェクト。
-func NewDatum(idText, en, jp, en2, jp2, kana, levelText, similarText string) Datum {
+func NewDatum(idText, word, definitionEn, definitionJa, exampleEn, exampleJa, kana, levelText, similarText string) Datum {
 	idText = strings.TrimSpace(idText)
-	en = strings.TrimSpace(en)
-	jp = strings.TrimSpace(jp)
-	en2 = strings.TrimSpace(en2)
-	jp2 = strings.TrimSpace(jp2)
+	word = strings.TrimSpace(word)
+	definitionEn = strings.TrimSpace(definitionEn)
+	definitionJa = strings.TrimSpace(definitionJa)
+	exampleEn = strings.TrimSpace(exampleEn)
+	exampleJa = strings.TrimSpace(exampleJa)
 	kana = strings.TrimSpace(kana)
 	levelText = strings.TrimSpace(levelText)
 	similarText = strings.TrimSpace(similarText)
@@ -62,14 +48,15 @@ func NewDatum(idText, en, jp, en2, jp2, kana, levelText, similarText string) Dat
 	}
 
 	return Datum{
-		ID:      id,
-		En:      en,
-		Jp:      jp,
-		En2:     en2,
-		Jp2:     jp2,
-		Kana:    kana,
-		Level:   level,
-		Similar: similar,
+		ID:           id,
+		Word:         word,
+		DefinitionEn: definitionEn,
+		DefinitionJa: definitionJa,
+		ExampleEn:    exampleEn,
+		ExampleJa:    exampleJa,
+		Kana:         kana,
+		Level:        level,
+		SimilarIDs:   similar,
 	}
 }
 

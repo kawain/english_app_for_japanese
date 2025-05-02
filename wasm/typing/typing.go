@@ -276,10 +276,10 @@ func (t *Typing) createDataArray(text string) []string {
 	return tmp
 }
 
-// createCurrentDataArrayE は現在の問題データ (CurrentData) の英語例文 (En2) を
+// createCurrentDataArrayE は現在の問題データ (CurrentData) の英語例文を
 // 文字単位に分割し、CurrentDataArrayE に格納します。
 func (t *Typing) createCurrentDataArrayE() {
-	t.CurrentDataArrayE = t.createDataArray(t.CurrentData.En2)
+	t.CurrentDataArrayE = t.createDataArray(t.CurrentData.ExampleEn)
 }
 
 // createCurrentDataArrayJ は現在の問題データ (CurrentData) の日本語かな (Kana) を

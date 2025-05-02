@@ -41,10 +41,11 @@ func GetListeningData(this js.Value, args []js.Value) any {
 			// 結果をJavaScriptのオブジェクトとして返す
 			result := map[string]interface{}{
 				"id":    listeningData.CurrentData.ID,
-				"en":    listeningData.CurrentData.En,
-				"jp":    listeningData.CurrentData.Jp,
-				"en2":   listeningData.CurrentData.En2,
-				"jp2":   listeningData.CurrentData.Jp2,
+				"en":    listeningData.CurrentData.Word,
+				"ee":    listeningData.CurrentData.DefinitionEn,
+				"jp":    listeningData.CurrentData.DefinitionJa,
+				"en2":   listeningData.CurrentData.ExampleEn,
+				"jp2":   listeningData.CurrentData.ExampleJa,
 				"level": listeningData.CurrentData.Level,
 			}
 

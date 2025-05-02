@@ -38,7 +38,7 @@ func TestCreateCurrentDataArray(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			typingInstance.CurrentData = &objects.Datum{En2: tc.en2, Kana: tc.kana}
+			typingInstance.CurrentData = &objects.Datum{ExampleEn: tc.en2, Kana: tc.kana}
 			typingInstance.createCurrentDataArrayE()
 			got := typingInstance.CurrentDataArrayE
 			if equalStringSlice(got, tc.expected) {

@@ -71,10 +71,10 @@ func CreateQuiz(this js.Value, args []js.Value) any {
 			// 結果をJavaScriptのオブジェクトとして返す
 			jsResult := map[string]interface{}{
 				"id":  quizData.CorrectAnswer.ID,
-				"en":  quizData.CorrectAnswer.En,
-				"jp":  quizData.CorrectAnswer.Jp,
-				"en2": quizData.CorrectAnswer.En2,
-				"jp2": quizData.CorrectAnswer.Jp2,
+				"en":  quizData.CorrectAnswer.Word,
+				"jp":  quizData.CorrectAnswer.DefinitionJa,
+				"en2": quizData.CorrectAnswer.ExampleEn,
+				"jp2": quizData.CorrectAnswer.ExampleJa,
 			}
 			resolve.Invoke(jsResult)
 		}()
@@ -118,8 +118,8 @@ func CreateQuizChoices(this js.Value, args []js.Value) any {
 			for i, choice := range quizData.OptionsArray {
 				// 各選択肢を map[string]interface{} (JavaScriptオブジェクトに対応) に変換
 				choiceObj := map[string]interface{}{
-					"id": choice.ID, // IDは数値のまま渡す
-					"jp": choice.Jp, // 日本語訳
+					"id": choice.ID,           // IDは数値のまま渡す
+					"jp": choice.DefinitionJa, // 日本語訳
 				}
 				jsResult[i] = choiceObj // map を interface{} としてスライスに追加
 			}

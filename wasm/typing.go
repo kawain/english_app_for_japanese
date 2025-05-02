@@ -87,8 +87,8 @@ func GetTypingQuestion(this js.Value, args []js.Value) any {
 			}
 			// 結果をJavaScriptのオブジェクトとして返す
 			result := map[string]interface{}{
-				"en2": typingData.CurrentData.En2,
-				"jp2": typingData.CurrentData.Jp2,
+				"en2": typingData.CurrentData.ExampleEn,
+				"jp2": typingData.CurrentData.ExampleJa,
 			}
 			resolve.Invoke(result)
 		}()

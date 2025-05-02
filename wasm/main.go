@@ -104,7 +104,7 @@ func InitializeAppData(this js.Value, args []js.Value) any {
 						continue
 					}
 					fields := strings.Split(line, "\t")
-					if len(fields) == 8 {
+					if len(fields) == 9 {
 						for j := range fields {
 							fields[j] = strings.TrimSpace(fields[j])
 						}
@@ -112,11 +112,11 @@ func InitializeAppData(this js.Value, args []js.Value) any {
 							consoleLog.Invoke(js.ValueOf(fmt.Sprintf("Go関数(InitializeAppData): IDが空のため %d 行目をスキップします: %s", i+1, line)))
 							continue
 						}
-						obj := objects.NewDatum(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6], fields[7])
+						obj := objects.NewDatum(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6], fields[7], fields[8])
 						appData.AddData(obj)
 						addedCount++
 					} else if len(strings.TrimSpace(line)) > 0 {
-						consoleLog.Invoke(js.ValueOf(fmt.Sprintf("Go関数(InitializeAppData): 不正な行 %d をスキップします (期待されるフィールド数: 8, 実際のフィールド数: %d): %s", i+1, len(fields), line)))
+						consoleLog.Invoke(js.ValueOf(fmt.Sprintf("Go関数(InitializeAppData): 不正な行 %d をスキップします (期待されるフィールド数: 9, 実際のフィールド数: %d): %s", i+1, len(fields), line)))
 					}
 				}
 				finalCount := len(appData.Data)
@@ -256,10 +256,10 @@ func SearchData(this js.Value, args []js.Value) any {
 			for i, v := range results {
 				obj := map[string]interface{}{
 					"id":    v.ID,
-					"en":    v.En,
-					"jp":    v.Jp,
-					"en2":   v.En2,
-					"jp2":   v.Jp2,
+					"en":    v.Word,
+					"jp":    v.DefinitionJa,
+					"en2":   v.ExampleEn,
+					"jp2":   v.ExampleJa,
 					"level": v.Level,
 				}
 				jsResult[i] = obj

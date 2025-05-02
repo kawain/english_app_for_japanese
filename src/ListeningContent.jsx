@@ -9,9 +9,10 @@ function ListeningContent () {
   const [times, setTimes] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(null)
   const [en, setEn] = useState('')
+  const [ee, setEe] = useState('【意味】')
   const [jp, setJp] = useState('【日本語訳】')
   const [en2, setEn2] = useState('【例文】')
-  const [jp2, setJp2] = useState('【例文の日本語訳】')
+  const [jp2, setJp2] = useState('【日本語訳】')
   const [step, setStep] = useState(0)
   const [autoPlay, setAutoPlay] = useState(false)
   const [reviewArray, setReviewArray] = useState([])
@@ -46,9 +47,10 @@ function ListeningContent () {
     }
     setCurrentQuestion(question)
     setEn(question.en)
+    setEe('【意味】')
     setJp('【日本語訳】')
     setEn2('【例文】')
-    setJp2('【例文の日本語訳】')
+    setJp2('【日本語訳】')
     if (startFlag) {
       setProgress(1)
       setTimes(1)
@@ -70,9 +72,17 @@ function ListeningContent () {
     }
   }
 
-  const handleJpClick = async () => {
+  const handleEeClick = async () => {
     if (currentQuestion) {
       setStep(2)
+      setEe(currentQuestion.ee)
+      await speak(currentQuestion.ee, 'en-US')
+    }
+  }
+
+  const handleJpClick = async () => {
+    if (currentQuestion) {
+      setStep(3)
       setJp(currentQuestion.jp)
       await speak(currentQuestion.jp, 'ja-JP')
     }
@@ -80,7 +90,7 @@ function ListeningContent () {
 
   const handleEn2Click = async () => {
     if (currentQuestion) {
-      setStep(3)
+      setStep(4)
       setEn2(currentQuestion.en2)
       await speak(currentQuestion.en2, 'en-US')
     }
@@ -88,7 +98,7 @@ function ListeningContent () {
 
   const handleJp2Click = async () => {
     if (currentQuestion) {
-      setStep(4)
+      setStep(5)
       setJp2(currentQuestion.jp2)
       await speak(currentQuestion.jp2, 'ja-JP')
     }
@@ -137,17 +147,21 @@ function ListeningContent () {
         if (step === 1) {
           await speak(currentQuestion.en, 'en-US')
           await speak(currentQuestion.en, 'en-US')
-          setJp(currentQuestion.jp)
+          setEe(currentQuestion.ee)
           setStep(2)
         } else if (step === 2) {
-          await speak(currentQuestion.jp, 'ja-JP')
-          setEn2(currentQuestion.en2)
+          await speak(currentQuestion.ee, 'en-US')
+          setJp(currentQuestion.jp)
           setStep(3)
         } else if (step === 3) {
-          await speak(currentQuestion.en2, 'en-US')
-          setJp2(currentQuestion.jp2)
+          await speak(currentQuestion.jp, 'ja-JP')
+          setEn2(currentQuestion.en2)
           setStep(4)
         } else if (step === 4) {
+          await speak(currentQuestion.en2, 'en-US')
+          setJp2(currentQuestion.jp2)
+          setStep(5)
+        } else if (step === 5) {
           await speak(currentQuestion.jp2, 'ja-JP')
           await speak(currentQuestion.en2, 'en-US')
           await new Promise(resolve => setTimeout(resolve, 1000))
@@ -196,7 +210,18 @@ function ListeningContent () {
             {en}
           </div>
           <div
-            className={step === 2 ? 'jp-area highlight' : 'jp-area'}
+            className={step === 2 ? 'ee-area highlight' : 'ee-area'}
+            onClick={() => {
+              if (!autoPlay) {
+                handleEeClick()
+              }
+            }}
+            style={{ cursor: 'pointer' }}
+          >
+            {ee}
+          </div>
+          <div
+            className={step === 3 ? 'jp-area highlight' : 'jp-area'}
             onClick={() => {
               if (!autoPlay) {
                 handleJpClick()
@@ -207,7 +232,7 @@ function ListeningContent () {
             {jp}
           </div>
           <div
-            className={step === 3 ? 'en2-area highlight' : 'en2-area'}
+            className={step === 4 ? 'en2-area highlight' : 'en2-area'}
             onClick={() => {
               if (!autoPlay) {
                 handleEn2Click()
@@ -218,7 +243,7 @@ function ListeningContent () {
             {en2}
           </div>
           <div
-            className={step === 4 ? 'jp2-area highlight' : 'jp2-area'}
+            className={step === 5 ? 'jp2-area highlight' : 'jp2-area'}
             onClick={() => {
               if (!autoPlay) {
                 handleJp2Click()
@@ -276,9 +301,21 @@ function ListeningContent () {
               {reviewArray.map(item => (
                 <tr key={item.id}>
                   <td className='center-text'>{item.id}</td>
-                  <td>{item.en}</td>
+                  <td
+                    style={{ cursor: 'pointer' }}
+                    role='button'
+                    title='読み上げ'
+                    onClick={async () => await speak(item.en, 'en-US')}
+                  >
+                    {item.en}
+                  </td>
                   <td>{item.jp}</td>
-                  <td>
+                  <td
+                    style={{ cursor: 'pointer' }}
+                    role='button'
+                    title='読み上げ'
+                    onClick={async () => await speak(item.en2, 'en-US')}
+                  >
                     {item.en2}
                     <br />
                     {item.jp2}
