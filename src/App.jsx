@@ -10,6 +10,7 @@ import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
+import SearchContent from './SearchContent.jsx'
 import Storage from './Storage.jsx'
 import { speakTextAsync } from './utils/tts.js'
 import { FaHome } from 'react-icons/fa'
@@ -17,6 +18,7 @@ import { MdHearing } from 'react-icons/md'
 import { MdOutlineQuiz } from 'react-icons/md'
 import { TiMessageTyping } from 'react-icons/ti'
 import { GrStorage } from 'react-icons/gr'
+import { FaSearch } from "react-icons/fa";
 
 // コンテキストを作成
 const AppContext = createContext()
@@ -112,6 +114,8 @@ function App () {
         return <WordQuizContent />
       case 'typing':
         return <TypingContent />
+      case 'search':
+        return <SearchContent />
       case 'storage':
         return <Storage />
       case 'home':
@@ -163,6 +167,13 @@ function App () {
           >
             <TiMessageTyping />
             <span>タイピング</span>
+          </button>
+          <button
+            onClick={() => setCurrentContent('search')}
+            disabled={!wasmInitialized || currentContent === 'search'}
+          >
+            <FaSearch />
+            <span>検索</span>
           </button>
           <button
             onClick={() => setCurrentContent('storage')}

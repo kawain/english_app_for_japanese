@@ -107,6 +107,8 @@ func InitializeAppData(this js.Value, args []js.Value) any {
 					if len(fields) == 9 {
 						for j := range fields {
 							fields[j] = strings.TrimSpace(fields[j])
+							// バックスラッシュを削除
+							fields[j] = strings.ReplaceAll(fields[j], "\\", "")
 						}
 						if fields[0] == "" {
 							consoleLog.Invoke(js.ValueOf(fmt.Sprintf("Go関数(InitializeAppData): IDが空のため %d 行目をスキップします: %s", i+1, line)))
@@ -272,6 +274,56 @@ func SearchData(this js.Value, args []js.Value) any {
 	return promiseConstructor.New(handler)
 }
 
+func SearchWord(this js.Value, args []js.Value) any {
+	handler := js.FuncOf(func(this js.Value, promiseArgs []js.Value) interface{} {
+		resolve := promiseArgs[0]
+		reject := promiseArgs[1]
+		go func() {
+			if appData.Data == nil {
+				// InitializeAppDataが完了していないか、失敗した可能性
+				reject.Invoke(js.ValueOf("Go関数(SearchWord)エラー: appDataが初期化されていません。InitializeAppDataが正常に完了したか確認してください。"))
+				return
+			}
+			if len(args) != 1 {
+				reject.Invoke(js.ValueOf("Go関数(SearchWord)エラー: 引数は1つ必要です"))
+				return
+			}
+			if args[0].Type() != js.TypeString {
+				reject.Invoke(js.ValueOf("Go関数(SearchWord)エラー: 引数は文字列型である必要があります"))
+				return
+			}
+			keyWord := args[0].String()
+			var results []objects.Datum
+
+			for _, v := range appData.Data {
+				if strings.Contains(v.Word, keyWord) {
+					results = append(results, v)
+				}
+			}
+
+			consoleLog.Invoke(js.ValueOf("Go関数(SearchWord)で検索したデータの長さ:"), js.ValueOf(len(results)))
+			// --- JavaScriptのデータに変換 ---
+			jsResult := make([]interface{}, len(results))
+			for i, v := range results {
+				obj := map[string]interface{}{
+					"id":    v.ID,
+					"en":    v.Word,
+					"ee":    v.DefinitionEn,
+					"jp":    v.DefinitionJa,
+					"en2":   v.ExampleEn,
+					"jp2":   v.ExampleJa,
+					"level": v.Level,
+				}
+				jsResult[i] = obj
+			}
+			resolve.Invoke(jsResult)
+		}()
+		return nil
+	})
+	promiseConstructor := js.Global().Get("Promise")
+	return promiseConstructor.New(handler)
+}
+
 // main はWASMモジュールのエントリーポイントです。
 // Goで実装された各種機能をJavaScriptのグローバルスコープに登録し、
 // JavaScript側から呼び出せるようにします。
@@ -288,6 +340,7 @@ func main() {
 
 	// データ検索関数を登録
 	js.Global().Set("SearchData", js.FuncOf(SearchData))
+	js.Global().Set("SearchWord", js.FuncOf(SearchWord))
 
 	// クイズ関連の関数を登録
 	js.Global().Set("CreateQuiz", js.FuncOf(CreateQuiz))

@@ -419,6 +419,45 @@ button:not([disabled]) {
   }
 }
 
+/* search-container */
+.search-container {
+  margin: 20px 0;
+
+  h2,
+  h3 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .search-input-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  input {
+    width: 300px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--text-color);
+    }
+  }
+}
+
 /* Highlight Animation */
 .highlight {
   animation: highlight-animation 0.5s ease-out;
