@@ -1740,7 +1740,7 @@ id	word	definition_ja	example_en	example_ja	kana	level
 1740	return	戻る、返す	He will return home in three days.	彼は3日後に帰国します。	かれはみっかごにきこくします。	1
 1741	window	窓、透過する開口部	He opened the window to let in some fresh air.	彼は新鮮な空気を入れるために窓を開けました。	かれはしんせんなくうきをいれるためにまどをあけました。	1
 1742	actual	実際の、本当の	The actual cost of the project was much higher than we had estimated.	そのプロジェクトの実際の費用は、私たちが見積もったよりもずっと高かった。	そのぷろじぇくとのじっさいのひようは、わたしたちがみつもったよりもずっとたかかった。	1
-1743	human	人間、ヒューマン	Humans are the most intelligent beings on Earth.	人間は地球上で最も知能の高い生物です。	にんげんはちきゅうじょうでもっともちのうのたかいせいぶつです。	1
+1743	human	人間	Humans are the most intelligent beings on Earth.	人間は地球上で最も知能の高い生物です。	にんげんはちきゅうじょうでもっともちのうのたかいせいぶつです。	1
 1744	industry	産業	The development of industry greatly contributes to economic growth.	産業の発展は経済成長に大きく寄与します。	さんぎょうのはってんはけいざいせいちょうにおおきくきよします。	1
 1745	outward	外向きの、外部の、表向きの	She kept a cheerful smile outward, even though she was feeling sad inside.	彼女は内心悲しかったにもかかわらず、表向きは明るい笑顔を保っていた。	かのじょはないしんかなしかったにもかかわらず、おもてむきはあかるいえがおをたもっていた。	1
 1746	rug	絨毯（ラグは3畳未満の小さめな敷物）	The new rug brightened up the living room.	居間に新しい絨毯を敷いたら、部屋が明るくなりました。	いまにあたらしいじゅうたんをしいたら、へやがあかるくなりました。	2
@@ -2226,7 +2226,7 @@ id	word	definition_ja	example_en	example_ja	kana	level
 2226	absence	不在、欠席	Her absence from the meeting was noticed by everyone.	彼女の会議への不在はみんなに気づかれました。	かのじょのかいぎへのふざいはみんなにきづかれました。	1
 2227	thief	泥棒	The thief ran away after stealing the jewels.	泥棒は宝石を盗んで逃げました。	どろぼうはほうせきをぬすんでにげました。	1
 2228	department	部署、学部	He was assigned to the marketing department for the new project.	彼は新しいプロジェクトのためにマーケティング部門に配属されました。	かれはあたらしいぷろじぇくとのためにまーけてぃんぐぶもんにはいぞくされました。	1
-2229	wax	ろう、またはワックス（ろう製の物を含む）	I used wax to polish the wooden surface of the table.	テーブルの木の表面を磨くためにろうを使いました。	てーぶるのきのひょうめんをみがくためにろうをつかいました。	1
+2229	wax	ろう、またはワックス	I used wax to polish the wooden surface of the table.	テーブルの木の表面を磨くためにろうを使いました。	てーぶるのきのひょうめんをみがくためにろうをつかいました。	1
 2230	watch	見る、監視する	I watched a movie on TV.	私はテレビで映画を見ました。	わたしはてれびでえいがをみました。	1
 2231	seize	掴む、捕らえる	The police tried to seize the thief.	警官は泥棒を捕らえようとしました。	けいかんはどろぼうをとらえようとしました。	1
 2232	mere	単なる、ただの	The mere thought of failing made her anxious.	失敗するという単なる考えが彼女を不安にさせた。	しっぱいするというたんなるかんがえがかのじょをふあんにさせた。	1
@@ -7344,7 +7344,7 @@ id	word	definition_ja	example_en	example_ja	kana	level
 7367	teeter	ぐらつく、よろめく	He lost his balance and teetered.	彼はバランスを崩して、よろめいた。	かれはばらんすをくずして、よろめいた。	2
 7368	finery	華やかな服装、装飾品	She wore her finest finery for the party.	彼女はパーティーのために、最高の装飾品を身に着けた。	かのじょはぱーてぃーのために、さいこうのそうしょくひんをみにつけた。	2
 7369	admire A for B	AをBの点で称賛する	I admire her for her courage.	彼女の勇気を称賛する。	かのじょのゆうきをしょうさんする。	1
-7370	cleave	割る、固守する	She cleaved to tradition.	彼女は伝統に固執した。	かのじょはでんとうにこしつした。	2
+7370	cleave	分裂させる、分断する、強固にくっつく、絆を深める	She cleaved to tradition.	彼女は伝統を忠実に守った。	かのじょはでんとうをちゅうじつにまもった。	2
 7371	in all probability	十中八九、おそらく	In all probability, he will arrive on time.	彼は十中八九、時間通りに来るだろう。	かれはじゅうなかはちきゅう、じかんどおりにくるだろう。	1
 7372	fabrication	作り事、捏造	It was just a fabrication.	それは単なる作り話だった。	それはたんなるつくりばなしだった。	2
 7373	be indebted to	～に恩義がある	I am deeply indebted to him.	私は彼に大変恩義を感じている。	わたしはかれにたいへんおんぎをかんじている。	1
@@ -13778,7 +13778,7 @@ id	word	definition_ja	example_en	example_ja	kana	level
 13894	unsuspected	疑われていない、予期しない	He was an unsuspected hero who saved the day.	彼は予想外のヒーローで、その日を救った。	かれはよそうがいのひーろーで、そのひをすくった。	2
 13895	garment	衣服、服	She bought a beautiful garment for the wedding.	彼女は結婚式のために美しい衣服を買いました。	かのじょはけっこんしきのためにうつくしいいふくをかいました。	2
 13896	abnormally	異常に、不正常に	The temperature was abnormally high for this time of year.	この時期にしては異常に高い気温でした。	このじきにしてはいじょうにたかいきおんでした。	2
-13897	choreography	振付、ダンスの動きの設計と配置	The choreography was breathtaking and required hours of practice.	その振付は息をのむほど素晴らしく、何時間も練習が必要でした。	そのふりつけはいきをのむほどすばらしく、なんじかんもれんしゅうがひつようでした。	2
+13897	choreography	振付、ダンスの動き	The choreography was breathtaking and required hours of practice.	その振付は息をのむほど素晴らしく、何時間も練習が必要でした。	そのふりつけはいきをのむほどすばらしく、なんじかんもれんしゅうがひつようでした。	2
 13898	paycheck	給料、小切手	He was excited to receive his paycheck after a long week.	長い一週間の後、彼は給料を受け取って喜びました。	ながいいちしゅうかんのあと、かれはきゅうりょうをうけとってよろこびました。	2
 13899	banknote	紙幣、銀行発行の紙幣	He paid for the groceries with a fifty-dollar banknote.	彼は50ドル紙幣で食料品の支払いをしました。	かれはごれいどるしへいでしょくりょうひんのしはらいをしました。	2
 13900	bothersome	迷惑な、面倒な	The loud noise was bothersome to everyone in the office.	その騒音はオフィスの皆にとって迷惑でした。	そのそうおんはおふぃすのみなにとってめいわくでした。	2
@@ -14445,3 +14445,4 @@ id	word	definition_ja	example_en	example_ja	kana	level
 14563	in need	困窮している、必要としている	Let's help people in need.	困窮している人々を助けましょう。	こんきゅうしているひとびとをたすけましょう。	1
 14564	argue over	〜について議論する、〜について言い争う	They argued over who would do the dishes.	彼らは皿洗いをする人を誰にするかで言い争いました。	かれらはさらあらいをするひとをだれにするかでいいあらそいました。	1
 14565	to handle	対処する、処理する、扱う、対応する	He doesn't know how to handle children.	彼は子供の扱い方を知らない。	かれはこどものあつかいかたをしらない。	1
+14566	yell	大声を出す、叫ぶ	The coach yelled instructions to the players during the game.	コーチは試合中に選手たちに指示を叫んだ。	こーちはしあいちゅうにせんしゅたちにしじをさけんだ。	2
