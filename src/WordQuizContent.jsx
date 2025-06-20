@@ -1,0 +1,239 @@
+import { useState, useEffect, useRef } from 'react'
+import { useAppContext } from './App.jsx'
+import VolumeControl from './components/VolumeControl.jsx'
+import QuizChoices from './components/QuizChoices.jsx'
+
+// 問題の選択肢の数
+const numberOfChoices = 12
+
+function WordQuizContent () {
+  const { speak } = useAppContext()
+  // 0: 初期状態スタートボタン表示
+  // 1: 問題と選択肢と回答するボタン表示
+  // 2: 回答と次の問題ボタン表示
+  const [progress, setProgress] = useState(0)
+  // WASMからもらうデータ
+  const [currentQuiz, setCurrentQuiz] = useState(null)
+  // WASMからもらうデータ
+  const [quizChoices, setQuizChoices] = useState([])
+  // ユーザーの選択
+  const [selectedChoiceId, setSelectedChoiceId] = useState(null)
+  // ユーザーの答えの正誤
+  const [answerResult, setAnswerResult] = useState(null)
+  // 正解率統計
+  const [correctCount, setCorrectCount] = useState(0)
+  const [totalQuestions, setTotalQuestions] = useState(0)
+  // CSSエフェクトのハイライト
+  const [isHighlighted, setIsHighlighted] = useState(false)
+
+  const fetchQuizData = async () => {
+    try {
+      const quizData = await window.CreateQuiz(numberOfChoices)
+      const choicesData = await window.CreateQuizChoices()
+      setCurrentQuiz(quizData)
+      setQuizChoices(choicesData)
+      return true
+    } catch (error) {
+      console.error('Error fetching quiz data:', error)
+      return false
+    }
+  }
+
+  const handleStart = async () => {
+    const result = await fetchQuizData()
+    if (result) {
+      setProgress(1)
+      setSelectedChoiceId(null)
+      setAnswerResult(null)
+      setCorrectCount(0)
+      setTotalQuestions(0)
+    } else {
+      alert('クイズデータの読み込みに失敗しました')
+      setProgress(0)
+    }
+  }
+
+  const handleNext = async () => {
+    const result = await fetchQuizData()
+    if (result) {
+      setProgress(1)
+      setSelectedChoiceId(null)
+      setAnswerResult(null)
+    } else {
+      alert('次のクイズデータの読み込みに失敗しました')
+      setProgress(0)
+    }
+  }
+
+  const handleChoiceChange = event => {
+    // 回答後は選択を変更できないようにする
+    if (answerResult !== null) return
+    setSelectedChoiceId(event.target.value)
+  }
+
+  const handleAnswer = async () => {
+    let result
+    let isCorrect = false
+
+    if (selectedChoiceId === null) {
+      result = 'passed' // 未選択の場合はパス扱い
+    } else if (String(selectedChoiceId) === String(currentQuiz.id)) {
+      result = 'correct'
+      isCorrect = true
+    } else {
+      result = 'incorrect'
+    }
+
+    setAnswerResult(result)
+    setTotalQuestions(prev => prev + 1)
+
+    if (isCorrect) {
+      setCorrectCount(prev => prev + 1)
+      // 正解した単語をストレージに追加
+      await window.AddStorage(currentQuiz.id)
+    }
+
+    setProgress(2)
+  }
+
+  const calculateAccuracy = () => {
+    if (totalQuestions === 0) return 0
+    return Math.round((correctCount / totalQuestions) * 100)
+  }
+
+  // クイズ中のハイライト効果
+  useEffect(() => {
+    if (progress === 0) return
+
+    let timerId = null
+
+    setIsHighlighted(true)
+    timerId = setTimeout(() => {
+      setIsHighlighted(false)
+    }, 500)
+
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId)
+      }
+    }
+  }, [progress])
+
+  // クイズ内容の読み上げのための TTS
+  useEffect(() => {
+    if (!currentQuiz || progress === 0) return
+    const textToSpeak = progress === 1 ? currentQuiz.en : currentQuiz.en2
+    if (textToSpeak) {
+      const speakText = async () => {
+        try {
+          await speak(textToSpeak, 'en-US')
+        } catch (error) {
+          console.error('Error in speak:', error)
+        }
+      }
+      speakText()
+    }
+  }, [progress, currentQuiz])
+
+  let content = null
+
+  if (progress === 0) {
+    content = <button onClick={handleStart}>単語クイズ スタート</button>
+  } else if (progress === 1) {
+    const groupingClass =
+      currentQuiz?.grouping !== undefined
+        ? `grouping-${currentQuiz.grouping}`
+        : ''
+
+    content = (
+      <>
+        <h2
+          className={isHighlighted ? 'highlight' : ''}
+          style={{ cursor: 'pointer' }}
+          title='読み上げ'
+          onClick={async () => await speak(currentQuiz.en, 'en-US')}
+        >
+          {currentQuiz.en}
+        </h2>
+        <div className={`quiz-content ${groupingClass}`}>
+          <QuizChoices
+            quizChoices={quizChoices}
+            selectedChoiceId={selectedChoiceId}
+            onChoiceChange={handleChoiceChange}
+            disabled={answerResult !== null}
+          />
+          <div>
+            <button onClick={handleAnswer}>答える / パス</button>
+          </div>
+        </div>
+      </>
+    )
+  } else if (progress === 2) {
+    content = (
+      <>
+        <h2
+          style={{ cursor: 'pointer' }}
+          title='読み上げ'
+          onClick={async () => await speak(currentQuiz.en, 'en-US')}
+        >
+          {currentQuiz.en}
+        </h2>
+        <div className='quiz-content'>
+          <QuizChoices
+            quizChoices={quizChoices}
+            selectedChoiceId={selectedChoiceId}
+            onChoiceChange={handleChoiceChange}
+            disabled={answerResult !== null}
+          />
+          <div>
+            <div className='quiz-result'>
+              {answerResult === 'correct' && (
+                <p className={isHighlighted ? 'highlight' : ''}>⭕ 正解です</p>
+              )}
+              {answerResult === 'incorrect' && (
+                <p className={isHighlighted ? 'highlight' : ''}>
+                  ❌ 間違いです
+                </p>
+              )}
+              {answerResult === 'passed' && (
+                <p className={isHighlighted ? 'highlight' : ''}>
+                  ❌ パスしました
+                </p>
+              )}
+
+              <div className='quiz-details'>
+                <p>{currentQuiz.en}</p>
+                <p>{currentQuiz.jp}</p>
+                <p
+                  className={isHighlighted ? 'highlight' : ''}
+                  style={{ cursor: 'pointer' }}
+                  title='読み上げ'
+                  onClick={async () => await speak(currentQuiz.en2, 'en-US')}
+                >
+                  {currentQuiz.en2}
+                </p>
+                <p>{currentQuiz.jp2}</p>
+              </div>
+
+              <div className='quiz-stats'>
+                <p>
+                  正解数: {correctCount} / {totalQuestions}
+                </p>
+                <p>正解率: {calculateAccuracy()}%</p>
+              </div>
+            </div>
+            <button onClick={handleNext}>次の問題を行う</button>
+          </div>
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div className='quiz-container'>{content}</div>
+      <VolumeControl />
+    </>
+  )
+}
+export default WordQuizContent

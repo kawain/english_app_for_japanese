@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgb(200, 200, 200);
+  --text-color: rgb(26, 26, 26);
+  --focus-color: rgb(180, 180, 180);
+  color-scheme: light dark;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgb(26, 26, 26);
+    --text-color: rgb(230, 230, 230);
+    --focus-color: rgb(16, 16, 16);
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  font-family: 'Roboto', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+/* General layout and elements */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  button {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+main {
+  margin: 20px 0;
+}
+
+.loading {
+  text-align: center;
+}
+
+.error {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
+}
+
+/* Volume Control */
+.volume-control-wrapper {
+  width: fit-content;
+  margin: 20px auto;
+
+  .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Level Control */
+.level-control-wrapper {
+  width: fit-content;
+  margin: 20px auto;
+
+  .level-select {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* Home */
+.home-container {
+  button {
+    padding: 10px;
+  }
+
+  .home-buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .home-results {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      th,
+      td {
+        padding: 8px;
+        border-bottom: 1px solid var(--text-color);
+      }
+    }
+  }
+
+  .pagination-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pagetop {
+    margin: 20px 0;
+    display: flex;
+    justify-content: end;
+  }
+
+  .pagetop button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+/* Utility classes */
+.center-text {
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.show-or-hide {
+  cursor: pointer;
+}
+
+/* WordQuizContent */
+.quiz-container {
+  margin: 20px 0;
+  text-align: center;
+
+  button {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin: 20px 0;
+  }
+
+  .quiz-content {
+    width: 100%;
+    border: 1px solid var(--text-color);
+    padding: 20px 40px;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+
+    > div:first-child {
+      /* Use > for direct children if intended */
+      width: 50%;
+      text-align: left;
+      line-height: 2;
+    }
+
+    > div:nth-child(2) {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .quiz-choices {
+      /* Assuming .quiz-choices is inside one of the divs */
+      input[type='radio'] {
+        padding: 10px;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .quiz-result {
+    line-height: 2;
+    font-size: 1.3rem;
+  }
+
+  .quiz-stats {
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+}
+
+/* TypingContent */
+.typing-container {
+  margin: 20px 0;
+  text-align: center;
+
+  button {
+    padding: 10px;
+  }
+
+  .typing-content {
+    width: 100%;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+
+    &:focus {
+      background-color: var(--focus-color);
+    }
+
+    .number-area {
+      font-size: 1.5rem;
+      padding: 10px 0;
+    }
+
+    .english-area {
+      font-size: 2rem;
+      padding: 10px 0;
+    }
+
+    .hiragana-area {
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    .correct-char {
+      color: var(--bg-color);
+      background-color: var(--text-color);
+    }
+
+    .kanji-area {
+      font-size: 2rem;
+      padding: 10px 0;
+    }
+
+    .key-area {
+      padding: 10px 0;
+
+      span {
+        font-size: 1.5rem;
+        color: var(--bg-color);
+        background-color: var(--text-color);
+      }
+    }
+
+    .stats-area {
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button-container {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+/* ListeningContent */
+.listening-container {
+  margin: 20px 0;
+  text-align: center;
+
+  button {
+    padding: 10px;
+  }
+
+  .start-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .listening-content {
+    width: 100%;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+
+    .number-area {
+      font-size: 1.5rem;
+      padding: 5px 0;
+    }
+
+    .en-area {
+      font-size: 4rem;
+      padding: 5px 0;
+    }
+
+    .ee-area {
+      font-size: 1.5rem;
+      padding: 5px 0;
+    }
+
+    .jp-area {
+      font-size: 2rem;
+      padding: 5px 0;
+    }
+
+    .en2-area {
+      font-size: 2rem;
+      padding: 5px 0;
+    }
+
+    .jp2-area {
+      font-size: 1.5rem;
+      padding: 5px 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .button-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.review-container {
+  button {
+    padding: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--text-color);
+    }
+  }
+}
+
+/* Storage */
+.storage-container {
+  margin: 20px 0;
+  text-align: center;
+
+  p {
+    margin: 20px 0;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  .storage-button-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hidden-input {
+    display: none;
+  }
+
+  .custom-file-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+/* search-container */
+.search-container {
+  margin: 20px 0;
+
+  h2,
+  h3 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .search-input-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  input {
+    width: 300px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--text-color);
+    }
+  }
+}
+
+/* Highlight Animation */
+.highlight {
+  animation: highlight-animation 0.5s ease-out;
+}
+
+@keyframes highlight-animation {
+  0% {
+    background-color: yellow;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    span {
+      display: none;
+    }
+  }
+}
