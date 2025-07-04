@@ -8,6 +8,7 @@ import {
 } from 'react'
 import Home from './Home.jsx'
 import ListeningContent from './ListeningContent.jsx'
+import ListeningContent2 from './ListeningContent2.jsx'
 import WordQuizContent from './WordQuizContent.jsx'
 import TypingContent from './TypingContent.jsx'
 import SearchContent from './SearchContent.jsx'
@@ -19,6 +20,7 @@ import { MdOutlineQuiz } from 'react-icons/md'
 import { TiMessageTyping } from 'react-icons/ti'
 import { GrStorage } from 'react-icons/gr'
 import { FaSearch } from 'react-icons/fa'
+import { FaAssistiveListeningSystems } from 'react-icons/fa'
 
 // コンテキストを作成
 const AppContext = createContext()
@@ -103,6 +105,8 @@ function App () {
     switch (currentContent) {
       case 'listening':
         return <ListeningContent />
+      case 'listening2':
+        return <ListeningContent2 />
       case 'quiz':
         return <WordQuizContent />
       case 'typing':
@@ -143,7 +147,14 @@ function App () {
             disabled={!wasmInitialized || currentContent === 'listening'}
           >
             <MdHearing />
-            <span>リスニング</span>
+            <span>リスニング1</span>
+          </button>
+          <button
+            onClick={() => setCurrentContent('listening2')}
+            disabled={!wasmInitialized || currentContent === 'listening2'}
+          >
+            <FaAssistiveListeningSystems />
+            <span>リスニング2</span>
           </button>
           <button
             onClick={() => setCurrentContent('quiz')}
