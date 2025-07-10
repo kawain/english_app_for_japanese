@@ -1,7 +1,7 @@
 {
   "name": "english_app_for_japanese",
   "private": true,
-  "version": "1.0.10",
+  "version": "1.0.11",
   "type": "module",
   "homepage": "https://kawain.github.io/english_app_for_japanese/",
   "scripts": {
