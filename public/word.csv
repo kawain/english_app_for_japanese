@@ -8972,7 +8972,7 @@ id	word	definition_ja	example_en	example_ja	kana
 9016	I haven't 〜 yet.	まだ～していない	I haven't finished my homework yet.	私はまだ宿題を終えていません。	わたしはまだしゅくだいをおえていません。
 9017	I like 〜ing	好む、好きであること	I like reading books before bed.	寝る前に本を読むのが好きです。	ねるまえにほんをよむのがすきです。
 9018	Do you want to 〜?	～したいですか？	Do you want to grab some coffee later?	後でコーヒーを飲みに行きませんか？	あとでこーひーをのみにいきませんか?
-9019	I was going to 〜	~するつもりだった	I was going to call you, but I forgot.	あなたに電話するつもりだったけど、忘れてしまった。	あなたにでんわするつもりだったけど、わすれてしまった。
+9019	I was going to 〜	～するつもりだった	I was going to call you, but I forgot.	あなたに電話するつもりだったけど、忘れてしまった。	あなたにでんわするつもりだったけど、わすれてしまった。
 9020	When I was 〜	〜の時、私が〜の時	When I was a child, I used to play outside every day.	子供の頃、毎日外で遊んでいました。	こどものころ、まいにちがいであそんでいました。
 9021	I'm kind of 〜	なんとなく、ちょっとした、やや、いくらかの	I'm kind of tired after that long hike.	あの長いハイキングの後、ちょっと疲れています。	あのながいはいきんぐのあと、ちょっとつかれています。
 9022	Do you know where 〜	どこで～か知っていますか？	Do you know where the nearest coffee shop is?	一番近いコーヒーショップがどこにあるか知っていますか？	いちばんちかいこーひーしょっぷがどこにあるかしっていますか?
@@ -14179,7 +14179,7 @@ id	word	definition_ja	example_en	example_ja	kana
 14332	dishonestly	不正直に、不公平に	He acted dishonestly to win the competition.	彼は競争に勝つために不正直に行動した。	かれはきょうそうにかつためにふしょうじきにこうどうした。
 14333	enjoyment	楽しみ、喜び	She found great enjoyment in reading books.	彼女は本を読むことに大きな楽しみを見つけた。	かのじょはほんをよむことにおおきなたのしみをみつけた。
 14334	counteract	相殺する、打ち消す	Vitamin C can help counteract the effects of a cold.	ビタミンCは風邪の効果を打ち消すのに役立つことがあります。	びたみんcはかぜのこうかをうちけすのにやくだつことがあります。
-14335	croissant	クロワッサン（三日月形のバター入りパン）	I had a delicious croissant for breakfast this morning.	今朝の朝食においしいクロワッサンを食べました。	けさのちょうしょくにおいしいくろわっさんをたべました。
+14335	croissant	クロワッサン	I had a delicious croissant for breakfast this morning.	今朝の朝食においしいクロワッサンを食べました。	けさのちょうしょくにおいしいくろわっさんをたべました。
 14336	relentless	容赦のない、絶え間ない	The rain was relentless all day.	一日中雨が容赦なく降り続いた。	いちにっちゅううがようしゃなくふりつづいた。
 14337	airway	気道	The doctor examined her airway for any obstructions.	医者は彼女の気道に異常がないか調べた。	いしゃはかのじょのきどうにいじょうがないかしらべた。
 14338	unobstructed	邪魔されていない、妨げられていない	The view was unobstructed from the top of the hill.	丘の上からの景色は邪魔されていなかった。	おかのうえからのけしきはじゃまされていなかった。
@@ -14522,3 +14522,658 @@ id	word	definition_ja	example_en	example_ja	kana
 14678	expertly	うまく、巧みに、熟達して	The pianist played the complex piece expertly.	ピアニストは複雑な曲をうまく演奏した。	ぴあにすとはふくざつなきょくをうまくえんそうした。
 14679	go to one's head	うぬぼれさせる、得意になる、つけあがらせる	Don't let it go to your head.	調子に乗らないようにね。	ちょうしにのらないようにね。
 14680	plight	苦境、窮状	They are in a hopeless plight.	彼らは絶望的な状況に陥っている。	かれらはぜつぼうてきなじょうきょうにおちいっている。
+14681	abductor	外転筋、誘拐者	The abductor muscles play an important role in moving your arm away from your body.	外転筋は腕を体から離す動作において重要な役割を果たします。	がいてんきんはうでをからだからはなすどうさにおいてじゅうようなやくわりをはたします。
+14682	abide	守る、従う、我慢する	You must abide by the rules of the school.	あなたは学校の規則を守らなければなりません。	あなたはがっこうのきそくをまもらなければなりません。
+14683	accrual	発生、蓄積	The accrual of interest on the savings account occurs monthly.	貯蓄口座の利息は毎月発生します。	ちょちくこうざのりそくはまいつきはっせいします。
+14684	adapter	アダプター、適合装置	You need an adapter to use this device in another country.	この機器を他の国で使うにはアダプターが必要です。	このききをほかのくにでつかうにはあだぷたーがひつようです。
+14685	additionally	加えて、さらに	Additionally, all students must submit their homework on time.	さらに、すべての生徒は宿題を時間通りに提出しなければなりません。	さらに、すべてのせいとはしゅくだいをじかんどおりにていしゅつしなければなりません。
+14686	adductor	内転筋	The adductor muscles help bring your legs together.	内転筋は脚を閉じる動きを助けます。	ないてんきんはあしをとじるうごきをたすけます。
+14687	adequately	十分に、適切に	The instructions were not adequately explained.	説明書は十分に説明されていませんでした。	せつめいしょはじゅうぶんにせつめいされていませんでした。
+14688	advertiser	広告主、広告業者	Each advertiser chooses where to display their ads.	各広告主は広告を表示する場所を選びます。	かくこうこくぬしはこうこくをひょうじするばしょをえらびます。
+14689	advisory	助言の、勧告の、助言	A weather advisory was issued for the coastal area.	沿岸地域に気象勧告が出されました。	えんがんちいきにきしょうかんこくがだされました。
+14690	aerobic	有酸素性の	Aerobic exercise is good for improving cardiovascular health.	有酸素運動は心血管の健康を向上させるのに良いです。	ゆうさんそうんどうはしんけっかんのけんこうをこうじょうさせるのによいです。
+14691	aerosol	エアロゾル	The room was sprayed with an aerosol disinfectant.	その部屋はエアロゾル消毒剤で噴霧された。	そのへやはえあろぞるしょうどくざいでふんむされた。
+14692	airfare	航空運賃	The airfare to Paris was more expensive than I expected.	パリへの航空運賃は思っていたより高かった。	ぱりへのこうくううんちんはおもっていたよりたかかった。
+14693	alas	（感嘆詞）ああ、残念ながら	Alas, the concert was canceled due to bad weather.	ああ、コンサートは悪天候のため中止になった。	ああ、こんさーとはあくてんこうのためちゅうしになった。
+14694	almond	アーモンド	She added some almonds to the salad.	彼女はサラダにアーモンドを加えた。	かのじょはさらだにあーもんどをくわえた。
+14695	alternatively	代わりに、あるいはまた	You can take the bus, or alternatively, you can walk.	バスに乗ることもできるし、代わりに歩くこともできる。	ばすにのることもできるし、かわりにあるくこともできる。
+14696	amino	アミノ（アミノ基・アミノ酸に関係する）	Amino acids are the building blocks of proteins.	アミノ酸はタンパク質の構成要素です。	あみのさんはたんぱくしつのこうせいようそです。
+14697	amortization	償却、（借入金などの）分割返済	The amortization of the loan will take ten years.	そのローンの償却には10年かかる。	そのろーんのしょうきゃくには10ねんかかる。
+14698	amortize	（借金や費用などを）分割返済する、償却する	The company plans to amortize the new equipment over five years.	会社は新しい機器を5年かけて償却する予定だ。	かいしゃはあたらしいききを5ねんかけてしょうきゃくするよていだ。
+14699	anabolic	同化（作用）の、アナボリック（新しい組織を構築するための代謝作用）	Anabolic processes help build muscle in the body.	同化作用は体内で筋肉を作るのを助ける。	どうかさようはたいないできんにくをつくるのをたすける。
+14700	anaerobic	無酸素の	Anaerobic exercise includes activities like sprinting and heavy lifting.	無酸素運動には短距離走や重量挙げなどが含まれる。	むさんそうんどうにはたんきょりそうやじゅうりょうあげなどがふくまれる。
+14701	analytic	分析の、分析的な	She has an analytic approach to solving problems.	彼女は問題を解決するのに分析的な手法を取る。	かのじょはもんだいをかいけつするのにぶんせきてきなしゅほうをとる。
+14702	announcer	アナウンサー、放送員、告知者	The announcer introduced the next performer.	アナウンサーは次の出演者を紹介した。	あなうんさーはつぎのしゅつえんしゃをしょうかいした。
+14703	annualize	年率換算する、年間化する	The interest rate was annualized for comparison.	金利は比較のために年率換算された。	きんりはひかくのためにねんりつかんさんされた。
+14704	annum	年、年間（per annumで「年間あたり」）	The salary is $50,000 per annum.	給料は年間5万ドルです。	きゅうりょうはねんかん5まんどるです。
+14705	anti	～に反対する（接頭語）、反～	He attended an anti-alcohol campaign.	彼は反アルコールキャンペーンに参加した。	かれははんあるこーるきゃんぺーんにさんかした。
+14706	antioxidant	抗酸化剤、抗酸化物質	Fruits and vegetables are rich in antioxidants.	果物や野菜は抗酸化物質が豊富です。	くだものややさいはこうさんかぶっしつがほうふです。
+14707	antitrust	反トラスト（独占禁止）の	The company was investigated for antitrust violations.	その会社は独占禁止法違反の疑いで調査された。	そのかいしゃはどくせんきんしほういはんのうたがいでちょうさされた。
+14708	appendix	付録、付加物、虫垂	You can find more details in the appendix of the book.	詳細は本の付録で確認できます。	しょうさいはほんのふろくでかくにんできます。
+14709	applicant	応募者、申請者	There were many applicants for the job.	その仕事には多くの応募者がいた。	そのしごとにはおおくのおうぼしゃがいた。
+14710	appraisal	評価、査定、鑑定	The property needs an official appraisal.	その不動産には正式な査定が必要です。	そのふどうさんにはせいしきなさていがひつようです。
+14711	appropriately	適切に、ふさわしく	She dressed appropriately for the interview.	彼女は面接のために適切な服装をした。	かのじょはめんせつのためにてきせつなふくそうをした。
+14712	arbitrage	裁定取引（異なる市場間の価格差を利用した取引）	He made a profit through currency arbitrage.	彼は通貨の裁定取引で利益を上げた。	かれはつうかのさいていとりひきでりえきをあげた。
+14713	archaeology	考古学	She is studying archaeology at university.	彼女は大学で考古学を学んでいる。	かのじょはだいがくでこうこがくをまなんでいる。
+14714	ass	（口語で）尻、愚か者、ロバ	She has a nice ass.	彼女はいいお尻をしている。	かのじょはいいおしりをしている。
+14715	attendee	出席者、参加者	Each attendee received a name tag.	各出席者は名札を受け取った。	かくしゅっせきしゃはなふだをうけとった。
+14716	attributable	〜に起因する、〜のせいである	The success is attributable to hard work.	その成功は努力の賜物だ。	そのせいこうはどりょくのたまものだ。
+14717	audition	オーディション、オーディションを受けること	She had an audition for the school play.	彼女は学芸会のためのオーディションを受けた。	かのじょはがくげいかいのためのおーでぃしょんをうけた。
+14718	auto	自動車（主に口語、米）、自動の	He bought a used auto last week.	彼は先週中古車を買った。	かれはせんしゅうちゅうこしゃをかった。
+14719	automotive	自動車の、自動車産業の	He works in the automotive industry.	彼は自動車産業で働いている。	かれはじどうしゃさんぎょうではたらいている。
+14720	backbend	背中を反らせて行う体操の動き、ブリッジ	She practiced a backbend in her gymnastics class.	彼女は体操のクラスでブリッジを練習した。	かのじょはたいそうのくらすでぶりっじをれんしゅうした。
+14721	backpack	背負うリュックサック、バックパック	He carries his books in a backpack.	彼は本をリュックサックに入れて持ち運ぶ。	かれはほんをりゅっくさっくにいれてもちはこぶ。
+14722	badge	バッジ、名札、記章	All visitors must wear a badge.	すべての来訪者はバッジを着用しなければならない。	すべてのらいほうしゃはばっじをちゃくようしなければならない。
+14723	baker	パン職人、パン屋	The baker wakes up early to make fresh bread.	パン職人は新鮮なパンを作るために早起きする。	ぱんしょくにんはしんせんなぱんをつくるためにはやおきする。
+14724	balcony	バルコニー、手すり付きの外部出窓	She stood on the balcony and looked at the city lights.	彼女はバルコニーに立って街の明かりを眺めた。	かのじょはばるこにーにたってまちのあかりをながめた。
+14725	ballroom	舞踏室、ダンスホール	The event was held in a large ballroom.	イベントは大きな舞踏室で開催された。	いべんとはおおきなぶとうしつでかいさいされた。
+14726	bang	大きな音、衝撃音、突然の爆発音、ドンと打つ	There was a loud bang outside the window.	窓の外で大きな音がした。	まどのそとでおおきなおとがした。
+14727	banker	銀行家、銀行の職員	He works as a banker in the city.	彼は市内で銀行員として働いている。	かれはしないでぎんこういんとしてはたらいている。
+14728	barbell	バーベル（両端に重りの付いたトレーニング器具）	She lifted a heavy barbell at the gym.	彼女はジムで重いバーベルを持ち上げた。	かのじょはじむでおもいばーべるをもちあげた。
+14729	baseline	基準線、出発点、テニスコートのベースライン	The doctor measured his progress against the baseline results.	医者は基準値と比較して彼の経過を測定した。	いしゃはきじゅんちとひかくしてかれのけいかをそくていした。
+14730	basement	地下室	They store old furniture in the basement.	彼らは地下室に古い家具を保管している。	かれらはちかしつにふるいかぐをほかんしている。
+14731	benchmark	基準、標準、ベンチマーク	This test provides a benchmark for student performance.	このテストは生徒の成績の基準を示す。	このてすとはせいとのせいせきのきじゅんをしめす。
+14732	beneficiary	受益者、恩恵を受ける人	She is the main beneficiary of her grandfather's will.	彼女は祖父の遺言の主な受益者だ。	かのじょはそふのゆいごんのおもなじゅえきしゃだ。
+14733	bicep	上腕二頭筋	He injured his bicep while lifting weights.	彼はウエイトを持ち上げているときに上腕二頭筋を痛めた。	かれはうえいとをもちあげているときにじょうわんにとうきんをいためた。
+14734	biodiversity	生物多様性	Rainforests are known for their rich biodiversity.	熱帯雨林は豊かな生物多様性で知られている。	ねったいうりんはゆたかなせいぶつたようせいでしられている。
+14735	biologist	生物学者	The biologist studies marine life.	その生物学者は海洋生物を研究している。	そのせいぶつがくしゃはかいようせいぶつをけんきゅうしている。
+14736	blender	ミキサー、ブレンダー	She made a smoothie using a blender.	彼女はミキサーを使ってスムージーを作った。	かのじょはみきさーをつかってすむーじーをつくった。
+14737	boardroom	役員会議室	The meeting will be held in the boardroom.	会議は役員会議室で行われる。	かいぎはやくいんかいぎしつでおこなわれる。
+14738	bodybuild	ボディビルをする	He likes to bodybuild to improve his strength.	彼は体力を高めるためにボディビルをするのが好きだ。	かれはたいりょくをたかめるためにぼでぃびるをするのがすきだ。
+14739	bodybuilder	ボディビルダー	The bodybuilder practiced for the upcoming competition.	そのボディビルダーは今度の大会のために練習した。	そのぼでぃびるだーはこんどのたいかいのためにれんしゅうした。
+14740	bodyweight	体重	Push-ups are a type of bodyweight exercise.	腕立て伏せは体重を使った運動の一種です。	うでたてふせはたいじゅうをつかったうんどうのいっしゅです。
+14741	bondholder	債券保有者	The bondholder receives interest payments every year.	債券保有者は毎年利子を受け取ります。	さいけんほゆうしゃはまいとしりしをうけとります。
+14742	boxer	ボクサー、ボクシング選手	The boxer trained hard for the upcoming match.	そのボクサーは次の試合のために一生懸命練習した。	そのぼくさーはつぎのしあいのためにいっしょうけんめいれんしゅうした。
+14743	boycott	ボイコット、（抗議としての）参加拒否	They decided to boycott the product.	彼らはその製品をボイコットすることに決めた。	かれらはそのせいひんをぼいこっとすることにきめた。
+14744	bracket	括弧、区分、ブラケット	Please write your answer in the bracket.	答えを括弧の中に書いてください。	こたえをかっこのなかにかいてください。
+14745	brainstorm	ブレインストーミングを行う、集団でアイデアを出し合う活動	Let's brainstorm ideas for the next project.	次のプロジェクトのためにアイデアを出し合いましょう。	つぎのぷろじぇくとのためにあいであをだしあいましょう。
+14746	briefcase	書類かばん、ブリーフケース	He carried his documents in a black briefcase.	彼は黒いブリーフケースに書類を入れて運んだ。	かれはくろいぶりーふけーすにしょるいをいれてはこんだ。
+14747	broadband	ブロードバンド、広帯域（高速インターネット通信）	The company offers high-speed broadband services.	その会社は高速ブロードバンドサービスを提供しています。	そのかいしゃはこうそくぶろーどばんどさーびすをていきょうしています。
+14748	broker	仲介業者、ブローカー	She talked to her broker about buying stocks.	彼女は株を買うことについて自分のブローカーと話した。	かのじょはかぶをかうことについてじぶんのぶろーかーとはなした。
+14749	brokerage	仲介業、仲介手数料、証券会社	He paid a brokerage fee when selling his house.	彼は家を売るときに仲介手数料を支払った。	かれはいえをうるときにちゅうかいてすうりょうをしはらった。
+14750	bulletin	掲示、ニュース速報、会報	The company posted a bulletin about the meeting on the notice board.	会社は掲示板に会議についての告知を貼り出した。	かいしゃはけいじばんにかいぎについてのこくちをはりだした。
+14751	bum	尻、おしり（くだけた言い方）、浮浪者（主に米）、怠け者	He fell and landed right on his bum.	彼は転んで尻もちをついた。	かれはころんでしりもちをついた。
+14752	bureaucrat	官僚	The bureaucrat processed the documents quickly.	その官僚は書類を素早く処理した。	そのかんりょうはしょるいをすばやくしょりした。
+14753	burpee	バーピー（腕立て伏せやジャンプなどを組み合わせた全身運動）	We did ten burpees during the workout.	トレーニング中にバーピーを10回やった。	とれーにんぐちゅうにばーぴーを10かいやった。
+14754	businessperson	実業家、会社員	The businessperson traveled abroad for a meeting.	そのビジネスパーソンは会議のために海外に出張した。	そのびじねすぱーそんはかいぎのためにかいがいにしゅっちょうした。
+14755	bust	胸像、破産、壊す、逮捕する	The police made a bust at the illegal casino.	警察は違法カジノを摘発した。	けいさつはいほうかじのをてきはつした。
+14756	butt	尻、たばこの吸い殻、（銃の）台尻	He threw the cigarette butt into the trash can.	彼はたばこの吸い殻をゴミ箱に捨てた。	かれはたばこのすいがらをごみばこにすてた。
+14757	by-law	（団体・自治体などの）細則、規則	The building has a strict by-law about noise at night.	その建物には夜間の騒音に関する厳しい規則がある。	そのたてものにはやかんのそうおんにかんするきびしいきそくがある。
+14758	cactus	サボテン	The cactus can survive in very dry environments.	サボテンは非常に乾燥した環境でも生きることができる。	さぼてんはひじょうにかんそうしたかんきょうでもいきることができる。
+14759	caffeine	カフェイン	This drink contains a lot of caffeine.	この飲み物には多くのカフェインが含まれている。	こののみものにはおおくのかふぇいんがふくまれている。
+14760	caller	電話をかけてきた人、訪問者	The caller did not leave a message.	電話をかけてきた人はメッセージを残さなかった。	でんわをかけてきたひとはめっせーじをのこさなかった。
+14761	caloric	熱量の、カロリーの	She is careful about her daily caloric intake.	彼女は毎日のカロリー摂取量に気をつけている。	かのじょはまいにちのかろりーせっしゅりょうにきをつけている。
+14762	calorie	カロリー	An apple has about 52 calories.	りんご1個には約52キロカロリーがある。	りんご1こにはやく52きろかろりーがある。
+14763	capitalization	大文字化、資本化（特に経済用語として）	Please check the capitalization of all proper nouns.	すべての固有名詞の大文字表記を確認してください。	すべてのこゆうめいしのだいもんじひょうきをかくにんしてください。
+14764	carmaker	自動車メーカー	The carmaker released a new electric vehicle.	その自動車メーカーは新しい電気自動車を発売した。	そのじどうしゃめーかーはあたらしいでんきじどうしゃをはつばいした。
+14765	cartel	企業連合、カルテル（同業者同士による利益調整のための組織）	Several companies formed a cartel to control prices.	いくつかの企業が価格を調整するためにカルテルを結成した。	いくつかのきぎょうがかかくをちょうせいするためにかるてるをけっせいした。
+14766	carton	カートン（紙や板紙などで作られた箱）、飲料パック	She bought a carton of milk.	彼女は牛乳パックを買った。	かのじょはぎゅうにゅうぱっくをかった。
+14767	cartwheel	側転（体操技）、手車	The child did a cartwheel on the playground.	その子どもは運動場で側転をした。	そのこどもはうんどうじょうでそくてんをした。
+14768	casein	カゼイン（牛乳などに含まれる主要なタンパク質）	Casein is commonly used in the production of cheese.	カゼインはチーズの製造によく使われる。	かぜいんはちーずのせいぞうによくつかわれる。
+14769	cashier	レジ係、現金出納係	The cashier gave me my change after I paid.	私は支払いを済ませた後、レジ係がつり銭をくれた。	わたしはしはらいをすませたあと、れじかかりがつりせんをくれた。
+14770	cater	（食事などを）仕出しする、要求に応じる	They cater meals for various events.	彼らはさまざまなイベントに食事を仕出ししている。	かれらはさまざまないべんとにしょくじをしだししている。
+14771	caterer	料理の仕出し屋	The company hired a caterer to provide food for the party.	会社はパーティーの食事を提供するために料理の仕出し業者を雇った。	かいしゃはぱーてぃーのしょくじをていきょうするためにりょうりのしだしぎょうしゃをやとった。
+14772	ceasefire	停戦、休戦	Both sides agreed to a temporary ceasefire.	双方は一時的な停戦に合意した。	そうほうはいちじてきなていせんにごういした。
+14773	cellphone	携帯電話、スマートフォン	She forgot her cellphone at home.	彼女は家に携帯電話を忘れてきた。	かのじょはいえにけいたいでんわをわすれてきた。
+14774	chancellor	長官、総長、首相（国や大学などの高い役職名）	The chancellor gave a speech at the graduation ceremony.	総長は卒業式でスピーチをした。	そうちょうはそつぎょうしきですぴーちをした。
+14775	charitable	慈善的な、慈善の	He made a charitable donation to the foundation.	彼はその財団に慈善的な寄付をした。	かれはそのざいだんにじぜんてきなきふをした。
+14776	cheaply	安く、安価に	They bought the furniture cheaply at a garage sale.	彼らはガレージセールで家具を安く買った。	かれらはがれーじせーるでかぐをやすくかった。
+14777	checkout	レジ、チェックアウト、会計	Please pay for your items at the checkout.	商品のお支払いはレジでお願いします。	しょうひんのおしはらいはれじでおねがいします。
+14778	chemotherapy	化学療法	She is receiving chemotherapy at the hospital.	彼女は病院で化学療法を受けている。	かのじょはびょういんでかがくりょうほうをうけている。
+14779	cheque	小切手	He paid the bill by cheque.	彼は請求書を小切手で支払った。	かれはせいきゅうしょをこぎってでしはらった。
+14780	chloride	塩化物	Sodium chloride is commonly known as table salt.	塩化ナトリウムは一般的に食塩として知られている。	えんかなとりうむはいっぱんてきにしょくえんとしてしられている。
+14781	cholesterol	コレステロール	Doctors often check cholesterol levels in blood tests.	医師はよく血液検査でコレステロール値を調べる。	いしはよくけつえきけんさでこれすてろーるちをしらべる。
+14782	circus	サーカス	We took the children to the circus yesterday.	昨日、子どもたちをサーカスに連れて行った。	きのう、こどもたちをさーかすにつれていった。
+14783	cleaner	掃除人、クリーナー、清掃用具	The cleaner comes every Monday to tidy the office.	清掃員は毎週月曜日にオフィスを掃除しに来る。	せいそういんはまいしゅうげつようびにおふぃすをそうじしにくる。
+14784	cleric	聖職者	The cleric led the ceremony with calm and dignity.	聖職者は落ち着きと威厳をもって式典を執り行った。	せいしょくしゃはおちつきといげんをもってしきてんをとりおこなった。
+14785	climber	登山家、クライマー、登る人	The climber reached the top of the mountain before noon.	その登山家は正午前に山頂に到達した。	そのとざんかはしょうごまえにさんちょうにとうたつした。
+14786	clip	クリップ、切り抜き、留め具、切り取る	She used a paper clip to hold the documents together.	彼女はクリップで書類をまとめた。	かのじょはくりっぷでしょるいをまとめた。
+14787	clone	クローン、複製、そっくりなもの	Scientists were able to create a clone of the sheep.	科学者たちは羊のクローンを作ることに成功した。	かがくしゃたちはひつじのくろーんをつくることにせいこうした。
+14788	cobra	コブラ（毒蛇の一種）	A cobra can expand its hood when it feels threatened.	コブラは危険を感じるとフードを広げることができる。	こぶらはきけんをかんじるとふーどをひろげることができる。
+14789	collarbone	鎖骨	He broke his collarbone while playing football.	彼はサッカーをしているときに鎖骨を折った。	かれはさっかーをしているときにさこつをおった。
+14790	comfy	快適な、心地よい（comfortableの略）	This chair is so comfy that I could sit here all day.	この椅子はとても快適で一日中座っていられる。	このいすはとてもかいてきでいちにちちゅうすわっていられる。
+14791	comma	コンマ、読点	Remember to use a comma after introductory phrases.	導入句の後にはコンマを使うことを忘れないでください。	どうにゅうくのあとにはこんまをつかうことをわすれないでください。
+14792	commissioner	委員、長官、理事	The commissioner announced new rules for the league.	委員長はリーグの新しい規則を発表した。	いいんちょうはりーぐのあたらしいきそくをはっぴょうした。
+14793	communicative	話好きな、コミュニケーション能力がある	She is very communicative and enjoys meeting new people.	彼女はとても話好きで、新しい人に会うのを楽しむ。	かのじょはとてもはなしすきで、あたらしいひとにあうのをたのしむ。
+14794	communism	共産主義	Communism is a political and economic ideology.	共産主義は政治的・経済的なイデオロギーである。	きょうさんしゅぎはせいじてき・けいざいてきないでおろぎーである。
+14795	competence	能力、適性	He showed great competence in handling the project.	彼はそのプロジェクトに取り組むうえで高い能力を示した。	かれはそのぷろじぇくとにとりくむうえでたかいのうりょくをしめした。
+14796	competency	能力、適性、力量	The job requires a high level of competency in mathematics.	その仕事には高度な数学の能力が必要です。	そのしごとにはこうどなすうがくののうりょくがひつようです。
+14797	competitiveness	競争力、競争心	The company's competitiveness has improved after introducing new technology.	新技術を導入した後、会社の競争力が向上した。	しんぎじゅつをどうにゅうしたあと、かいしゃのきょうそうりょくがこうじょうした。
+14798	computerize	コンピューター化する、電子化する	The school decided to computerize all student records.	学校はすべての生徒記録をコンピューター化することに決めた。	がっこうはすべてのせいときろくをこんぴゅーたーかすることにきめた。
+14799	concierge	コンシェルジュ、案内係、管理人	The concierge helped us make a reservation at the restaurant.	コンシェルジュはレストランの予約を手伝ってくれた。	こんしぇるじゅはれすとらんのよやくをてつだってくれた。
+14800	conduction	伝導、伝達（特に熱や電気）	Metals are good at heat conduction.	金属は熱の伝導が得意だ。	きんぞくはねつのでんどうがとくいだ。
+14801	congressman	国会議員、下院議員（特にアメリカ）	The congressman gave a speech about education reform.	その国会議員は教育改革について演説を行った。	そのこっかいぎいんはきょういくかいかくについてえんぜつをおこなった。
+14802	congruent	一致する、合致する、合同の（数学）	Her actions were congruent with her words.	彼女の行動は彼女の言葉と一致していた。	かのじょのこうどうはかのじょのことばといっちしていた。
+14803	consolidation	強化、統合、合併	The two companies announced a consolidation to improve efficiency.	2社は効率向上のために統合を発表した。	2しゃはこうりつこうじょうのためにとうごうをはっぴょうした。
+14804	consortium	共同事業体、企業連合	The project was funded by an international consortium.	そのプロジェクトは国際的な共同企業体によって資金提供された。	そのぷろじぇくとはこくさいてきなきょうどうきぎょうたいによってしきんていきょうされた。
+14805	constituency	選挙区、有権者、支持者層	The politician visited his constituency to listen to the citizens’ concerns.	その政治家は自分の選挙区を訪れ、市民の懸念を聞いた。	そのせいじかはじぶんのせんきょくをおとずれ、しみんのけねんをきいた。
+14806	consultancy	コンサルタント業、相談業、助言会社	He works for a management consultancy.	彼は経営コンサルタント会社で働いている。	かれはけいえいこんさるたんとかいしゃではたらいている。
+14807	contestant	競技者、参加者、出場者	Each contestant must answer three questions.	それぞれの参加者は3つの質問に答えなければならない。	それぞれのさんかしゃは3つのしつもんにこたえなければならない。
+14808	conveniently	便利に、都合よく	The station is conveniently located near the hotel.	駅はホテルの近くに便利な場所にある。	えきはほてるのちかくにべんりなばしょにある。
+14809	cookbook	料理本	She found a new recipe in her favorite cookbook.	彼女はお気に入りの料理本で新しいレシピを見つけた。	かのじょはおきにいりのりょうりぼんであたらしいれしぴをみつけた。
+14810	cooldown	クールダウン、（運動後などの）体を落ち着かせる時間	It's important to do a cooldown after exercising.	運動後にはクールダウンをすることが大切だ。	うんどうごにはくーるだうんをすることがたいせつだ。
+14811	cooler	クーラー、冷却器、冷却用容器	Please put the drinks in the cooler.	飲み物をクーラーに入れてください。	のみものをくーらーにいれてください。
+14812	coordinator	調整者、コーディネーター、まとめ役	The event coordinator managed all the preparations.	イベントのコーディネーターが全ての準備を管理した。	いべんとのこーでぃねーたーがすべてのじゅんびをかんりした。
+14813	cordless	コードレスの、無線の	She bought a cordless vacuum cleaner.	彼女はコードレスの掃除機を買った。	かのじょはこーどれすのそうじきをかった。
+14814	coronary	冠状動脈の、冠状動脈に関する	He was taken to the hospital with a suspected coronary problem.	彼は冠状動脈の問題が疑われて病院に運ばれた。	かれはかんじょうどうみゃくのもんだいがうたがわれてびょういんにはこばれた。
+14815	corrective	是正的な、矯正の	The company implemented corrective measures.	その会社は是正措置を実施した。	そのかいしゃはぜせいそちをじっしした。
+14816	correlate	相関する、互いに関係がある	The increase in temperature correlates with higher energy consumption.	気温の上昇はエネルギー消費の増加と相関している。	きおんのじょうしょうはえねるぎーしょうひのぞうかとそうかんしている。
+14817	correspondent	特派員、通信員、文通相手	The journalist worked as a foreign correspondent in Europe.	その記者はヨーロッパで海外特派員として働いた。	そのきしゃはよーろっぱでかいがいとくはいんとしてはたらいた。
+14818	counselor	カウンセラー、相談員、助言者	She visited a school counselor to talk about her concerns.	彼女は悩みについて話すためにスクールカウンセラーを訪ねた。	かのじょはなやみについてはなすためにすくーるかうんせらーをたずねた。
+14819	counterparty	取引相手、契約相手	The bank confirmed the identity of the counterparty before proceeding with the transaction.	銀行は取引を進める前に取引相手の身元を確認した。	ぎんこうはとりひきをすすめるまえにとりひきあいてのみもとをかくにんした。
+14820	coupon	割引券、クーポン、小切手、利札	She used a coupon to get a discount on her purchase.	彼女は買い物の割引にクーポンを使った。	かのじょはかいもののわりびきにくーぽんをつかった。
+14821	covariance	共分散（統計学で2つの変数の関連性を示す指標）	The covariance between height and weight was calculated for the data set.	データセットに対し、身長と体重の共分散が計算された。	でーたせっとにたいし、しんちょうとたいじゅうのきょうぶんさんがけいさんされた。
+14822	covenant	契約、盟約、約束（法的な意味を含むことが多い）	The contract included a covenant not to compete.	契約には競争しないという盟約が含まれていた。	けいやくにはきょうそうしないというめいやくがふくまれていた。
+14823	creatine	クレアチン（筋肉に存在する化合物、エネルギー供給に関与）	Athletes often use creatine supplements to improve performance.	運動選手はしばしばパフォーマンス向上のためにクレアチンサプリメントを使用する。	うんどうせんしゅはしばしばぱふぉーまんすこうじょうのためにくれあちんさぷりめんとをしようする。
+14824	credible	信用できる、信頼できる	The police only act on credible information.	警察は信頼できる情報だけに基づいて行動する。	けいさつはしんらいできるじょうほうだけにもとづいてこうどうする。
+14825	creditor	債権者、貸主	The company paid its creditors on time.	その会社は債権者に期限通りに支払いをした。	そのかいしゃはさいけんしゃにきげんとおりにしはらいをした。
+14826	crossover	交差、クロスオーバー、異なるものの混合や組み合わせ	The musician released a crossover album combining jazz and rock.	そのミュージシャンはジャズとロックを組み合わせたクロスオーバーアルバムをリリースした。	そのみゅーじしゃんはじゃずとろっくをくみあわせたくろすおーばーあるばむをりりーすした。
+14827	crow	カラス（名詞）、得意になって自慢する（動詞）	A crow was sitting on the branch, watching everything below.	カラスが枝に止まって、下のすべてを見ていた。	からすがえだにとまって、したのすべてをみていた。
+14828	cuff	袖口、手錠、平手打ちする	He rolled up his shirt cuffs before washing his hands.	彼は手を洗う前にシャツの袖口をまくった。	かれはてをあらうまえにしゃつのそでぐちをまくった。
+14829	curb	縁石、抑制する、制限する	The city installed new curbs along the street.	市は通りに沿って新しい縁石を設置した。	しはとおりにそってあたらしいえんせきをせっちした。
+14830	curtsy	（女性が膝を少し曲げる）おじぎ	She gave a polite curtsy before leaving the stage.	彼女は舞台を降りる前に丁寧なおじぎをした。	かのじょはぶたいをおりるまえにていねいなおじぎをした。
+14831	customize	カスタマイズする、好みに合わせて作る	You can customize your phone settings to suit your needs.	自分のニーズに合わせて携帯電話の設定をカスタマイズできる。	じぶんのにーずにあわせてけいたいでんわのせっていをかすたまいずできる。
+14832	cyclical	周期的な、循環的な	Economic growth often shows a cyclical pattern.	経済成長はしばしば周期的なパターンを示す。	けいざいせいちょうはしばしばしゅうきてきなぱたーんをしめす。
+14833	dash	突進する、急いで走る、ダッシュ、少量	She made a dash for the bus when she saw it at the stop.	彼女はバスが停留所にいるのを見て、急いで駆け寄った。	かのじょはばすがていりゅうじょにいるのをみて、いそいでかけよった。
+14834	deadlift	デッドリフト（床から重い物を持ち上げるウエイトトレーニングの一種）	He increased the weight for his deadlift during today's workout.	彼は今日のトレーニングでデッドリフトの重量を増やした。	かれはきょうのとれーにんぐででっどりふとのじゅうりょうをふやした。
+14835	dealership	代理店、販売店	She bought her new car at the local dealership.	彼女は地元の販売店で新しい車を買った。	かのじょはじもとのはんばいてんであたらしいくるまをかった。
+14836	debenture	社債、無担保債券	The company issued a debenture to raise capital.	その会社は資金調達のために社債を発行した。	そのかいしゃはしきんちょうたつのためにしゃさいをはっこうした。
+14837	decentralize	分散化する、分権化する	The organization decided to decentralize its management.	その組織は経営を分散化することを決定した。	そのそしきはけいえいをぶんさんかすることをけっていした。
+14838	deductible	控除可能な、（保険の）免責金額	Her health insurance policy has a $500 deductible.	彼女の健康保険には500ドルの免責金額がある。	かのじょのけんこうほけんには500どるのめんせききんがくがある。
+14839	defer	延期する、先送りにする	They decided to defer the meeting until next week.	彼らは会議を来週まで延期することにした。	かれらはかいぎをらいしゅうまでえんきすることにした。
+14840	deflation	デフレーション、物価下落	The country experienced deflation for several years.	その国は数年間デフレーションを経験した。	そのくにはすうねんかんでふれーしょんをけいけんした。
+14841	deflection	そらすこと、偏向、逸脱	The deflection of the ball changed the outcome of the game.	ボールの逸れ方が試合の結果を変えた。	ぼーるのそれかたがしあいのけっかをかえた。
+14842	dehydration	脱水（症）、水分喪失	He was hospitalized due to severe dehydration.	彼は重度の脱水症で入院した。	かれはじゅうどのだっすいしょうでにゅういんした。
+14843	deliverable	納入可能なもの、成果物	The final report is a key deliverable of the project.	最終報告書はこのプロジェクトの主要な成果物だ。	さいしゅうほうこくしょはこのぷろじぇくとのしゅようなせいかぶつだ。
+14844	deltoid	三角筋、三角形状の	The deltoid muscle is located on the upper arm.	三角筋は上腕に位置している。	さんかくきんはじょうわんにいちしている。
+14845	deluxe	豪華な、デラックスな	They stayed in a deluxe hotel room during their vacation.	彼らは休暇中、デラックスなホテルの部屋に泊まった。	かれらはきゅうかちゅう、でらっくすなほてるのへやにとまった。
+14846	demonstrator	実演者、デモ参加者、デモンストレーター	The demonstrator showed how to use the new machine.	その実演者は新しい機械の使い方を示した。	そのじつえんしゃはあたらしいきかいのつかいかたをしめした。
+14847	denominate	～と名付ける、～を呼ぶ	The currency was denominated in dollars.	その通貨はドルで表示された。	そのつうかはどるでひょうじされた。
+14848	denominator	（分数の）分母、共通要素	In the fraction 3/5, 5 is the denominator.	分数3/5では、5が分母である。	ぶんすう3/5では、5がぶんぼである。
+14849	departmental	部門の、部署の	There will be a departmental meeting tomorrow.	明日は部門会議がある。	あすはぶもんかいぎがある。
+14850	dependency	従属、依存、属国	The island is a dependency of the larger country.	その島は大きな国の属領である。	そのしまはおおきなくにのぞくりょうである。
+14851	depositor	預金者、預け入れ人	The bank ensured the safety of every depositor's money.	その銀行はすべての預金者のお金の安全を保証した。	そのぎんこうはすべてのよきんしゃのおかねのあんぜんをほしょうした。
+14852	depreciate	価値が下がる、減価する	Cars tend to depreciate quickly after purchase.	自動車は購入後すぐに価値が下がる傾向がある。	じどうしゃはこうにゅうごすぐにかちがさがるけいこうがある。
+14853	depreciation	減価償却、価値の減少	The company recorded depreciation for its equipment.	その会社は設備の減価償却を記録した。	そのかいしゃはせつびのげんかしょうきゃくをきろくした。
+14854	deregulation	規制緩和	Deregulation led to more competition in the market.	規制緩和によって市場での競争が増えた。	きせいかんわによってしじょうでのきょうそうがふえた。
+14855	descendent	子孫、末裔	She is a descendent of the original founder.	彼女は創立者の子孫である。	かのじょはそうりつしゃのしそんである。
+14856	descriptor	記述語、説明するための語句や情報	Each product has a descriptor that explains its features.	各製品にはその特徴を説明する記述語がある。	かくせいひんにはそのとくちょうをせつめいするきじゅつごがある。
+14857	determinant	決定要因、決定するもの	Access to education is a key determinant of economic success.	教育へのアクセスは経済的成功の主要な決定要因である。	きょういくへのあくせすはけいざいてきせいこうのしゅようなけっていよういんである。
+14858	detox	解毒、体内の毒素を取り除くこと	She went to a clinic to detox after a long period of unhealthy eating.	彼女は長期間の不健康な食生活の後、解毒のためクリニックに行った。	かのじょはちょうきかんのふけんこうなしょくせいかつのあと、げどくのためくりにっくにいった。
+14859	devaluation	（通貨などの）価値の切り下げ、低下	The devaluation of the currency affected the price of imported goods.	通貨の切り下げは輸入品の価格に影響を与えた。	つうかのきりさげはゆにゅうひんのかかくにえいきょうをあたえた。
+14860	dial	ダイヤル、（電話などの）番号を回す、（時計などの）文字盤	You need to dial the area code before the phone number.	電話番号の前に市外局番をダイヤルする必要がある。	でんわばんごうのまえにしがいきょくばんをだいやるするひつようがある。
+14861	dictator	独裁者	The dictator ruled the country for many years.	その独裁者は何年もその国を統治した。	そのどくさいしゃはなんねんもそのくにをとうちした。
+14862	diner	食事客、（アメリカの）簡易レストラン	We had breakfast at a local diner this morning.	今朝、私たちは地元のダイナーで朝食をとった。	けさ、わたしたちはじもとのだいなーでちょうしょくをとった。
+14863	dishwasher	食器洗い機、食器洗いをする人	She loaded the dirty dishes into the dishwasher.	彼女は汚れた食器を食器洗い機に入れた。	かのじょはよごれたしょっきをしょっきあらいきにいれた。
+14864	dismantle	分解する、解体する	They had to dismantle the old machine before installing the new one.	新しい機械を設置する前に、彼らは古い機械を分解しなければならなかった。	あたらしいきかいをせっちするまえに、かれらはふるいきかいをぶんかいしなければならなかった。
+14865	disposition	気質、性質、配置、処分	He has a cheerful disposition and gets along with everyone.	彼は明るい性格で、誰とでもうまくやっていける。	かれはあかるいせいかくで、だれとでもうまくやっていける。
+14866	dissection	解剖、詳細な分析	The dissection of the frog was part of the biology class.	カエルの解剖は生物の授業の一部だった。	かえるのかいぼうはせいぶつのじゅぎょうのいちぶだった。
+14867	dissertation	学位論文、論文	She spent months writing her dissertation on modern history.	彼女は現代史についての博士論文を書くのに数か月かかった。	かのじょはげんだいしについてのはくしろんぶんをかくのにすうかげつかかった。
+14868	distraction	気を散らすもの、注意をそらすこと	Loud noises can be a major distraction while studying.	大きな音は勉強中に大きな気を散らす原因になる。	おおきなおとはべんきょうちゅうにおおきなきをちらすげんいんになる。
+14869	distractor	注意をそらすもの、（試験の）ひっかけ選択肢	In the multiple-choice test, some answers are distractors to mislead students.	複数選択式テストでは、いくつかの回答は学生を惑わせるひっかけ選択肢である。	ふくすうせんたくしきてすとでは、いくつかのかいとうはがくせいをまどわせるひっかけせんたくしである。
+14870	distributor	流通業者、販売業者、配給者	The distributor delivered the products to various stores.	流通業者がさまざまな店舗に商品を配達した。	りゅうつうぎょうしゃがさまざまなてんぽにしょうひんをはいたつした。
+14871	diversification	多様化、分散	The company is focusing on diversification to reach new markets.	その会社は新しい市場に進出するために多様化に力を入れている。	そのかいしゃはあたらしいしじょうにしんしゅつするためにたようかにちからをいれている。
+14872	diversify	多様化する、分散する	Many businesses try to diversify their products.	多くの企業は製品を多様化しようとする。	おおくのきぎょうはせいひんをたようかしようとする。
+14873	divert	そらす、転換する	The police diverted traffic to another road.	警察は交通を別の道路に迂回させた。	けいさつはこうつうをべつのどうろにうかいさせた。
+14874	downgrade	格下げする、降格させる、（評価などを）下げる	The rating agency decided to downgrade the company's credit rating.	格付け会社はその企業の信用格付けを引き下げることを決定した。	かくづけかいしゃはそのきぎょうのしんようかくづけをひきさげることをけっていした。
+14875	downside	欠点、不利な点、マイナス面	The downside of living in the city is the high cost of living.	都市に住むことの欠点は生活費が高いことだ。	としにすむことのけってんはせいかつひがたかいことだ。
+14876	dumbbell	ダンベル（筋力トレーニングなどに使う小型の手持ちの重り）	She lifts dumbbells every morning to stay fit.	彼女は健康を保つために毎朝ダンベルを持ち上げている。	かのじょはけんこうをたもつためにまいあさだんべるをもちあげている。
+14877	dump	捨てる、投棄する、ごみ捨て場	Please don't dump trash in the park.	公園にごみを捨てないでください。	こうえんにごみをすてないでください。
+14878	e-book	電子書籍	I bought an e-book to read on my tablet.	私はタブレットで読むために電子書籍を買った。	わたしはたぶれっとでよむためにでんししょせきをかった。
+14879	eagle	鷲	An eagle flew high above the mountains.	鷲が山の上空を高く飛んでいた。	わしがやまのじょうくうをたかくとんでいた。
+14880	economize	節約する、倹約する	We need to economize on electricity this month.	今月は電気を節約する必要がある。	こんげつはでんきをせつやくするひつようがある。
+14881	electrolyte	電解質（電気を通す液体に溶けているイオン）	Sports drinks often contain electrolytes.	スポーツドリンクにはよく電解質が含まれている。	すぽーつどりんくにはよくでんかいしつがふくまれている。
+14882	empower	権限を与える、力を持たせる	The new software empowers users to manage their data easily.	新しいソフトウェアはユーザーに簡単にデータを管理する力を与える。	あたらしいそふとうぇあはゆーざーにかんたんにでーたをかんりするちからをあたえる。
+14883	empowerment	権限付与、力を持たせること	Employee empowerment can lead to higher job satisfaction.	従業員の権限付与は仕事の満足度向上につながることがある。	じゅうぎょういんのけんげんふよはしごとのまんぞくどこうじょうにつながることがある。
+14884	endowment	寄付金、才能、天賦の資質	The university received a large endowment from an alumnus.	その大学は卒業生から多額の寄付金を受け取った。	そのだいがくはそつぎょうせいからたがくのきふきんをうけとった。
+14885	enforceable	法的に執行可能な	This contract is legally enforceable.	この契約は法的に執行可能である。	このけいやくはほうてきにしっこうかのうである。
+14886	enhancement	強化、向上、増強	The software update brought several enhancements to the system.	ソフトウェアのアップデートでシステムがいくつか強化された。	そふとうぇあのあっぷでーとでしすてむがいくつかきょうかされた。
+14887	enlargement	拡大、拡張	The enlargement of the picture made the details clearer.	写真を拡大すると細部がより鮮明になった。	しゃしんをかくだいするとさいぶがよりせんめいになった。
+14888	enormously	非常に、莫大に	The new project improved efficiency enormously.	新しいプロジェクトは効率を非常に向上させた。	あたらしいぷろじぇくとはこうりつをひじょうにこうじょうさせた。
+14889	entail	伴う、必要とする、引き起こす	This job will entail working late several times a week.	この仕事では週に何度か遅くまで働くことが必要になる。	このしごとではしゅうになんどかおそくまではたらくことがひつようになる。
+14890	entrant	参加者、新規参入者	Each entrant must fill out the registration form.	各参加者は登録用紙に記入しなければならない。	かくさんかしゃはとうろくようしにきにゅうしなければならない。
+14891	entrepreneurial	起業家の、起業家精神のある	She has an entrepreneurial spirit and always looks for new opportunities.	彼女は起業家精神があり、常に新しい機会を探している。	かのじょはきぎょうかせいしんがあり、つねにあたらしいきかいをさがしている。
+14892	epidemiology	疫学（病気の流行や分布を研究する分野）	She is studying epidemiology at university.	彼女は大学で疫学を学んでいる。	かのじょはだいがくでえきがくをまなんでいる。
+14893	equate	同一視する、等しいとみなす	Some people equate wealth with happiness.	一部の人々は富と幸福を同一視する。	いちぶのひとびとはとみとこうふくをどういつしする。
+14894	erode	侵食する、徐々に減少させる	Water can erode rock over thousands of years.	水は何千年もかけて岩を侵食することができる。	みずはなんぜんねんもかけていわをしんしょくすることができる。
+14895	escalator	エスカレーター、動く階段	She rode the escalator to the second floor.	彼女はエスカレーターに乗って2階へ行った。	かのじょはえすかれーたーにのって2かいへいった。
+14896	euro	ユーロ（ヨーロッパ連合の通貨）	He paid for the coffee in euros.	彼はユーロでコーヒーの代金を支払った。	かれはゆーろでこーひーのだいきんをしはらった。
+14897	ex	元〜、以前の〜、元恋人	She saw her ex at the party.	彼女はパーティーで元恋人に会った。	かのじょはぱーてぃーでもとこいびとにあった。
+14898	expiration	満了、期限、終了	Please check the expiration date on the package.	パッケージの有効期限を確認してください。	ぱっけーじのゆうこうきげんをかくにんしてください。
+14899	explanatory	説明の、説明的な	The manual contains explanatory notes for each step.	マニュアルには各手順についての説明書きがある。	まにゅあるにはかくてじゅんについてのせつめいかきがある。
+14900	exporter	輸出業者、輸出国	Japan is a major exporter of cars.	日本は自動車の主要な輸出国だ。	にっぽんはじどうしゃのしゅようなゆしゅつこくだ。
+14901	externality	外部性（経済活動の外部効果や外部不経済）	Pollution is an example of a negative externality.	汚染は負の外部性の例である。	おせんはふのがいぶせいのれいである。
+14902	extinguisher	消火器	There is a fire extinguisher near the exit.	出口の近くに消火器がある。	でぐちのちかくにしょうかきがある。
+14903	facet	側面、面、要素	Honesty is one important facet of her personality.	誠実さは彼女の性格の重要な一面だ。	せいじつさはかのじょのせいかくのじゅうようないちめんだ。
+14904	factorial	階乗（ある整数までの連続した整数の積）	The factorial of 5 is 120.	5の階乗は120である。	5のかいじょうは120である。
+14905	familiarity	精通、よく知っていること、親しみ	Her familiarity with the local culture helped her adjust quickly.	彼女はその土地の文化に精通していたので、すぐに順応できた。	かのじょはそのとちのぶんかにせいつうしていたので、すぐにじゅんのうできた。
+14906	fascia	（解剖学）筋膜、（建築）横板、帯	The doctor explained that damage to the fascia can cause pain.	医師は、筋膜の損傷が痛みを引き起こすことがあると説明した。	いしは、きんまくのそんしょうがいたみをひきおこすことがあるとせつめいした。
+14907	fascial	筋膜の、筋膜に関する	Fascial release techniques are sometimes used in physical therapy.	筋膜リリースの技法は理学療法で使われることがある。	きんまくりりーすのぎほうはりがくりょうほうでつかわれることがある。
+14908	fax	ファクス、ファクス送信する	Please fax this document to the office.	この書類をオフィスにファクスで送ってください。	このしょるいをおふぃすにふぁくすでおくってください。
+14909	fin	魚のひれ、（機械の）フィン	The fish moved its fins to swim faster.	その魚はひれを動かして速く泳いだ。	そのさかなはひれをうごかしてはやくおよいだ。
+14910	flexion	（関節などの）屈曲	Flexion of the elbow decreases the angle between the upper arm and forearm.	肘の屈曲は上腕と前腕の角度を小さくする。	ひじのくっきょくはじょうわんとぜんわんのかくどをちいさくする。
+14911	flexor	屈筋（関節を曲げる筋肉）	The flexor muscles help you bend your fingers.	屈筋は指を曲げるのを助ける。	くっきんはゆびをまげるのをたすける。
+14912	flextime	フレックスタイム（労働者が始業・終業時刻を選べる勤務形態）	She prefers a job with flextime so she can avoid rush hour.	彼女はラッシュアワーを避けるためにフレックスタイムの仕事を好んでいる。	かのじょはらっしゅあわーをさけるためにふれっくすたいむのしごとをこのんでいる。
+14913	flotation	浮かぶこと、浮遊、（経済用語としての）新株発行	The device is designed to aid flotation in water.	その装置は水中での浮遊を助けるように設計されている。	そのそうちはすいちゅうでのふゆうをたすけるようにせっけいされている。
+14914	flyer	チラシ、ちらし広告、飛行機の搭乗者	They handed out flyers to promote the event.	彼らはイベントを宣伝するためにチラシを配った。	かれらはいべんとをせんでんするためにちらしをくばった。
+14915	folder	フォルダー、書類ばさみ、コンピュータ上の保存場所	She saved the documents in a new folder on her computer.	彼女はパソコンの新しいフォルダーに書類を保存した。	かのじょはぱそこんのあたらしいふぉるだーにしょるいをほぞんした。
+14916	forecaster	予報者、予測する人（特に天気予報士）	The forecaster predicted rain for tomorrow.	予報士は明日の雨を予測した。	よほうしはあすのあめをよそくした。
+14917	franc	フラン（通貨単位）	He paid ten francs for the book in Switzerland.	彼はスイスでその本を10フランで買った。	かれはすいすでそのほんを10ふらんでかった。
+14918	freelance	フリーランス、自由契約の	She works as a freelance writer.	彼女はフリーランスのライターとして働いている。	かのじょはふりーらんすのらいたーとしてはたらいている。
+14919	freighter	貨物船、運送業者	The freighter arrived at the port with a cargo of cars.	貨物船は自動車の積荷とともに港に到着した。	かもつせんはじどうしゃのつみにとともにみなとにとうちゃくした。
+14920	fringe	縁、へり、房飾り、（グループなどの）周辺部	The festival was held on the fringe of the city.	その祭りは市の周辺部で開催された。	そのまつりはしのしゅうへんぶでかいさいされた。
+14921	fructose	果糖	Fructose is a type of sugar found in fruits.	果糖は果物に含まれる種類の糖だ。	かとうはくだものにふくまれるしゅるいのとうだ。
+14922	fundraise	資金を集める、募金活動をする	The school plans to fundraise for new playground equipment.	その学校は新しい遊具のために資金集めを計画している。	そのがっこうはあたらしいゆうぐのためにしきんあつめをけいかくしている。
+14923	gardener	庭師、園芸家	The gardener takes care of the flowers in the park.	その庭師は公園の花々の世話をしている。	そのにわしはこうえんのはなばなのせわをしている。
+14924	generalization	一般化、概括	Making a generalization based on one example can be misleading.	一つの例だけで一般化することは誤解を招くことがある。	ひとつのれいだけでいっぱんかすることはごかいをまねくことがある。
+14925	generalize	一般化する、概括する	It is not always accurate to generalize from one example.	1つの例から一般化するのは必ずしも正確ではない。	1つのれいからいっぱんかするのはかならずしもせいかくではない。
+14926	genetics	遺伝学、遺伝的特徴	Genetics plays a role in many health conditions.	遺伝学は多くの健康状態に関与している。	いでんがくはおおくのけんこうじょうたいにかんよしている。
+14927	globalization	グローバル化、世界規模での展開や統合	Globalization has increased the exchange of goods and ideas.	グローバル化によって物や考えの交流が増えた。	ぐろーばるかによってものやかんがえのこうりゅうがふえた。
+14928	glutamine	グルタミン（アミノ酸の一種）	Glutamine is important for muscle recovery after exercise.	グルタミンは運動後の筋肉回復に重要である。	ぐるたみんはうんどうごのきんにくかいふくにじゅうようである。
+14929	gluteus	臀筋（でんきん）（おしりの筋肉）	The gluteus muscles are activated during squats.	スクワット中に臀筋が使われる。	すくわっとちゅうにでんきんがつかわれる。
+14930	glycemic	血糖（値）の、血糖に関する	The glycemic index measures how foods affect blood sugar levels.	グリセミック指数は食品が血糖値にどう影響するかを測るものである。	ぐりせみっくしすうはしょくひんがけっとうちにどうえいきょうするかをはかるものである。
+14931	glycogen	グリコーゲン（体内に蓄えられる多糖類）	The body stores excess glucose as glycogen in the liver and muscles.	体は余分なグルコースを肝臓や筋肉にグリコーゲンとして蓄える。	からだはよぶんなぐるこーすをかんぞうやきんにくにぐりこーげんとしてたくわえる。
+14932	gosh	おや、まあ（驚きを表す表現）	Gosh, I didn’t expect to see you here!	おや、ここであなたに会うとは思いませんでした！	おや、ここであなたにあうとはおもいませんでした!
+14933	graphics	図、グラフィックス、映像表現	This video game has impressive graphics.	このビデオゲームは印象的なグラフィックスを持っている。	このびでおげーむはいんしょうてきなぐらふぃっくすをもっている。
+14934	gum	ガム（噛み菓子）、歯ぐき、樹脂	Chewing gum can freshen your breath.	ガムを噛むと口臭を爽やかにできる。	がむをかむとこうしゅうをさわやかにできる。
+14935	hacker	ハッカー（コンピューターシステムへの不正侵入者、またはシステムやプログラムをいじる人）	The hacker accessed the system without permission.	そのハッカーは許可なくシステムにアクセスした。	そのはっかーはきょかなくしすてむにあくせすした。
+14936	hamstring	ハムストリング（太ももの裏の筋）、（比喩的に）妨げる	He injured his hamstring during the football match.	彼はサッカーの試合中にハムストリングを痛めた。	かれはさっかーのしあいちゅうにはむすとりんぐをいためた。
+14937	handbook	ハンドブック、手引き書、ガイドブック	Please read the employee handbook before starting work.	仕事を始める前に従業員ハンドブックを読んでください。	しごとをはじめるまえにじゅうぎょういんはんどぶっくをよんでください。
+14938	handset	（電話などの）受話器、携帯端末	She picked up the handset and called her friend.	彼女は受話器を取って友人に電話をかけた。	かのじょはじゅわきをとってゆうじんにでんわをかけた。
+14939	handstand	倒立（手で体を支えて立つこと）	He practiced his handstand every day.	彼は毎日倒立の練習をした。	かれはまいにちとうりつのれんしゅうをした。
+14940	handy	便利な、使いやすい、手元にある	Keep a flashlight handy in case of a power outage.	停電時に備えて懐中電灯を手元に置いておいてください。	ていでんじにそなえてかいちゅうでんとうをてもとにおいておいてください。
+14941	hardworking	勤勉な、一生懸命働く	She is a hardworking student and always does her best.	彼女は勤勉な学生で、いつも最善を尽くす。	かのじょはきんべんながくせいで、いつもさいぜんをつくす。
+14942	headphone	ヘッドホン、イヤホン	He listened to music with his headphones.	彼はヘッドホンで音楽を聴いた。	かれはへっどほんでおんがくをきいた。
+14943	healthful	健康によい、健康的な	Eating vegetables is healthful.	野菜を食べることは健康によい。	やさいをたべることはけんこうによい。
+14944	helix	らせん、螺旋状のもの	DNA has a double helix structure.	DNAは二重らせん構造をしている。	でぃーえぬえーはにじゅうらせんこうぞうをしている。
+14945	hey	やあ、ねえ（呼びかけや注意を引くときに使う）	Hey, can you help me with this?	ねえ、これ手伝ってくれる？	ねえ、これてつだってくれる?
+14946	hiker	ハイキングをする人、登山者	The hikers reached the top of the mountain before noon.	ハイカーたちは正午前に山頂に到着した。	はいかーたちはしょうごまえにさんちょうにとうちゃくした。
+14947	histogram	ヒストグラム（データの分布を表す棒グラフ）	We used a histogram to analyze the test results.	私たちはテスト結果を分析するためにヒストグラムを使った。	わたしたちはてすとけっかをぶんせきするためにひすとぐらむをつかった。
+14948	homeowner	住宅所有者、持ち家の人	The homeowner planted flowers in the garden.	その住宅所有者は庭に花を植えた。	そのじゅうたくしょゆうしゃはにわにはなをうえた。
+14949	hotline	ホットライン、緊急連絡電話	You can call the support hotline for help any time.	サポートホットラインにはいつでも電話して助けを求められます。	さぽーとほっとらいんにはいつでもでんわしてたすけをもとめられます。
+14950	hourly	毎時の、1時間ごとの、時間単位で	She receives an hourly wage at her job.	彼女は職場で時間給を受け取っている。	かのじょはしょくばでじかんきゅうをうけとっている。
+14951	housekeep	家事を行う	She learned to housekeep efficiently.	彼女は効率的に家事をする方法を学んだ。	かのじょはこうりつてきにかじをするほうほうをまなんだ。
+14952	housekeeper	家政婦、家事を担当する人	The housekeeper cleans the rooms every morning.	家政婦は毎朝部屋を掃除する。	かせいふはまいあさへやをそうじする。
+14953	hugely	非常に、とても、大いに	The movie was hugely popular last year.	その映画は昨年とても人気があった。	そのえいがはさくねんとてもにんきがあった。
+14954	huh	えっ？はぁ？（聞き返す・驚く時などに使う）	Huh? I didn't hear what you said.	えっ？何と言ったのか聞こえなかった。	えっ?なんといったのかきこえなかった。
+14955	hydrate	水分を補給する、水和する	It's important to hydrate after exercise.	運動の後は水分を補給することが大切です。	うんどうのあとはすいぶんをほきゅうすることがたいせつです。
+14956	hydration	水分補給、水和	Proper hydration is necessary during hot weather.	暑い天候の時は適切な水分補給が必要です。	あついてんこうのときはてきせつなすいぶんほきゅうがひつようです。
+14957	hypertrophy	肥大、（組織などの）過形成	Muscle hypertrophy occurs when you do strength training regularly.	筋肉の肥大は定期的に筋力トレーニングを行うと起こります。	きんにくのひだいはていきてきにきんりょくとれーにんぐをおこなうとおこります。
+14958	ice cream	アイスクリーム	She bought a chocolate ice cream at the store.	彼女は店でチョコレートアイスクリームを買いました。	かのじょはみせでちょこれーとあいすくりーむをかいました。
+14959	imbalance	不均衡、バランスの悪さ	A nutrient imbalance can affect your health.	栄養の不均衡は健康に影響を与えることがあります。	えいようのふきんこうはけんこうにえいきょうをあたえることがあります。
+14960	importer	輸入業者	The company is a major importer of coffee.	その会社は主要なコーヒーの輸入業者です。	そのかいしゃはしゅようなこーひーのゆにゅうぎょうしゃです。
+14961	incorporation	法人化、組み入れ、編入	The incorporation of the new company took place last month.	新会社の法人化は先月行われました。	しんかいしゃのほうじんかはせんげつおこなわれました。
+14962	industrialize	産業化する、工業化する	Many countries began to industrialize in the nineteenth century.	多くの国々が19世紀に産業化を始めました。	おおくのくにぐにが19せいきにさんぎょうかをはじめました。
+14963	inefficiency	非効率、効率の悪さ	Inefficiency in the process caused delays.	工程の非効率が遅延の原因となりました。	こうていのひこうりつがちえんのげんいんとなりました。
+14964	inexperience	未経験、経験不足	His inexperience showed during the meeting.	彼の未経験が会議中に表れていました。	かれのみけいけんがかいぎちゅうにあらわれていました。
+14965	inflationary	インフレの、インフレを引き起こす	The government was concerned about the inflationary effects of increased spending.	政府は支出増加によるインフレ効果を懸念していた。	せいふはししゅつぞうかによるいんふれこうかをけねんしていた。
+14966	inflow	流入、流入量	There was a steady inflow of foreign investment into the country.	その国には安定した外国投資の流入があった。	そのくににはあんていしたがいこくとうしのりゅうにゅうがあった。
+14967	info	情報（informationの略）	If you need more info, please contact our office.	さらに情報が必要な場合は、当社オフィスまでご連絡ください。	さらにじょうほうがひつようなばあいは、とうしゃおふぃすまでごれんらくください。
+14968	ingestion	摂取、飲食	Ingestion of contaminated water can cause health problems.	汚染された水の摂取は健康問題を引き起こすことがある。	おせんされたみずのせっしゅはけんこうもんだいをひきおこすことがある。
+14969	insider	内部者、関係者	As an insider, she knew about the company's plans before they were announced.	内部者として、彼女は会社の計画が発表される前に知っていた。	ないぶしゃとして、かのじょはかいしゃのけいかくがはっぴょうされるまえにしっていた。
+14970	inspector	検査官、視察官	The inspector checked the building for safety violations.	検査官は建物の安全違反を調査した。	けんさかんはたてもののあんぜんいはんをちょうさした。
+14971	insurer	保険会社、保険業者	The insurer agreed to cover the damages caused by the accident.	保険会社は事故による損害を補償することに同意した。	ほけんがいしゃはじこによるそんがいをほしょうすることにどういした。
+14972	inter	埋葬する	The family decided to inter their loved one in the local cemetery.	家族は愛する人を地元の墓地に埋葬することにした。	かぞくはあいするひとをじもとのぼちにまいそうすることにした。
+14973	interestingly	興味深いことに	Interestingly, the results were different from what everyone expected.	興味深いことに、結果は誰もが予想していたものとは異なっていた。	きょうみふかいことに、けっかはだれもがよそうしていたものとはことなっていた。
+14974	intern	インターン、生徒・学生見習い、実習生	The intern assisted the team with research projects.	インターンはチームの研究プロジェクトを手伝った。	いんたーんはちーむのけんきゅうぷろじぇくとをてつだった。
+14975	internship	インターンシップ、実習、研修期間	She gained valuable experience during her internship at a law firm.	彼女は法律事務所でのインターンシップ期間中に貴重な経験を得た。	かのじょはほうりつじむしょでのいんたーんしっぷきかんちゅうにきちょうなけいけんをえた。
+14976	intonation	イントネーション、抑揚、音調	Good intonation can help make your English sound more natural.	良いイントネーションは、英語をより自然に聞こえさせる助けになる。	よいいんとねーしょんは、えいごをよりしぜんにきこえさせるたすけになる。
+14977	invert	ひっくり返す、逆にする、転倒する	Please invert the glass before washing it.	コップを洗う前に逆さまにしてください。	こっぷをあらうまえにさかさまにしてください。
+14978	investigator	調査員、捜査官、研究者	The investigator asked several questions about the incident.	調査員はその事件についていくつか質問をした。	ちょうさいんはそのじけんについていくつかしつもんをした。
+14979	invoice	請求書、送り状	We received the invoice for the products yesterday.	私たちは昨日、その商品の請求書を受け取った。	わたしたちはきのう、そのしょうひんのせいきゅうしょをうけとった。
+14980	issuance	発行、交付	The issuance of a new passport may take several weeks.	新しいパスポートの発行には数週間かかることがある。	あたらしいぱすぽーとのはっこうにはすうしゅうかんかかることがある。
+14981	issuer	発行者、発行会社	The issuer of the credit card will contact you if there is a problem.	クレジットカードの発行者は問題があれば連絡してくる。	くれじっとかーどのはっこうしゃはもんだいがあればれんらくしてくる。
+14982	jack	ジャッキ、車を持ち上げる道具、（トランプの）ジャック、男性の名	I used a jack to lift the car and change the tire.	車を持ち上げてタイヤを交換するためにジャッキを使った。	くるまをもちあげてたいやをこうかんするためにじゃっきをつかった。
+14983	jackknife	折りたたみナイフ、（車などが）くの字に曲がる	He always carries a jackknife when he goes camping.	彼はキャンプに行くときはいつも折りたたみナイフを持っている。	かれはきゃんぷにいくときはいつもおりたたみないふをもっている。
+14984	jam	ジャム、混雑、詰まり、立ち往生する、押し込む	There was a traffic jam on the highway this morning.	今朝は高速道路で渋滞があった。	けさはこうそくどうろでじゅうたいがあった。
+14985	jeans	ジーンズ、デニムでできたズボン	She bought a new pair of jeans yesterday.	彼女は昨日、新しいジーンズを買った。	かのじょはきのう、あたらしいじーんずをかった。
+14986	junk	がらくた、くず、無価値なもの	He threw away all the junk in his garage.	彼はガレージの中のがらくたをすべて捨てた。	かれはがれーじのなかのがらくたをすべてすてた。
+14987	kettlebell	ケトルベル、取っ手のついた重りのトレーニング器具	She works out with a kettlebell every morning.	彼女は毎朝ケトルベルでトレーニングしている。	かのじょはまいあさけとるべるでとれーにんぐしている。
+14988	kickbox	キックボクシングをする	He likes to kickbox for exercise.	彼は運動のためにキックボクシングをするのが好きだ。	かれはうんどうのためにきっくぼくしんぐをするのがすきだ。
+14989	kicker	キッカー、キックをする人（特にスポーツで）	The kicker scored three points with a field goal.	そのキッカーはフィールドゴールで3点を取った。	そのきっかーはふぃーるどごーるでさんてんをとった。
+14990	killer	殺す人またはもの、非常に難しいもの	That last exam was a real killer.	最後の試験は本当に大変だった。	さいごのしけんはほんとうにたいへんだった。
+14991	kilocalorie	キロカロリー	The meal contains about 600 kilocalories.	その食事には約600キロカロリーが含まれている。	そのしょくじにはやく600きろかろりーがふくまれている。
+14992	kneecap	膝蓋骨（しつがいこつ）（膝のお皿の骨）	She injured her kneecap while playing soccer.	彼女はサッカーをしている時に膝蓋骨を痛めた。	かのじょはさっかーをしているときにしつがいこつをいためた。
+14993	knuckle	指の関節	He cracked his knuckles before starting work.	彼は仕事を始める前に指の関節を鳴らした。	かれはしごとをはじめるまえにゆびのかんせつをならした。
+14995	lactate	乳を分泌する、乳酸を生じる	Mammals lactate to feed their young.	哺乳類は子供に乳を与えるために乳を分泌する。	ほにゅうるいはこどもにちちをあたえるためにちちをぶんぴつする。
+14996	lats	広背筋（背中の大きな筋肉）	He does pull-ups to strengthen his lats.	彼は広背筋を鍛えるために懸垂をしている。	かれはこうはいきんをきたえるためにけんすいをしている。
+14997	lecturer	講義者、講師	The lecturer gave a talk on ancient history.	講師は古代史について講義をした。	こうしはこだいしについてこうぎをした。
+14998	lender	貸し手、融資者	The lender approved my loan application.	貸し手は私のローン申請を承認した。	かしてはわたしのろーんしんせいをしょうにんした。
+14999	lessee	借り手、賃借人	The lessee agreed to pay the monthly rent on time.	借り手は毎月の家賃を期限通りに支払うことに同意した。	かりてはまいつきのやちんをきげんとおりにしはらうことにどういした。
+15000	lesser	より小さい、より重要でない	This river is a lesser branch of the main stream.	この川は本流から分かれたより小さい支流だ。	このかわはほんりゅうからわかれたよりちいさいしりゅうだ。
+15001	lessor	貸し主、賃貸人	The lessor is responsible for property maintenance.	貸し主は物件の維持管理に責任がある。	かしぬしはぶっけんのいじかんりにせきにんがある。
+15002	letterhead	レターヘッド、会社や組織名の入った便箋の上部	The official letter was printed on company letterhead.	その公式文書は会社のレターヘッドに印刷されていた。	そのこうしきぶんしょはかいしゃのれたーへっどにいんさつされていた。
+15003	leverage	てこの作用、影響力、（金融での）レバレッジ	He used his technical expertise as leverage in negotiations.	彼は交渉で自身の技術的な専門知識を影響力として使った。	かれはこうしょうでじしんのぎじゅつてきなせんもんちしきをえいきょうりょくとしてつかった。
+15004	liberalization	自由化、規制緩和	The liberalization of trade helped increase market access.	貿易の自由化によって市場へのアクセスが増加した。	ぼうえきのじゆうかによってしじょうへのあくせすがぞうかした。
+15005	liberalize	自由化する、規制を緩和する	The government decided to liberalize the trade policy.	政府は貿易政策を自由化することを決定した。	せいふはぼうえきせいさくをじゆうかすることをけっていした。
+15006	lifter	持ち上げる人、リフター（重いものを持ち上げる機械など）	The lifter moved the heavy boxes to the truck.	リフターは重い箱をトラックに運んだ。	りふたーはおもいばこをとらっくにはこんだ。
+15007	liquidate	清算する、精算する、資産を現金化する	The company had to liquidate some assets to pay its debts.	その会社は負債を返済するためにいくつかの資産を清算しなければならなかった。	そのかいしゃはふさいをへんさいするためにいくつかのしさんをせいさんしなければならなかった。
+15008	liquidation	清算、解散、処分	The clothing store is having a liquidation sale before closing.	その衣料品店は閉店前に在庫一掃セールをしている。	そのいりょうひんてんはへいてんまえにざいこいっそうせーるをしている。
+15009	liquidity	流動性、すぐに現金化できる性質	Banks need to maintain enough liquidity to meet customer withdrawals.	銀行は顧客の引き出しに対応するために十分な流動性を保つ必要がある。	ぎんこうはこきゃくのひきだしにたいおうするためにじゅうぶんなりゅうどうせいをたもつひつようがある。
+15010	lobby	ロビー、陳情する、圧力団体	They plan to lobby the government for new regulations.	彼らは新しい規制を求めて政府に働きかけるつもりだ。	かれらはあたらしいきせいをもとめてせいふにはたらきかけるつもりだ。
+15011	login	ログイン、システムにアクセスすること	You need a username and password to complete the login.	ログインを完了するにはユーザー名とパスワードが必要だ。	ろぐいんをかんりょうするにはゆーざーめいとぱすわーどがひつようだ。
+15012	longitudinal	縦の、経度の、長期間にわたる	The researchers conducted a longitudinal study over ten years.	研究者たちは10年間にわたる縦断的研究を行った。	けんきゅうしゃたちは10ねんかんにわたるじゅうだんてきけんきゅうをおこなった。
+15013	loser	敗者、負けた人、損失を受けた人	The runner finished last, but he congratulated the winners.	そのランナーは最後にゴールしたが、勝者たちに祝福を述べた。	そのらんなーはさいごにごーるしたが、しょうしゃたちにしゅくふくをのべた。
+15014	lotus	ハス、ロータスの花	The lotus blooms beautifully in the pond during summer.	ハスの花は夏の間、池で美しく咲く。	はすのはなはなつのあいだ、いけでうつくしくさく。
+15015	lounge	ラウンジ、休憩室、ゆったり座る	She waited for her flight in the airport lounge.	彼女は空港のラウンジでフライトを待った。	かのじょはくうこうのらうんじでふらいとをまった。
+15016	lunchtime	昼食の時間	Let's meet at the park during lunchtime.	昼食の時間に公園で会いましょう。	ちゅうしょくのじかんにこうえんであいましょう。
+15017	ma'am	（女性への丁寧な呼びかけ）奥様、先生	Excuse me, ma'am, you dropped your wallet.	すみません、奥様、お財布を落としましたよ。	すみません、おくさま、おさいふをおとしましたよ。
+15018	macro	マクロ、大規模なもの、（IT用語で）一連の操作を自動化するプログラム	He uses a macro to speed up repetitive tasks.	彼は繰り返しの作業を速くするためにマクロを使っている。	かれはくりかえしのさぎょうをはやくするためにまくろをつかっている。
+15019	macroeconomic	マクロ経済の、経済全体に関する	The government announced a new macroeconomic policy.	政府は新しいマクロ経済政策を発表した。	せいふはあたらしいまくろけいざいせいさくをはっぴょうした。
+15020	macroeconomics	マクロ経済学	She is studying macroeconomics at university.	彼女は大学でマクロ経済学を勉強している。	かのじょはだいがくでまくろけいざいがくをべんきょうしている。
+15021	managerial	管理職の、経営上の	He attended a managerial training course.	彼は管理職向けの研修に参加した。	かれはかんりしょくむけのけんしゅうにさんかした。
+15022	mar	傷つける、損なう、台無しにする	The scratch marred the surface of the table.	その傷がテーブルの表面を損なった。	そのきずがてーぶるのひょうめんをそこなった。
+15023	marketable	市場性のある、売り物になる	She developed a marketable product.	彼女は売り物になる製品を開発した。	かのじょはうりものになるせいひんをかいはつした。
+15024	marketer	マーケティング担当者、販売業者	The marketer created a new campaign to promote the product.	マーケティング担当者は商品を宣伝するための新しいキャンペーンを作成した。	まーけてぃんぐたんとうしゃはしょうひんをせんでんするためのあたらしいきゃんぺーんをさくせいした。
+15025	materially	実質的に、物質的に	The new policy did not materially change the situation.	新しい方針は状況を実質的に変えなかった。	あたらしいほうしんはじょうきょうをじっしつてきにかえなかった。
+15026	maximal	最大の、最高の	The athletes tried to reach their maximal performance.	選手たちは最大のパフォーマンスを目指した。	せんしゅたちはさいだいのぱふぉーまんすをめざした。
+15027	maximization	最大化	The company focused on the maximization of its profits.	その会社は利益の最大化に注力した。	そのかいしゃはりえきのさいだいかにちゅうりょくした。
+15028	mediate	仲介する、調停する	She helped mediate the dispute between the two sides.	彼女は両者の争いを仲介するのを手伝った。	かのじょはりょうしゃのあらそいをちゅうかいするのをてつだった。
+15029	memo	メモ、覚書	He wrote a memo to remind himself of the meeting.	彼は会議を思い出すためにメモを書いた。	かれはかいぎをおもいだすためにめもをかいた。
+15030	memorandum	覚書、備忘録	They signed a memorandum to confirm their agreement.	彼らは合意を確認するために覚書に署名した。	かれらはごういをかくにんするためにおぼえがきにしょめいした。
+15031	micro	非常に小さい、微小な	The scientist used a microscope to study micro organisms.	科学者は顕微鏡を使って微生物を調べた。	かがくしゃはけんびきょうをつかってびせいぶつをしらべた。
+15032	microphone	マイク、拡声器	Please speak into the microphone so everyone can hear you.	全員に聞こえるようにマイクに向かって話してください。	ぜんいんにきこえるようにまいくにむかってはなしてください。
+15033	midline	中央線、正中線	The doctor examined the patient’s midline for any abnormalities.	医師は患者の正中線に異常がないか調べた。	いしはかんじゃのせいちゅうせんにいじょうがないかしらべた。
+15034	mileage	走行距離、燃費	This car has good mileage and uses less fuel.	この車は燃費が良く、燃料の消費が少ない。	このくるまはねんぴがよく、ねんりょうのしょうひがすくない。
+15035	milestone	画期的な出来事、重要な節目	Graduating from university was a major milestone in her life.	大学を卒業することは彼女の人生における大きな節目だった。	だいがくをそつぎょうすることはかのじょのじんせいにおけるおおきなふしめだった。
+15036	millimeter	ミリメートル	The rain fell at a rate of 10 millimeters per hour.	雨は1時間に10ミリメートルの速さで降った。	あめは1じかんに10みりめーとるのはやさでふった。
+15037	mindful	注意深い、意識している	She is always mindful of other people's feelings.	彼女はいつも他人の気持ちに注意を払っている。	かのじょはいつもたにんのきもちにちゅういをはらっている。
+15038	mindfully	注意深く、意識的に	He eats mindfully to enjoy his meal and avoid overeating.	彼は食事を楽しみ、食べ過ぎを防ぐために注意深く食べる。	かれはしょくじをたのしみ、たべすぎをふせぐためにちゅういふかくたべる。
+15039	mindfulness	注意深さ、心の気づき、意識	Practicing mindfulness can help reduce stress.	マインドフルネスを実践するとストレスを減らすのに役立つ。	まいんどふるねすをじっせんするとすとれすをへらすのにやくだつ。
+15040	mindset	考え方、物の見方、心構え	A positive mindset can help you achieve your goals.	前向きな考え方は目標達成に役立つ。	まえむきなかんがえかたはもくひょうたっせいにやくだつ。
+15041	mini	ミニの、小型の	She brought a mini umbrella in her bag.	彼女はカバンに小型の傘を入れてきた。	かのじょはかばんにこがたのかさをいれてきた。
+15042	misidentify	誤認する、間違って識別する	Witnesses sometimes misidentify suspects in a crime.	目撃者は時々犯罪の容疑者を誤認することがある。	もくげきしゃはときどきはんざいのようぎしゃをごにんすることがある。
+15043	mister	（男性への敬称）～さん、～氏	Mister Smith is our new English teacher.	スミスさんは私たちの新しい英語の先生です。	すみすさんはわたしたちのあたらしいえいごのせんせいです。
+15044	modem	モデム（コンピュータをインターネットや他のネットワークに接続するための装置）	I need a new modem for my internet connection.	インターネット接続のために新しいモデムが必要です。	いんたーねっとせつぞくのためにあたらしいもでむがひつようです。
+15045	mole	モグラ（動物）、ほくろ、スパイ	There is a mole living in my garden.	私の庭にモグラが住んでいます。	わたしのにわにもぐらがすんでいます。
+15046	monopolist	独占者、独占企業	A monopolist controls the entire supply of a product in the market.	独占者は市場における製品の供給全体を支配しています。	どくせんしゃはしじょうにおけるせいひんのきょうきゅうぜんたいをしはいしています。
+15047	morphological	形態の、形態学的な	The study focused on the morphological features of insects.	その研究は昆虫の形態的特徴に焦点を当てていました。	そのけんきゅうはこんちゅうのけいたいてきとくちょうにしょうてんをあてていました。
+15048	mosque	モスク（イスラム教の礼拝所）	They visited a famous mosque during their trip.	彼らは旅行中に有名なモスクを訪れました。	かれらはりょこうちゅうにゆうめいなもすくをおとずれました。
+15049	motif	モチーフ、主題、模様	The artist used a floral motif in her painting.	その芸術家は絵に花のモチーフを使いました。	そのげいじゅつかはえにはなのもちーふをつかいました。
+15050	multi	多数の、多くの（複合語で使われる接頭語）	The company launched a multi-purpose device.	その会社は多目的な装置を発売しました。	そのかいしゃはたもくてきなそうちをはつばいしました。
+15051	multiplier	乗数、増加させるもの	The economic multiplier effect can boost local economies.	経済の乗数効果は地域経済を活性化させることがあります。	けいざいのじょうすうこうかはちいきけいざいをかっせいかさせることがあります。
+15052	myofascial	筋膜の	She received a myofascial massage to relieve her muscle pain.	彼女は筋膜マッサージを受けて筋肉の痛みを和らげました。	かのじょはきんまくまっさーじをうけてきんにくのいたみをやわらげました。
+15053	nationalize	国有化する	The government decided to nationalize the railway system.	政府は鉄道を国有化することを決めた。	せいふはてつどうをこくゆうかすることをきめた。
+15054	navel	へそ	The baby has a small scar near his navel.	その赤ちゃんはへその近くに小さな傷がある。	そのあかちゃんはへそのちかくにちいさなきずがある。
+15055	needy	貧しい、困っている	The organization helps needy families in the community.	その団体は地域の困っている家族を支援している。	そのだんたいはちいきのこまっているかぞくをしえんしている。
+15056	negotiable	交渉できる、譲渡できる	The price of the car is negotiable.	その車の値段は交渉可能だ。	そのくるまのねだんはこうしょうかのうだ。
+15057	negotiator	交渉者	A skilled negotiator helped the two companies reach an agreement.	熟練の交渉者が両社の合意を助けた。	じゅくれんのこうしょうしゃがりょうしゃのごういをたすけた。
+15058	neo	新しい、新…（接頭語として使われる）	The architect is famous for his neo-classical designs.	その建築家は新古典主義のデザインで有名だ。	そのけんちくかはしんこてんしゅぎのでざいんでゆうめいだ。
+15059	newcomer	新しく来た人、新人	As a newcomer to the city, she is still learning her way around.	彼女はその町の新人なので、まだ道を覚えている最中だ。	かのじょはそのまちのしんじんなので、まだみちをおぼえているさいちゅうだ。
+15060	newsletter	会報、ニュースレター	The company sends out a monthly newsletter to its employees.	その会社は社員に毎月ニュースレターを送っている。	そのかいしゃはしゃいんにまいつきにゅーすれたーをおくっている。
+15061	newsstand	新聞売り場	He bought the newspaper at a newsstand near the station.	彼は駅の近くの新聞売り場で新聞を買った。	かれはえきのちかくのしんぶんうりばでしんぶんをかった。
+15062	niche	適所、ニッチ（特定の分野や市場の隙間）	She found a niche in the market for handmade soaps.	彼女は手作り石鹸の市場にニッチを見つけた。	かのじょはてづくりせっけんのしじょうににっちをみつけた。
+15063	nonlinear	非線形の（直線的でない）	The relationship between these two variables is nonlinear.	これら二つの変数の関係は非線形です。	これらふたつのへんすうのかんけいはひせんけいです。
+15064	nostril	鼻の穴	He pinched his nostrils to stop the bleeding.	彼は鼻血を止めるために鼻の穴をつまんだ。	かれははなじをとめるためにはなのあなをつまんだ。
+15065	nutritional	栄養の、栄養に関する	The nutritional value of vegetables is very high.	野菜の栄養価はとても高い。	やさいのえいようかはとてもたかい。
+15066	obesity	肥満	Obesity can increase the risk of various health problems.	肥満はさまざまな健康問題のリスクを高める可能性がある。	ひまんはさまざまなけんこうもんだいのりすくをたかめるかのうせいがある。
+15067	obliques	腹斜筋（お腹の側面にある筋肉）	He does exercises to strengthen his obliques.	彼は腹斜筋を鍛えるために運動している。	かれはふくしゃすじをきたえるためにうんどうしている。
+15068	occupancy	占有、入居、収容人数	The maximum occupancy of this room is 50 people.	この部屋の最大収容人数は50人です。	このへやのさいだいしゅうようにんずうは50にんです。
+15069	odds	確率、勝ち目、可能性	The odds of winning the lottery are very low.	宝くじに当たる確率はとても低い。	たからくじにあたるかくりつはとてもひくい。
+15070	omega	オメガ（ギリシャ文字の最後の文字、または脂肪酸の種類で使われる用語）	Omega-3 fatty acids are important for health.	オメガ3脂肪酸は健康にとって重要です。	おめが3しぼうさんはけんこうにとってじゅうようです。
+15071	ooh	おお！（驚き・感嘆を表す声）	\"Ooh, that's a beautiful painting!\" she exclaimed.	「おお、それは美しい絵だね！」と彼女は叫んだ。	「おお、それはうつくしいえだね!」とかのじょはさけんだ。
+15072	opener	開ける道具、開始者（主にスポーツやイベントの最初のもの）	He used a bottle opener to open the drink.	彼はボトルオープナーを使って飲み物を開けた。	かれはぼとるおーぷなーをつかってのみものをあけた。
+15073	ordinate	（数学）座標平面上の縦座標（y座標）	In the coordinate pair (3, 5), 5 is the ordinate.	座標(3, 5)では、5が縦座標である。	ざひょう(3, 5)では、5がたてざひょうである。
+15074	organizer	主催者、まとめ役、整理する道具	She is the organizer of the conference.	彼女はその会議の主催者です。	かのじょはそのかいぎのしゅさいしゃです。
+15075	outflow	流出、外へ流れること	The outflow of water from the dam was carefully monitored.	ダムからの水の流出は慎重に監視された。	だむからのみずのりゅうしゅつはしんちょうにかんしされた。
+15076	outperform	より良い成績をおさめる、上回る	The new phone outperformed the older models in speed tests.	新しい携帯電話は速度テストで古いモデルよりも良い成績をおさめた。	あたらしいけいたいでんわはそくどてすとでふるいもでるよりもよいせいせきをおさめた。
+15077	outsource	外部委託する	The company decided to outsource its customer service.	その会社はカスタマーサービスを外部委託することに決めた。	そのかいしゃはかすたまーさーびすをがいぶいたくすることにきめた。
+15078	overcharge	過剰請求する、料金を取りすぎる	He realized that the restaurant had overcharged him for his meal.	彼はレストランが食事代を過剰請求していたことに気づいた。	かれはれすとらんがしょくじだいをかじょうせいきゅうしていたことにきづいた。
+15079	overhand	上から投げる（動作）、頭上からの（形容）	She threw the ball with an overhand motion.	彼女はオーバーハンドの動作でボールを投げた。	かのじょはおーばーはんどのどうさでぼーるをなげた。
+15080	overpay	払いすぎる	He accidentally overpaid for the concert tickets.	彼はコンサートチケットにうっかり払いすぎてしまった。	かれはこんさーとちけっとにうっかりはらいすぎてしまった。
+15081	overtrain	（トレーニングを）やりすぎる、過剰に鍛える	Athletes need to be careful not to overtrain and risk injury.	アスリートは怪我のリスクがあるため、過度なトレーニングを避ける必要がある。	あすりーとはけがのりすくがあるため、かどなとれーにんぐをさけるひつようがある。
+15082	oxidize	酸化させる、酸化する	Iron tends to oxidize when exposed to air.	鉄は空気に触れると酸化しやすい。	てつはくうきにふれるとさんかしやすい。
+15083	paperback	ペーパーバック、紙表紙の本	She bought a paperback version of the novel.	彼女はその小説のペーパーバック版を買った。	かのじょはそのしょうせつのぺーぱーばっくばんをかった。
+15084	paperwork	書類仕事、事務書類	He spent the whole afternoon doing paperwork.	彼は午後を全部書類仕事に費やした。	かれはごごをぜんぶしょるいしごとについやした。
+15085	paralegal	弁護士補助員	The paralegal assisted in preparing the legal documents.	その弁護士補助員は法的書類の作成を手伝った。	そのべんごしほじょいんはほうてきしょるいのさくせいをてつだった。
+15086	paramilitary	準軍事的な、軍隊に似た組織・部隊	The government deployed paramilitary forces to maintain order.	政府は秩序維持のため準軍事部隊を配備した。	せいふはちつじょいじのためじゅんぐんじぶたいをはいびした。
+15087	parenthesis	丸括弧、挿入語句	Place the explanation in parenthesis.	説明を丸括弧の中に入れてください。	せつめいをまるかっこのなかにいれてください。
+15088	payable	支払うべき、支払可能な	The bill is payable within 30 days.	請求書は30日以内に支払うべきです。	せいきゅうしょは30にちいないにしはらうべきです。
+15089	payback	返済、報復、投資回収	The payback period for the project is three years.	そのプロジェクトの回収期間は3年間です。	そのぷろじぇくとのかいしゅうきかんは3ねんかんです。
+15090	payoff	支払い、清算、成果、報酬	She finally saw the payoff for her hard work.	彼女はついに努力の成果を目にした。	かのじょはついにどりょくのせいかをめにした。
+15091	payout	支払い、支給金	The insurance payout was processed last week.	保険の支払いは先週処理された。	ほけんのしはらいはせんしゅうしょりされた。
+15092	peacekeeping	平和維持（活動）	The country sent troops for a UN peacekeeping mission.	その国は国連の平和維持活動のために部隊を派遣した。	そのくにはこくれんのへいわいじかつどうのためにぶたいをはけんした。
+15093	peanut	ピーナッツ、落花生	She packed a peanut butter sandwich for lunch.	彼女は昼食にピーナッツバターサンドイッチを持参した。	かのじょはちゅうしょくにぴーなっつばたーさんどいっちをじさんした。
+15094	pelvic	骨盤の、骨盤に関する	The doctor examined the patient's pelvic area.	医師は患者の骨盤部を診察した。	いしはかんじゃのこつばんぶをしんさつした。
+15095	penalize	罰する、ペナルティを課す	The referee decided to penalize the player for his foul.	審判は反則をした選手にペナルティを与えることにした。	しんぱんははんそくをしたせんしゅにぺなるてぃをあたえることにした。
+15096	pending	未決定の、保留中の、待っている	The project is pending approval from the committee.	そのプロジェクトは委員会の承認待ちとなっている。	そのぷろじぇくとはいいんかいのしょうにんまちとなっている。
+15097	pensioner	年金受給者	The park is a popular place for local pensioners to gather.	その公園は地元の年金受給者が集まる人気の場所だ。	そのこうえんはじもとのねんきんじゅきゅうしゃがあつまるにんきのばしょだ。
+15098	periodization	期間区分、時代区分、（スポーツでの）期分け	Periodization is important in training programs for athletes.	アスリートのトレーニングプログラムでは期間区分が重要である。	あすりーとのとれーにんぐぷろぐらむではきかんくぶんがじゅうようである。
+15099	personalize	個人向けにする、個性化する	You can personalize your profile with a photo.	プロフィールに写真を追加して個人向けにできます。	ぷろふぃーるにしゃしんをついかしてこじんむけにできます。
+15100	peso	ペソ（通貨単位）	The item costs 100 pesos.	その品物は100ペソです。	そのしなものは100ぺそです。
+15101	pesticide	殺虫剤、農薬	Farmers use pesticides to protect crops from pests.	農家は作物を害虫から守るために殺虫剤を使う。	のうかはさくもつをがいちゅうからまもるためにさっちゅうざいをつかう。
+15102	phenomenal	驚異的な、並外れた	The athlete achieved phenomenal results in the competition.	そのアスリートは大会で驚異的な結果を出した。	そのあすりーとはたいかいできょういてきなけっかをだした。
+15103	phonological	音韻の、音韻論の	She studied the phonological differences between English and Spanish.	彼女は英語とスペイン語の音韻の違いを研究した。	かのじょはえいごとすぺいんごのおんいんのちがいをけんきゅうした。
+15104	phosphate	リン酸塩	Fertilizers often contain phosphate to help plants grow.	肥料にはしばしば植物の成長を助けるためにリン酸塩が含まれている。	ひりょうにはしばしばしょくぶつのせいちょうをたすけるためにりんさんしおがふくまれている。
+15105	photocopier	コピー機、複写機	The office bought a new photocopier last month.	そのオフィスは先月新しいコピー機を購入した。	そのおふぃすはせんげつあたらしいこぴーきをこうにゅうした。
+15106	photocopy	コピーを取る、コピー、複写	Please make a photocopy of this document.	この書類のコピーを取ってください。	このしょるいのこぴーをとってください。
+15107	pi	円周率	Pi is used to calculate the circumference of a circle.	円周率は円の円周を計算するのに使われる。	えんしゅうりつはえんのえんしゅうをけいさんするのにつかわれる。
+15108	pinky	小指	He wore a ring on his pinky.	彼は小指に指輪をはめていた。	かれはこゆびにゆびわをはめていた。
+15109	plank	板、厚板	We need another plank to finish the floor.	床を仕上げるためにはもう一枚板が必要だ。	ゆかをしあげるためにはもういちまいいたがひつようだ。
+15110	planner	計画を立てる人、手帳、計画表	She writes all her appointments in a planner.	彼女はすべての予定を手帳に書き込んでいる。	かのじょはすべてのよていをてちょうにかきこんでいる。
+15111	podcast	ポッドキャスト（音声や映像のデジタル配信番組）	He listens to a podcast while commuting.	彼は通勤中にポッドキャストを聞いている。	かれはつうきんちゅうにぽっどきゃすとをきいている。
+15112	policeman	警察官、巡査	The policeman directed the traffic at the busy intersection.	警察官が混雑した交差点で交通整理をしていた。	けいさつかんがこんざつしたこうさてんでこうつうせいりをしていた。
+15113	policyholder	保険契約者	The policyholder needs to sign the document to update their insurance.	保険契約者は保険を更新するために書類に署名する必要がある。	ほけんけいやくしゃはほけんをこうしんするためにしょるいにしょめいするひつようがある。
+15114	policymaker	政策立案者	Policymakers are discussing new economic strategies.	政策立案者たちは新しい経済戦略について議論している。	せいさくりつあんしゃたちはあたらしいけいざいせんりゃくについてぎろんしている。
+15115	popcorn	ポップコーン	We ate popcorn while watching the movie.	私たちは映画を見ながらポップコーンを食べた。	わたしたちはえいがをみながらぽっぷこーんをたべた。
+15116	populist	大衆主義者、ポピュリスト	The politician is often described as a populist.	その政治家はよくポピュリストと呼ばれている。	そのせいじかはよくぽぴゅりすととよばれている。
+15117	postgraduate	大学院生、大学卒業後の、大学院課程の	She started her postgraduate studies last year.	彼女は昨年大学院の勉強を始めた。	かのじょはさくねんだいがくいんのべんきょうをはじめた。
+15118	pragmatic	実用的な、現実的な	He took a pragmatic approach to solving the problem.	彼はその問題を解決するために実用的な方法を取った。	かれはそのもんだいをかいけつするためにじつようてきなほうほうをとった。
+15119	pre	〜の前の、前に（接頭辞）	The event will be held in the pre-lunch session.	そのイベントは昼食前のセッションで行われる。	そのいべんとはひるしょくぜんのせっしょんでおこなわれる。
+15120	preacher	説教師、伝道者	The preacher gave a sermon to the congregation.	説教師は信者たちに説教をした。	せっきょうしはしんじゃたちにせっきょうをした。
+15121	precipitate	引き起こす、もたらす、（化学で）沈殿させる、急な	The announcement could precipitate a change in policy.	その発表は政策の変更を引き起こす可能性がある。	そのはっぴょうはせいさくのへんこうをひきおこすかのうせいがある。
+15122	predictor	予測因子、指標、予言者	Education level is often used as a predictor of income.	教育水準はしばしば収入の予測因子として使われる。	きょういくすいじゅんはしばしばしゅうにゅうのよそくいんしとしてつかわれる。
+15123	prep	準備（preparationの略）、下準備、予習、（口語）予備校	She needs more prep before the big exam.	彼女は大きな試験の前にもっと準備が必要だ。	かのじょはおおきなしけんのまえにもっとじゅんびがひつようだ。
+15124	prepayment	前払い、前払金	Many utility companies offer discounts for prepayment.	多くの公共料金会社は前払いに対して割引を提供している。	おおくのこうきょうりょうきんかいしゃはまえばらいにたいしてわりびきをていきょうしている。
+15125	presenter	プレゼンター、発表者、司会者	The presenter introduced each speaker at the conference.	プレゼンターは会議で各発表者を紹介した。	ぷれぜんたーはかいぎでかくはっぴょうしゃをしょうかいした。
+15126	primer	入門書、初歩読本、下塗り材	She read a primer to learn the basics of chemistry.	彼女は化学の基礎を学ぶために入門書を読んだ。	かのじょはかがくのきそをまなぶためににゅうもんしょをよんだ。
+15127	privatization	民営化、私有化	The government announced the privatization of several public companies.	政府はいくつかの公企業の民営化を発表した。	せいふはいくつかのこうきぎょうのみんえいかをはっぴょうした。
+15128	privatize	民営化する、私有化する	The country decided to privatize its national railway system.	その国は国有鉄道システムを民営化することを決定した。	そのくにはこくゆうてつどうしすてむをみんえいかすることをけっていした。
+15129	profitability	収益性、利益率	The company is working to improve its profitability.	その会社は収益性の向上に取り組んでいる。	そのかいしゃはしゅうえきせいのこうじょうにとりくんでいる。
+15130	projector	プロジェクター、映写機	They used a projector to show slides during the meeting.	彼らは会議中にスライドを映すためにプロジェクターを使った。	かれらはかいぎちゅうにすらいどをうつすためにぷろじぇくたーをつかった。
+15131	proofread	校正する、見直す	Please proofread your essay before submitting it.	提出前にエッセイを校正してください。	ていしゅつまえにえっせいをこうせいしてください。
+15132	proprietorship	所有権、個人事業	She started a new shop under sole proprietorship.	彼女は個人事業として新しい店を始めた。	かのじょはこじんじぎょうとしてあたらしいみせをはじめた。
+15133	prosecutor	検察官、起訴者	The prosecutor presented new evidence at the trial.	検察官は裁判で新しい証拠を提示した。	けんさつかんはさいばんであたらしいしょうこをていじした。
+15134	prosperous	繁栄している、成功している	The town became more prosperous after the new factory was built.	新しい工場が建てられてから、町はより繁栄した。	あたらしいこうじょうがたてられてから、まちはよりはんえいした。
+15135	protester	抗議者、デモ参加者	The protesters marched through the city center.	抗議者たちは市の中心を行進した。	こうぎしゃたちはしのちゅうしんをこうしんした。
+15136	proton	陽子（原子核を構成する正の電荷を持つ粒子）	A hydrogen atom has one proton in its nucleus.	水素原子の核には1つの陽子がある。	すいそげんしのかくには1つのようしがある。
+15137	proxy	代理人、代理権、プロキシ（インターネットの中継サーバー）	She gave her friend a proxy to vote on her behalf.	彼女は友人に自分の代わりに投票する代理権を与えた。	かのじょはゆうじんにじぶんのかわりにとうひょうするだいりけんをあたえた。
+15138	publicize	公表する、宣伝する	They plan to publicize the event on social media.	彼らはそのイベントをソーシャルメディアで宣伝する予定だ。	かれらはそのいべんとをそーしゃるめでぃあでせんでんするよていだ。
+15139	pulldown	引き下ろすこと、プルダウンメニュー	Select your country from the pulldown menu.	プルダウンメニューから自分の国を選択してください。	ぷるだうんめにゅーからじぶんのくにをせんたくしてください。
+15140	pulley	滑車	A pulley is used to lift heavy objects more easily.	滑車は重い物をより簡単に持ち上げるために使われる。	かっしゃはおもいものをよりかんたんにもちあげるためにつかわれる。
+15141	punch	パンチする、打つ、（飲み物の）パンチ、穴を開ける道具	He gave the punching bag a quick punch.	彼はサンドバッグに素早くパンチをした。	かれはさんどばっぐにすばやくぱんちをした。
+15142	purchaser	購入者、買い手	The purchaser received a receipt after the transaction.	購入者は取引の後、領収書を受け取った。	こうにゅうしゃはとりひきのあと、りょうしゅうしょをうけとった。
+15143	purser	（特に船や飛行機の）乗客のサービスを担当する役職	The purser helped the passengers with their cabin assignments.	パーサーは乗客の客室の割り当てを手伝いました。	ぱーさーはじょうきゃくのきゃくしつのわりあてをてつだいました。
+15144	pyramid	ピラミッド、（形が）ピラミッド型のもの	The pyramid in Egypt is famous all over the world.	エジプトのピラミッドは世界中で有名だ。	えじぷとのぴらみっどはせかいじゅうでゆうめいだ。
+15145	quad	中庭（特に学校などの）、四つ組のもの、クワッドバイク（四輪バイク）	The students had lunch in the quad.	生徒たちは中庭で昼食を取った。	せいとたちはなかにわでちゅうしょくをとった。
+15146	quadricep	大腿四頭筋（太ももの前面にある筋肉）	Stretching your quadriceps can help prevent injury.	大腿四頭筋をストレッチすることで怪我を予防できる。	だいたいしとうきんをすとれっちすることでけがをよぼうできる。
+15147	qualitative	質的な、性質に関する	The researchers conducted a qualitative analysis of the interview data.	研究者たちはインタビューのデータに質的分析を行った。	けんきゅうしゃたちはいんたびゅーのでーたにしつてきぶんせきをおこなった。
+15148	quarterly	年4回の、四半期ごとの	The company releases its quarterly report every three months.	その会社は3か月ごとに四半期報告書を発行している。	そのかいしゃは3かげつごとにしはんきほうこくしょをはっこうしている。
+15149	quasi	準～、類似の、疑似の	The committee acted in a quasi-official capacity.	その委員会は準公式な立場で行動した。	そのいいんかいはじゅんこうしきなたちばでこうどうした。
+15150	raincoat	レインコート、雨合羽	She wore a raincoat to stay dry in the rain.	彼女は雨の中で濡れないようにレインコートを着た。	かのじょはあめのなかでぬれないようにれいんこーとをきた。
+15151	randomize	無作為にする、ランダム化する	The teacher decided to randomize the seating arrangement.	先生は座席の配置を無作為に決めることにした。	せんせいはざせきのはいちをむさくいにきめることにした。
+15152	ration	配給、割り当て、一定量に制限する	During the shortage, each family received a weekly ration of rice.	不足の間、各家族は週ごとに米の配給を受け取った。	ふそくのあいだ、かくかぞくはしゅうごとにべいのはいきゅうをうけとった。
+15153	realizable	実現可能な	Her plan is ambitious, but it seems realizable.	彼女の計画は野心的だが、実現可能に思える。	かのじょのけいかくはやしんてきだが、じつげんかのうにおもえる。
+15154	rearrange	並べ替える、再配置する	He had to rearrange the books on the shelf.	彼は棚の本を並べ替えなければならなかった。	かれはたなのほんをならべかえなければならなかった。
+15155	rebate	払い戻し、割戻し、リベート	Customers can claim a rebate after purchasing the product.	お客様は商品購入後に払い戻しを受けることができます。	おきゃくさまはしょうひんこうにゅうごにはらいもどしをうけることができます。
+15156	receivable	受け取るべき、受取勘定	The company reviewed its accounts receivable at the end of the month.	会社は月末に受取勘定を確認した。	かいしゃはげつまつにうけとりかんじょうをかくにんした。
+15157	reconnect	再びつなげる、再接続する	She tried to reconnect the internet cable.	彼女はインターネットケーブルを再接続しようとした。	かのじょはいんたーねっとけーぶるをさいせつぞくしようとした。
+15158	recruiter	採用担当者	The recruiter contacted him about a new job opportunity.	採用担当者は新しい仕事の機会について彼に連絡した。	さいようたんとうしゃはあたらしいしごとのきかいについてかれにれんらくした。
+15159	recruitment	募集、採用活動	The company started its recruitment for new graduates.	その会社は新卒者の採用活動を始めた。	そのかいしゃはしんそつしゃのさいようかつどうをはじめた。
+15160	redesign	再設計する、デザインを変更する	They decided to redesign the website to make it easier to use.	彼らはウェブサイトをより使いやすくするため再設計することにした。	かれらはうぇぶさいとをよりつかいやすくするためさいせっけいすることにした。
+15161	redundancy	余剰、冗長性、解雇	Many workers lost their jobs due to redundancy.	多くの労働者が余剰人員のために職を失った。	おおくのろうどうしゃがよじょうじんいんのためにしょくをうしなった。
+15162	referral	紹介、委託、照会	The patient came to the hospital by referral from a local doctor.	その患者は地元の医師の紹介で病院に来た。	そのかんじゃはじもとのいしのしょうかいでびょういんにきた。
+15163	refinance	借り換えする、再融資する	They decided to refinance their mortgage to get a lower interest rate.	彼らはより低い金利を得るために住宅ローンを借り換えることにした。	かれらはよりひくいきんりをえるためにじゅうたくろーんをかりかえることにした。
+15164	reformer	改革者	The reformer introduced new policies to improve the education system.	その改革者は教育制度を改善するために新しい政策を導入した。	そのかいかくしゃはきょういくせいどをかいぜんするためにあたらしいせいさくをどうにゅうした。
+15165	reformist	改革主義者、改革的な	The reformist group proposed several changes to the law.	改革主義者のグループはいくつかの法改正を提案した。	かいかくしゅぎしゃのぐるーぷはいくつかのほうかいせいをていあんした。
+15166	refreshment	軽食、飲み物、リフレッシュすること	After the meeting, light refreshments were served.	会議の後に軽食が振る舞われた。	かいぎのあとにけいしょくがふるまわれた。
+15167	refundable	返金可能な	The ticket is fully refundable if you cancel in advance.	そのチケットは事前にキャンセルすれば全額返金されます。	そのちけっとはじぜんにきゃんせるすればぜんがくへんきんされます。
+15168	regression	後退、退行、回帰	The patient showed signs of regression after the treatment was stopped.	治療が中止された後、患者は退行の兆候を示した。	ちりょうがちゅうしされたあと、かんじゃはたいこうのちょうこうをしめした。
+15169	rehabilitation	リハビリテーション、社会復帰	He underwent rehabilitation after his accident.	彼は事故の後にリハビリテーションを受けた。	かれはじこのあとにりはびりてーしょんをうけた。
+15170	rehearsal	リハーサル、下見、予行演習	The actors met for rehearsal before the play.	俳優たちは劇の前にリハーサルのために集まった。	はいゆうたちはげきのまえにりはーさるのためにあつまった。
+15171	rehearse	予行演習をする、リハーサルする、練習する	The actors will rehearse the play this afternoon.	俳優たちは今日の午後、その劇のリハーサルをする。	はいゆうたちはきょうのごご、そのげきのりはーさるをする。
+15172	reinvest	再投資する	She decided to reinvest her profits into new projects.	彼女は利益を新しいプロジェクトに再投資することを決めた。	かのじょはりえきをあたらしいぷろじぇくとにさいとうしすることをきめた。
+15173	reinvestment	再投資	The reinvestment of earnings can help a company grow.	収益の再投資は会社の成長を助けることができる。	しゅうえきのさいとうしはかいしゃのせいちょうをたすけることができる。
+15174	relational	関係のある、関係性の	A relational database organizes data into related tables.	リレーショナルデータベースはデータを関連するテーブルに整理する。	りれーしょなるでーたべーすはでーたをかんれんするてーぶるにせいりする。
+15175	relocation	移転、移動	The company's relocation to the new city was completed last month.	その会社の新しい都市への移転は先月完了した。	そのかいしゃのあたらしいとしへのいてんはせんげつかんりょうした。
+15176	renewal	更新、再生、再開	She submitted an application for the renewal of her passport.	彼女はパスポートの更新申請書を提出した。	かのじょはぱすぽーとのこうしんしんせいしょをていしゅつした。
+15177	rental	賃貸、レンタル、賃貸料	We paid the rental for the apartment at the beginning of the month.	私たちは月の初めにアパートの賃貸料を支払った。	わたしたちはつきのはじめにあぱーとのちんたいりょうをしはらった。
+15178	renter	賃借人、借り手	The renter agreed to follow the rules set by the landlord.	借り手は大家が定めた規則に従うことに同意した。	かりてはおおやがさだめたきそくにしたがうことにどういした。
+15179	reopen	再び開く、再開する	The museum will reopen to the public next week.	その博物館は来週一般公開を再開する。	そのはくぶつかんはらいしゅういっぱんこうかいをさいかいする。
+15180	reorganization	再編成、組織変更	The company underwent a major reorganization last year.	その会社は昨年大規模な再編成を行った。	そのかいしゃはさくねんだいきぼなさいへんせいをおこなった。
+15181	repairperson	修理工、修理をする人	The repairperson fixed the broken heater.	修理工が壊れたヒーターを修理した。	しゅうりこうがこわれたひーたーをしゅうりした。
+15182	repayment	返済、返金	She arranged the repayment of her loan over five years.	彼女は5年間でローンを返済する手続きをした。	かのじょは5ねんかんでろーんをへんさいするてつづきをした。
+15183	repurchase	再購入、買い戻し	The company initiated a stock repurchase program.	その会社は株式の再購入プログラムを開始した。	そのかいしゃはかぶしきのさいこうにゅうぷろぐらむをかいしした。
+15184	resale	再販、転売	Tickets are not allowed for resale at a higher price.	チケットは高値での転売が許可されていない。	ちけっとはたかねでのてんばいがきょかされていない。
+15185	reschedule	予定を変更する、再調整する	We need to reschedule our meeting to next week.	私たちは会議を来週に再調整する必要がある。	わたしたちはかいぎをらいしゅうにさいちょうせいするひつようがある。
+15186	reset	リセットする、再設定する、初期化する	If your computer freezes, try to reset it.	もしコンピュータが固まったら、リセットしてみてください。	もしこんぴゅーたがかたまったら、りせっとしてみてください。
+15187	restatement	再表現、言い換え	He provided a restatement of the main points for clarity.	彼は明確にするために主な点を言い換えた。	かれはめいかくにするためにおもなてんをいいかえた。
+15188	restorative	回復させるもの、回復の	The spa offered restorative treatments to help guests relax.	スパではお客様がリラックスできる回復のための待遇を提供していた。	すぱではおきゃくさまがりらっくすできるかいふくのためのたいぐうをていきょうしていた。
+15189	restrictive	制限的な、制約のある	The new law has restrictive regulations on imports.	新しい法律は輸入に関する制限的な規制がある。	あたらしいほうりつはゆにゅうにかんするせいげんてきなきせいがある。
+15190	revaluation	再評価、貨幣価値の見直し	The company performed a revaluation of its assets.	その会社は資産の再評価を行った。	そのかいしゃはしさんのさいひょうかをおこなった。
+15191	reviewer	批評家、評論者、レビューを書く人	The reviewer gave the book a positive evaluation.	その批評家はその本に好意的な評価を与えた。	そのひひょうかはそのほんにこういてきなひょうかをあたえた。
+15192	rewrite	書き直す、書き換える	She had to rewrite her essay to fix the mistakes.	彼女は間違いを直すためにエッセイを書き直さなければならなかった。	かのじょはまちがいをなおすためにえっせいをかきなおさなければならなかった。
+15193	ribcage	肋骨（ろっこつ）、あばら骨	He injured his ribcage during the football game.	彼はフットボールの試合中に肋骨を痛めた。	かれはふっとぼーるのしあいちゅうにあばらぼねをいためた。
+15194	rig	装置、装備、機材、装備する、不正操作する	The oil rig was located far out at sea.	その油田掘削装置は遠く沖合に設置されていた。	そのゆでんくっさくそうちはとおくおきあいにせっちされていた。
+15195	rightly	正しく、当然に	She was rightly praised for her hard work.	彼女は努力したことで当然のように称賛された。	かのじょはどりょくしたことでとうぜんのようにしょうさんされた。
+15196	rotator	回転させるもの、回転機	The fan's rotator stopped working suddenly.	扇風機の回転機が突然動かなくなった。	せんぷうきのかいてんきがとつぜんうごかなくなった。
+15198	sadly	悲しそうに、残念ながら	Sadly, the concert was canceled because of the weather.	残念ながら、天候のためコンサートは中止された。	ざんねんながら、てんこうのためこんさーとはちゅうしされた。
+15199	salespeople	販売員、営業担当者	The salespeople greeted every customer at the door.	販売員はすべての来店客を入り口で迎えた。	はんばいいんはすべてのらいてんきゃくをいりぐちでむかえた。
+15200	salon	美容院、（社交）サロン	She booked an appointment at the hair salon.	彼女は美容院の予約を取った。	かのじょはびよういんのよやくをとった。
+15201	salvage	救出する、回収する、引き揚げる	They managed to salvage some equipment from the damaged ship.	彼らは損傷した船からいくつかの機材を救出することができた。	かれらはそんしょうしたふねからいくつかのきざいをきゅうしゅつすることができた。
+15202	sauna	サウナ、蒸し風呂	She likes to relax in the sauna after work.	彼女は仕事の後、サウナでリラックスするのが好きだ。	かのじょはしごとのあと、さうなでりらっくすするのがすきだ。
+15203	saver	節約する人、蓄える人	He is a good saver and always sets aside some money each month.	彼は倹約家で、毎月必ず少しずつお金を貯めている。	かれはけんやくかで、まいつきかならずすこしずつおかねをためている。
+15204	scorecard	スコアカード、得点表	The scorecard shows the results of each round in the golf game.	スコアカードにはゴルフの各ラウンドの結果が表示されている。	すこあかーどにはごるふのかくらうんどのけっかがひょうじされている。
+15205	scrap	くず、廃材、断片、廃棄する	The old car was sold for scrap.	その古い車はスクラップとして売られた。	そのふるいくるまはすくらっぷとしてうられた。
+15206	scripture	聖典、経典	Many people find comfort in reading scripture.	多くの人が聖典を読むことで慰めを感じる。	おおくのひとがせいてんをよむことでなぐさめをかんじる。
+15207	scroll	巻物、スクロールする	He found an ancient scroll in the library.	彼は図書館で古代の巻物を見つけた。	かれはとしょかんでこだいのまきものをみつけた。
+15208	seafood	魚介類、シーフード	They ordered seafood at the restaurant.	彼らはレストランでシーフードを注文した。	かれらはれすとらんでしーふーどをちゅうもんした。
+15209	seaside	海辺、海岸	They spent their vacation at a seaside resort.	彼らは休暇を海辺のリゾートで過ごした。	かれらはきゅうかをうみべのりぞーとですごした。
+15210	sedan	セダン（自動車の種類）	He bought a new sedan for his family.	彼は家族のために新しいセダンを買った。	かれはかぞくのためにあたらしいせだんをかった。
+15211	seeker	探求者、求職者、〜を探す人	She is a job seeker looking for new opportunities.	彼女は新しい機会を探している求職者です。	かのじょはあたらしいきかいをさがしているきゅうしょくしゃです。
+15212	segmentation	分割、区分、市場細分化	Market segmentation helps companies target specific customer groups.	市場細分化は、企業が特定の顧客グループにターゲットを絞るのに役立ちます。	しじょうさいぶんかは、きぎょうがとくていのこきゃくぐるーぷにたーげっとをしぼるのにやくだちます。
+15213	sender	送信者、発送人	The sender's address is written on the back of the envelope.	封筒の裏側には差出人の住所が書かれています。	ふうとうのうらがわにはさしだしにんのじゅうしょがかかれています。
+15214	separatist	分離主義者、独立主義者	The separatist group demanded independence.	分離主義者のグループは独立を要求した。	ぶんりしゅぎしゃのぐるーぷはどくりつをようきゅうした。
+15215	shipment	発送、出荷、積荷	The shipment will arrive at the port tomorrow.	その積荷は明日港に到着します。	そのつみにはあすみなとにとうちゃくします。
+15216	shopper	買い物客	The mall was crowded with shoppers.	ショッピングモールは買い物客で混雑していました。	しょっぴんぐもーるはかいものきゃくでこんざつしていました。
+15217	showroom	ショールーム、展示場	The cars are displayed in the showroom.	自動車はショールームに展示されています。	じどうしゃはしょーるーむにてんじされています。
+15218	shuffle	（トランプなどを）混ぜる、足を引きずって歩く、順序を変える	Please shuffle the cards before dealing.	配る前にカードをよく切ってください。	くばるまえにかーどをよくきってください。
+15219	sightsee	観光する、見物する	They plan to sightsee in Kyoto during their vacation.	彼らは休暇中に京都を観光する予定です。	かれらはきゅうかちゅうにきょうとをかんこうするよていです。
+15220	skateboard	スケートボード	She learned how to ride a skateboard last summer.	彼女は去年の夏にスケートボードの乗り方を覚えた。	かのじょはきょねんのなつにすけーとぼーどののりかたをおぼえた。
+15221	skeptic	懐疑論者、疑い深い人	He is a skeptic who questions everything he hears.	彼は聞いたことすべてを疑う懐疑論者だ。	かれはきいたことすべてをうたがうかいぎろんしゃだ。
+15222	slash	（動詞）切り裂く、（名詞）斜線符号（/）	Please use a slash between the two options.	2つの選択肢の間にはスラッシュを使ってください。	2つのせんたくしのあいだにはすらっしゅをつかってください。
+15223	slowdown	減速、景気の減退、鈍化	There has been a slowdown in economic growth.	経済成長の鈍化が見られる。	けいざいせいちょうのどんかがみられる。
+15224	smartphone	スマートフォン	She uses her smartphone to check emails.	彼女はメールを確認するのにスマートフォンを使う。	かのじょはめーるをかくにんするのにすまーとふぉんをつかう。
+15225	smith	鍛冶屋、職人	The smith made a new horseshoe.	鍛冶屋は新しい蹄鉄を作った。	かじやはあたらしいていてつをつくった。
+15226	socket	ソケット、差込口、凹部	Plug the charger into the electric socket.	充電器を電気ソケットに差し込んでください。	じゅうでんきをでんきそけっとにさしこんでください。
+15227	solute	溶質（溶液中で溶けている物質）	Salt is a common solute in water.	塩は水によく使われる溶質です。	しおはみずによくつかわれるようしつです。
+15228	sophisticate	洗練された人、教養ある人（名詞）、洗練させる（動詞）	She is a sophisticate who enjoys art and classical music.	彼女は芸術やクラシック音楽を楽しむ洗練された人だ。	かのじょはげいじゅつやくらしっくおんがくをたのしむせんれんされたひとだ。
+15229	soreness	痛み、ひりひりする感覚、炎症	He felt soreness in his muscles after the workout.	運動後に彼は筋肉に痛みを感じた。	うんどうごにかれはきんにくにいたみをかんじた。
+15230	spa	温泉、スパ、健康ランド	She visited a spa to relax after work.	彼女は仕事の後、リラックスするためにスパを訪れた。	かのじょはしごとのあと、りらっくすするためにすぱをおとずれた。
+15231	specialization	専門化、専門分野	His specialization is in environmental engineering.	彼の専門分野は環境工学である。	かれのせんもんぶんやはかんきょうこうがくである。
+15232	speculator	投機家、相場師	The speculator bought a large amount of stock, hoping the price would rise.	その投機家は、価格が上がることを期待して大量の株を購入した。	そのとうきかは、かかくがあがることをきたいしてたいりょうのかぶをこうにゅうした。
+15233	spokesperson	広報担当者、代表者	The spokesperson answered questions from the reporters.	広報担当者は記者からの質問に答えた。	こうほうたんとうしゃはきしゃからのしつもんにこたえた。
+15234	spreadsheet	スプレッドシート、表計算ソフト	She keeps her budget in a spreadsheet.	彼女は自分の予算をスプレッドシートで管理している。	かのじょはじぶんのよさんをすぷれっどしーとでかんりしている。
+15235	squat	しゃがむ、不法占拠する、しゃがむこと	He did ten squats as part of his exercise routine.	彼は運動の一環としてスクワットを10回行った。	かれはうんどうのいっかんとしてすくわっとを10かいおこなった。
+15236	statistically	統計的に、統計上	Statistically, the chance of rain tomorrow is very high.	統計的に見て、明日雨が降る確率はとても高い。	とうけいてきにみて、あすあめがふるかくりつはとてもたかい。
+15237	statistics	統計、統計学、統計値	He studies statistics at university.	彼は大学で統計学を学んでいる。	かれはだいがくでとうけいがくをまなんでいる。
+15238	stereo	ステレオ、ステレオ音響装置	He listened to music on his new stereo.	彼は新しいステレオで音楽を聴いた。	かれはあたらしいすてれおでおんがくをきいた。
+15239	sterling	スターリング（イギリスの通貨）、純正の、立派な	She paid in sterling because she was in the UK.	彼女はイギリスにいたのでスターリングで支払った。	かのじょはいぎりすにいたのですたーりんぐでしはらった。
+15240	sternum	胸骨（きょうこつ、胸の中央にある平らな骨）	The doctor examined his sternum for any signs of injury.	医者は彼の胸骨にけがの兆候がないか調べた。	いしゃはかれのきょうこつにけがのちょうこうがないかしらべた。
+15241	steroid	ステロイド（体内で作られる、または薬として使用される化学物質）	The athlete was prescribed a steroid to reduce inflammation.	その選手は炎症を抑えるためにステロイドを処方された。	そのせんしゅはえんしょうをおさえるためにすてろいどをしょほうされた。
+15242	sticker	ステッカー、貼り紙、ラベル	She decorated her notebook with colorful stickers.	彼女は自分のノートをカラフルなステッカーで飾った。	かのじょはじぶんののーとをからふるなすてっかーでかざった。
+15243	stochastic	確率的な、ランダムな要素を含む	The weather model uses stochastic methods to predict rainfall.	その天気予報モデルは降水量を予測するために確率的手法を使っている。	そのてんきよほうもでるはこうすいりょうをよそくするためにかくりつてきしゅほうをつかっている。
+15244	stockbroker	株式仲買人、証券ブローカー	He works as a stockbroker in a large financial firm.	彼は大手金融会社で株式仲買人として働いている。	かれはおおてきんゆうかいしゃでかぶしきなかがいにんとしてはたらいている。
+15245	stockholder	株主	Stockholders attended the annual company meeting.	株主たちは年次会社総会に出席した。	かぶぬしたちはねんじかいしゃそうかいにしゅっせきした。
+15246	stockmarket	株式市場	The stockmarket experienced significant changes this week.	今週、株式市場は大きな変動があった。	こんしゅう、かぶしきしじょうはおおきなへんどうがあった。
+15247	storeroom	倉庫、物置部屋	Old equipment is kept in the storeroom downstairs.	古い機器は下の階の倉庫に保管されている。	ふるいききはしたのきざはしのそうこにほかんされている。
+15248	sub	潜水艦、省略形（submarine、substituteなどの略）	The sub dived to avoid detection.	その潜水艦は発見を避けるために潜った。	そのせんすいかんははっけんをさけるためにもぐった。
+15249	subprime	信用度の低い（貸付などの金融用語）	The bank was cautious about giving loans to subprime borrowers.	銀行は信用度の低い借り手への貸し出しに慎重だった。	ぎんこうはしんようどのひくいかりてへのかしだしにしんちょうだった。
+15250	subscribe	購読する、申し込む、参加する、同意する	I decided to subscribe to the monthly magazine.	私はその月刊誌を購読することに決めた。	わたしはそのげっかんしをこうどくすることにきめた。
+15251	subsection	小区分、下位の区分、節の下位部分	Please refer to subsection 3.2 for more details.	詳しくは小区分3.2をご参照ください。	くわしくはしょうくぶん3.2をごさんしょうください。
+15252	super	とても良い、素晴らしい（口語）、管理人（名詞として）	The food at the new restaurant was super.	新しいレストランの料理はとても良かった。	あたらしいれすとらんのりょうりはとてもよかった。
+15253	superset	スーパーセット（運動の方法）、上位集合（集合論）	In the gym, I tried a superset of push-ups and pull-ups.	ジムで腕立て伏せと懸垂のスーパーセットを試した。	じむでうでたてふせとけんすいのすーぱーせっとをためした。
+15254	supervisory	監督の、管理の	She holds a supervisory position in the company.	彼女は会社で管理職に就いている。	かのじょはかいしゃでかんりしょくについている。
+15255	supine	仰向けの、無気力な	He lay supine on the couch, relaxing after a long day.	彼は長い一日の後で、ソファに仰向けになってリラックスしていた。	かれはながいいちにちのあとで、そふぁにあおむけになってりらっくすしていた。
+15256	supplementation	補給、追加	Vitamin supplementation is sometimes necessary for a healthy diet.	ビタミンの補給は健康的な食事に時々必要である。	びたみんのほきゅうはけんこうてきなしょくじにときどきひつようである。
+15257	sustainability	持続可能性、維持できること	Many companies are focusing on sustainability in their business practices.	多くの企業が事業活動で持続可能性に注力している。	おおくのきぎょうがじぎょうかつどうでじぞくかのうせいにちゅうりょくしている。
+15258	sweaty	汗をかいている、汗まみれの	His shirt was sweaty after the long run.	長いランニングの後、彼のシャツは汗でびっしょりだった。	ながいらんにんぐのあと、かれのしゃつはあせでびっしょりだった。
+15259	syllabus	講義要項、シラバス（授業の概要や計画を示した文書）	The teacher handed out the syllabus on the first day of class.	先生は授業初日にシラバスを配布した。	せんせいはじゅぎょうしょにちにしらばすをはいふした。
+15260	synergy	相乗効果、協力による効果	The synergy between the two companies led to greater success.	二社間の相乗効果が、より大きな成功につながった。	にしゃかんのそうじょうこうかが、よりおおきなせいこうにつながった。
+15261	syntactic	構文上の、文法的な、統語論的な	The student learned about syntactic rules in linguistics class.	その学生は言語学の授業で統語的規則について学んだ。	そのがくせいはげんごがくのじゅぎょうでとうごてききそくについてまなんだ。
+15262	tablecloth	テーブルクロス、テーブルを覆う布	She spread a white tablecloth over the dining table.	彼女はダイニングテーブルに白いテーブルクロスをかけた。	かのじょはだいにんぐてーぶるにしろいてーぶるくろすをかけた。
+15263	tablespoon	大さじ、テーブルスプーン（容量の単位）	Add two tablespoons of sugar to the recipe.	レシピに砂糖を大さじ2杯加えてください。	れしぴにさとうをおおさじ2はいくわえてください。
+15264	tablet	錠剤、タブレット端末、平板	He took a tablet for his headache.	彼は頭痛のために錠剤を飲んだ。	かれはずつうのためにじょうざいをのんだ。
+15265	tabletop	テーブルトップ、テーブルの上面	The tabletop was covered with books and papers.	テーブルの上は本と書類で覆われていた。	てーぶるのうえはほんとしょるいでおおわれていた。
+15266	tailbone	尾てい骨、仙骨の先端部分	She injured her tailbone when she fell off the chair.	彼女は椅子から落ちて尾てい骨を痛めた。	かのじょはいすからおちてびていこつをいためた。
+15267	takeover	引き継ぎ、買収、支配権の取得	The company announced a takeover of its competitor.	その会社は競合他社の買収を発表した。	そのかいしゃはきょうごうたしゃのばいしゅうをはっぴょうした。
+15268	taker	受け取る人、引き受ける人	There were many takers for the new job openings.	新しい求人には多くの応募者がいた。	あたらしいきゅうじんにはおおくのおうぼしゃがいた。
+15269	taxable	課税対象の、課税される	The bonus she received from her job is considered taxable income.	彼女が仕事で受け取ったボーナスは課税所得とみなされる。	かのじょがしごとでうけとったぼーなすはかぜいしょとくとみなされる。
+15270	teen	10代（13歳から19歳）の若者	Many teens enjoy spending time with their friends after school.	多くの10代は放課後に友達と過ごすのが好きだ。	おおくの10だいはほうかごにともだちとすごすのがすきだ。
+15271	telecom	通信会社、電気通信	The telecom industry has grown rapidly in recent years.	近年、通信業界は急速に成長している。	きんねん、つうしんぎょうかいはきゅうそくにせいちょうしている。
+15272	template	ひな型、テンプレート、雛形	She used a template to create her resume.	彼女は自分の履歴書を作成するのにテンプレートを使った。	かのじょはじぶんのりれきしょをさくせいするのにてんぷれーとをつかった。
+15273	testosterone	テストステロン（男性ホルモンの一種）	Testosterone plays an important role in muscle development.	テストステロンは筋肉の発達に重要な役割を果たす。	てすとすてろんはきんにくのはったつにじゅうようなやくわりをはたす。
+15274	therapist	セラピスト、治療者、療法士	She visits a therapist once a week to discuss her feelings.	彼女は自分の気持ちを話すために週に一度セラピストのもとを訪ねている。	かのじょはじぶんのきもちをはなすためにしゅうにいちどせらぴすとのもとをたずねている。
+15275	thunderstorm	雷雨	The thunderstorm last night caused a power outage.	昨夜の雷雨で停電が起きた。	さくやのらいうでていでんがおきた。
+15276	tightness	締め付け、きつさ、窮屈さ	He felt tightness in his chest during exercise.	彼は運動中に胸の締め付けを感じた。	かれはうんどうちゅうにむねのしめつけをかんじた。
+15277	timeline	時間軸、年表、タイムライン	The project manager created a timeline to track progress.	プロジェクトマネージャーは進捗を追跡するためにタイムラインを作成した。	ぷろじぇくとまねーじゃーはしんちょくをついせきするためにたいむらいんをさくせいした。
+15278	timely	タイムリーな、時機を得た、適時の	The company's timely response improved its reputation.	その会社のタイムリーな対応で評判が上がった。	そのかいしゃのたいむりーなたいおうでひょうばんがあがった。
+15279	timer	タイマー、時間を測る装置	She set a timer for 10 minutes to bake the cake.	彼女はケーキを焼くために10分のタイマーをセットした。	かのじょはけーきをやくために10ぷんのたいまーをせっとした。
+15280	timetable	時刻表、時間割、予定表	The train timetable is posted at the station.	電車の時刻表は駅に掲示されている。	でんしゃのじこくひょうはえきにけいじされている。
+15281	tiptoe	つま先立ちする、つま先歩き	He walked on tiptoe to avoid making noise.	彼は音を立てないようにつま先立ちで歩いた。	かれはおとをたてないようにつまさきだちであるいた。
+15282	toiletry	洗面用具	She packed her toiletries in a small bag for the trip.	彼女は旅行用に洗面用具を小さなバッグに詰めた。	かのじょはりょこうようにせんめんようぐをちいさなばっぐにつめた。
+15283	tomato	トマト	He added chopped tomato to the salad.	彼はサラダに刻んだトマトを加えた。	かれはさらだにきざんだとまとをくわえた。
+15284	toner	トナー（化粧水、プリンターのインク粉末など）	She uses a toner after washing her face.	彼女は顔を洗った後に化粧水を使う。	かのじょはかおをあらったあとにけしょうすいをつかう。
+15285	trainee	研修生、訓練生	The new trainee learned the job quickly.	新しい研修生は仕事をすぐに覚えた。	あたらしいけんしゅうせいはしごとをすぐにおぼえた。
+15286	tranche	（財務用語で）分割分、割当て	The company received the first tranche of funding.	その会社は資金の第一分割分を受け取った。	そのかいしゃはしきんのだいいちぶんかつぶんをうけとった。
+15287	trans	（化学などで）トランス型、横切る、越える（prefixとして）	Trans-Pacific flights are scheduled regularly.	太平洋横断のフライトは定期的に運航されている。	たいへいようおうだんのふらいとはていきてきにうんこうされている。
+15288	tricep	上腕三頭筋	He does exercises to strengthen his triceps.	彼は上腕三頭筋を鍛える運動をしている。	かれはじょうわんさんとうきんをきたえるうんどうをしている。
+15289	triglyceride	中性脂肪	High levels of triglyceride in the blood may increase health risks.	血中の中性脂肪値が高いと健康リスクが高まる可能性がある。	けっちゅうのちゅうせいしぼうちがたかいとけんこうりすくがたかまるかのうせいがある。
+15290	tuple	タプル（いくつかの要素の順序付き集合、特にプログラミングで使われる）	A tuple can store different types of data in a single variable.	タプルは1つの変数に異なる型のデータを格納できる。	たぷるは1つのへんすうにことなるかたのでーたをかくのうできる。
+15291	turnover	売上高、回転率、離職率、転換	The company has a high employee turnover rate.	その会社は従業員の離職率が高い。	そのかいしゃはじゅうぎょういんのりしょくりつがたかい。
+15292	unattended	無人の、放置された、誰も世話をしていない	Do not leave your luggage unattended at the airport.	空港で荷物を放置しないでください。	くうこうでにもつをほうちしないでください。
+15293	underline	下線を引く、強調する	Please underline the key words in the sentence.	文中のキーワードに下線を引いてください。	ぶんちゅうのきーわーどにかせんをひいてください。
+15294	undervalue	過小評価する、価値を低く見積もる	He tends to undervalue his own achievements.	彼は自分の成果を過小評価しがちだ。	かれはじぶんのせいかをかしょうひょうかしがちだ。
+15295	underwrite	（保険・金融で）引き受ける、保証する	The company agreed to underwrite the new project.	その会社は新しいプロジェクトを引き受けることに同意した。	そのかいしゃはあたらしいぷろじぇくとをひきうけることにどういした。
+15296	underwriter	（保険・証券などの）引受人、保証人	An underwriter assesses risks before issuing a policy.	引受人は保険契約を発行する前にリスクを評価する。	ひきうけにんはほけんけいやくをはっこうするまえにりすくをひょうかする。
+15297	undoubtedly	疑いなく、確かに	She is undoubtedly one of the best players on the team.	彼女は間違いなくチームで最も優れた選手の一人だ。	かのじょはまちがいなくちーむでもっともすぐれたせんしゅのひとりだ。
+15298	unintelligible	理解できない、意味不明の	The announcement was so quiet that it was unintelligible.	アナウンスがとても小さかったので、意味が分からなかった。	あなうんすがとてもちいさかったので、いみがわからなかった。
+15299	unpaid	未払いの、無給の	She took an unpaid leave from work.	彼女は無給休暇を取った。	かのじょはむきゅうきゅうかをとった。
+15300	unravel	ほどく、解明する	The detective worked hard to unravel the mystery.	探偵はその謎を解明しようと努力した。	たんていはそのなぞをかいめいしようとどりょくした。
+15301	unreal	非現実的な、現実でない	The scenery from the mountain top looked unreal.	山頂からの景色は現実とは思えなかった。	さんちょうからのけしきはげんじつとはおもえなかった。
+15302	unsecured	保証されていない、安全でない	He left the door unsecured when he went out.	彼は外出するときにドアを施錠しなかった。	かれはがいしゅつするときにどあをせじょうしなかった。
+15303	unused	使われていない、未使用の	There is a pile of unused notebooks on my shelf.	棚に未使用のノートが積まれている。	たなにみしようののーとがつまれている。
+15304	upbeat	陽気な、前向きな	She always has an upbeat attitude at work.	彼女は仕事中いつも前向きな態度だ。	かのじょはしごとちゅういつもまえむきなたいどだ。
+15305	upload	アップロードする、（データを）送信する	Please upload the file to the server.	そのファイルをサーバーにアップロードしてください。	そのふぁいるをさーばーにあっぷろーどしてください。
+15306	uppercut	（ボクシングの）アッパーカット	The boxer knocked out his opponent with an uppercut.	そのボクサーはアッパーカットで相手をノックアウトした。	そのぼくさーはあっぱーかっとであいてをのっくあうとした。
+15307	vacate	（場所を）明け渡す、退去する	We need to vacate the room by noon.	私たちは正午までに部屋を明け渡さないといけない。	わたしたちはしょうごまでにへやをあけわたさないといけない。
+15308	validate	有効にする、妥当性を確認する、認証する	You need to validate your parking ticket before leaving.	出る前に駐車券を認証する必要があります。	でるまえにちゅうしゃけんをにんしょうするひつようがあります。
+15309	valuation	評価、査定、評価額	The valuation of the property was higher than expected.	その不動産の評価額は予想より高かった。	そのふどうさんのひょうかがくはよそうよりたかかった。
+15310	variability	変動性、ばらつき	There is considerable variability in test results.	テストの結果にはかなりのばらつきがある。	てすとのけっかにはかなりのばらつきがある。
+15311	vegan	厳格な菜食主義者、動物性製品を一切使わない人	She follows a vegan diet.	彼女はヴィーガンの食事をしている。	かのじょはヴぃーがんのしょくじをしている。
+15312	vend	販売する、自動販売する	They vend snacks from a machine in the lobby.	ロビーの自動販売機でスナックを売っている。	ろびーのじどうはんばいきですなっくをうっている。
+15313	vertebra	椎骨（ついこつ）	A human spine is made up of 33 vertebrae.	人間の背骨は33個の椎骨からできている。	にんげんのせぼねは33このついこつからできている。
+15314	vest	ベスト、チョッキ、肌着	He wore a vest under his suit jacket.	彼はスーツの下にベストを着ていた。	かれはすーつのしたにべすとをきていた。
+15315	videoconference	テレビ会議、ビデオ会議	We will hold a videoconference with the overseas team tomorrow.	明日、海外のチームとビデオ会議を行います。	あす、かいがいのちーむとびでおかいぎをおこないます。
+15316	visa	査証、ビザ（入国許可証）	He applied for a travel visa last month.	彼は先月、旅行ビザを申請した。	かれはせんげつ、りょこうびざをしんせいした。
+15317	visualize	思い描く、心に描く、視覚化する	She tried to visualize her goal before the competition.	彼女は試合の前に自分の目標を思い描こうとした。	かのじょはしあいのまえにじぶんのもくひょうをおもいえがこうとした。
+15318	voucher	引換券、クーポン、証明書	He used a voucher to get a discount at the store.	彼は店で割引を受けるために引換券を使った。	かれはみせでわりびきをうけるためにひきかえけんをつかった。
+15319	waistline	胴回り、ウエストライン	She measured her waistline for the new dress.	彼女は新しいドレスのためにウエストラインを測った。	かのじょはあたらしいどれすのためにうえすとらいんをはかった。
+15320	walkway	歩道、歩行者通路	A walkway connects the two buildings.	歩道がその2つの建物をつないでいる。	ほどうがその2つのたてものをつないでいる。
+15321	warmup	ウォームアップ、準備運動	He did a warmup before starting his workout.	彼は運動を始める前にウォームアップをした。	かれはうんどうをはじめるまえにうぉーむあっぷをした。
+15322	webpage	ウェブページ、インターネット上のページ	The company's webpage contains their latest news.	その会社のウェブページには最新ニュースが掲載されている。	そのかいしゃのうぇぶぺーじにはさいしんにゅーすがけいさいされている。
+15323	whey	ホエー、乳清（チーズやヨーグルトを作る過程でできる液体部分）	Whey is often used as a protein supplement.	ホエーはよくプロテインサプリメントとして使われる。	ほえーはよくぷろていんさぷりめんととしてつかわれる。
+15324	whoa	（驚きや制止を表す）おっと、ちょっと待って	\"Whoa, slow down!\" he said to his friend.	「おっと、ゆっくり！」と彼は友人に言った。	「おっと、ゆっくり!」とかれはゆうじんにいった。
+15325	wholesale	卸売の、卸売りで	He buys fruits at wholesale prices.	彼は果物を卸売価格で買っている。	かれはくだものをおろしうりかかくでかっている。
+15326	wholesaler	卸売業者、卸売り商	The wholesaler supplies goods to many small shops.	その卸売業者は多くの小さな店に商品を供給している。	そのおろしうりぎょうしゃはおおくのちいさなみせにしょうひんをきょうきゅうしている。
+15327	wiper	ワイパー（車のフロントガラスや窓を拭く装置）	The car's wiper stopped working in the rain.	その車のワイパーは雨の中で動かなくなった。	そのくるまのわいぱーはあめのなかでうごかなくなった。
+15328	workbook	ワークブック、練習帳	Please complete the exercises in your workbook.	ワークブックの練習問題を終わらせてください。	わーくぶっくのれんしゅうもんだいをおわらせてください。
+15329	worksheet	ワークシート、作業用紙	The teacher handed out a math worksheet.	先生は数学のワークシートを配った。	せんせいはすうがくのわーくしーとをくばった。
+15330	wow	わあ！、すごい！	\"Wow, that's amazing!\" she said.	「わあ、それはすごい！」と彼女は言った。	「わあ、それはすごい!」とかのじょはいった。
+15331	wristwatch	腕時計	He looked at his wristwatch to check the time.	彼は時間を確かめるために腕時計を見た。	かれはじかんをたしかめるためにうでどけいをみた。
+15332	yen	円（日本の通貨単位）	The price is 500 yen.	値段は500円です。	ねだんは500えんです。
+15333	yep	うん、はい（くだけた言い方）	\"Are you coming with us?\" \"Yep, I am.\"	「一緒に来る？」「うん、行くよ。」	「いっしょにくる?」「うん、いくよ。」
+15334	yoga	ヨガ、インド発祥の心身の修行法	She practices yoga every morning.	彼女は毎朝ヨガをしている。	かのじょはまいあさよがをしている。
+15335	yogi	ヨガの修行者、ヨギ	The yogi meditated in silence.	そのヨギは静かに瞑想していた。	そのよぎはしずかにめいそうしていた。
+15336	yuan	元（中国の通貨単位）	The book costs 20 yuan.	その本は20元です。	そのほんは20げんです。
+15337	yummy	とても美味しい、うまい	This cake is really yummy.	このケーキは本当に美味しい。	このけーきはほんとうにおいしい。
