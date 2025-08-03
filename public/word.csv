@@ -3471,7 +3471,7 @@ id	word	definition_ja	example_en	example_ja	kana
 3486	juvenile	未成年者、若い	He recently watched a documentary about juvenile crime.	彼は最近未成年者の犯罪についてのドキュメンタリーを見ました。	かれはさいきんみせいねんしゃのはんざいについてのどきゅめんたりーをみました。
 3487	mire	泥沼、困難な状況	He got stuck deep in the mire of the problem.	彼は問題の泥沼に深くはまってしまった。	かれはもんだいのどろぬまにふかくはまってしまった。
 3488	take something with a grain of salt	話半分に聞く、疑いを持って受け取る	You should take his stories with a grain of salt since they are always exaggerated.	彼の話はいつも誇張されているので、話半分に聞いた方がいい。	かれのはなしはいつもこちょうされているので、はなしはんぶんにきいたほうがいい。
-3489	bereaved	喪失を経験した、特に愛する人を亡くした人	She is grieving as she has recently become bereaved of a loved one.	彼女は最近、愛する人を失い、悲しみに暮れています。	かのじょはさいきん、あいするひとをうしない、かなしみにくれています。
+3489	bereaved	遺族（の）、肉親を亡くした（人）	The counselor spoke gently to the bereaved family after the funeral.	カウンセラーは葬儀の後、遺族に優しく語りかけた。	かうんせらーはそうぎのあと、いぞくにやさしくかたりかけた。
 3490	engross	没頭させる、夢中にさせる	I was totally engrossed in his story.	彼の話に完全に没頭してしまいました。	かれのはなしにかんぜんにぼっとうしてしまいました。
 3491	toy with	いじる、遊ぶ、（感情などを）弄ぶ	He is just toying with her feelings.	彼は彼女の感情をいじっているだけだ。	かれはかのじょのかんじょうをいじっているだけだ。
 3492	undue	不当な、過度の	I was shocked by his undue demands.	彼の不当な要求には驚きました。	かれのふとうなようきゅうにはおどろきました。
@@ -5296,7 +5296,7 @@ id	word	definition_ja	example_en	example_ja	kana
 5316	forestall	防ぐ、先手を打つ	He tried to forestall the situation by taking measures before the problem worsened.	彼は問題が悪化する前に対策を講じることで、事態を防ごうとした。	かれはもんだいがあっかするまえにたいさくをこうじることで、じたいをふせごうとした。
 5317	forgo	辞退する、差し控える	He decided to forgo dining at the upscale restaurant to save on his travel budget.	彼は旅行の予算を節約するために、高級レストランでの食事を辞退することに決めました。	かれはりょこうのよさんをせつやくするために、こうきゅうれすとらんでのしょくじをじたいすることにきめました。
 5318	canine	犬科の動物	She started reading a book about canine animals.	彼女は犬科の動物についての本を読み始めました。	かのじょはいぬかのどうぶつについてのほんをよみはじめました。
-5319	bring A in	持ち込む、導入する	Bringing in new technology has greatly improved efficiency in operations.	新しい技術を業務に持ち込むことで、効率が大幅に向上しました。	あたらしいぎじゅつをぎょうむにもちこむことで、こうりつがおおはばにこうじょうしました。
+5319	bring A in	Aを（外から）呼び入れる、招き入れる、関与させる、（収入など）Aを得る	The police brought a specialist in to help with the cybercrime investigation.	警察はサイバー犯罪の捜査を手伝ってもらうため専門家を招き入れた。	けいさつはさいばーはんざいのそうさをてつだってもらうためせんもんかをまねきいれた。
 5320	savvy	賢い、精通した	He made a savvy choice because he is well-versed in the business world.	彼はビジネスの世界に精通しているので、非常に賢い選択をしました。	かれはびじねすのせかいにせいつうしているので、ひじょうにかしこいせんたくをしました。
 5321	deft	器用な、手際の良い	She deftly crafted handmade jewelry.	彼女は器用に手作りのアクセサリーを作り上げました。	かのじょはきようにてづくりのあくせさりーをつくりあげました。
 5322	nimble	素早い、軽快な	She moved nimbly, easily leaping over the obstacles.	彼女は素早く動き回り、障害物を軽快に飛び越えました。	かのじょはすばやくうごきまわり、しょうがいぶつをけいかいにとびこえました。
@@ -7050,7 +7050,7 @@ id	word	definition_ja	example_en	example_ja	kana
 7081	ingenuous	無邪気な、純真な	She is so ingenuous that she doesn't know how to suspect people.	彼女はあまりにも無邪気なので、人を疑うことを知りません。	かのじょはあまりにもむじゃきなので、ひとをうたがうことをしりません。
 7082	sturdy	頑丈な、丈夫な	This chair is very sturdily built.	この椅子はとても頑丈に作られています。	このいすはとてもがんじょうにつくられています。
 7083	ambiguous	曖昧な、多義的な	His statement was ambiguous, and I didn't understand what he meant.	彼の発言は曖昧で、何を意味するのかわかりませんでした。	かれのはつげんはあいまいで、なにをいみするのかわかりませんでした。
-7084	diplomatic	外交的な、如才ない	He is a diplomatic person, so he can get along with anyone.	彼は外交的な人物なので、誰とでもうまくやっていけます。	かれはがいこうてきなじんぶつなので、だれとでもうまくやっていけます。
+7084	diplomatic	外交的な	He is a diplomatic person, so he can get along with anyone.	彼は外交的な人物なので、誰とでもうまくやっていけます。	かれはがいこうてきなじんぶつなので、だれとでもうまくやっていけます。
 7085	alongside	～のそばに、～と並んで	My house is alongside the river.	私の家は川のそばにあります。	わたしのいえはかわのそばにあります。
 7086	narrative	物語、語り口	His narrative was so interesting that I was drawn in until the end.	彼の物語はとても面白くて、最後まで引き込まれました。	かれのものがたりはとてもおもしろくて、さいごまでひきこまれました。
 7087	contamination	汚染	Contamination of drinking water is a serious problem.	飲料水の汚染は深刻な問題です。	いんりょうすいのおせんはしんこくなもんだいです。
@@ -9298,7 +9298,7 @@ id	word	definition_ja	example_en	example_ja	kana
 9360	octopus	タコ	I tried octopus sushi for the first time, and it was surprisingly delicious!	初めてタコの寿司を食べてみたら、意外と美味しかった！	はじめてたこのすしをたべてみたら、いがいとおいしかった!
 9361	Olympics	オリンピック、国際的なスポーツイベント	I'm really excited to watch the Olympics this summer!	今夏のオリンピックを見るのがとても楽しみです！	こんかのおりんぴっくをみるのがとてもたのしみです!
 9362	orchestra	オーケストラ、楽団	The orchestra played beautifully during the concert last night.	昨夜のコンサートでオーケストラは美しく演奏しました。	さくやのこんさーとでおーけすとらはうつくしくえんそうしました。
-9363	owl	フクロウ、夜行性の鳥	I love listening to the owl hooting at night.	夜にフクロウの鳴き声を聞くのが大好きです。	よるにふくろうのなきごえをきくのがだいすきです。
+9363	owl	フクロウ	I love listening to the owl hooting at night.	夜にフクロウの鳴き声を聞くのが大好きです。	よるにふくろうのなきごえをきくのがだいすきです。
 9364	P.E.	体育、身体教育	I really enjoy P.E. class because we get to play games and stay active.	体育の授業が大好きなんだ、だってゲームをして体を動かすことができるから。	たいいくのじゅぎょうがだいすきなんだ、だってげーむをしてからだをうごかすことができるから。
 9365	painter	画家、絵を描く人	My neighbor is a talented painter who specializes in landscapes.	私の隣人は風景画を専門とする才能ある画家です。	わたしのりんじんはふうけいがをせんもんとするさいのうあるがかです。
 9366	painting	絵画、塗装	I love spending my weekends painting landscapes.	週末に風景画を描くのが大好きです。	しゅうまつにふうけいがをえがくのがだいすきです。
@@ -9487,7 +9487,7 @@ id	word	definition_ja	example_en	example_ja	kana
 9552	United States	アメリカ合衆国	I always wanted to visit the United States and see the Grand Canyon.	アメリカ合衆国を訪れてグランドキャニオンを見たいと思っていました。	あめりかがっしゅうこくをおとずれてぐらんどきゃにおんをみたいとおもっていました。
 9553	universal design	ユニバーサルデザイン、誰にでも使いやすいデザイン	The new building follows universal design principles to make it accessible for everyone.	新しいビルは、誰にでも利用しやすいようにユニバーサルデザインの原則に従っています。	あたらしいびるは、だれにでもりようしやすいようにゆにばーさるでざいんのげんそくにしたがっています。
 9555	USA	アメリカ合衆国	I can't wait to visit the USA next summer!	来年の夏にアメリカ合衆国を訪れるのが待ちきれません！	らいねんのなつにあめりかがっしゅうこくをおとずれるのがまちきれません!
-9556	Valentine	バレンタイン、恋人や友人への愛を表現する日	I'm really excited to celebrate Valentine's Day with my partner this year.	今年はパートナーとバレンタインデーを祝うのがとても楽しみです。	ことしはぱーとなーとばれんたいんでーをいわうのがとてもたのしみです。
+9556	Valentine	バレンタイン	I'm really excited to celebrate Valentine's Day with my partner this year.	今年はパートナーとバレンタインデーを祝うのがとても楽しみです。	ことしはぱーとなーとばれんたいんでーをいわうのがとてもたのしみです。
 9557	vending machine	自動販売機	I need some snacks, so I'm going to the vending machine over there.	お腹が空いたから、あそこにある自動販売機に行ってくるよ。	おなかがすいたから、あそこにあるじどうはんばいきにいってくるよ。
 9558	Venezuela	ベネズエラ（国名）	I've always wanted to visit Venezuela to see its beautiful landscapes.	私は美しい風景を見るためにベネズエラを訪れたいと思っていました。	わたしはうつくしいふうけいをみるためにべねずえらをおとずれたいとおもっていました。
 9559	video	ビデオ、映像	I watched an amazing video about space travel yesterday.	昨日、宇宙旅行に関する素晴らしいビデオを見ました。	きのう、うちゅうりょこうにかんするすばらしいびでおをみました。
@@ -12519,7 +12519,7 @@ id	word	definition_ja	example_en	example_ja	kana
 12650	creator	創造者、製作者	The creator of the game is a well-known developer.	そのゲームの創造者は有名な開発者である。	そのげーむのそうぞうしゃはゆうめいなかいはつしゃである。
 12651	in prison	投獄中、牢屋の中	He spent five years in prison for his crime.	彼は犯罪で5年間投獄された。	かれははんざいで5ねんかんとうごくされた。
 12652	vastly	非常に、とても	The new smartphone is vastly more powerful than the previous model.	新しいスマートフォンは前のモデルよりも非常に強力である。	あたらしいすまーとふぉんはまえのもでるよりもひじょうにきょうりょくである。
-12653	picked up	拾った、身に付けた	I picked up some souvenirs on my trip.	私は旅行中にいくつかの土産物を拾った。	わたしはりょこうちゅうにいくつかのみやげものをひろった。
+12653	picked up	拾った、身に付けた	She picked up the book from the floor.	彼女は床から本を拾い上げた。	かのじょはゆかからほんをひろいあげた。
 12654	sold out	完売、売り切れ	The concert tickets sold out quickly.	コンサートのチケットはすぐに売り切れた。	こんさーとのちけっとはすぐにうりきれた。
 12655	financially	財政的に、金銭的に	The company is doing well financially.	会社は財政的にうまくいっている。	かいしゃはざいせいてきにうまくいっている。
 12656	fatty	脂肪の、太った	The doctor told him to reduce his intake of fatty foods.	医者は彼に脂肪の多い食品の摂取を減らすように言った。	いしゃはかれにしぼうのおおいしょくひんのせっしゅをへらすようにいった。
@@ -13122,7 +13122,7 @@ id	word	definition_ja	example_en	example_ja	kana
 13262	mountainside	山の斜面	They camped on the mountainside to enjoy the view.	彼らは景色を楽しむために山の斜面でキャンプしました。	かれらはけしきをたのしむためにやまのしゃめんできゃんぷしました。
 13263	intrusion	侵入、不法侵入	The security system alarms when there is an intrusion.	侵入があったときにセキュリティシステムのアラームが鳴ります。	しんにゅうがあったときにせきゅりてぃしすてむのあらーむがなります。
 13264	graphically	視覚的に	The movie depicts the battle graphically.	この映画ではその戦いが生々しく描かれている。	このえいがではそのたたかいがなまなましくえがかれている。
-13265	insidiously	陰湿に、徐々に害を及ぼす様に、知らないうちに、巧妙に、または有害な方法で影響を及ぼす	The disease spread insidiously through the population.	その病気は陰湿に人口に広がりました。	そのびょうきはいんしつにじんこうにひろがりました。
+13265	insidiously	巧妙に、陰湿に、知らず知らずのうちに悪影響を及ぼすように	The disease spread insidiously, showing no symptoms until it was too late.	病気は気づかないうちに広がり、手遅れになるまで症状は現れなかった。	びょうきはきづかないうちにひろがり、ておくれになるまでしょうじょうはあらわれなかった。
 13266	watery	水のような、液体のような、薄い水っぽい	The eyes looked watery after crying.	泣いた後で目がひどく潤んで見えた。	ないたあとでめがひどくうるんでみえた。
 13267	rash	発疹、皮膚のかゆみ・赤みの出た状態	He developed a rash after eating shellfish.	彼は貝類を食べた後、発疹ができた。	かれはかいるいをたべたあと、ほっしんができた。
 13268	concealment	隠すこと、隠蔽	The treasure was hidden through concealment in the cave.	宝物は洞窟の中に隠されていました。	たからものはどうくつのなかにかくされていました。
@@ -13552,7 +13552,7 @@ id	word	definition_ja	example_en	example_ja	kana
 13699	disburse	資金を支払う、支出する	The government will disburse the funds for the new project next week.	政府は来週、新しいプロジェクトのために資金を支出します。	せいふはらいしゅう、あたらしいぷろじぇくとのためにしきんをししゅつします。
 13700	misconduct	不正行為	The employee was suspended for professional misconduct.	その従業員は職務上の不正行為で一時停止処分を受けました。	そのじゅうぎょういんはしょくむじょうのふせいこういでいちじていししょぶんをうけました。
 13701	flipper	ひれ、特に海洋動物の水かき状のひれ	The seal used its flippers to propel itself through the water.	アザラシはひれを使って水中を進みました。	あざらしはひれをつかってすいちゅうをすすみました。
-13702	unfounded	根拠のない、事実に基づかない	Her fears were unfounded and she was able to enjoy her trip.	彼女の恐怖心は根拠のないもので、旅行を楽しむことができました。	かのじょのきょうふしんはこんきょのないもので、りょこうをたのしむことができました。
+13702	unfounded	根拠のない、でたらめな	The rumors about the company going bankrupt were completely unfounded.	その会社が倒産するという噂は、完全に根拠のないものだった。	そのかいしゃがとうさんするといううわさは、かんぜんにこんきょのないものだった。
 13703	headland	岬、突堤	The lighthouse is located on a headland overlooking the bay.	灯台は湾を見下ろす岬に位置しています。	とうだいはわんをみおろすみさきにいちしています。
 13704	impertinently	無礼に、不作法に	He answered impertinently to the teacher's question.	彼は先生の質問に無礼に答えました。	かれはせんせいのしつもんにぶれいにこたえました。
 13705	mistress	女主人、女性の指導者	She was the mistress of the household, making all the decisions.	彼女は家庭の女主人であり、すべての決定を下していました。	かのじょはかていのおんなしゅじんであり、すべてのけっていをくだしていました。
@@ -14246,7 +14246,7 @@ id	word	definition_ja	example_en	example_ja	kana
 14401	vividly	鮮やかに、鮮明に	She remembered the event vividly.	彼女はその出来事を鮮明に覚えていた。	かのじょはそのできごとをせんめいにおぼえていた。
 14402	uncontrolled	制御されていない、抑えきれない	The crowd became uncontrollable after the goal.	ゴール後、群衆は制御不能になった。	ごーるご、ぐんしゅうはせいぎょふのうになった。
 14403	outwardly	外見上は、外側に	He appeared outwardly calm but was nervous inside.	彼は外見上は落ち着いて見えたが、内心は緊張していた。	かれはがいけんじょうはおちついてみえたが、ないしんはきんちょうしていた。
-14404	purportedly	いわゆる、うわさによると	The article purportedly reveals new evidence.	その記事は新しい証拠を明らかにしているとされている。	そのきじはあたらしいしょうこをあきらかにしているとされている。
+14404	purportedly	〜だとされている、〜だと主張されている	He is purportedly the richest man in the village, though no one has seen his bank account.	彼は村で一番の大金持ちだとされているが、誰も彼の銀行口座を見たことはない。	かれはむらでいちばんのおおがねもちだとされているが、だれもかれのぎんこうこうざをみたことはない。
 14405	unspecified	未記載の、未指定の	The location of the event is unspecified.	そのイベントの場所は未記載である。	そのいべんとのばしょはみきさいである。
 14406	purification	浄化、清浄	The water undergoes purification before it reaches our homes.	水は私たちの家に届く前に浄化される。	みずはわたしたちのいえにとどくまえにじょうかされる。
 14407	shrewdness	鋭さ、抜け目のなさ	His shrewdness helped him make profitable investments.	彼の鋭さが、彼に儲かる投資をさせた。	かれのするどさが、かれにもうかるとうしをさせた。
@@ -14275,7 +14275,7 @@ id	word	definition_ja	example_en	example_ja	kana
 14430	elliptical	楕円形の	The elliptical shape of the planet's orbit was surprising to astronomers.	惑星の軌道が楕円形であることに、天文学者たちは驚いた。	わくせいのきどうがだえんけいであることに、てんもんがくしゃたちはおどろいた。
 14431	pierce	貫通させる、穴を開ける	She decided to pierce her ears yesterday.	彼女は昨日耳にピアスを開けることにしました。	かのじょはきのうみみにぴあすをあけることにしました。
 14432	figurative	比喩の、比喩的な	The phrase 'time is a thief' is figurative language.	「時間は盗人だ」という表現は比喩的な表現です。	「じかんはぬすびとだ」というひょうげんはひゆてきなひょうげんです。
-14433	rhythmically	リズミカルに、リズムに合わせて。	The dancers moved rhythmically to the drumbeats.	ダンサーたちは太鼓のビートに合わせてリズミカルに動いた。	だんさーたちはたいこのびーとにあわせてりずみかるにうごいた。
+14433	rhythmically	リズミカルに、リズムに合わせて	The dancers moved rhythmically to the drumbeats.	ダンサーたちは太鼓のビートに合わせてリズミカルに動いた。	だんさーたちはたいこのびーとにあわせてりずみかるにうごいた。
 14434	insignia	階級、所属を示す旗章やバッジ	The soldiers proudly wore their insignia on their uniforms.	兵士たちは誇らしげに制服に記章を付けていた。	へいしたちはほこらしげにせいふくにきしょうをつけていた。
 14435	shoreline	海岸線	We walked along the shoreline, collecting shells.	私たちは海岸に沿って歩きながら貝殻を集めました。	わたしたちはかいがんにそってあるきながらかいがらをあつめました。
 14436	unexplained	説明のつかない、不明な	There is an unexplained phenomenon in the sky.	空には説明のつかない現象がある。	そらにはせつめいのつかないげんしょうがある。
